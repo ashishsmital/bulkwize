@@ -1,9 +1,14 @@
 
 <h2>Products </h2> <br/>
 
-Step 1: Go to Products folder <br/>
-Step 2: npm install all the packages<br/>
-Step 3: node index.js <br/>
+Step 1: Install couch base and create a new bucket bulkwize <br/>
+Step 2: CREATE PRIMARY INDEX ON bulkwize USING GSI; - Run this as couchbase 4 onward there is no default index <br/>
+Step 3: Go to Products folder <br/>
+Step 4: node index.js <br/> 
+Step 5: If it is not working then install the package as mentioned below <br/>
+Step 6: npm install all the packages<br/> 
+Step 7: node index.js <br/>
+
 
 
 <h4>Save Products</h4>
