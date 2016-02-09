@@ -1,12 +1,12 @@
 
-<h2>Products </h2> <br>
+<h2>Products </h2> <br/>
 
-Step 1: Go to Products folder:<br>
-Step 2: npm install all the packages<br>
-Step 3: node index.js <br>
+Step 1: Go to Products folder <br/>
+Step 2: npm install all the packages<br/>
+Step 3: node index.js <br/>
 
 
-Save Products
+<h4>Save Products</h4>
 -----------------------------
 
 POST : http://localhost:8080/products <br/>
@@ -51,23 +51,21 @@ Data :<code>
 "override_lead_time_for_delivery_in_days":20
 }</code>
 
+<h4>Unique Brand Name</h4>
 -----------------------------------------
 
-Get : Unique Brand Name <br/>
-URL : http://localhost:8080/products/uniquebrands <br/>
+Get URL : http://localhost:8080/products/uniquebrands <br/>
 
-
+<h4>Get all the products by category name</h4>
 -------------------------------------------
 
-Get : Get all the products by category name
+Get URL: http://localhost:8080/products/category/Mens
 
-http://localhost:8080/products/category/Mens
 
+<h4>Get all the products for a given brand name</h4>
 -------------------------------------------
 
-Get : Get all the products for a given brand name
-
-http://localhost:8080/products/brand/Gillete
+Get URL : http://localhost:8080/products/brand/Gillete
 
 
 
