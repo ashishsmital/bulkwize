@@ -1,0 +1,21 @@
+{
+  "name": "bulkwise",
+  "version": "1.0.0",
+  "description": "bulkwise ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bulkwise"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "dbutil": "file:///Users/harman/Personal/BulkWise-Project/DBUtil",
+    "express": "^4.13.4",
+    "products": "file:///Users/harman/Personal/BulkWise-Project/Products",
+    "uuid": "^2.0.1"
+  }
+}
