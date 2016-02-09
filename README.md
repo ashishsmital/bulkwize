@@ -1,14 +1,17 @@
 
-Products: 
+<h2>Products </h2> <br>
 
-Step 1: Go to Products folder:
-Step 2: npm install all the packages
-Step 3: node index.js
+Step 1: Go to Products folder:<br>
+Step 2: npm install all the packages<br>
+Step 3: node index.js <br>
+
+
+Save Products
 -----------------------------
 
-POST : http://localhost:8080/products
+POST : http://localhost:8080/products <br/>
 
-Data :
+Data :<code>
 {
 "type":"com.bulkwise.Products",
 "id":"produ::9",
@@ -46,11 +49,12 @@ Data :
 "category_id":["unique"],
 "supplier_id": "suppl::1",
 "override_lead_time_for_delivery_in_days":20
-}
+}</code>
+
 -----------------------------------------
 
-Get : Unique Brand Name
-URL : http://localhost:8080/products/uniquebrands
+Get : Unique Brand Name <br/>
+URL : http://localhost:8080/products/uniquebrands <br/>
 
 
 -------------------------------------------
