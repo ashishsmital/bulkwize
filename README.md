@@ -11,7 +11,7 @@ Step 3: node index.js <br/>
 
 POST : http://localhost:8080/products <br/>
 
-Data :<code>
+<code>
 {
 "type":"com.bulkwise.Products",
 "id":"produ::9",
@@ -28,7 +28,6 @@ Data :<code>
 		"supplier_material_code":" 82242983",
 		"supplier_material_description":" Mach 3 turbo pack of 3",
 		"supplier_EAN":" 4902430665452",
-
 		"count_in_case":50,
 		"unit size/weight/qty":"3",
 		"MRP/unit": 550,
