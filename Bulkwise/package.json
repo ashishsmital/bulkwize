@@ -13,9 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
-    "dbutil": "file:///Users/harman/Personal/BulkWise-Project/DBUtil",
+    "dbutil": "file:///Users/harman/WebstormProjects/bulkwize/DBUtil",
     "express": "^4.13.4",
-    "products": "file:///Users/harman/Personal/BulkWise-Project/Products",
+    "products": "file:///Users/harman/WebstormProjects/bulkwize/products",
+    "shoppingcart": "file:///Users/harman/WebstormProjects/bulkwize/ShoppingCart",
     "uuid": "^2.0.1"
   }
 }

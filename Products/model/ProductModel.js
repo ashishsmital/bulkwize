@@ -69,8 +69,8 @@ ProductModel.getByAttribute = function(attribute,value, callback) {
 
     var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"'");
 
-    db.query(query, function(err, result) {
-        if (err) {
+    db.query(query, function(error, result) {
+        if (error) {
             callback(error, null);
             return;
         }
@@ -93,8 +93,8 @@ ProductModel.getByAttributeArray = function(attribute,value, callback) {
 
     var query = N1qlQuery.fromString("select * from "+db._name+" where ANY id in "+attribute+" SATISFIES id =='"+value+"' END");
 
-    db.query(query, function(err, result) {
-        if (err) {
+    db.query(query, function(error, result) {
+        if (error) {
             callback(error, null);
             return;
         }
@@ -116,8 +116,8 @@ ProductModel.getUniqueAttributes = function(attribute, callback) {
 
     var query = N1qlQuery.fromString("select distinct("+attribute+") from "+db._name);
 
-    db.query(query, function(err, result) {
-        if (err) {
+    db.query(query, function(error, result) {
+        if (error) {
             callback(error, null);
             return;
         }
