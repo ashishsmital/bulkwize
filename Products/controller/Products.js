@@ -25,6 +25,21 @@ products.post('/', function(req, res, next) {
 });
 
 /**
+ * Get all Products
+ */
+products.get('/', function(req, res, next) {
+
+
+    ProductModel.getByAttribute('type', 'com.bulkwise.Products', function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+
+});
+
+/**
  * Get Products by Brand Name
  */
 products.get('/brand/:brand_name', function(req, res, next) {
