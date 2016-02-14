@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "couchbase": "^2.1.3"
+    "couchbase": "^2.1.3",
+	"fast-csv": "1.0.0"
   }
 }
