@@ -37,16 +37,16 @@ ShoppingCartModel.save = function(data, callback) {
         business_id:data.business_id,
         shop_id:data.shop_id,
         session_id:data.session_id,
-        products:[data.products],
+        products:data.products,
         coupon_code:data.coupon_code,
         billing_address:data.billing_address,
         shipping_address:data.shipping_address,
         total_cart_value_after_discount:data.total_cart_value_after_discount,
-                //Workflow states:{"created:""},
+        workflow_states:data.workflow_states,
         createdAt : new Date(),
         updatedAt : new Date()
     }
-    var documentId = data.document_id ? data.document_id : uuid.v4();
+    var documentId = data.customer_id ? data.customer_id : uuid.v4();
 
     db.upsert(documentId, jsonObject, function(error, result) {
         if(error) {
@@ -54,6 +54,30 @@ ShoppingCartModel.save = function(data, callback) {
             return;
         }
         callback(null, {message: 'success', data: result});
+    });
+}
+
+/**
+ *
+ * Get Attribute by Name
+ *
+ * @param attribute
+ *         attribute name
+ * @param value
+ *          attribute value
+ * @param callback
+ *          http callback
+ */
+ShoppingCartModel.get = function(key, callback) {
+
+
+    db.get(key, function(error, result) {
+        if (error) {
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: [{'bulkwize':result.value}]});
+        return;
     });
 }
 
