@@ -12,6 +12,7 @@
     "body-parser": "^1.15.0",
     "dbutil": "file:///Users/harman/WebstormProjects/bulkwize/DBUtil",
     "express": "^4.13.4",
+    "express-session": "^1.13.0",
     "uuid": "^2.0.1"
   }
 }
