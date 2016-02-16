@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
+    "category": "file:///Users/harman/WebstormProjects/bulkwize/Category",
     "dbutil": "file:///Users/harman/WebstormProjects/bulkwize/DBUtil",
     "express": "^4.13.4",
     "express-session": "^1.13.0",

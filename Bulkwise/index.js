@@ -13,8 +13,10 @@ var session = require('express-session');
 
 //importing middleware modules
 var main =require('./main.js');
+var category = require('category/controller/Category.js');
 var products = require('products/controller/Products.js');
 var shoppingcart = require('shoppingcart/controller/ShoppingCart.js');
+
 
 
 //post body parser
@@ -36,6 +38,7 @@ console.log('Magic happens on port ' + port);
 // we'll create our controller here
 app.use('/', main);
 // apply the controller to our application
+app.use('/category', category);
 app.use('/products', products);
 app.use('/shoppingcart', shoppingcart);
 
