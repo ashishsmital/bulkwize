@@ -13,12 +13,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
-    "category": "file:///Users/harman/WebstormProjects/bulkwize/Category",
-    "dbutil": "file:///Users/harman/WebstormProjects/bulkwize/DBUtil",
+    "category": "../Category",
+    "dbutil": "../DBUtil",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
-    "products": "file:///Users/harman/WebstormProjects/bulkwize/products",
-    "shoppingcart": "file:///Users/harman/WebstormProjects/bulkwize/ShoppingCart",
+    "products": "../products",
+    "shoppingcart": "../ShoppingCart",
     "uuid": "^2.0.1"
   }
 }
