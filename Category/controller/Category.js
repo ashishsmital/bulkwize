@@ -15,7 +15,7 @@ var CategoryModel = require('../model/CategoryModel.js');
 category.get('/', function(req, res, next) {
 
 
-    CategoryModel.getAll('type','com.bulkwise.Category', function(error, result) {
+    CategoryModel.getAll('type','com.bulkwize.category', function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }

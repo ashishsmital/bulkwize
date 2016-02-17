@@ -27,7 +27,7 @@ function CategoryModel() { };
 CategoryModel.save = function(data, callback) {
 
     var jsonObject = {
-        type: "com.bulkwise.Category",
+        type: "com.bulkwize.category",
         id:data.id,
         category_name:data.category_name,
         category_image_url:data.category_image_url,
