@@ -17,6 +17,7 @@ var categoryObj = {
 	 "cateory_img_url":"../images/category/personal_care.img",
 	 "cateory_icon_url":"../icons/category/personal_care.img",
 	 "maximum_discount_percentage":65, 
+	 "id":"id",
 	 "parent_category _id":0
 }
 
@@ -84,7 +85,7 @@ var categoryObj = {
 		  		});
 				
 // Create dummy supplier
-	/*db.counter("supplierCounter",1, function(err, res) {
+	db.counter("supplierCounter",1, function(err, res) {
 		  		  if (err) {
 		  			  console.log('Unable to fetch supplier counter & hence can not create dummy supplier', err);
 					  return;
@@ -102,7 +103,7 @@ var categoryObj = {
 								});
 
 		  		});		
-*/
+
 // Populate DB with data from Procter & Gamble
 // Parse CSV file for Procter & Gamble
 var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw.csv");
@@ -134,6 +135,7 @@ var insertCategoryIntoDB = function(parsedRecord) {
 							  // insert the category with incremented counter
 							  categoryObj.category_name=parsedRecord.Category;
 							  var categoryId = res.value;
+							  categoryObj.id=categoryId;
 							  db.upsert("categoryCounter::"+categoryId, categoryObj, function(err, res){
 									if (err) {;
 										console.log('category creation failed for name ' + parsedRecord.Category, err);
