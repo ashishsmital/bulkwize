@@ -18,7 +18,7 @@ var categoryObj = {
 	 "cateory_icon_url":"../icons/category/personal_care.img",
 	 "maximum_discount_percentage":65, 
 	 "id":"id",
-	 "parent_category _id":0
+	 "parentCategoryId":0
 }
 
 // Products Counter check
@@ -115,11 +115,11 @@ csv
 	 console.log("the category inserted in db is  " + data.Category);
  })
  .on("end", function(){
-    console.log("done");
+    console.log("parsing done");
 	parsedRecordInMemoryLength = parsedRecordInMemory.length
-	insertCategoryIntoDB(parsedRecordInMemory[parsedRecordIndex]); 	 
+	insertCategoryIntoDB(parsedRecordInMemory[parsedCategoryIndex]); 	 
  });
-var parsedRecordIndex=0;
+var parsedCategoryIndex=0;
 var parsedRecordInMemoryLength = parsedRecordInMemory.length;
 var insertCategoryIntoDB = function(parsedRecord) {		  		  
 			console.log("the parsed record before transformation is " + parsedRecord.Category);
@@ -148,9 +148,56 @@ var insertCategoryIntoDB = function(parsedRecord) {
 											
 											return;
 										}
-										parsedRecordIndex++;
-										if(parsedRecordIndex < parsedRecordInMemoryLength){
-											insertCategoryIntoDB(parsedRecordInMemory[parsedRecordIndex]); 	
+										console.log("Calling insert subcategory to see if the subcategory needs to be added");
+										insertSubCategoryIntoDB(parsedRecord,categoryId);
+									});
+								});
+						 });
+						 
+						 return;
+					   }
+				console.log('category with name '+parsedRecord.Category +' exists hence it need not be created', res);
+				console.log("Parsed record index current value is " + parsedCategoryIndex);
+				console.log("Parsed record in memory length is " + parsedRecordInMemoryLength);
+				console.log("Calling insert subcategory to see if the subcategory needs to be added");
+				insertSubCategoryIntoDB(parsedRecord,res.value);
+			});
+			
+  				  	
+		}
+
+var insertSubCategoryIntoDB = function(parsedRecord, parentCategoryId) {		  		  
+			console.log("the parsed record before transformation is " + parsedRecord.SubCategory);
+			console.log("the parent categoryid for subcategory " + parsedRecord.SubCategory + " is --" + parentCategoryId);
+		  	db.get("categ::name::"+parsedRecord.SubCategory, function(err, res){
+			 if (err) {
+		  			  console.log('category with name '+parsedRecord.SubCategory +' does not exist hence it needs to be created',err);
+					   // increment category counter
+						 db.counter('categoryCounter', 1, function(err, res) {
+						  if (err) {
+								console.log('category counter increment failed', err);
+								return;
+							  }
+							  // insert the category with incremented counter
+							  categoryObj.category_name=parsedRecord.SubCategory;
+							  var categoryId = res.value;
+							  categoryObj.id=categoryId;
+							  categoryObj.parentCategoryId=parentCategoryId;
+							  db.upsert("categoryCounter::"+categoryId, categoryObj, function(err, res){
+									if (err) {;
+										console.log('category creation failed for name ' + parsedRecord.SubCategory, err);
+										return;
+									}
+									// inserting a lookup key with categoryname as key and category id as value
+									db.upsert("categ::name::"+parsedRecord.SubCategory,categoryId, function(err, res){
+										if (err) {;
+											console.log('category look-up key creation failed for category name ' + parsedRecord.SubCategory + " and id -" + categoryId, err);
+											
+											return;
+										}
+										parsedCategoryIndex++;
+										if(parsedCategoryIndex < parsedRecordInMemoryLength){
+											insertCategoryIntoDB(parsedRecordInMemory[parsedCategoryIndex]); 	
 										}
 										
 										
@@ -160,12 +207,12 @@ var insertCategoryIntoDB = function(parsedRecord) {
 						 
 						 return;
 					   }
-				console.log('category with name '+parsedRecord.Category +' exists hence it need not be created', res);
-				console.log("Parsed record index current value is " + parsedRecordIndex);
+				console.log('category with name '+parsedRecord.SubCategory +' exists hence it need not be created', res);
+				console.log("Parsed record index current value is " + parsedCategoryIndex);
 				console.log("Parsed record in memory length is " + parsedRecordInMemoryLength);
-				parsedRecordIndex++;
-				if(parsedRecordIndex < parsedRecordInMemoryLength){
-						insertCategoryIntoDB(parsedRecordInMemory[parsedRecordIndex]); 	
+				parsedCategoryIndex++;
+				if(parsedCategoryIndex < parsedRecordInMemoryLength){
+						insertCategoryIntoDB(parsedRecordInMemory[parsedCategoryIndex]); 	
 				}
 						 
             });
