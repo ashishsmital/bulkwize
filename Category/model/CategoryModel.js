@@ -48,7 +48,7 @@ CategoryModel.save = function(data, callback) {
 }
 
 /**
- * CategoryModel save method
+ * CategoryModel get All method
  *
  * @param data
  *          Category json
@@ -58,6 +58,28 @@ CategoryModel.save = function(data, callback) {
 CategoryModel.getAll = function(attribute,value,callback) {
 
     var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"'");
+
+    db.query(query, function(error, result) {
+        if (error) {
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
+/**
+ * CategoryModel get All method
+ *
+ * @param data
+ *          Category json
+ * @param callback
+ *          callback for http response
+ */
+CategoryModel.getAllById = function(attribute,value,callback) {
+
+    var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"="+value);
 
     db.query(query, function(error, result) {
         if (error) {
