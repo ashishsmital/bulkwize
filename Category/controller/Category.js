@@ -45,7 +45,7 @@ category.post('/', function(req, res, next) {
 category.get('/:parentCategoryId/subcategory', function(req, res, next) {
 
 
-    CategoryModel.getAll('parentCategoryId',req.params['parentCategoryId'], function(error, result) {
+    CategoryModel.getAllById('parentCategoryId',req.params['parentCategoryId'], function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }
