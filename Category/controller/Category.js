@@ -10,7 +10,7 @@ var CategoryModel = require('../model/CategoryModel.js');
 
 
 /**
- * Get Products by Brand Name
+ * Get All categories
  */
 category.get('/', function(req, res, next) {
 
@@ -25,12 +25,27 @@ category.get('/', function(req, res, next) {
 });
 
 /**
- * Get Products by Brand Name
+ * Create Category
  */
 category.post('/', function(req, res, next) {
 
 
     CategoryModel.save(req.body, function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+
+});
+
+/**
+ * Get Subcategories by a category-id
+ */
+category.get('/:parentCategoryId/subcategory', function(req, res, next) {
+
+
+    CategoryModel.getAll('parentCategoryId',req.params['parentCategoryId'], function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }
