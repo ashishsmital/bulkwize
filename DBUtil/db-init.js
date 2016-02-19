@@ -176,6 +176,7 @@ var insertCategoryIntoDB = function(parsedRecord) {
 							  categoryObj.category_name=parsedRecord.Category;
 							  var categoryId = res.value;
 							  categoryObj.id=categoryId;
+							  categoryObj.parentCategoryId=0;
 							  db.upsert("categoryCounter::"+categoryId, categoryObj, function(err, res){
 									if (err) {;
 										console.log('category creation failed for name ' + parsedRecord.Category, err);
