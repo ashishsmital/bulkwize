@@ -6,10 +6,17 @@ var db = require('./index.js').bucket;
 var dummySuppliers = require('./conf/dummy-supplier.json');
 var csv = require('fast-csv');
 var fs = require('fs');
+var moment = require( 'moment' );
 
 var productCounter = 0; // this is only for first time, else retrieve this value from the counter below.
 var categoryCounter = 0; // this is only for first time, else retrieve this value from the counter below.
 var supplierCounter = 0; // this is only for first time, else retrieve this value from the counter below.
+
+var parsedCategoryIndex=0;
+var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw.csv");
+var parsedRecordInMemory = [];
+
+var currentUTCdate = new Date(moment().utc().format());
 
 var categoryObj = {
 	 "type":"com.bulkwize.category",
@@ -20,6 +27,41 @@ var categoryObj = {
 	 "id":"id",
 	 "parentCategoryId":0
 }
+
+var productObj = {
+"type":"com.bulkwise.Products",
+"id":"id",
+"productDisplayTitle" : "Gillete Mach 3 razor, titanium blade",
+"productBrandName":"Gillete",
+"productShortSummary": "A very short summary to be displayed along with title.",
+"productDescription": "A detailed description about the product",
+"productName": "Gillete Mach 3",
+"img_url":"product image url",
+"productIsVisible":true,
+"productVariants":[{
+		"sku_id":"id",
+		"productItemId":" 82243252",
+		"productMaterialCode":" 82242983",
+		"productMaterialDescription":" Mach 3 turbo pack of 3",
+		"productEAN":" 4902430665452",
+		"productCountInCase":50,
+		"productUnitSizeWeightQty":"3",
+		"productMRPUnit": 550,
+		"productDiscountPercentage": 9,
+		"productVariantIsVisible":true,
+		"productVariantPriceApplicableUpto":currentUTCdate
+		}],
+ "prd_metafields":[ {
+         "key":"attribute1",
+         "value":"value1"
+        } ],
+"createdAt":currentUTCdate,
+"updatedAt":currentUTCdate,
+"productCategoryId":["array","because a product can belong to multiple categories"],
+"supplier_id": "suppl::1",
+"override_lead_time_for_delivery_in_days":"5-7 days"
+}
+
 
 // Products Counter check
 	db.get("productCounter", function(err, res) {
@@ -106,8 +148,6 @@ var categoryObj = {
 
 // Populate DB with data from Procter & Gamble
 // Parse CSV file for Procter & Gamble
-var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw.csv");
-var parsedRecordInMemory = [];
 csv
  .fromStream(stream,{headers:true})
  .transform(function(parsedRecord){   parsedRecordInMemory.push(parsedRecord); })
@@ -119,7 +159,7 @@ csv
 	parsedRecordInMemoryLength = parsedRecordInMemory.length
 	insertCategoryIntoDB(parsedRecordInMemory[parsedCategoryIndex]); 	 
  });
-var parsedCategoryIndex=0;
+
 var parsedRecordInMemoryLength = parsedRecordInMemory.length;
 var insertCategoryIntoDB = function(parsedRecord) {		  		  
 			console.log("the parsed record before transformation is " + parsedRecord.Category);
@@ -195,10 +235,7 @@ var insertSubCategoryIntoDB = function(parsedRecord, parentCategoryId) {
 											
 											return;
 										}
-										parsedCategoryIndex++;
-										if(parsedCategoryIndex < parsedRecordInMemoryLength){
-											insertCategoryIntoDB(parsedRecordInMemory[parsedCategoryIndex]); 	
-										}
+										insertProductIntoDB(parsedRecord,parentCategoryId,categoryId);
 										
 										
 									});
@@ -207,16 +244,54 @@ var insertSubCategoryIntoDB = function(parsedRecord, parentCategoryId) {
 						 
 						 return;
 					   }
-				console.log('category with name '+parsedRecord.SubCategory +' exists hence it need not be created', res);
+				console.log('Subcategory with name '+parsedRecord.SubCategory +' exists hence it need not be created', res);
 				console.log("Parsed record index current value is " + parsedCategoryIndex);
 				console.log("Parsed record in memory length is " + parsedRecordInMemoryLength);
-				parsedCategoryIndex++;
-				if(parsedCategoryIndex < parsedRecordInMemoryLength){
-						insertCategoryIntoDB(parsedRecordInMemory[parsedCategoryIndex]); 	
-				}
+				insertProductIntoDB(parsedRecord,parentCategoryId,res.value);
 						 
             });
 			
   				  	
 		}
+		
+var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId) {		  		  
+			console.log("the parsed record before transformation is " + parsedRecord.MaterialDescription);
+			console.log("the parent subcategoryId for product " + parsedRecord.MaterialDescription + " is --" + subCategoryId);
+		  	// increment product counter
+			db.counter('productCounter', 1, function(err, res) {
+				if (err) {
+					console.log('product counter increment failed', err);
+					return;
+				}
+				// insert the product with incremented counter
+				var productId = res.value;
+				productObj.id=productId;
+				productObj.productDisplayTitle= parsedRecord.MaterialDescription;
+				productObj.productBrandName=parsedRecord.Brand;
+				productObj.productShortSummary = parsedRecord.MaterialDescription;
+				productObj.productDescription =  parsedRecord.MaterialDescription;
+				productObj.productName=parsedRecord.MaterialDescription;
+				productObj.productVariants[0].sku_id=productId;
+				productObj.productVariants[0].productItemId=parsedRecord.ItemID;
+				productObj.productVariants[0].productMaterialCode=parsedRecord.Matcode;
+				productObj.productVariants[0].productMaterialDescription=parsedRecord.MaterialDescription;
+				productObj.productVariants[0].productEAN=parsedRecord.EAN;
+				productObj.productVariants[0].productCountInCase=parsedRecord.CaseCount;
+				productObj.productVariants[0].productMRPUnit=parsedRecord.MRP;
+				productObj.productCategoryId[0] = parentCategoryId;
+				productObj.productCategoryId[1] = subCategoryId;
+				db.upsert("productCounter::"+productId, productObj, function(err, res){
+					if (err) {;
+						console.log('product creation failed for name ' + parsedRecord.MaterialDescription, err);
+						return;
+					}
+				});
+			});
+			parsedCategoryIndex++;
+			if(parsedCategoryIndex < parsedRecordInMemoryLength){
+				insertCategoryIntoDB(parsedRecordInMemory[parsedCategoryIndex]); 	
+			}
+				  	
+		}
+		
 
