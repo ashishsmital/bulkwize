@@ -100,6 +100,21 @@ products.get('/uniquebrands', function(req, res, next) {
 
 });
 
+/**
+ * Get Brands for a given subcategory id
+ */
+products.post('/search', function(req, res, next) {
+	console.log("category ids for product search are " + req.body.categoryIds);
+	console.log("Brand name for product search are " + req.body.productBrandName);
+	ProductModel.getProductsByCategoryIdsAndBrandName(req.body.categoryIds,req.body.productBrandName, function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+
+});
+
 // export product module
 module.exports = products;
 

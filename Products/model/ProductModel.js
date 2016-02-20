@@ -127,6 +127,30 @@ ProductModel.getUniqueAttributes = function(attribute, callback) {
 }
 
 
+/**
+ * Get all products for given category id and brand
+ *
+ * @param data
+ *          array of category ids
+ * @param callback
+ *          callback for http response
+ */
+ProductModel.getProductsByCategoryIdsAndBrandName = function(categoryIdArray,productBrandName,callback) {
+	console.log("category id array inside the model object for querying products is -- " + categoryIdArray);
+	console.log("Brand name inside the model object for querying products is -- " + productBrandName);
+    var query = N1qlQuery.fromString("select * from "+db._name+" as brand UNNEST brand.productCategoryId where productCategoryId IN ["+ categoryIdArray+"] and brand.productBrandName = '" + productBrandName+"'");
+	console.log("Executing the query -- " + query);
+	//e.g. select * from default as brand UNNEST brand.productCategoryId where productCategoryId IN [3,16] and brand.productBrandName = "Tide";
+    db.query(query, function(error, result) {
+        if (error) {
+			console.log("Error in executing query ", error);
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
 
 
 
