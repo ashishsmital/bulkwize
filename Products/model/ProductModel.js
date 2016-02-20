@@ -80,6 +80,32 @@ ProductModel.getByAttribute = function(attribute,value, callback) {
 }
 
 /**
+ *
+ * Getby Id
+ *
+ * @param attribute
+ *         attribute name
+ * @param value
+ *          attribute value
+ * @param callback
+ *          http callback
+ */
+ProductModel.getById = function(productId, callback) {
+
+    var query = N1qlQuery.fromString("select * from "+db._name+" where id = "+productId+" and type='com.bulkwise.Products'");
+
+    db.query(query, function(error, result) {
+        if (error) {
+			console.log("Error while retrieving product by product id --" + productId)
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
+/**
  * Get Attribute Array
  *
  * @param attribute

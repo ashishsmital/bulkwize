@@ -56,12 +56,12 @@ products.get('/brand/:brand_name', function(req, res, next) {
 
 
 /**
- * Get Products by Brand Name
+ * Get Product by Product Id
  */
-products.get('/brand/:brand_name', function(req, res, next) {
+products.get('/:productId', function(req, res, next) {
 
-
-    ProductModel.getByAttribute('brand_name',req.params['brand_name'], function(error, result) {
+	console.log("Insert controller method of retrieving product by product id --" + req.params['productId'])
+    ProductModel.getById(req.params['productId'], function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }
