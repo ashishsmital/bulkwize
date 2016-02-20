@@ -1,0 +1,175 @@
+/* Empty. Add your own CSS if you like */
+.has-subofheader{
+    top: 132px;
+}
+.thumbnailSlider img{
+	max-width: 100%;
+}
+.thumbnailSlider .slider-pager{
+    bottom: 0;
+}
+.img-responsive{
+	width: 100%;
+}
+.bar-pink{
+	background: #D32361;
+	color: #fff;
+	font-size: 16px;
+}
+.bar-pink div{
+	padding: 6px;
+}
+.btn{
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+    background: #D32361;
+}
+.item-thumbnail-left, 
+.item-thumbnail-left .item-content{
+	padding-bottom: 8px;
+}
+.price{
+	color: #d32361;
+}
+.discount{
+	color: #10C0EE;
+}
+/*.font_price .price,
+.font_price .discount{
+	font-size: 12px;
+}*/
+.cart_button{
+	padding: 0;
+}
+.cart_button .button{
+	border-radius: 0 !important;
+	line-height: 44px !important;
+}
+.icon-plus-round {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.product-quantity {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: underline;
+}
+.icon-minus-round {
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*.product-price {
+    margin-left: 15px;
+}*/
+.mt_10{
+	margin-top: 10px;
+}
+.padding_6{
+	padding: 6px;
+}
+.cartnumber{
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+}
+.tab-menu{
+    position: relative;
+    background-color: #f8f8f8;
+    color: #444;
+    text-align: center;
+}
+.tab-menu .row{
+    padding: 0
+}
+.tab-menu .col{
+    padding-top: 10px;
+    padding-bottom: 11px;
+    border-bottom: 3px solid transparent;
+}
+.tab-menu a{
+    color: #444;
+}
+.tab-menu .col.active{
+    border-bottom: 3px solid #D32361;
+}
+.clear{
+    clear: both;
+}
+.left_thumb{
+    float: left;
+    width: 20%;
+    text-align: center;
+    margin-right: 1%;
+}
+.right_thumb{
+    float: right;
+    width: 79%;
+}
+.left_thumb img{
+    width: 100%;
+}
+.category_list .item-thumbnail-left > img:first-child, 
+.category_list .item-thumbnail-left .item-image, 
+.category_list .item-thumbnail-left .item-content > img:first-child, 
+.category_list .item-thumbnail-left .item-content .item-image{
+    top: 38px;
+}
+.table{
+    width: 100%;
+}
+.table th{
+    background: #f5f5f5;
+    text-align: left;
+}
+.table td,
+.table th{
+    border: 1px solid #b5b5b5;
+    padding: 5px;
+}
+.table tbody td{
+    padding: 12px 6px;
+}
+.table tfoot td{
+    background: #ef473a;
+    color: #fff;
+    border: 1px solid #ef473a;
+}
+.font_16{
+    font-size: 16px !important;
+}
+.spinner svg {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    fill: #fff;
+}
+.error{
+    font-size: 12px;
+    color: red;
+}
+form sup{
+    color: red;
+}
+.forgot_password{
+    text-align: right;
+    padding: 15px;
+}
+.login_button{
+    padding: 16px;
+}
+.owl-carousel .item,
+.checkbox-slider .item-content{
+    border: 0;
+    text-transform: none;
+    white-space: normal;
+}

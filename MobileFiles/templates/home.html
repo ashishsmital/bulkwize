@@ -1,0 +1,92 @@
+<ion-view title="">
+	<div class="item-input-inset has-header padding_6">
+		<label class="item-input-wrapper">
+		    <i class="icon ion-ios-search placeholder-icon"></i>
+		    <input type="search" placeholder="Search">
+		</label>
+		<button class="button button-small button-calm">
+	     	<i class="icon ion-ios-search"></i>
+	    </button>
+	</div>
+	<div class="bar bar-pink has-subheader">
+  		<div>Home</div>
+	</div>
+  	<ion-content class="has-subofheader">
+  	<!-- 	<div class="list">
+
+		    <a class="item item-avatar" ui-sref="app.categorylist({ cid: cat.category})" ng-repeat="cat in data">
+		      	<img ng-src="{{cat.image}}">
+		      	<h2>{{cat.name}}</h2>
+		      	<p>{{cat.description}}</p>
+		    </a>
+
+		</div> -->
+		<ion-slide-box on-slide-changed="slideHasChanged($index)">
+		  	<ion-slide ng-repeat="bannerImage in dummyImage" data>
+		    	<div class="box">
+		    		<img ng-src="{{bannerImage.image}}" alt="" class="img-responsive">
+		    	</div>
+		  	</ion-slide>
+		</ion-slide-box>
+		<div class="thumbnailSlider">
+			<div class="row nop_b text-uppercase">
+			  	<div class="col col-75">Top Brand</div>
+			  	<div class="col text-right"><a ui-sref="app.brand" class="btn">View All</a></div>
+			</div>
+			<ion-slide-box on-slide-changed="slideHasChanged($index)">
+			  	<ion-slide>
+			    	<div class="row">
+			            <div class="col col-33">
+			                <a ui-sref="app.categorylist">
+			                	<img src="http://initiative.com/wp-content/uploads/2012/10/Unilever.jpg" />
+			                </a>
+			            </div>
+			            <div class="col col-33">
+			                <a ui-sref="app.categorylist">
+			                	<img src="http://vignette4.wikia.nocookie.net/logopedia/images/6/6d/Head_%26_Shoulders_2010.png/revision/latest?cb=20100711131648" />
+			                </a>
+			            </div>
+			            <div class="col col-33">
+			                <a ui-sref="app.categorylist">
+			                	<img src="http://insidetrade.co/wp-content/uploads/2015/01/ups2.jpg" />
+			                </a>
+			            </div>
+			        </div>
+			  	</ion-slide>
+			  	<ion-slide>
+			    	<div class="row">
+			            <div class="col col-33">
+			                <a ui-sref="app.categorylist">
+			                	<img src="https://www.botanytowncentre.co.nz/BotanyTownCentre/media/contents/04_Stores/01_Store_Logos/logo_Amazon.png?ext=.png" />
+			                </a>
+			            </div>
+			            <div class="col col-33">
+			                <a ui-sref="app.categorylist">
+			                	<img src="https://www.technopat.net/wp-content/uploads/2013/07/LG_Logo-640x350.jpg" />
+			                </a>
+			            </div>
+			            <div class="col col-33">
+			                <a ui-sref="app.categorylist">
+			                	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqBXMr2GIxI_p-TmuTzp90YzeGI8Z0TANPeiPjswzpat79uwlXjg" />
+			                </a>
+			            </div>
+			        </div>
+			  	</ion-slide>
+			</ion-slide-box>
+		</div>
+		<div class="thumbnailSlider">
+			<div class="row nop_b text-uppercase">
+			  	<div class="col col-75">Category</div>
+			  	<div class="col text-right"><a ui-sref="app.category" class="btn btn-assetive">View All</a></div>
+			</div>
+			<owl-slider class="owl-carousel">
+	           <div class="item" owl-carousel-item="" ng-repeat="items in category">
+	              	<a ui-sref="app.subcategory({ subId: items.Bulkwize.parentCategoryId})">
+	              		<img src="http://www.casheltravel.com/system/images/456/original/BANNER-Michelin.jpg?1434032844" />
+	              		{{items.Bulkwize.category_name}}
+	              	</a>
+	            </div>
+	        </owl-slider>
+		</div>
+  	</ion-content>
+</ion-view>
