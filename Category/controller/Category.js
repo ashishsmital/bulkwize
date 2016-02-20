@@ -54,5 +54,19 @@ category.get('/:parentCategoryId/subcategory', function(req, res, next) {
 
 });
 
+/**
+ * Get Brands for a given subcategory id
+ */
+category.post('/brand/search', function(req, res, next) {
+	console.log("category ids for brand search are " + req.body.categoryIds);
+	CategoryModel.getBrandsByCategoryIds(req.body.categoryIds, function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+
+});
+
 // export product module
 module.exports = category;

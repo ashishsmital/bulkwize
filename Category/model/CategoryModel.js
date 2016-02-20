@@ -91,5 +91,30 @@ CategoryModel.getAllById = function(attribute,value,callback) {
     });
 }
 
+/**
+ * Get all brands of given category ids
+ *
+ * @param data
+ *          array of category ids
+ * @param callback
+ *          callback for http response
+ */
+CategoryModel.getBrandsByCategoryIds = function(categoryIdArray,callback) {
+	console.log("category id array inside the model object for querying brand is -- " + categoryIdArray);
+    var query = N1qlQuery.fromString("select * from "+db._name+" as brand UNNEST brand.productCategoryId where productCategoryId IN ["+ categoryIdArray+"] GROUP BY brand.productBrandName");
+	console.log("Executing the query -- " + query);
+	//e.g. select * from default as brand UNNEST brand.productCategoryId where productCategoryId IN [3,16] GROUP BY brand.productBrandName;
+    db.query(query, function(error, result) {
+        if (error) {
+			console.log("Error in executing query ", error);
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
+
 // export product module
 module.exports = CategoryModel;

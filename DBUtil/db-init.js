@@ -33,10 +33,11 @@ var productObj = {
 "id":"id",
 "productDisplayTitle" : "Gillete Mach 3 razor, titanium blade",
 "productBrandName":"Gillete",
+"productBrandImageURL": "This is product brand image URL "
 "productShortSummary": "A very short summary to be displayed along with title.",
 "productDescription": "A detailed description about the product",
 "productName": "Gillete Mach 3",
-"img_url":"product image url",
+"productImageURL":"This is product image url",
 "productIsVisible":true,
 "productVariants":[{
 		"sku_id":"id",
