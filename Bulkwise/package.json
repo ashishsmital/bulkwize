@@ -17,6 +17,7 @@
     "dbutil": "../DBUtil",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "passport": "^0.3.2",
     "products": "../products",
     "shoppingcart": "../ShoppingCart",
     "uuid": "^2.0.1"
