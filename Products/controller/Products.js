@@ -71,6 +71,20 @@ products.get('/:productId', function(req, res, next) {
 });
 
 /**
+ * Search Product with like search
+ */
+products.get('/likeSearch/:searchString', function(req, res, next) {
+
+	ProductModel.getProductsByLikeSearch(req.params['searchString'].toLowerCase(), function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+
+});
+
+/**
  * Get Products by Category
  */
 products.get('/category/:category', function(req, res, next) {
