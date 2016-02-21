@@ -25,8 +25,22 @@
         <entry file="file://$PROJECT_DIR$/Products/controller/Products.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-              <folding />
+              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+              <folding>
+                <marker date="1456092134000" expanded="true" signature="193:216" placeholder="/** Save Product ...*/" />
+                <marker date="1456092134000" expanded="true" signature="261:437" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="321:432" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="341:400" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="441:468" placeholder="/** Get all Products ...*/" />
+                <marker date="1456092134000" expanded="true" signature="512:721" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="605:716" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="725:762" placeholder="/** Get Products by Brand Name ...*/" />
+                <marker date="1456092134000" expanded="true" signature="823:1038" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="922:1033" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="942:1001" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="2745:2887" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="2771:2882" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -35,8 +49,17 @@
         <entry file="file://$PROJECT_DIR$/Category/controller/Category.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="46" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="46" />
-              <folding />
+              <caret line="62" column="19" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="46" />
+              <folding>
+                <marker date="1456092134000" expanded="true" signature="0:44" placeholder="/** Created by Devaraj on 05/02/2016. ...*/" />
+                <marker date="1456092134000" expanded="true" signature="268:469" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="353:464" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="544:721" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="605:716" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="843:1067" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="951:1062" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="971:1030" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,17 +78,17 @@
         <entry file="file://$PROJECT_DIR$/Category/model/CategoryModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Bulkwise/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.70789474">
+              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -75,16 +98,21 @@
         <entry file="file://$PROJECT_DIR$/Bulkwise/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-              <folding />
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+              <folding>
+                <marker date="1456092134000" expanded="true" signature="0:43" placeholder="/** Created by harman on 04/02/2016. ...*/" />
+                <marker date="1456092134000" expanded="true" signature="674:762" placeholder="{&quot;secret&quot;: 'bulkwizesecret-12340987'...}" />
+                <marker date="1456092134000" expanded="true" signature="903:932" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="984:1011" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShoppingCart.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ShoppingCart.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52227724">
+            <state vertical-scroll-proportion="0.0">
               <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
               <folding />
             </state>
@@ -115,8 +143,20 @@
         <entry file="file://$PROJECT_DIR$/Products/model/ProductModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-              <folding />
+              <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+              <folding>
+                <marker date="1456092134000" expanded="true" signature="229:277" placeholder="/** ProductModel class ...*/" />
+                <marker date="1456092134000" expanded="true" signature="308:439" placeholder="/** Product save method ...*/" />
+                <marker date="1456092134000" expanded="true" signature="485:1381" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="509:1091" placeholder="{&quot;type&quot;: &quot;com.bulkwise.Products&quot;...}" />
+                <marker date="1456092134000" expanded="true" signature="1225:1377" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="1245:1311" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="1383:1556" placeholder="/** ...*/" />
+                <marker date="1456092134000" expanded="true" signature="1623:1944" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="1771:1940" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="1792:1858" placeholder="{...}" />
+                <marker date="1456092134000" expanded="true" signature="1946:1952" placeholder="/** Get Attribute Array ...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,7 +184,6 @@
         <option value="$PROJECT_DIR$/ShoppingCart/package.json" />
         <option value="$PROJECT_DIR$/Products/model/ProductModel.js" />
         <option value="$PROJECT_DIR$/Bulkwise/node_modules/shoppingcart/model/ShoppingCartModel.js" />
-        <option value="$PROJECT_DIR$/Bulkwise/package.json" />
         <option value="$PROJECT_DIR$/ShoppingCart/index.js" />
         <option value="$PROJECT_DIR$/ShoppingCart/model/ShoppingCartModel.js" />
         <option value="$PROJECT_DIR$/ShoppingCart/Readme.md" />
@@ -154,6 +193,7 @@
         <option value="$PROJECT_DIR$/Category/controller/Category.js" />
         <option value="$PROJECT_DIR$/Bulkwise/index.js" />
         <option value="$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js" />
+        <option value="$PROJECT_DIR$/Bulkwise/package.json" />
       </list>
     </option>
   </component>
@@ -312,6 +352,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bulkwize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bulkwize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bulkwise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -437,9 +491,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="733" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32605305" sideWeight="0.5107228" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761312" sideWeight="0.48768863" order="7" side_tool="false" content_ui="tabs" />
@@ -545,7 +599,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-          <folding />
+          <folding>
+            <marker date="1456092134000" expanded="true" signature="0:43" placeholder="/** Created by harman on 04/02/2016. ...*/" />
+            <marker date="1456092134000" expanded="true" signature="674:762" placeholder="{&quot;secret&quot;: 'bulkwizesecret-12340987'...}" />
+            <marker date="1456092134000" expanded="true" signature="903:932" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="984:1011" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -644,7 +703,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding />
+          <folding>
+            <marker date="1456092134000" expanded="true" signature="0:43" placeholder="/** Created by harman on 04/02/2016. ...*/" />
+            <marker date="1456092134000" expanded="true" signature="674:762" placeholder="{&quot;secret&quot;: 'bulkwizesecret-12340987'...}" />
+            <marker date="1456092134000" expanded="true" signature="903:932" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="984:1011" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -835,19 +899,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bulkwise/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Category/controller/Category.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="46" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="46" />
-          <folding />
+          <caret line="62" column="19" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="46" />
+          <folding>
+            <marker date="1456092134000" expanded="true" signature="0:44" placeholder="/** Created by Devaraj on 05/02/2016. ...*/" />
+            <marker date="1456092134000" expanded="true" signature="268:469" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="353:464" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="544:721" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="605:716" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="843:1067" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="951:1062" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="971:1030" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -862,30 +927,41 @@
     <entry file="file://$PROJECT_DIR$/Bulkwise/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="21" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Category/model/CategoryModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <marker date="1456092134000" expanded="true" signature="0:43" placeholder="/** Created by harman on 04/02/2016. ...*/" />
+            <marker date="1456092134000" expanded="true" signature="674:762" placeholder="{&quot;secret&quot;: 'bulkwizesecret-12340987'...}" />
+            <marker date="1456092134000" expanded="true" signature="903:932" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="984:1011" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Products/controller/Products.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+          <folding>
+            <marker date="1456092134000" expanded="true" signature="193:216" placeholder="/** Save Product ...*/" />
+            <marker date="1456092134000" expanded="true" signature="261:437" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="321:432" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="341:400" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="441:468" placeholder="/** Get all Products ...*/" />
+            <marker date="1456092134000" expanded="true" signature="512:721" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="605:716" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="725:762" placeholder="/** Get Products by Brand Name ...*/" />
+            <marker date="1456092134000" expanded="true" signature="823:1038" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="922:1033" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="942:1001" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="2745:2887" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="2771:2882" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52227724">
+        <state vertical-scroll-proportion="0.0">
           <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
           <folding />
         </state>
@@ -894,7 +970,35 @@
     <entry file="file://$PROJECT_DIR$/Products/model/ProductModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <caret line="49" column="18" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="18" />
+          <folding>
+            <marker date="1456092134000" expanded="true" signature="229:277" placeholder="/** ProductModel class ...*/" />
+            <marker date="1456092134000" expanded="true" signature="308:439" placeholder="/** Product save method ...*/" />
+            <marker date="1456092134000" expanded="true" signature="485:1381" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="509:1091" placeholder="{&quot;type&quot;: &quot;com.bulkwise.Products&quot;...}" />
+            <marker date="1456092134000" expanded="true" signature="1225:1377" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="1245:1311" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="1383:1556" placeholder="/** ...*/" />
+            <marker date="1456092134000" expanded="true" signature="1623:1944" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="1771:1940" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="1792:1858" placeholder="{...}" />
+            <marker date="1456092134000" expanded="true" signature="1946:1952" placeholder="/** Get Attribute Array ...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Category/model/CategoryModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bulkwise/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70789474">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
           <folding />
         </state>
       </provider>
