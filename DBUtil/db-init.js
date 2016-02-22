@@ -46,6 +46,7 @@ var productObj = {
 		"productMaterialDescription":" Mach 3 turbo pack of 3",
 		"productEAN":" 4902430665452",
 		"productCountInCase":50,
+		"productOrderedQty":0,
 		"productUnitSizeWeightQty":"3",
 		"productMRPUnit": 550,
 		"productDiscountPercentage": 9,
