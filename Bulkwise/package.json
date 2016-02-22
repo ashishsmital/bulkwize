@@ -17,8 +17,10 @@
     "dbutil": "../DBUtil",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "passport": "^0.3.2",
     "products": "../Products",
     "shoppingcart": "../ShoppingCart",
+    "underscore": "^1.8.3",
     "uuid": "^2.0.1"
   }
 }

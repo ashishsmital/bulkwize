@@ -10,6 +10,7 @@ var app     = express();
 var port    =   process.env.PORT || 8080;
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var passport = require('passport');
 
 //importing middleware modules
 var main =require('./main.js');
@@ -29,6 +30,19 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }));
+
+
+//initalize passport and app
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.serializeUser(function(user, done) {
+    done(null, user.uid);
+});
+
+passport.deserializeUser(function(userId, done) {
+    done(null, userId);
+});
 
 //listerner
 app.listen(port);
