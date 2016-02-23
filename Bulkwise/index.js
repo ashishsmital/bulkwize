@@ -73,5 +73,7 @@ app.use('/', main);
 app.use('/category', category);
 app.use('/products', products);
 app.use('/shoppingcart', shoppingcart);
+console.log("The dir name is -- "+ __dirname+'../appcontent');
+app.use('/appcontent',express.static(__dirname+'/../appcontent'));
 
 
