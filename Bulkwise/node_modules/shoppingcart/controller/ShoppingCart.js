@@ -9,7 +9,7 @@ var express = require('express');
 var shoppingcart = express.Router();
 var ShoppingCartModel = require('../model/ShoppingCartModel.js');
 var _ = require('underscore');
-
+var request = require('request');
 /**
  * get Shoppingcart
  */
@@ -18,6 +18,19 @@ shoppingcart.get('/user/:userid', function (req, res, next) {
     ShoppingCartModel.get(req.params['userid'], function (error, result) {
         if (error) {
             return res.status(400).send(error);
+        } else {
+            if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+
+                var sum = 0
+                _.each(result.data[0].bulkwize.products, function (ele) {
+
+                    sum += ele.variants.length;
+
+                });
+                _.extend(result.data[0].bulkwize, {'totalCount': sum});
+            }
+
+            console.log(result.data[0].bulkwize.totalCount);
         }
         res.send(result);
     });
@@ -104,7 +117,7 @@ shoppingcart.delete('/product', function (req, res, next) {
 
                     _.each(pdtFromSite, function (ele) {
 
-                        var pdt = _.findWhere(pdtFromDB,{'id': ele.id});
+                        var pdt = _.findWhere(pdtFromDB, {'id': ele.id});
                         pdtFromDB = _.without(pdtFromDB, pdt);
 
                     });

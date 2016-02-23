@@ -56,12 +56,26 @@ products.get('/brand/:brand_name', function(req, res, next) {
 
 
 /**
- * Get Products by Brand Name
+ * Get Product by Product Id
  */
-products.get('/brand/:brand_name', function(req, res, next) {
+products.get('/:productId', function(req, res, next) {
 
+	console.log("Insert controller method of retrieving product by product id --" + req.params['productId'])
+    ProductModel.getById(req.params['productId'], function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
 
-    ProductModel.getByAttribute('brand_name',req.params['brand_name'], function(error, result) {
+});
+
+/**
+ * Search Product with like search
+ */
+products.get('/likeSearch/:searchString', function(req, res, next) {
+
+	ProductModel.getProductsByLikeSearch(req.params['searchString'].toLowerCase(), function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }
@@ -92,6 +106,21 @@ products.get('/uniquebrands', function(req, res, next) {
 
 
     ProductModel.getUniqueAttributes("brand_name", function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+
+});
+
+/**
+ * Get Brands for a given subcategory id
+ */
+products.post('/search', function(req, res, next) {
+	console.log("category ids for product search are " + req.body.categoryIds);
+	console.log("Brand name for product search are " + req.body.productBrandName);
+	ProductModel.getProductsByCategoryIdsAndBrandName(req.body.categoryIds,req.body.productBrandName, function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }

@@ -8,6 +8,7 @@ var db = require('dbutil').bucket;
 var ViewQuery = require('dbutil').ViewQuery;
 var N1qlQuery = require('dbutil').N1qlQuery;
 
+
 /**
  * ProductModel class
  *
@@ -92,7 +93,7 @@ ProductModel.getByAttribute = function(attribute,value, callback) {
  */
 ProductModel.getById = function(productId, callback) {
 
-    var query = N1qlQuery.fromString("select * from "+db._name+" where id = "+productId+" and type='com.bulkwise.Products'");
+    var query = N1qlQuery.fromString("select * from "+db._name+" where id = '"+productId+"' and type='com.bulkwise.Products'");
 
     db.query(query, function(error, result) {
         if (error) {
