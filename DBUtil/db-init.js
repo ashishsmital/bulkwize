@@ -13,7 +13,7 @@ var categoryCounter = 0; // this is only for first time, else retrieve this valu
 var supplierCounter = 0; // this is only for first time, else retrieve this value from the counter below.
 
 var parsedCategoryIndex=0;
-var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw.csv");
+var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw-2.csv");
 var parsedRecordInMemory = [];
 
 var currentUTCdate = new Date(moment().utc().format());
@@ -271,6 +271,8 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.id=productId;
 				productObj.productDisplayTitle= parsedRecord.MaterialDescription;
 				productObj.productBrandName=parsedRecord.Brand;
+				productObj.productBrandImageURL=parsedRecord.BrandImgURL;
+				productObjproductImageURL=parsedRecord.ProductImgURL;
 				productObj.productShortSummary = parsedRecord.MaterialDescription;
 				productObj.productDescription =  parsedRecord.MaterialDescription;
 				productObj.productName=parsedRecord.MaterialDescription;
@@ -281,6 +283,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.productVariants[0].productEAN=parsedRecord.EAN;
 				productObj.productVariants[0].productCountInCase=parsedRecord.CaseCount;
 				productObj.productVariants[0].productMRPUnit=parsedRecord.MRP;
+				productObj.productVariants[0].productDiscountPercentage=parsedRecord.ProductDiscountPercentage;
 				productObj.productCategoryId[0] = parentCategoryId;
 				productObj.productCategoryId[1] = subCategoryId;
 				db.upsert("productCounter::"+productId, productObj, function(err, res){
