@@ -6,7 +6,7 @@
 //importing packages
 var express = require('express');
 var supplier = express.Router();
-var supplierModel = require('../model/supplierModel.js');
+var supplierModel = require('../model/SupplierModel.js');
 
 
 /**
