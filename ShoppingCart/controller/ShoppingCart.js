@@ -10,7 +10,7 @@ var shoppingcart = express.Router();
 var ShoppingCartModel = require('../model/ShoppingCartModel.js');
 var _ = require('underscore');
 var request = require('request');
-var bucketName = "Bulkwize";
+var Bulkwize = "Bulkwize";
 /**
  * get Shoppingcart
  */
@@ -23,15 +23,15 @@ shoppingcart.get('/user/:userid', function (req, res, next) {
             if (result != null && !_.isUndefined(result) && result.data.length > 0) {
 				console.log('the retrieved cart is ' + result.data);
                 var sum = 0
-                _.each(result.data[0].''+bucketName.products, function (ele) {
+                _.each(result.data[0].Bulkwize.products, function (ele) {
 
                     sum += ele.variants.length;
 
                 });
-                _.extend(result.data[0].''+bucketName, {'totalCount': sum});
+                _.extend(result.data[0].Bulkwize, {'totalCount': sum});
             }
 
-            console.log(result.data[0].''+bucketName.totalCount);
+            console.log(result.data[0].Bulkwize.totalCount);
         }
         res.send(result);
     });
@@ -58,7 +58,7 @@ shoppingcart.put('/', function (req, res, next) {
                 if (pdtFromSite != null) {
 
                     var match = false;
-                    var pdtFromDB = result.data[0].''+bucketName.products;
+                    var pdtFromDB = result.data[0].Bulkwize.products;
 
                     _.each(pdtFromSite, function (ele) {
 
@@ -80,7 +80,7 @@ shoppingcart.put('/', function (req, res, next) {
 
                     });
 
-                    data = result.data[0].''+bucketName;
+                    data = result.data[0].Bulkwize;
                 }
             }
         }
@@ -114,7 +114,7 @@ shoppingcart.delete('/product', function (req, res, next) {
 
                 if (pdtFromSite != null) {
 
-                    var pdtFromDB = result.data[0].''+bucketName.products;
+                    var pdtFromDB = result.data[0].Bulkwize.products;
 
                     _.each(pdtFromSite, function (ele) {
 
@@ -122,8 +122,8 @@ shoppingcart.delete('/product', function (req, res, next) {
                         pdtFromDB = _.without(pdtFromDB, pdt);
 
                     });
-                    result.data[0].''+bucketName.products = pdtFromDB;
-                    data = result.data[0].''+bucketName;
+                    result.data[0].Bulkwize.products = pdtFromDB;
+                    data = result.data[0].Bulkwize;
                 }
             }
         }
@@ -155,7 +155,7 @@ shoppingcart.delete('/variants', function (req, res, next) {
             if (result.data != null && result.data.length > 0) {
                 var pdtFromSite = data.products;
 
-                var pdtFromDB = result.data[0].''+bucketName.products;
+                var pdtFromDB = result.data[0].Bulkwize.products;
 
                 _.each(pdtFromSite, function (ele) {
 
@@ -170,7 +170,7 @@ shoppingcart.delete('/variants', function (req, res, next) {
                         });
                     }
 
-                    data = result.data[0].''+bucketName;
+                    data = result.data[0].Bulkwize;
 
                 });
             }
