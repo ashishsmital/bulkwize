@@ -1,6 +1,6 @@
 {
   "couchbase": {
-    "server": "127.0.0.1:8091",
-    "bucket": "bulkwize"
+    "server": "10.0.1.137:8091",
+    "bucket": "Bulkwize"
   }
 }
