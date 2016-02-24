@@ -105,7 +105,7 @@ shoppingcart.delete('/product', function (req, res, next) {
 
     populateSessionDetails(req, data);
 
-    ShoppingCartModel.getByAttribute("id",data.customer_id, function (error, result) {
+    ShoppingCartModel.getByAttribute("id",data.id, function (error, result) {
         if (error) {
             console.log('No previous cart details for the user');
         } else {
@@ -148,7 +148,7 @@ shoppingcart.delete('/variants', function (req, res, next) {
 
     populateSessionDetails(req, data);
 
-    ShoppingCartModel.getByAttribute("id",data.customer_id, function (error, result) {
+    ShoppingCartModel.getByAttribute("id",data.id, function (error, result) {
         if (error) {
             console.log('No previous cart details for the user');
         } else {
