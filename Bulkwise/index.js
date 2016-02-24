@@ -17,6 +17,7 @@ var main =require('./main.js');
 var category = require('category/controller/Category.js');
 var products = require('products/controller/Products.js');
 var shoppingcart = require('shoppingcart/controller/ShoppingCart.js');
+var supplier = require('supplier/controller/Supplier.js');
 
 
 
@@ -73,6 +74,7 @@ app.use('/', main);
 app.use('/category', category);
 app.use('/products', products);
 app.use('/shoppingcart', shoppingcart);
+app.use('/supplier', supplier);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
 
