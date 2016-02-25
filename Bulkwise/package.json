@@ -23,6 +23,7 @@
     "request": "2.69.0",
     "shoppingcart": "../ShoppingCart",
     "supplier": "../Supplier",
+	"promotion": "../Promotions",
     "underscore": "^1.8.3",
     "uuid": "^2.0.1"
   }
