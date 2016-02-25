@@ -11,6 +11,7 @@ var port    =   process.env.PORT || 8080;
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 //importing middleware modules
 var main =require('./main.js');
@@ -37,13 +38,28 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 passport.serializeUser(function(user, done) {
-    done(null, user.uid);
+    done(null, user);
 });
 
-passport.deserializeUser(function(userId, done) {
-    done(null, userId);
+passport.deserializeUser(function(user, done) {
+    done(null, user);
 });
+
+passport.use(new LocalStrategy(function(username, password, done) {
+    process.nextTick(function() {
+        // Auth Check Logic
+
+        if (password != '1234') {
+            return done(null, false,{message:'Incorrect password'});
+        }
+        var user ={'user':username};
+
+        return done(null,user);
+    });
+}));
+
 
 //listerner
 app.listen(port);
@@ -65,11 +81,28 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
 
     // Pass to next layer of middleware
-    next();
+    //next();
+    isAuthenticated(req, res, next);
 });
+
+var isAuthenticated = function (req, res, next) {
+
+    // do any checks you want to in here
+
+    // CHECK THE USER STORED IN SESSION FOR A CUSTOM VARIABLE
+    // you can do this however you want with whatever variables you set up
+    console.log(req.isAuthenticated());
+    if (req.isAuthenticated() || req.url=='/login' || req.url=='/')
+        return next();
+
+    // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SOMEWHERE
+    res.redirect('/login');
+}
+
 
 // we'll create our controller here
 app.use('/', main);
+
 // apply the controller to our application
 app.use('/category', category);
 app.use('/products', products);

@@ -18,11 +18,12 @@
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "products": "../Products",
+    "request": "2.69.0",
     "shoppingcart": "../ShoppingCart",
-	"supplier": "../Supplier",
+    "supplier": "../Supplier",
     "underscore": "^1.8.3",
-	"request": "2.69.0",
     "uuid": "^2.0.1"
   }
 }
