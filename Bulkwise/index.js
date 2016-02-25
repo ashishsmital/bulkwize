@@ -81,8 +81,8 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
 
     // Pass to next layer of middleware
-    //next();
-    isAuthenticated(req, res, next);
+    next();
+    //isAuthenticated(req, res, next);
 });
 
 var isAuthenticated = function (req, res, next) {
