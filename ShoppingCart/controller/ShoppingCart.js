@@ -90,6 +90,40 @@ shoppingcart.put('/', function (req, res, next) {
 
     });
 
+/**
+ * Save Shoppingcart shipping details
+ */
+shoppingcart.put('/shippingDetails', function (req, res, next) {
+
+
+    var data = req.body;
+
+
+    populateSessionDetails(req, data);
+
+    ShoppingCartModel.getByAttribute("id","com.bulkwise.Cart::"+data.customer_id, function (error, result) {
+        if (error) {
+            console.log('No previous cart details for the user');
+        } else {
+            if (result.data != null && result.data.length > 0) {
+                var shoppingCartfromDB = result.data[0].Bulkwize;
+				var shippingAddFromSite = data.shipping_address;
+
+                if (shippingAddFromSite != null) {
+					shoppingCartfromDB.shipping_address=shippingAddFromSite;
+					data = result.data[0].Bulkwize;
+                     
+                }
+				
+			
+            }
+        }
+
+      	  //saving final data
+				saveCart(data, res);
+
+    });
+
 
 });
 
