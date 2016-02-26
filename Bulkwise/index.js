@@ -20,6 +20,7 @@ var products = require('products/controller/Products.js');
 var shoppingcart = require('shoppingcart/controller/ShoppingCart.js');
 var supplier = require('supplier/controller/Supplier.js');
 var promotion = require('promotion/controller/Promotion.js');
+var order = require('order/controller/Order.js');
 
 
 
@@ -110,6 +111,7 @@ app.use('/products', products);
 app.use('/shoppingcart', shoppingcart);
 app.use('/supplier', supplier);
 app.use('/promotion', promotion);
+app.use('/order', order);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
 
