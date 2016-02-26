@@ -116,17 +116,11 @@ shoppingcart.put('/shippingDetails', function (req, res, next) {
 					data = result.data[0].Bulkwize;
                      
                 }
-				
-			
-            }
+			}
         }
-
       	  //saving final data
 				saveCart(data, res);
-
     });
-
-
 });
 
 
