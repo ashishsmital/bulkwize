@@ -89,6 +89,8 @@ shoppingcart.put('/', function (req, res, next) {
         saveCart(data, res);
 
     });
+	
+});
 
 /**
  * Save Shoppingcart shipping details
