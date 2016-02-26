@@ -195,7 +195,7 @@ shoppingcart.delete('/variants', function (req, res, next) {
 
                 _.each(pdtFromSite, function (ele) {
 
-                    var prod = _.findWhere(pdtFromDB, {'id': ele.id});
+                    var prod = _.findWhere(pdtFromDB, {'id': parseInt(ele.id)});
 
                     if (prod !== null) {
                         _.each(ele.variants, function (ele) {
