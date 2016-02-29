@@ -7,7 +7,7 @@
 //importing packages
 var express = require('express');
 var order = express.Router();
-var orderModel = require('../model/orderModel.js');
+var orderModel = require('../model/OrderModel.js');
 var _ = require('underscore');
 var request = require('request');
 
