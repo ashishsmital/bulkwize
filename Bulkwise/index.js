@@ -20,7 +20,8 @@ var products = require('products/controller/Products.js');
 var shoppingcart = require('shoppingcart/controller/ShoppingCart.js');
 var supplier = require('supplier/controller/Supplier.js');
 var promotion = require('promotion/controller/Promotion.js');
-
+var user = require('user/controller/User.js');
+var UserModel = require('user/model/UserModel.js');
 
 
 //post body parser
@@ -52,12 +53,19 @@ passport.use(new LocalStrategy(function(username, password, done) {
     process.nextTick(function() {
         // Auth Check Logic
 
-        if (password != '1234') {
-            return done(null, false,{message:'Incorrect password'});
-        }
-        var user ={'user':username};
+        UserModel.getByAttribute("mobileNumber", username, function (error, result) {
 
-        return done(null,user);
+            if (result && result.data.length>0) {
+                name  = result.data[0].Bulkwize.mobileNumber;
+                pass = result.data[0].Bulkwize.password;
+                if(password == pass)
+                var user ={'user':name};
+                return done(null,user);
+            } else {
+                return done(null, false,{message:'Incorrect password'});
+            }
+        });
+
     });
 }));
 
@@ -82,8 +90,8 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
 
     // Pass to next layer of middleware
-    next();
-    //isAuthenticated(req, res, next);
+    //next();
+    isAuthenticated(req, res, next);
 });
 
 var isAuthenticated = function (req, res, next) {

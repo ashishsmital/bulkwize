@@ -23,12 +23,30 @@ main.get('/', function(req, res, next) {
 });
 
 
+/**
+ * Main get method for registration
+ */
+main.get('/registration', function(req, res, next) {
+    res.sendfile ('views/registration.html');
+});
+
+
 main.post('/login',
     passport.authenticate('local', {
             successRedirect: '/loginSuccess',
             failureRedirect: '/loginFailure'
     })
 );
+
+
+main.post('/login',
+    passport.authenticate('local', {
+            successRedirect: '/loginSuccess',
+            failureRedirect: '/loginFailure'
+    })
+);
+
+
 
 main.get('/loginFailure', function(req, res, next) {
         res.send('Failed to authenticate');

@@ -9,8 +9,9 @@ var express = require('express');
 var shoppingcart = express.Router();
 var ShoppingCartModel = require('../model/ShoppingCartModel.js');
 var _ = require('underscore');
-var request = require('request');
 var Bulkwize = "Bulkwize";
+
+
 /**
  * get Shoppingcart
  */
@@ -48,7 +49,7 @@ shoppingcart.put('/', function (req, res, next) {
 
     populateSessionDetails(req, data);
 
-    ShoppingCartModel.getByAttribute("id","com.bulkwise.Cart::"+data.customer_id, function (error, result) {
+    ShoppingCartModel.getByAttribute("id", "com.bulkwise.Cart::" + data.customer_id, function (error, result) {
         if (error) {
             console.log('No previous cart details for the user');
         } else {
@@ -90,174 +91,174 @@ shoppingcart.put('/', function (req, res, next) {
 
     });
 
-/**
- * Save Shoppingcart shipping details
- */
-shoppingcart.put('/shippingDetails', function (req, res, next) {
+    /**
+     * Save Shoppingcart shipping details
+     */
+    shoppingcart.put('/shippingDetails', function (req, res, next) {
 
 
-    var data = req.body;
+        var data = req.body;
 
 
-    populateSessionDetails(req, data);
+        populateSessionDetails(req, data);
 
-    ShoppingCartModel.getByAttribute("id","com.bulkwise.Cart::"+data.customer_id, function (error, result) {
-        if (error) {
-            console.log('No previous cart details for the user');
-        } else {
-            if (result.data != null && result.data.length > 0) {
-                var shoppingCartfromDB = result.data[0].Bulkwize;
-				var shippingAddFromSite = data.shipping_address;
+        ShoppingCartModel.getByAttribute("id", "com.bulkwise.Cart::" + data.customer_id, function (error, result) {
+            if (error) {
+                console.log('No previous cart details for the user');
+            } else {
+                if (result.data != null && result.data.length > 0) {
+                    var shoppingCartfromDB = result.data[0].Bulkwize;
+                    var shippingAddFromSite = data.shipping_address;
 
-                if (shippingAddFromSite != null) {
-					shoppingCartfromDB.shipping_address=shippingAddFromSite;
-					data = result.data[0].Bulkwize;
-                     
+                    if (shippingAddFromSite != null) {
+                        shoppingCartfromDB.shipping_address = shippingAddFromSite;
+                        data = result.data[0].Bulkwize;
+
+                    }
+
+
                 }
-				
-			
             }
-        }
 
-      	  //saving final data
-				saveCart(data, res);
+            //saving final data
+            saveCart(data, res);
+
+        });
+
 
     });
 
 
-});
+    /**
+     * delete products from Shoppingcart
+     */
+    shoppingcart.delete('/product', function (req, res, next) {
 
 
-/**
- * delete products from Shoppingcart
- */
-shoppingcart.delete('/product', function (req, res, next) {
+        var data = req.body;
 
 
-    var data = req.body;
+        populateSessionDetails(req, data);
+
+        ShoppingCartModel.getByAttribute("id", data.id, function (error, result) {
+            if (error) {
+                console.log('No previous cart details for the user');
+            } else {
+                if (result.data != null && result.data.length > 0) {
+                    var pdtFromSite = data.products;
+
+                    if (pdtFromSite != null) {
+
+                        var pdtFromDB = result.data[0].Bulkwize.products;
+
+                        _.each(pdtFromSite, function (ele) {
+
+                            var pdt = _.findWhere(pdtFromDB, {'id': ele.id});
+                            pdtFromDB = _.without(pdtFromDB, pdt);
+
+                        });
+                        result.data[0].Bulkwize.products = pdtFromDB;
+                        data = result.data[0].Bulkwize;
+                    }
+                }
+            }
+
+            //saving final data
+            saveCart(data, res);
+
+        });
 
 
-    populateSessionDetails(req, data);
+    });
 
-    ShoppingCartModel.getByAttribute("id",data.id, function (error, result) {
-        if (error) {
-            console.log('No previous cart details for the user');
-        } else {
-            if (result.data != null && result.data.length > 0) {
-                var pdtFromSite = data.products;
 
-                if (pdtFromSite != null) {
+    /**
+     * delete products from Shoppingcart
+     */
+    shoppingcart.delete('/variants', function (req, res, next) {
+
+
+        var data = req.body;
+
+
+        populateSessionDetails(req, data);
+
+        ShoppingCartModel.getByAttribute("id", data.id, function (error, result) {
+            if (error) {
+                console.log('No previous cart details for the user');
+            } else {
+                if (result.data != null && result.data.length > 0) {
+                    var pdtFromSite = data.products;
 
                     var pdtFromDB = result.data[0].Bulkwize.products;
 
                     _.each(pdtFromSite, function (ele) {
 
-                        var pdt = _.findWhere(pdtFromDB, {'id': ele.id});
-                        pdtFromDB = _.without(pdtFromDB, pdt);
+                        var prod = _.findWhere(pdtFromDB, {'id': ele.id});
+
+                        if (prod !== null) {
+                            _.each(ele.variants, function (ele) {
+
+                                var variant = _.findWhere(prod.variants, {'sku_id': ele.sku_id});
+                                prod.variants = _.without(prod.variants, variant);
+
+                            });
+                        }
+
+                        data = result.data[0].Bulkwize;
 
                     });
-                    result.data[0].Bulkwize.products = pdtFromDB;
-                    data = result.data[0].Bulkwize;
                 }
             }
-        }
 
-        //saving final data
-        saveCart(data, res);
+            //saving final data
+            saveCart(data, res);
 
-    });
-
-
-});
-
-
-/**
- * delete products from Shoppingcart
- */
-shoppingcart.delete('/variants', function (req, res, next) {
-
-
-    var data = req.body;
-
-
-    populateSessionDetails(req, data);
-
-    ShoppingCartModel.getByAttribute("id",data.id, function (error, result) {
-        if (error) {
-            console.log('No previous cart details for the user');
-        } else {
-            if (result.data != null && result.data.length > 0) {
-                var pdtFromSite = data.products;
-
-                var pdtFromDB = result.data[0].Bulkwize.products;
-
-                _.each(pdtFromSite, function (ele) {
-
-                    var prod = _.findWhere(pdtFromDB, {'id': ele.id});
-
-                    if (prod !== null) {
-                        _.each(ele.variants, function (ele) {
-
-                            var variant = _.findWhere(prod.variants, {'sku_id': ele.sku_id});
-                            prod.variants = _.without(prod.variants, variant);
-
-                        });
-                    }
-
-                    data = result.data[0].Bulkwize;
-
-                });
-            }
-        }
-
-        //saving final data
-        saveCart(data, res);
-
-    });
-
-
-});
-
-/**
- *
- * @param data
- * @param res
- */
-function saveCart(data, res) {
-    ShoppingCartModel.save(data, function (error, result) {
-        if (error) {
-            return res.status(400).send(error);
-        }
-        res.send(result);
-    });
-}
-
-
-var populateSessionDetails = function (req, data) {
-
-    data.session_id = req.session.id;
-
-
-};
-
-var populateVariants = function (dbVariants, siteVariants) {
-    console.log(dbVariants + " db variants")
-    if (siteVariants != null) {
-        siteVariants.forEach(function (ele, index) {
-            console.log("site variant  " + ele.sku_id);
-            dbVariants.forEach(function (dbvariant, index) {
-                console.log("dbvariant dbvariant  " + dbvariant);
-                if (ele.sku_id == dbvariant.sku_id) {
-                    console.log("matched");
-                    ele.quantity = dbvariant.quantity;
-                }
-            });
         });
 
+
+    });
+
+    /**
+     *
+     * @param data
+     * @param res
+     */
+    function saveCart(data, res) {
+        ShoppingCartModel.save(data, function (error, result) {
+            if (error) {
+                return res.status(400).send(error);
+            }
+            res.send(result);
+        });
+    };
+
+
+    var populateSessionDetails = function (req, data) {
+
+        data.session_id = req.session.id;
+
+
+    };
+
+    var populateVariants = function (dbVariants, siteVariants) {
+        console.log(dbVariants + " db variants")
+        if (siteVariants != null) {
+            siteVariants.forEach(function (ele, index) {
+                console.log("site variant  " + ele.sku_id);
+                dbVariants.forEach(function (dbvariant, index) {
+                    console.log("dbvariant dbvariant  " + dbvariant);
+                    if (ele.sku_id == dbvariant.sku_id) {
+                        console.log("matched");
+                        ele.quantity = dbvariant.quantity;
+                    }
+                });
+            });
+
+        }
     }
-}
 
-
+});
 // export product module
 module.exports = shoppingcart;
 
