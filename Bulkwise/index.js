@@ -22,6 +22,7 @@ var supplier = require('supplier/controller/Supplier.js');
 var promotion = require('promotion/controller/Promotion.js');
 var user = require('user/controller/User.js');
 var UserModel = require('user/model/UserModel.js');
+var order = require('order/controller/Order.js');
 
 
 //post body parser
@@ -118,6 +119,7 @@ app.use('/products', products);
 app.use('/shoppingcart', shoppingcart);
 app.use('/supplier', supplier);
 app.use('/promotion', promotion);
+app.use('/order', order);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
 

@@ -31,7 +31,7 @@ promotion.get('/', function(req, res, next) {
 promotion.get('/carousel', function(req, res, next) {
 	console.log("inside carousel function ")
 	var carouselUrlsJson = {"carouselURLs":[]}
-	var files = fs.readdirSync(__dirname+"/../../appcontent/images/promotions/carousel");
+	var files = fs.readdirSync(__dirname+"/../../../../appcontent/images/promotions/carousel");
 	
 	for(var i in files){
 		console.log("file name is " + files[i])
