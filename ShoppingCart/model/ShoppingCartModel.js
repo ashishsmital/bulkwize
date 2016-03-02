@@ -46,16 +46,53 @@ ShoppingCartModel.save = function(data, callback) {
         createdAt : new Date(),
         updatedAt : new Date()
     }
-    var documentId = data.customer_id ? data.customer_id : uuid.v4();
+    var documentId = data.customer_id ? data.customer_id : data.session_id;
+
+
 
     db.upsert(documentId, jsonObject, function(error, result) {
         if(error) {
             callback(error, null);
             return;
         }
-        callback(null, {message: 'success', data: result});
+        if(data.customer_id) {
+            //delete session key data if customer_id is passed
+            db.remove(data.session_id, function (error, removedResult) {
+                if (error) {
+                    console.log(error);
+                    if(error.code ==13){
+                        callback(null, {message: 'success', data: result});
+                    }else {
+                        callback(error, removedResult);
+                    }
+                    return;
+                }
+                callback(null, {message: 'success', data: result});
+
+            });
+        }else{
+            callback(null, {message: 'success', data: result});
+        }
+
     });
 }
+/**
+ * Delete's details in shopping cart for the given key
+ *
+ * @param key
+ * @param callback
+ */
+ShoppingCartModel.delete =function(key,callback){
+
+    db.remove(key, function(error, result) {
+        if(error) {
+            callback(error, null);
+            return;
+        }
+
+        callback(null, {message: 'success', data: result});
+    });
+};
 
 /**
  *
