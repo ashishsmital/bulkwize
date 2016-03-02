@@ -46,33 +46,6 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
         }
     })
 
-    .state('app.login', {
-        url:"/login",
-        views:{
-            'menuContent':{
-                templateUrl:'templates/login.html'
-            }
-        }
-    })
-
-    .state('app.register', {
-        url:"/register",
-        views:{
-            'menuContent':{
-                templateUrl:'templates/register.html'
-            }
-        }
-    })
-
-    .state('app.forgotpassword', {
-        url:"/forgotpassword",
-        views:{
-            'menuContent':{
-                templateUrl:'templates/forgotpassword.html'
-            }
-        }
-    })
-
     .state('app.home', {
         url: '/home',
         views: {
@@ -112,7 +85,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     })
 
     .state('app.subcategory',{
-        url:'/subcategory/:subId',
+        url:'/subcategory',
         views:{
             'menuContent' : {
                 templateUrl: 'templates/subcategory.html',

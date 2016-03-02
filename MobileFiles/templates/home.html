@@ -37,38 +37,26 @@
 			  	<ion-slide>
 			    	<div class="row">
 			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="http://initiative.com/wp-content/uploads/2012/10/Unilever.jpg" />
-			                </a>
+			                <a ui-sref="app.categorylist"><img src="http://initiative.com/wp-content/uploads/2012/10/Unilever.jpg" /></a>
 			            </div>
 			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="http://vignette4.wikia.nocookie.net/logopedia/images/6/6d/Head_%26_Shoulders_2010.png/revision/latest?cb=20100711131648" />
-			                </a>
+			                <a ui-sref="app.categorylist"><img src="http://vignette4.wikia.nocookie.net/logopedia/images/6/6d/Head_%26_Shoulders_2010.png/revision/latest?cb=20100711131648" /></a>
 			            </div>
 			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="http://insidetrade.co/wp-content/uploads/2015/01/ups2.jpg" />
-			                </a>
+			                <a ui-sref="app.categorylist"><img src="http://insidetrade.co/wp-content/uploads/2015/01/ups2.jpg" /></a>
 			            </div>
 			        </div>
 			  	</ion-slide>
 			  	<ion-slide>
 			    	<div class="row">
 			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="https://www.botanytowncentre.co.nz/BotanyTownCentre/media/contents/04_Stores/01_Store_Logos/logo_Amazon.png?ext=.png" />
-			                </a>
+			                <a ui-sref="app.categorylist"><img src="https://www.botanytowncentre.co.nz/BotanyTownCentre/media/contents/04_Stores/01_Store_Logos/logo_Amazon.png?ext=.png" /></a>
 			            </div>
 			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="https://www.technopat.net/wp-content/uploads/2013/07/LG_Logo-640x350.jpg" />
-			                </a>
+			                <a ui-sref="app.categorylist"><img src="https://www.technopat.net/wp-content/uploads/2013/07/LG_Logo-640x350.jpg" /></a>
 			            </div>
 			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqBXMr2GIxI_p-TmuTzp90YzeGI8Z0TANPeiPjswzpat79uwlXjg" />
-			                </a>
+			                <a ui-sref="app.categorylist"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqBXMr2GIxI_p-TmuTzp90YzeGI8Z0TANPeiPjswzpat79uwlXjg" /></a>
 			            </div>
 			        </div>
 			  	</ion-slide>
@@ -79,14 +67,73 @@
 			  	<div class="col col-75">Category</div>
 			  	<div class="col text-right"><a ui-sref="app.category" class="btn btn-assetive">View All</a></div>
 			</div>
-			<owl-slider class="owl-carousel">
-	           <div class="item" owl-carousel-item="" ng-repeat="items in category">
-	              	<a ui-sref="app.subcategory({ subId: items.Bulkwize.parentCategoryId})">
-	              		<img src="http://www.casheltravel.com/system/images/456/original/BANNER-Michelin.jpg?1434032844" />
-	              		{{items.Bulkwize.category_name}}
-	              	</a>
-	            </div>
-	        </owl-slider>
+			<ion-slide-box on-slide-changed="slideHasChanged($index)">
+			  	<ion-slide>
+			    	<div class="row">
+			            <div class="col col-33">
+			                <a ui-sref="app.subcategory"><img src="http://www.casheltravel.com/system/images/456/original/BANNER-Michelin.jpg?1434032844" /></a>
+			            </div>
+			            <div class="col col-33">
+			                <a ui-sref="app.subcategory"><img src="http://www.beachtomato.com/assets/heroNEW11.jpeg" /></a>
+			            </div>
+			            <div class="col col-33">
+			                <a ui-sref="app.subcategory"><img src="http://www.healthcanbefun.com.sg/wp-content/themes/hcf/images/kids1.png" /></a>
+			            </div>
+			        </div>
+			  	</ion-slide>
+			  	<ion-slide>
+			    	<div class="row">
+			            <div class="col col-33">
+			                <a ui-sref="app.subcategory"><img src="http://www.casheltravel.com/system/images/456/original/BANNER-Michelin.jpg?1434032844" /></a>
+			            </div>
+			            <div class="col col-33">
+			                <a ui-sref="app.subcategory"><img src="http://brocouncil.com/images/stories/Articles/2013/07july/comiccon/comic-con-2013-movies.jpg" /></a>
+			            </div>
+			            <div class="col col-33">
+			                <a ui-sref="app.subcategory"><img src="http://www.healthcanbefun.com.sg/wp-content/themes/hcf/images/kids1.png" /></a>
+			            </div>
+			        </div>
+			  	</ion-slide>
+			</ion-slide-box>
 		</div>
+
+
+        <!-- <owl-slider class="owl-carousel">
+            <div class="item">
+              	<h2>Swipe</h2>
+            </div>
+            <div class="item">
+              	<h2>Drag</h2>
+            </div>
+            <div class="item">
+              	<h2>Responsive</h2>
+            </div>
+            <div class="item">
+              	<h2>CSS3</h2>
+            </div>
+            <div class="item">
+              	<h2>Fast</h2>
+            </div>
+            <div class="item">
+              	<h2>Easy</h2>
+            </div>
+            <div class="item">
+              	<h2>Free</h2>
+            </div>
+            <div class="item">
+              	<h2>Upgradable</h2>
+            </div>
+            <div class="item">
+              	<h2>Tons of options</h2>
+            </div>
+            <div class="item">
+              	<h2>Infinity</h2>
+            </div>
+            <div class="item">
+              	<h2>Auto Width</h2>
+            </div>
+        </owl-slider> -->
+
+
   	</ion-content>
 </ion-view>

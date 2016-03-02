@@ -5,31 +5,17 @@ angular.module('starter.controllers', [])
         restrict: 'E',
         link: function (scope, element, attrs) {
             $ionicSideMenuDelegate.canDragContent(false);
-            scope.initCarousel = function(element) {
-                $(element).owlCarousel({
-                    autoPlay: false,
-                    slideSpeed : 300,
-                    paginationSpeed : 400,
-                    items: 3,
-                    itemsDesktop: [1199, 3],
-                    itemsDesktopSmall: [979, 3],
-                    itemsTablet: [600, 3], 
-                    itemsMobile: false
-                });
-            };
-        }
-    };
-})
-
-.directive('owlCarouselItem', function() {
-    return {
-        restrict: 'A',
-        transclude: false,
-        link: function(scope, element) {
-          // wait for the last item in the ng-repeat then call init
-            if(scope.$last) {
-                scope.initCarousel(element.parent());
-            }
+            var options = scope.$eval($(element).attr('data-options'));
+            $(element).owlCarousel({
+                autoPlay: false,
+                slideSpeed : 300,
+                paginationSpeed : 400,
+                items: 3,
+                itemsDesktop: [1199, 3],
+                itemsDesktopSmall: [979, 3],
+                itemsTablet: [600, 3], 
+                itemsMobile: false
+            });
         }
     };
 })
@@ -78,7 +64,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading) {
+.controller('HomeCtrl', function($scope, $stateParams, $http) {
 
     $scope.dummyImage = [
         { image: 'http://db-hospitality.com/images/restaurant.jpeg'},
@@ -86,64 +72,50 @@ angular.module('starter.controllers', [])
         { image: 'http://www.perkinsusa.com/wp-content/uploads/2013/06/shutterstock_21820732.jpg'}
     ];
 
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
-
-    $scope.category = [];
-    $http({
-        method: 'GET',
-        url: 'http://52.73.228.44:8080/category'
-    }).then(function successCallback(data) {
-        console.log(data.data.data);
-        for ( i = 0; i<data.data.data.length; i++){  
-            if(data.data.data[i].Bulkwize.parentCategoryId == 0){
-                $scope.category.push(data.data.data[i]);
-                console.log("hello");
-            }
-        };
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
+    // $http({
+    //     method: 'GET',
+    //     url: 'http://localhost/mobile/www/js/dummy.json'
+    // }).then(function successCallback(data) {
+    //     $scope.data = data.data.Dummy;
+    // }, function errorCallback(data) {
+    //     console.log(data)
+    // });
 
 })
 
-.controller('CategoryListCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading) {
+.controller('CategoryListCtrl', function($scope, $stateParams, $http, $rootScope) {
 
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
+    $scope.productqty = 1;
+    $scope.productprice = 100;
 
-    $scope.loadMore = function(){
-        $http({
-            method: 'GET',
-            url: 'http://localhost/mobile/www/js/dummy.json'
-        }).then(function successCallback(response) {
-            $scope.lists = response.data.data;
-            console.log(response.data.data);
-            $ionicLoading.hide();
-        }, function errorCallback(data) {
-            console.log(data);
-            $ionicLoading.hide();
-        });
+    $scope.addProduct = function(){
+        $scope.productqty  = $scope.productqty + 1;
+        $scope.productprice  = $scope.productprice + 1000;
+    }
+    
+    $scope.removeProduct = function(){
+        $scope.productqty  = $scope.productqty - 1;
+        $scope.productprice  = $scope.productprice - 1000;
     }
 
-    // $scope.increment = function(data){
-    //     $scope.qty++;
-    // }
+    // $scope.categoryTitle = $stateParams.cid;
+    // $scope.data = [];
+    // var headers = {
+    //     'Access-Control-Allow-Origin' : '*',
+    //     'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+    //     'Content-Type': 'application/json',
+    //     'Accept': 'application/json'
+    // };
 
-    $scope.$on('$stateChangeSuccess', function() {
-        $scope.loadMore();
+    $http({
+        method: 'GET',
+        url: 'http://52.87.231.137:8080/products'
+    }).then(function successCallback(data) {
+        //$scope.data = data.data.Dummy;
+        $scope.data = data.data;
+        console.log(data);
+    }, function errorCallback(data) {
+        console.log(data)
     });
 
 })
@@ -203,92 +175,39 @@ angular.module('starter.controllers', [])
     // console.log($rootScope.cartNumber);
 })
 
-.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http){
+.controller('CartCtrl', function($scope, $rootScope, $state){
+    $scope.productqty = 1;
+    $scope.productprice = 100;
 
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
+    $scope.addProduct = function(){
+        $scope.productqty  = $scope.productqty + 1;
+        $scope.productprice  = $scope.productprice + 1000;
+    }
+    
+    $scope.removeProduct = function(){
+        $scope.productqty  = $scope.productqty - 1;
+        $scope.productprice  = $scope.productprice - 1000;
+    }
+    
+    $scope.addCart = function(data){
+        $state.go('app.payment');
 
-    $http({
-        method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/user/John'
-    }).then(function successCallback(data) {
-        console.log(data.data.data);
-        $scope.cartDetails = data.data.data;
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
+        console.log($rootScope.cartNumber);
+    }
 })
 
-.controller('SubCategoryCtrl', function($scope, $stateParams, $http, $ionicLoading){
+.controller('SubCategoryCtrl', function($scope, $ionicTabsDelegate){
 
-    $scope.checked = [];
+    $scope.selectTab = 1;
 
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
-
-    $http({
-        method: 'GET',
-        url: 'http://52.73.228.44:8080/category/'+$stateParams.subId+'/subcategory'
-    }).then(function successCallback(data) {
-        console.log(data.data.data);
-        $scope.subCategory = data.data.data;
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
-
-
-    // $http({
-    //     method: 'GET',
-    //     url: 'http://52.73.228.44:8080/products'
-    // }).then(function successCallback(response) {
-    //     console.log(response.data.data);
-    //     $scope.lists = response.data.data;
-    //     setTimeout(function() {
-    //         $ionicLoading.hide();
-    //     }, 2000); 
-    // }, function errorCallback(data) {
-    //     console.log(data);
-    //     $ionicLoading.hide();
-    // });
-
-
-    $scope.change = function(value) {
-        if($scope.checked.length ==  0){
-            console.log('its there');
-            $scope.checked.push(value.Bulkwize.id);
-        }else{
-            console.log('its not tere');
-            for(var i=0; i< $scope.checked.length; i++){
-                if($scope.checked[i] == value.Bulkwize.id){
-                    console.log('its coming');
-                    $scope.checked.splice(i, 1);
-                }else{
-                    $scope.checked.push(value.Bulkwize.id);
-                    break;
-                }
-            }
-            console.log($scope.checked.length);
-        }
-       
-       console.log($scope.checked);
-    };
-
-    $scope.addCart = function(list, count){
-        console.log(list, count);
+    $scope.init = function(selectTab) {
+        $scope.selectTab = selectTab;
+        console.log($scope.selectTab);
     }
 
+    $scope.mainTab = function(setTab){
+        $scope.selectTab = setTab;
+        $scope.init($scope.selectTab);
+        console.log($scope.selectTab);
+    };
 });

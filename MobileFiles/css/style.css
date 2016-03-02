@@ -147,29 +147,3 @@
 .font_16{
     font-size: 16px !important;
 }
-.spinner svg {
-    width: 28px;
-    height: 28px;
-    stroke: #fff;
-    fill: #fff;
-}
-.error{
-    font-size: 12px;
-    color: red;
-}
-form sup{
-    color: red;
-}
-.forgot_password{
-    text-align: right;
-    padding: 15px;
-}
-.login_button{
-    padding: 16px;
-}
-.owl-carousel .item,
-.checkbox-slider .item-content{
-    border: 0;
-    text-transform: none;
-    white-space: normal;
-}
