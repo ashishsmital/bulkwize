@@ -1,183 +1,66 @@
-<ion-view title="Sub Category">
+<ion-view title="{{title}}">
 	<div class="item-input-inset has-header padding_6">
 		<label class="item-input-wrapper">
 		    <i class="icon ion-ios-search placeholder-icon"></i>
-		    <input type="search" placeholder="Search">
+		    <input type="search" placeholder="Search" ng-model="search">
 		</label>
-		<button class="button button-small button-calm">
+		<button class="button button-small button-calm" ui-sref="app.search({ searchId: search})">
 	     	<i class="icon ion-ios-search"></i>
 	    </button>
 	</div>
   	<ion-content class="has-subheader">
-  		<owl-slider class="owl-carousel">
-            <ion-checkbox ng-model="isChecked1"  class="item">
-            	<img src="http://ecx.images-amazon.com/images/I/51o1LFaBwdL._SY300_.jpg">
-            </ion-checkbox>
-            <ion-checkbox ng-model="isChecked2"  class="item">
-            	<img src="http://ecx.images-amazon.com/images/I/51o1LFaBwdL._SY300_.jpg">
-            </ion-checkbox>
-            <ion-checkbox ng-model="isChecked3"  class="item">
-            	<img src="http://ecx.images-amazon.com/images/I/51o1LFaBwdL._SY300_.jpg">
-            </ion-checkbox>
-            <ion-checkbox ng-model="isChecked4"  class="item">
-            	<img src="http://ecx.images-amazon.com/images/I/51o1LFaBwdL._SY300_.jpg">
-            </ion-checkbox>
-            <ion-checkbox ng-model="isChecked5"  class="item">
-            	<img src="http://ecx.images-amazon.com/images/I/51o1LFaBwdL._SY300_.jpg">
-            </ion-checkbox>
-        </owl-slider>
         <div class="list font_price">
         	<div class="list font_price category_list">
-			    <div class="item">
-			    	<div class="left_thumb">
-			      		<img src="http://yearofrealeating.com/wp-content/uploads/2014/11/oast.jpg">
-			      	</div>
-			      	<div>
-				      	<h2>Head Shoulders Sampoo</h2>
-				      	<p>Damage Rescue Shampoo</p>
-				    </div>
-				    <div class="clear"></div>
-
+			    <div class="item" ng-repeat="list in lists" ng-show="list.brand">
+			    	<div ui-sref="app.categorydetail({ pId: list.brand.id})">
+				    	<div class="left_thumb">
+				      		<img ng-src="http://52.73.228.44:8080{{list.brand.productBrandImageURL}}">
+				      	</div>
+				      	<div>
+					      	<h2>{{list.brand.productBrandName}}</h2>
+					      	<p>{{list.brand.productShortSummary}}</p>
+					      	<!-- <p>Discount : <span class="red">{{list.bran}}</span></p> -->
+					    </div>
+					    <div class="clear"></div>
+					</div>
 					<div class="mt_10">
 						<table class="table">
 							<tr>
 								<th>Size</th>
-								<th>Case count</th>
+								<th>Units/case</th>
 								<th>Price</th>
-								<th>Ordr. Qty</th>
+								<th>No of cases</th>
 							</tr>
 							<tbody>
-								<tr>
-									<td>12</td>
-									<td>white</td>
-									<td>123</td>
+								<tr ng-repeat="productVariant in list.brand.productVariants">
+									<td>{{productVariant.productUnitSizeWeightQty}}</td>
+									<td>{{productVariant.productCountInCase}}</td>
 									<td>
-										<i class="icon ion-plus-round icon-plus-round" ng-click="addProduct()"></i>
-								      	<span class="product-quantity">{{productqty}}</span>
-								      	<i class="icon ion-minus-round icon-minus-round" ng-click="removeProduct()"></i>
+										<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
+											{{productVariant.productMRPUnit}}
+											{{productVariant.discount}}
+									</td>
+									<td>
+										<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+								      	<span class="product-quantity">{{productVariant.productOrderedQty}}</span>
+								      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
 									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-
-					<div class="button-bar custom_view_button mt_10">
-					  	<a class="button button-calm" ui-sref="app.categorydetail">View</a>
-					  	<a class="button button-assertive">Add to Cart</a>
-					</div>
-			    </div>
-			    <div class="item">
-			    	<div class="left_thumb">
-			      		<img src="http://ecx.images-amazon.com/images/I/51o1LFaBwdL._SY300_.jpg">
-			      	</div>
-			      	<div>
-				      	<h2>Head Shoulders Sampoo</h2>
-				      	<p>Damage Rescue Shampoo</p>
-				    </div>
-				    <div class="clear"></div>
-
-					<div class="mt_10">
-						<table class="table">
-							<tr>
-								<th>Size</th>
-								<th>Case count</th>
-								<th>Price</th>
-								<th>Ordr. Qty</th>
-							</tr>
-							<tbody>
-								<tr>
-									<td>12</td>
-									<td>white</td>
-									<td>123</td>
-									<td>
-										<i class="icon ion-plus-round icon-plus-round" ng-click="addProduct()"></i>
-								      	<span class="product-quantity">{{productqty}}</span>
-								      	<i class="icon ion-minus-round icon-minus-round" ng-click="removeProduct()"></i>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<div class="button-bar custom_view_button mt_10">
-					  	<a class="button button-calm" ui-sref="app.categorydetail">View</a>
-					  	<a class="button button-assertive">Add to Cart</a>
-					</div>
-			    </div>
-			    <div class="item">
-			    	<div class="left_thumb">
-			      		<img src="http://www.fun-masti.net/wp-content/uploads/2015/03/grains-pulses-beans-22568262.jpg">
-			      	</div>
-			      	<div>
-				      	<h2>Head Shoulders Sampoo</h2>
-				      	<p>Damage Rescue Shampoo</p>
-				    </div>
-				    <div class="clear"></div>
-
-					<div class="mt_10">
-						<table class="table">
-							<tr>
-								<th>Size</th>
-								<th>Case count</th>
-								<th>Price</th>
-								<th>Ordr. Qty</th>
-							</tr>
-							<tbody>
-								<tr>
-									<td>12</td>
-									<td>white</td>
-									<td>123</td>
-									<td>
-										<i class="icon ion-plus-round icon-plus-round" ng-click="addProduct()"></i>
-								      	<span class="product-quantity">{{productqty}}</span>
-								      	<i class="icon ion-minus-round icon-minus-round" ng-click="removeProduct()"></i>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<div class="button-bar custom_view_button mt_10">
-					  	<a class="button button-calm" ui-sref="app.categorydetail">View</a>
-					  	<a class="button button-assertive">Add to Cart</a>
-					</div>
-			    </div>
-			    <div class="item">
-			    	<div class="left_thumb">
-			      		<img src="http://cdn1.costatic.com/img/product/750x1000/534c4add4d823/head-shoulders-antidandruff-17540.jpg">
-			      	</div>
-			      	<div>
-				      	<h2>Head Shoulders Sampoo</h2>
-				      	<p>Damage Rescue Shampoo</p>
-				    </div>
-				    <div class="clear"></div>
-
-					<div class="mt_10">
-						<table class="table">
-							<tr>
-								<th>Size</th>
-								<th>Case count</th>
-								<th>Price</th>
-								<th>Ordr. Qty</th>
-							</tr>
-							<tbody>
-								<tr>
-									<td>12</td>
-									<td>white</td>
-									<td>123</td>
-									<td>
-										<i class="icon ion-plus-round icon-plus-round" ng-click="addProduct()"></i>
-								      	<span class="product-quantity">{{productqty}}</span>
-								      	<i class="icon ion-minus-round icon-minus-round" ng-click="removeProduct()"></i>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-
-					<div class="button-bar custom_view_button mt_10">
-					  	<a class="button button-calm" ui-sref="app.categorydetail">View</a>
-					  	<a class="button button-assertive">Add to Cart</a>
+					
+					<div class="row">
+						<div class="col">
+							<a ui-sref="app.categorydetail({ pId: list.brand.id})" class="more_link">
+								More Details <i class="ion-arrow-right-c"></i>
+							</a>
+						</div>
+						<div class="col text-right">
+							<div class="addCartButton" ng-click="addCart(list)">
+							 	Add to Cart <i class="ion-android-cart"></i>
+							</div>
+						</div>
 					</div>
 			    </div>
 			</div>

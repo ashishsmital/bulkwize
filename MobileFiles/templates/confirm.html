@@ -1,5 +1,8 @@
-<ion-view view-title="Cart details">
-  	<ion-content >
+<ion-view view-title="Confirm Page">
+	<div class="has-header bar bar-pink">
+		<div class="total">Total: $1538</div>
+	</div>
+  	<ion-content class="has-subheader">
     	<div class="list font_price category_list">
 		    <div class="item" ng-repeat="cartDetail in cartDetails.products">
 		    	<div ui-sref="app.categorydetail({ pId: cartDetail.id})">
@@ -51,10 +54,7 @@
 		    </div>
 		</div>
   	</ion-content>
-  	<ion-footer-bar class="bar bar-dark cart_button">
-		<div class="button-bar">
-			<a class="button button-calm " ui-sref="#">Total: $1538</a>
-			<a class="button button-assertive" ui-sref="app.shipping">Checkout</a>
-		</div>
-	</ion-footer-bar>
+	<ion-footer-bar class="bar bar-footer bar-assertive">
+  		<div class="title cart-footer" ng-click="confirm()">Confirm the Order</div>
+  	</ion-footer-bar>
 </ion-view>
