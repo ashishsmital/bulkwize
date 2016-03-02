@@ -13,7 +13,7 @@ var categoryCounter = 0; // this is only for first time, else retrieve this valu
 var supplierCounter = 0; // this is only for first time, else retrieve this value from the counter below.
 
 var parsedCategoryIndex=0;
-var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw.csv");
+var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw-3.csv");
 var parsedRecordInMemory = [];
 
 var currentUTCdate = new Date(moment().utc().format());
@@ -21,8 +21,8 @@ var currentUTCdate = new Date(moment().utc().format());
 var categoryObj = {
 	 "type":"com.bulkwize.category",
 	 "category_name":"Personal Care",
-	 "cateory_img_url":"../images/category/personal_care.img",
-	 "cateory_icon_url":"../icons/category/personal_care.img",
+	 "category_img_url":"../images/category/personal_care.img",
+	 "category_icon_url":"../icons/category/personal_care.img",
 	 "maximum_discount_percentage":65, 
 	 "id":"id",
 	 "parentCategoryId":0
@@ -46,6 +46,7 @@ var productObj = {
 		"productMaterialDescription":" Mach 3 turbo pack of 3",
 		"productEAN":" 4902430665452",
 		"productCountInCase":50,
+		"productOrderedQty":0,
 		"productUnitSizeWeightQty":"3",
 		"productMRPUnit": 550,
 		"productDiscountPercentage": 9,
@@ -178,6 +179,7 @@ var insertCategoryIntoDB = function(parsedRecord) {
 							  var categoryId = res.value;
 							  categoryObj.id=categoryId;
 							  categoryObj.parentCategoryId=0;
+							  categoryObj.category_img_url=parsedRecord.CategoryImageURL;
 							  db.upsert("categoryCounter::"+categoryId, categoryObj, function(err, res){
 									if (err) {;
 										console.log('category creation failed for name ' + parsedRecord.Category, err);
@@ -225,6 +227,7 @@ var insertSubCategoryIntoDB = function(parsedRecord, parentCategoryId) {
 							  var categoryId = res.value;
 							  categoryObj.id=categoryId;
 							  categoryObj.parentCategoryId=parentCategoryId;
+							  categoryObj.category_img_url=parsedRecord.SubCategoryImageURL;
 							  db.upsert("categoryCounter::"+categoryId, categoryObj, function(err, res){
 									if (err) {;
 										console.log('category creation failed for name ' + parsedRecord.SubCategory, err);
@@ -270,6 +273,8 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.id=productId;
 				productObj.productDisplayTitle= parsedRecord.MaterialDescription;
 				productObj.productBrandName=parsedRecord.Brand;
+				productObj.productBrandImageURL=parsedRecord.BrandImgURL;
+				productObj.productImageURL=parsedRecord.ProductImgURL;
 				productObj.productShortSummary = parsedRecord.MaterialDescription;
 				productObj.productDescription =  parsedRecord.MaterialDescription;
 				productObj.productName=parsedRecord.MaterialDescription;
@@ -280,6 +285,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.productVariants[0].productEAN=parsedRecord.EAN;
 				productObj.productVariants[0].productCountInCase=parsedRecord.CaseCount;
 				productObj.productVariants[0].productMRPUnit=parsedRecord.MRP;
+				productObj.productVariants[0].productDiscountPercentage=parsedRecord.ProductDiscountPercentage;
 				productObj.productCategoryId[0] = parentCategoryId;
 				productObj.productCategoryId[1] = subCategoryId;
 				db.upsert("productCounter::"+productId, productObj, function(err, res){

@@ -56,12 +56,26 @@ products.get('/brand/:brand_name', function(req, res, next) {
 
 
 /**
- * Get Products by Brand Name
+ * Get Product by Product Id
  */
-products.get('/brand/:brand_name', function(req, res, next) {
+products.get('/:productId', function(req, res, next) {
 
+	console.log("Insert controller method of retrieving product by product id --" + req.params['productId'])
+    ProductModel.getById(req.params['productId'], function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
 
-    ProductModel.getByAttribute('brand_name',req.params['brand_name'], function(error, result) {
+});
+
+/**
+ * Search Product with like search
+ */
+products.get('/likeSearch/:searchString', function(req, res, next) {
+
+	ProductModel.getProductsByLikeSearch(req.params['searchString'].toLowerCase(), function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }

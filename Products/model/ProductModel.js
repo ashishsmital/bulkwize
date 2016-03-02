@@ -8,6 +8,7 @@ var db = require('dbutil').bucket;
 var ViewQuery = require('dbutil').ViewQuery;
 var N1qlQuery = require('dbutil').N1qlQuery;
 
+
 /**
  * ProductModel class
  *
@@ -80,6 +81,32 @@ ProductModel.getByAttribute = function(attribute,value, callback) {
 }
 
 /**
+ *
+ * Getby Id
+ *
+ * @param attribute
+ *         attribute name
+ * @param value
+ *          attribute value
+ * @param callback
+ *          http callback
+ */
+ProductModel.getById = function(productId, callback) {
+
+    var query = N1qlQuery.fromString("select * from "+db._name+" where id = "+productId+" and type='com.bulkwise.Products'");
+
+    db.query(query, function(error, result) {
+        if (error) {
+			console.log("Error while retrieving product by product id --" + productId)
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
+/**
  * Get Attribute Array
  *
  * @param attribute
@@ -141,6 +168,42 @@ ProductModel.getProductsByCategoryIdsAndBrandName = function(categoryIdArray,pro
     var query = N1qlQuery.fromString("select * from "+db._name+" as brand UNNEST brand.productCategoryId where productCategoryId IN ["+ categoryIdArray+"] and brand.productBrandName = '" + productBrandName+"'");
 	console.log("Executing the query -- " + query);
 	//e.g. select * from default as brand UNNEST brand.productCategoryId where productCategoryId IN [3,16] and brand.productBrandName = "Tide";
+    db.query(query, function(error, result) {
+        if (error) {
+			console.log("Error in executing query ", error);
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
+/**
+ * Get all products for given category id and brand
+ *
+ * @param data
+ *          array of category ids
+ * @param callback
+ *          callback for http response
+ */
+ProductModel.getProductsByLikeSearch = function(searchString,callback) {
+	console.log("Inside product search for query string -- " + searchString);
+	
+    var query = N1qlQuery.fromString("select id, productName as ProductNameSearch from "+db._name+" where lower(productName) LIKE '%"+searchString+"%' and type='com.bulkwise.Products' UNION select distinct productCategoryId,productBrandName as ProductBrandNameSearch from "+db._name+" where lower(productBrandName) LIKE '%" +searchString+"%' and type='com.bulkwise.Products'");
+	
+	console.log("Executing the query -- " + query);
+/* e.g. Query
+select id, productName as ProductNameSearch from default where lower(productName) LIKE "%rie%" and type="com.bulkwise.Products"
+UNION
+select id, productShortSummary as ProductShortSummarySearch from default where lower(productShortSummary) LIKE "%rie%" and type="com.bulkwise.Products"
+UNION
+select id,productBrandName as ProductBrandNameSearch from default where lower(productBrandName) LIKE "%rie%" and type="com.bulkwise.Products"
+UNION
+select id,productDescription as ProductDescriptionSearch from default where lower(productDescription) LIKE "%rie%" and type="com.bulkwise.Products"
+UNION
+select id,productDisplayTitle as ProductTitleSearch from default where lower(productDisplayTitle) LIKE "%rie%" and type="com.bulkwise.Products";
+*/
     db.query(query, function(error, result) {
         if (error) {
 			console.log("Error in executing query ", error);
