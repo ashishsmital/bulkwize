@@ -103,10 +103,13 @@ var isAuthenticated = function (req, res, next) {
     // you can do this however you want with whatever variables you set up
     console.log(req.isAuthenticated());
 	if(req.isAuthenticated()){
+		console.log("The user is authentication - " + req.isAuthenticated() + " and hence allowing to process");
 		return next();
 	}else if(req.url !='/order'){
-		return nex();
+		console.log("The URL does not mandate authentication  and hence allowing to process");
+		return next();
 	}else if(req.url =='/order' && req.isAuthenticated()){
+		console.log("The URL mandates authentication and user authentication is "+ req.isAuthenticated() +"  and hence allowing to process");
 		return next();
 	}
     
