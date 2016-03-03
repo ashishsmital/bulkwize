@@ -18,7 +18,9 @@ user.post('/', function (req, res, next) {
         pan: req.body.pan,
         email: req.body.email,
         shopAddress: req.body.shopAddress,
-        deliveryAddress: req.body.deliveryAddress
+        deliveryAddress: req.body.deliveryAddress,
+		type:"com.bulkwise.User",
+		id: req.body.mobileNumber
     }
     var key;
 
@@ -28,6 +30,7 @@ user.post('/', function (req, res, next) {
 
         key = 'com.bulkwise.User::' + jsonObject.mobileNumber;
     }
+	jsonObject.id=key;
     UserModel.getByAttribute("mobileNumber", key, function (error, result) {
 
         if (result) {

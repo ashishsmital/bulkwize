@@ -31,7 +31,8 @@ UserModel.save = function(data, callback) {
         pan:data.pan,
         email:data.email,
         shopAddress:data.shopAddress,
-        deliveryAddress:data.deliveryAddress
+        deliveryAddress:data.deliveryAddress,
+		type:"com.bulkwise.User"
     }
     var documentId = data.mobileNumber+'';
 
