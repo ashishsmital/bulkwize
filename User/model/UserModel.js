@@ -32,9 +32,10 @@ UserModel.save = function(data, callback) {
         email:data.email,
         shopAddress:data.shopAddress,
         deliveryAddress:data.deliveryAddress,
-		type:"com.bulkwise.User"
+		type:"com.bulkwise.User",
+		id:data.id
     }
-    var documentId = data.mobileNumber+'';
+    var documentId = data.id+'';
 
     db.upsert(documentId, jsonObject, function(error, result) {
         if(error) {

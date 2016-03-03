@@ -56,7 +56,7 @@ user.get('/:user', function (req, res, next) {
 
         key = 'com.bulkwise.User::' + mobileNumber;
     }
-    UserModel.getByAttribute("mobileNumber", key, function (error, result) {
+    UserModel.getByAttribute("id", key, function (error, result) {
 
         if (result) {
             res.send(result);
