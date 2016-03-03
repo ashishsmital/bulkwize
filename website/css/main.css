@@ -1,0 +1,144 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.block{
+    padding: 20px 0px;   
+}
+
+ h1 {
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-size: 38px;
+		margin: 20px 0;
+	}
+	h2 {
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-size: 30px;
+		margin: 20px 0;
+	}
+	h4 {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	margin: 20px 0;
+	}
+
+ p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	margin: 20px 0;
+}
+
+.hero-unit {
+  padding: 60px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #F37365;
+  
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+.navbar-inverse .navbar-inner {
+  background-color: #61B7B5;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-position: none;
+  background-repeat: no-repeat;
+  border-color: #61B7B5;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+}
+
+.hero-unit .brand-logo {
+  float: left;
+  padding: 18px 0px 0px;
+  margin-left: -40px;
+  margin-top: -70px;
+  height:250px;
+  width: 350px;
+  vertical-align: left;
+  
+  
+  background-repeat: no-repeat;
+}
+
+.navbar .brand-logo {
+  float: left;
+  padding: 18px 0px 0px;
+  margin-left: -100px;
+  margin-top: -30px;
+  height:90px;
+  width: 150px;
+  vertical-align: left;
+  background-repeat: no-repeat;
+  border-radius:5px;
+}
+
+.navbar .nav > li > a {
+  float: none;
+  padding: 20px 30px 20px;
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  
+}
+
+.phone-grey {
+  float: left;
+  padding: 10px 10px 55px;
+  margin-top: -32px;
+  margin-left: 5px;
+  height:360px;
+  width:200px;
+  
+ }
+
+.screenshot-image-container {
+  float: left;
+  padding: 60px 10px 0px;
+  margin-left: 120px;
+  margin-top: 10px;
+  min-width: 200px;
+  min-height: 100px;
+  background-image: url("../img/android-device-grey.png");
+  background-size: 250px 450px;
+  background-repeat: no-repeat;
+  
+}
+
+.supplier-image-container {
+  float: left;
+  padding: 0px 10px 0px;
+  margin-top: 10px;
+  min-width: 100px;
+  min-height: 50px;
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+

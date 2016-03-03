@@ -1,0 +1,58 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300);
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+.block{
+    padding: 20px 0px;   
+}
+
+ h1 {
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-size: 38px;
+		margin: 20px 0;
+	}
+	h2 {
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-size: 30px;
+		margin: 20px 0;
+	}
+ p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	margin: 20px 0;
+}
+
+.hero-unit {
+  padding: 60px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #61B7B5;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
