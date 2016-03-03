@@ -33,7 +33,7 @@ user.post('/', function (req, res, next) {
 	jsonObject.id=key;
     UserModel.getByAttribute("mobileNumber", key, function (error, result) {
 
-        if (result) {
+        if (result != null && !_.isUndefined(result) && result.data.length > 0) {
             return res.status(400).send({"errorMessage": "User already exists"});
         } else {
             UserModel.save(jsonObject, function (error, result) {
