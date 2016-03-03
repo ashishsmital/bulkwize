@@ -58,7 +58,7 @@ UserModel.save = function(data, callback) {
  */
 UserModel.getByAttribute = function(attribute,value, callback) {
 
-    var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"'");
+    var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"' and type='com.bulkwise.User'");
     db.query(query, function(error, result) {
         if (error) {
             callback(error, null);
