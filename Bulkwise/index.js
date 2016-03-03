@@ -128,6 +128,7 @@ app.use('/shoppingcart', shoppingcart);
 app.use('/supplier', supplier);
 app.use('/promotion', promotion);
 app.use('/order', order);
+app.use('/user', user);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
 
