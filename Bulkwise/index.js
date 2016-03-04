@@ -61,7 +61,16 @@ passport.use(new LocalStrategy(function(username, password, done) {
                 pass = result.data[0].Bulkwize.password;
                 if(password == pass)
                 var user ={'user':name};
-                return done(null,user);
+               shoppingcart.populateCartDetails(username,done,function(error,result,done){
+                    if(error){
+                        console.log('Error in updating the cart');
+                        return done(null, false,{message:'Incorrect password'});
+                    }else{
+                        console.log('Success in updating the cart');
+                        return done(null,user);
+                    }
+                });
+
             } else {
                 return done(null, false,{message:'Incorrect password'});
             }
@@ -69,6 +78,8 @@ passport.use(new LocalStrategy(function(username, password, done) {
 
     });
 }));
+
+
 
 
 //listerner
@@ -102,7 +113,7 @@ var isAuthenticated = function (req, res, next) {
     // CHECK THE USER STORED IN SESSION FOR A CUSTOM VARIABLE
     // you can do this however you want with whatever variables you set up
     console.log(req.isAuthenticated());
-    if (req.isAuthenticated() || req.url=='/login' || req.url=='/' || req.url=='/shoppingcart')
+    if (req.isAuthenticated() || req.url=='/login' || req.url=='/' || req.url=='/shoppingcart'|| req.url=='/user' )
         return next();
 
     // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SOMEWHERE
@@ -120,6 +131,7 @@ app.use('/shoppingcart', shoppingcart);
 app.use('/supplier', supplier);
 app.use('/promotion', promotion);
 app.use('/order', order);
+app.use('/user', user);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
 
