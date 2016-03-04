@@ -6,7 +6,18 @@
    Author's custom styles
    ========================================================================== */
 .block{
-    padding: 20px 0px;   
+    padding: 20px 0px;
+    clear: both;
+}
+body {
+color: #2d2d2d;
+}
+a {
+    color: #61b7b5;
+}
+a:hover {
+    color: #678a7b;
+    text-decoration: none;
 }
 
  h1 {
@@ -33,11 +44,12 @@
 	font-weight: 400;
 	font-size: 14px;
 	margin: 20px 0;
+     line-height: 170%;
 }
 
 .hero-unit {
   padding: 60px;
-  margin-top: 30px;
+  margin-top: 0;
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 200;
@@ -45,13 +57,14 @@
   color: inherit;
   background-color: #F37365;
   
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+    padding-bottom: 0;
 }
 
 .navbar-inverse .navbar-inner {
-  background-color: #61B7B5;
+  background-color: #f37365;
   background-image: none;
   background-image: none;
   background-image: none;
@@ -59,8 +72,9 @@
   background-image: none;
   background-position: none;
   background-repeat: no-repeat;
-  border-color: #61B7B5;
+  border: none;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+    box-shadow: none;
 }
 
 .hero-unit .brand-logo {
@@ -78,24 +92,75 @@
 
 .navbar .brand-logo {
   float: left;
-  padding: 18px 0px 0px;
-  margin-left: -100px;
-  margin-top: -30px;
-  height:90px;
+  /*padding: 18px 0px 0px;*/
+  /*margin-left: -100px;*/
+  margin-top: 10px;
+  /*height:90px;*/
   width: 150px;
   vertical-align: left;
   background-repeat: no-repeat;
-  border-radius:5px;
+  /*border-radius:5px;*/
+}
+/*.right-pull1 {
+        float: right !important;
+    }*/
+ul.nav.right-pull1 {
+float: right !important;
+}
+.navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:hover, .navbar-inverse .nav .active > a:focus {
+    color: #ffffff;
+    background-color: #2d2d2d;
+}
+/*.image-wrap {
+    border: 1px solid #cfc9c3;
+    display: inline-block;
+}*/
+.page-header {border-color: #cfc9c3;}
+
+.panel-body p {margin-top: 0;}
+.panel-title a {
+    font-weight: 600;
+}
+.panel-title {
+margin-bottom: 10px;
+}
+#section-5 a{
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+@media (min-width: 768px) {
+    .navbar-inner {
+        height: 68px;
+    }
+    ul.nav.right-pull1 {
+        float: right !important;
+    }
+    .content-wrap {overflow: hidden;}
+    .desk-pull-left {float:left;  width:50%; margin-top: 60px; color: #ffffff;}
+    .desk-pull-right {float:right;  width:50%; text-align: right;}
+    /*.page-header {margin: 68px 0 30px;}*/
 }
 
+
+
+
+@media (max-width: 979px) {
+    .navbar-fixed-top {margin-bottom: 0;}
+}
+.content-wrap {max-width: 1170px; margin: 0 auto;}
+
+
+
 .navbar .nav > li > a {
-  float: none;
-  padding: 20px 30px 20px;
-  color: #000000;
-  text-decoration: none;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-size: 25px;
+    float: none;
+    padding:24px 30px 24px;
+    color: #2d2d2d;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    text-shadow: none;
   
 }
 
@@ -130,6 +195,34 @@
   min-height: 50px;
   
   
+}
+.screen-grabs img{
+    max-width: 80%;
+    margin: 0 auto;
+}
+.screen-grabs>div {
+    text-align: center;
+}
+
+@media (max-width: 767px) {
+    ul.nav.right-pull1 {
+        float: none !important;
+    }
+    .hero-unit {margin: 0 -20px; padding: 20px; color: #ffffff;}
+    .desk-pull-right {display: none;}
+    .screenshot-image-container {
+        background-position: top center;
+        min-width: 100%;
+        margin-left: 0;
+    }
+    .navbar .brand-logo {
+        margin-left: 10px;
+    }
+    .navbar .btn-navbar {margin: 15px; border-radius: 0; background: #2b2b2b; box-shadow: none; border: none; padding:12px 15px}
+    .navbar .nav > li > a {padding: 12px 30px 12px;}
+    .navbar-inverse .nav-collapse .nav > li > a, .navbar-inverse .nav-collapse .dropdown-menu a {color: #2b2b2b;}
+    .navbar-inverse .nav-collapse .nav > li > a:hover, .navbar-inverse .nav-collapse .dropdown-menu a:hover{color: #ffffff;}
+    .navbar-inverse .nav .active > a {color: #ffffff !important;}
 }
 
 
