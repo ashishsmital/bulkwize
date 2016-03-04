@@ -1,10 +1,10 @@
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in login.html)
+// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessages'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -38,10 +38,11 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     })
 
     .state('app.search', {
-        url: '/search',
+        url: '/search/:searchId',
         views: {
           'menuContent': {
-            templateUrl: 'templates/search.html'
+            templateUrl: 'templates/search.html',
+            controller: 'SearchCtrl'
           }
         }
     })
@@ -59,7 +60,18 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
         url:"/register",
         views:{
             'menuContent':{
-                templateUrl:'templates/register.html'
+                templateUrl:'templates/register.html',
+                controller: 'RegisterCtrl'
+            }
+        }
+    })
+
+    .state('app.supplier', {
+        url:"/supplier",
+        views:{
+            'menuContent':{
+                templateUrl:'templates/supplier.html',
+                controller: 'SupplierCtrl'
             }
         }
     })
@@ -79,6 +91,25 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
             'menuContent': {
                 templateUrl: 'templates/home.html',
                 controller: 'HomeCtrl'
+            }
+        }
+    })
+
+    .state('app.aboutus', {
+        url: '/aboutus',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/aboutus.html'
+            }
+        }
+    })
+
+    .state('app.faq', {
+        url: '/faq',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/faq.html',
+                controller: 'FaqCtrl'
             }
         }
     })
@@ -103,7 +134,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     })
 
     .state('app.category',{
-        url:'/brand',
+        url:'/category',
         views:{
             'menuContent' : {
                 templateUrl: 'templates/category.html'
@@ -111,8 +142,18 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
         }
     })
 
+    .state('app.subcatbrand',{
+        url:'/subcatbrand/:subId/:productName',
+        views:{
+            'menuContent' : {
+                templateUrl: 'templates/subcatbrand.html',
+                controller: 'SubCategoryBrandCtrl'
+            }
+        }
+    })
+
     .state('app.subcategory',{
-        url:'/subcategory/:subId',
+        url:'/subcategory/:prodname',
         views:{
             'menuContent' : {
                 templateUrl: 'templates/subcategory.html',
@@ -122,7 +163,7 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
     })
 
     .state('app.categorydetail', {
-        url: '/categorydetail',
+        url: '/categorydetail/:pId',
         views: {
             'menuContent': {
                 templateUrl: 'templates/categorydetail.html',
@@ -137,6 +178,35 @@ angular.module('starter', ['ionic', 'starter.controllers','ngCordova'])
             'menuContent': {
                 templateUrl: 'templates/cart.html',
                 controller: 'CartCtrl'
+            }
+        }
+    })
+
+    .state('app.shipping', {
+        url: '/shipping',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/shipping.html',
+                controller: 'ShippingCtrl'
+            }
+        }
+    })
+
+    .state('app.confirm', {
+        url: '/confirm',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/confirm.html',
+                controller: 'ConfirmCtrl'
+            }
+        }
+    })
+
+    .state('app.success', {
+        url: '/success',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/success.html'
             }
         }
     })

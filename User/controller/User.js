@@ -18,7 +18,9 @@ user.post('/', function (req, res, next) {
         pan: req.body.pan,
         email: req.body.email,
         shopAddress: req.body.shopAddress,
-        deliveryAddress: req.body.deliveryAddress
+        deliveryAddress: req.body.deliveryAddress,
+		type:"com.bulkwise.User",
+		id: req.body.mobileNumber
     }
     var key;
     console.log('Creating user');
@@ -28,10 +30,12 @@ user.post('/', function (req, res, next) {
 
         key = 'com.bulkwise.User::' + jsonObject.mobileNumber;
     }
-    UserModel.getByAttribute("mobileNumber", key, function (error, result) {
+	jsonObject.id=key;
+    UserModel.getByAttribute("id", key, function (error, result) {
 
-        if (result && result.data.length>0) {
-            console.log("User results "+result)
+
+        if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+
             return res.status(400).send({"errorMessage": "User already exists"});
         } else {
             UserModel.save(jsonObject, function (error, result) {
@@ -55,7 +59,7 @@ user.get('/:user', function (req, res, next) {
 
         key = 'com.bulkwise.User::' + mobileNumber;
     }
-    UserModel.getByAttribute("mobileNumber", key, function (error, result) {
+    UserModel.getByAttribute("id", key, function (error, result) {
 
         if (result) {
             res.send(result);

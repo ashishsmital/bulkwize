@@ -1,9 +1,22 @@
 /* Empty. Add your own CSS if you like */
+body, html, div{
+    font-family: 'Open Sans', sans-serif;
+    color: #49514d;
+}
+a{
+    text-decoration: none;
+}
+.font_16{
+    font-size: 16px;
+}
 .has-subofheader{
     top: 132px;
 }
 .thumbnailSlider img{
 	max-width: 100%;
+    width: 75% !important;
+    margin-right: auto;
+    margin-left: auto;
 }
 .thumbnailSlider .slider-pager{
     bottom: 0;
@@ -11,13 +24,17 @@
 .img-responsive{
 	width: 100%;
 }
+.height1{
+    height: 200px;
+}
 .bar-pink{
-	background: #D32361;
+	background: #61B7B5;
 	color: #fff;
 	font-size: 16px;
 }
 .bar-pink div{
 	padding: 6px;
+    color: #fff;
 }
 .btn{
     padding: 5px;
@@ -47,26 +64,32 @@
 	line-height: 44px !important;
 }
 .icon-plus-round {
-    border: 1px solid #ddd;
-    border-radius: 2px;
+    border: 1px solid #61B7B5;
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 10px;
     padding-right: 10px;
+    border-radius: 50%;
+    background: #61B7B5;
+    color: #fff;
 }
 .product-quantity {
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
-    text-decoration: underline;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    display: inline-block;
 }
 .icon-minus-round {
-    border: 1px solid #ddd;
-    border-radius: 2px;
+    border: 1px solid #61B7B5;
     padding-top: 4px;
     padding-bottom: 4px;
     padding-left: 10px;
     padding-right: 10px;
+    border-radius: 50%;
+    background: #61B7B5;
+    color: #fff;
 }
 /*.product-price {
     margin-left: 15px;
@@ -79,8 +102,8 @@
 }
 .cartnumber{
     position: absolute !important;
-    top: 0 !important;
-    right: 0 !important;
+    top: -7px !important;
+    right: -6px !important;
 }
 .tab-menu{
     position: relative;
@@ -105,11 +128,19 @@
 .clear{
     clear: both;
 }
+.hr{
+    height: 1px;
+    background: #ddd;
+    display: block;
+    width: 100%;
+    border: 0;
+    margin: 15px 0 10px 0;
+}
 .left_thumb{
     float: left;
     width: 20%;
     text-align: center;
-    margin-right: 1%;
+    margin-right: 3%;
 }
 .right_thumb{
     float: right;
@@ -157,12 +188,18 @@
     font-size: 12px;
     color: red;
 }
+.red{
+    color: red;
+}
 form sup{
     color: red;
 }
 .forgot_password{
     text-align: right;
     padding: 15px;
+}
+.text-right{
+    text-align: right;
 }
 .login_button{
     padding: 16px;
@@ -172,4 +209,108 @@ form sup{
     border: 0;
     text-transform: none;
     white-space: normal;
+    padding-bottom: 0;
+}
+.perctenage_layout{
+    position: absolute;
+    padding: 3px 6px;
+    border-radius: 64px;
+    border: 2px solid #FFF;
+    background: #D55757;
+    color: #FFF;
+    right: 0;
+    top: 0;
+    text-align: center;
+    z-index: 1;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 11px;
+}
+.bar.item-input-inset .item-input-wrapper input {
+    width: 100%;
+}
+
+.search-wrapper-light {
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    background: none;
+    border-radius: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
+    color: #ffffff;
+}
+.button.button-calm,
+.bar-calm .button{
+    background: #61B7B5;
+}
+.bar.bar-calm{
+    background: #F37365;
+}
+.right-buttons .button {
+    margin-left: 5px;
+}
+.more_link{
+    color: #61B7B5;
+    margin-top: 16px;
+    text-decoration: none;
+    display: block;
+}
+.addCartButton{
+    padding: 10px 16px;
+    border-radius: 25px;
+    background: #61B7B5;
+    color: #fff;
+    margin-top: 5px;
+    width: auto;
+    display: inline-block;
+}
+.addCartButton i{
+    font-size: 17px;
+    margin-left: 15px;
+}
+.item h2{
+    color: #F37365;
+    font-family: 'Lato', sans-serif;
+}
+.button.button-positive{
+    background: #61B7B5;
+}
+.nmt{
+    margin-top: 0;
+}
+.npt{
+    padding-top: 0;
+}
+.text-justify{
+    text-align: justify;
+}
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+.accordion .item.item-stable{
+    white-space: normal;
+}
+.list .item.item-accordion {
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: 0.05s all linear;
+        white-space: normal;
+}
+.list .item.item-accordion.ng-hide {
+    line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+    display: block !important;
+}
+.menu_home{
+    width: 34px;
+    position: absolute;
+    top: 7px;
+}
+.pl_42{
+    padding-left: 42px;
 }

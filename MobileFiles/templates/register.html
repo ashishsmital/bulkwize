@@ -1,39 +1,66 @@
 <ion-view title="Register">
   <ion-content class="has-header">
+    <form class="form-horizontal padding_col6_left" role="form" name="register" novalidate method="post" ng-submit="submit(register.$valid, reg)" autocomplete="off">
     <form ng-submit="doLogin()">
       <div class="list">
         <label class="item item-input item-stacked-label">
-            <span class="input-label">Company/Shop Name</span>
-            <input type="text" placeholder="XYZ">
-            <div class="error">This field is Required</div>
+            <span class="input-label">Company/Shop Name <sup>*</sup></span>
+            <input type="text" placeholder="XYZ" name="companyname" id="companyname" class ="error" ng-model="reg.companyname" required>
+            <div class="validation-error" ng-if="(register.$submitted || register.companyname.$touched)" ng-messages="register.companyname.$error" >
+                <div ng-message="required" class="error">Company/Shop Name is required</div>
+            </div>
         </label>
         <label class="item item-input item-stacked-label">
-            <span class="input-label">Mobile Number</span>
-            <input type="text" placeholder="+91 XXXXXXXXXX">
+            <span class="input-label">Mobile Number <sup>*</sup></span>
+            <input type="text" placeholder="+91 XXXXXXXXXX" name="mob" id="mob" class="error" ng-model="reg.mob" required>
+            <div class="validation-error" ng-if="(register.$submitted || register.mob.$touched)" ng-messages="register.mob.$error" >
+                <div ng-message="required" class="error">Mobile Number is required</div>
+
+            </div>
         </label>
         <label class="item item-input item-stacked-label">
-            <span class="input-label">Password</span>
-            <input type="text" placeholder="****">
+            <span class="input-label">Password <sup>*</sup></span>
+            <input type="password" placeholder="****" name="password" id="password" class="error" ng-model="reg.password" required>
+            <div class="validation-error" ng-if="(register.$submitted || register.password.$touched)" ng-messages="register.password.$error" >
+                <div ng-message="required" class="error">Password is required</div>
+            </div>
         </label>
         <label class="item item-input item-stacked-label">
-            <span class="input-label">Confirm Password</span>
-            <input type="text" placeholder="****">
+            <span class="input-label">Confirm Password <sup>*</sup></span>
+            <input type="password" placeholder="****" name="confirmpassword" id="confirmpassword" class="error" ng-model="reg.confirmpassword" required compare-to="reg.password">
+            <div class="validation-error" ng-if="(register.$submitted || register.confirmpassword.$touched || register.confirmpassword.$error.otherModelValue)" ng-messages="register.confirmpassword.$error" >
+                <div ng-message="required" class="error">Confirm Password is required</div>
+                <div ng-message="otherModelValue" class="error">test</div>
+            </div>
         </label>
         <label class="item item-input item-stacked-label">
             <span class="input-label">First Name <sup>*</sup></span>
-            <input type="text" placeholder="John">
+            <input type="text" placeholder="John" name="firstname" id="firstname" class="error" ng-model="reg.firstname" required>
+            <div class="validation-error" ng-if="(register.$submitted || register.firstname.$touched)" ng-messages="register.firstname.$error" >
+                <div ng-message="required" class="error">First Name is required</div>
+            </div>
         </label>
         <label class="item item-input item-stacked-label">
-            <span class="input-label">Last Name</span>
-            <input type="text" placeholder="Doe">
+            <span class="input-label">Last Name <sup>*</sup></span>
+            <input type="text" placeholder="Doe" name="lastname" id="lastname" class="error" ng-model="reg.lastname" required>
+            <div class="validation-error" ng-if="(register.$submitted || register.lastname.$touched)" ng-messages="register.lastname.$error" >
+                <div ng-message="required" class="error">Last Name is required</div>
+            </div>
         </label>
         <label class="item item-input item-stacked-label">
-            <span class="input-label">PAN Number</span>
-            <input type="text" placeholder="1234578">
+            <span class="input-label">PAN Number <sup>*</sup></span>
+            <input type="text" placeholder="1234578" name="panumber" id="panumber" class="error" ng-model="reg.panumber" required>
+            <div class="validation-error" ng-if="(register.$submitted || register.panumber.$touched)" ng-messages="register.panumber.$error" >
+                <div ng-message="required" class="error">PAN Number is required</div>
+            </div>
         </label>
         <label class="item item-input item-stacked-label">
-            <span class="input-label">Email</span>
-            <input type="text" placeholder="sample@sample.com">
+            <span class="input-label">Email <sup>*</sup></span>
+            <input type="email" placeholder="sample@sample.com" name="email" id="email" class="error" ng-model="reg.email" required>
+            <div class="validation-error" ng-if="(register.$submitted || register.email.$touched )" ng-messages="register.email.$error" >
+                <div ng-message="required" class="error">Email is required</div>
+                <div ng-message="email" class="error">This needs to be a valid email</div>
+            </div>
         </label>
         <label class="item item-input item-stacked-label">
             <span class="input-label">Shop Address</span>
@@ -60,12 +87,15 @@
             <input type="text" placeholder="560012">
         </label>
         <label class="item item-input item-stacked-label">
-            <span class="input-label">Consumer Type</span>
-            <select>
-                <option>--Select Type--</option>
+            <span class="input-label">Consumer Type <sup>*</sup></span>
+            <select name="consumertype" id="consumertype" ng-model="reg.consumertype" required>
+                <option value="">--Select Type--</option>
                 <option>Supplier</option>
                 <option>Buyer</option>
             </select>
+            <div class="validation-error" ng-if="(register.$submitted || register.consumertype.$touched)" ng-messages="register.consumertype.$error" >
+                <div ng-message="required" class="error">Consumer Type is required</div>
+            </div>
         </label>
         <label class="item">
           <button class="button button-block button-positive" type="submit">Save</button>

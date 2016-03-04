@@ -17,7 +17,7 @@ var Bulkwize = "Bulkwize";
  */
 shoppingcart.get('/user/:userid', function (req, res, next) {
 
-    ShoppingCartModel.getByAttribute("id", 'com.bulkwize.Cart::' + req.params['userid'], function (error, result) {
+    ShoppingCartModel.getByAttribute("id", 'com.bulkwise.Cart::' + req.params['userid'], function (error, result) {
         if (error) {
             return res.status(400).send(error);
         } else {

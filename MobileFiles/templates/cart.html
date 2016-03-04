@@ -1,58 +1,60 @@
-<ion-view view-title="Total: 123978">
-  	<ion-content>
+<ion-view view-title="Cart details">
+  	<ion-content >
     	<div class="list font_price category_list">
-		    <div class="item" ng-repeat="cartDetail in cartDetails">
-		    	<div class="left_thumb">
-		      		<img src="http://www.allure.com/images/beauty-products/hair/2013/head-shoulders-damage-rescue-shampoo.jpg">
-		      	</div>
-		      	<div>
-			      	<h2>Head Shoulders Sampoo</h2>
-			      	<p>Damage Rescue Shampoo</p>
+		    <div class="item" ng-repeat="cartDetail in cartDetails.products">
+		    	<div ui-sref="app.categorydetail({ pId: cartDetail.id})">
+			    	<div class="left_thumb">
+			      		<img src="http://52.73.228.44:8080{{cartDetail.productBrandImageURL}}">
+			      	</div>
+			      	<div>
+				      	<h2>{{cartDetail.productBrandName}}</h2>
+				      	<p>{{cartDetail.productShortSummary}}</p>
+				    </div>
+			    	<div class="clear"></div>
 			    </div>
-			    <div class="clear"></div>
 
-				<div class="mt_10">
+			    <div class="mt_10">
 					<table class="table">
 						<tr>
 							<th>Size</th>
-							<th>Case count</th>
+							<th>Units/case</th>
 							<th>Price</th>
-							<th>Ordr. Qty</th>
+							<th>No of cases</th>
 						</tr>
 						<tbody>
-							<tr>
-								<td>12</td>
-								<td>white</td>
-								<td>123</td>
+							<tr ng-repeat="productVariant in cartDetail.variants">
+								<td>{{productVariant.productUnitSizeWeightQty}}</td>
+								<td>{{productVariant.productCountInCase}}</td>
+								<td>{{productVariant.productMRPUnit}}</td>
 								<td>
-									<i class="icon ion-plus-round icon-plus-round" ng-click="addProduct()"></i>
-							      	<span class="product-quantity">{{productqty}}</span>
-							      	<i class="icon ion-minus-round icon-minus-round" ng-click="removeProduct()"></i>
-								</td>
-							</tr>
-							<tr>
-								<td>12</td>
-								<td>white</td>
-								<td>123</td>
-								<td>
-									<i class="icon ion-plus-round icon-plus-round" ng-click="addProduct()"></i>
-							      	<span class="product-quantity">{{productqty}}</span>
-							      	<i class="icon ion-minus-round icon-minus-round" ng-click="removeProduct()"></i>
+									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+							      	<span class="product-quantity">{{productVariant.quantity}}</span>
+							      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
 								</td>
 							</tr>
 						</tbody>
-						<tfoot>
-							<tr>
-								<td colspan="3">Sub total</td>
-								<td>7945</td>
-							</tr>
-						</tfoot>
 					</table>
+				</div>
+				<div class="row">
+					
+					<div class="col">
+						<div class="addCartButton" ng-click="addCart(cartDetail)">
+						 	Updated to Cart<i class="ion-android-cart"></i>
+						</div>
+					</div>
+					<div class="col text-right">
+						<div class="addCartButton" ng-click="delete(cartDetail)">
+						 	Remove <i class="ion-close"></i>
+						</div>
+					</div>
 				</div>
 		    </div>
 		</div>
   	</ion-content>
-	<ion-footer-bar class="bar bar-footer bar-assertive">
-  		<div class="title cart-footer" ng-click="addCart(data)">Proceed</div>
-  	</ion-footer-bar>
+  	<ion-footer-bar class="bar bar-dark cart_button">
+		<div class="button-bar">
+			<a class="button button-calm " ui-sref="#">Total: $1538</a>
+			<a class="button button-assertive" ui-sref="app.shipping">Checkout</a>
+		</div>
+	</ion-footer-bar>
 </ion-view>

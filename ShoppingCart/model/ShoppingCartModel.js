@@ -46,7 +46,7 @@ ShoppingCartModel.save = function(data, callback) {
         createdAt : new Date(),
         updatedAt : new Date()
     }
-    var documentId = data.customer_id ? data.customer_id : data.session_id;
+    var documentId = data.id ? data.id : data.session_id;
 
 
 

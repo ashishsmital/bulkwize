@@ -2,35 +2,23 @@
 	<div class="item-input-inset has-header padding_6">
 		<label class="item-input-wrapper">
 		    <i class="icon ion-ios-search placeholder-icon"></i>
-		    <input type="search" placeholder="Search">
+		    <input type="search" placeholder="Search" ng-model="search">
 		</label>
-		<button class="button button-small button-calm">
+		<button class="button button-small button-calm" ui-sref="app.search({ searchId: search})">
 	     	<i class="icon ion-ios-search"></i>
 	    </button>
 	</div>
-	<div class="bar bar-pink has-subheader">
-  		<div>Home</div>
-	</div>
-  	<ion-content class="has-subofheader">
-  	<!-- 	<div class="list">
-
-		    <a class="item item-avatar" ui-sref="app.categorylist({ cid: cat.category})" ng-repeat="cat in data">
-		      	<img ng-src="{{cat.image}}">
-		      	<h2>{{cat.name}}</h2>
-		      	<p>{{cat.description}}</p>
-		    </a>
-
-		</div> -->
+  	<ion-content class="has-subheader">
 		<ion-slide-box on-slide-changed="slideHasChanged($index)">
-		  	<ion-slide ng-repeat="bannerImage in dummyImage" data>
+		  	<ion-slide ng-repeat="bannerImage in promotionImage">
 		    	<div class="box">
-		    		<img ng-src="{{bannerImage.image}}" alt="" class="img-responsive">
+		    		<img ng-src="http://52.73.228.44:8080{{bannerImage}}" alt="" class="img-responsive height1">
 		    	</div>
 		  	</ion-slide>
 		</ion-slide-box>
 		<div class="thumbnailSlider">
 			<div class="row nop_b text-uppercase">
-			  	<div class="col col-75">Top Brand</div>
+			  	<div class="col col-75 font_16">Brands with maximum discounts</div>
 			  	<div class="col text-right"><a ui-sref="app.brand" class="btn">View All</a></div>
 			</div>
 			<ion-slide-box on-slide-changed="slideHasChanged($index)">
@@ -74,16 +62,19 @@
 			  	</ion-slide>
 			</ion-slide-box>
 		</div>
+		<div class="clear"></div>
+		<hr class="hr">
 		<div class="thumbnailSlider">
 			<div class="row nop_b text-uppercase">
-			  	<div class="col col-75">Category</div>
+			  	<div class="col col-75 font_16">Categories</div>
 			  	<div class="col text-right"><a ui-sref="app.category" class="btn btn-assetive">View All</a></div>
 			</div>
 			<owl-slider class="owl-carousel">
 	           <div class="item" owl-carousel-item="" ng-repeat="items in category">
-	              	<a ui-sref="app.subcategory({ subId: items.Bulkwize.parentCategoryId})">
-	              		<img src="http://www.casheltravel.com/system/images/456/original/BANNER-Michelin.jpg?1434032844" />
-	              		{{items.Bulkwize.category_name}}
+	              	<a ui-sref="app.subcatbrand({ subId: items.Bulkwize.id, productName : items.Bulkwize.category_name})">
+	              		<img ng-src="http://52.73.228.44:8080{{items.Bulkwize.category_img_url}}" />
+	              		<span class="perctenage_layout">Upto {{items.Bulkwize.maximum_discount_percentage}} %</span>
+	              		<div>{{items.Bulkwize.category_name | limitTo: 20}} <span ng-show="items.Bulkwize.category_name.length > 20">...</span></div>
 	              	</a>
 	            </div>
 	        </owl-slider>

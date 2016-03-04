@@ -1,63 +1,66 @@
-<ion-view title="Sub Category" ng-init="count=0">
+<ion-view title="{{title}}">
 	<div class="item-input-inset has-header padding_6">
 		<label class="item-input-wrapper">
 		    <i class="icon ion-ios-search placeholder-icon"></i>
-		    <input type="search" placeholder="Search">
+		    <input type="search" placeholder="Search" ng-model="search">
 		</label>
-		<button class="button button-small button-calm">
+		<button class="button button-small button-calm" ui-sref="app.search({ searchId: search})">
 	     	<i class="icon ion-ios-search"></i>
 	    </button>
 	</div>
   	<ion-content class="has-subheader">
-  		
-	  		<owl-slider class="owl-carousel checkbox-slider">
-
-	          	<ion-checkbox ng-model="hello" owl-carousel-item="" ng-repeat="items in subCategory" owl-carousel-item="" class="item" ng-change="change(items)" ng-true-value="'items.Bulkwize.id'"
-                      ng-false-value="">
-
-	            	<img src="http://ecx.images-amazon.com/images/I/51o1LFaBwdL._SY300_.jpg">
-	            	{{items.Bulkwize.category_name}}
-	            </ion-checkbox>
-
-	    	</owl-slider>
-	    
         <div class="list font_price">
         	<div class="list font_price category_list">
-			    <div class="item" ng-repeat="list in lists">
-			    	<div class="left_thumb">
-			      		<img src="http://yearofrealeating.com/wp-content/uploads/2014/11/oast.jpg">
-			      	</div>
-			      	<div>
-				      	<h2>{{list.Bulkwize.productBrandName}}</h2>
-				      	<p>Damage Rescue Shampoo</p>
-				    </div>
-				    <div class="clear"></div>
-
+			    <div class="item" ng-repeat="list in lists" ng-show="list.brand">
+			    	<div ui-sref="app.categorydetail({ pId: list.brand.id})">
+				    	<div class="left_thumb">
+				      		<img ng-src="http://52.73.228.44:8080{{list.brand.productBrandImageURL}}">
+				      	</div>
+				      	<div>
+					      	<h2>{{list.brand.productBrandName}}</h2>
+					      	<p>{{list.brand.productShortSummary}}</p>
+					      	<!-- <p>Discount : <span class="red">{{list.bran}}</span></p> -->
+					    </div>
+					    <div class="clear"></div>
+					</div>
 					<div class="mt_10">
 						<table class="table">
 							<tr>
 								<th>Size</th>
-								<th>Case count</th>
+								<th>Units/case</th>
 								<th>Price</th>
-								<th>Ordr. Qty</th>
+								<th>No of cases</th>
 							</tr>
 							<tbody>
-								<tr ng-repeat="productVariant in list.Bulkwize.productVariants">
+								<tr ng-repeat="productVariant in list.brand.productVariants">
 									<td>{{productVariant.productUnitSizeWeightQty}}</td>
-									<td>white</td>
-									<td>{{productVariant.productMRPUnit}}</td>
+									<td>{{productVariant.productCountInCase}}</td>
 									<td>
-										<button class="icon ion-plus-round icon-plus-round" ng-click="count = count + 1"></button>
-								      	<span class="product-quantity">{{count}}</span>
-								      	<button class="icon ion-minus-round icon-minus-round" ng-disabled="count == 0" ng-click="count = count - 1"></button>
+										<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
+											{{productVariant.productMRPUnit}}
+											{{productVariant.discount}}
+									</td>
+									<td>
+										<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+								      	<span class="product-quantity">{{productVariant.productOrderedQty}}</span>
+								      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
 									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					<div class="button-bar custom_view_button mt_10">
-					  	<a class="button button-calm" ui-sref="app.categorydetail">View</a>
-					  	<a class="button button-assertive" ng-click="addCart(list, {{count}})">Add to Cart</a>
+					
+					<div class="row">
+						<div class="col">
+							<a ui-sref="app.categorydetail({ pId: list.brand.id})" class="more_link">
+								More Details <i class="ion-arrow-right-c"></i>
+							</a>
+						</div>
+						<div class="col text-right">
+							<div class="addCartButton" ng-click="addCart(list)">
+							 	Add to Cart <i class="ion-android-cart"></i>
+							</div>
+						</div>
 					</div>
 			    </div>
 			</div>

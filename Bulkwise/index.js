@@ -52,12 +52,14 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
+
 passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, password, done) {
     process.nextTick(function() {
         // Auth Check Logic
-        console.log(username+'  '+password)
+        console.log(username+password)
         UserModel.getByAttribute("mobileNumber", username, function (error, result) {
 
+            console.log('Username' + result.data.length)
             if (result && result.data.length>0) {
                 name  = result.data[0].Bulkwize.mobileNumber;
                 pass = result.data[0].Bulkwize.password;
@@ -74,7 +76,7 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                             console.log('Got shopping cart for the session ')
                             var object  = result.data[0].Bulkwize;
                             object.customer_id = name;
-                            object.id ='com.bulkwize.Cart::'+name;
+                            object.id ='com.bulkwise.Cart::'+name;
                             ShoppingCartModel.save(object,function(error,result){
                                 console.log('Got shopping cart for the session and saving for the user ')
                                 if(result && result.data.length >0){
@@ -103,6 +105,8 @@ console.log('Magic happens on port ' + port);
 
 app.use(function (req, res, next) {
 
+    console.log("the incoming request is --"+req.body +" and the URL is -->" + req.url);
+
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -121,6 +125,13 @@ app.use(function (req, res, next) {
     isAuthenticated(req, res, next);
 });
 
+// we'll create our controller here
+app.use('/', main);
+
+
+// apply the controller to our application
+app.use('/category', category);
+
 var isAuthenticated = function (req, res, next) {
 
     // do any checks you want to in here
@@ -128,19 +139,25 @@ var isAuthenticated = function (req, res, next) {
     // CHECK THE USER STORED IN SESSION FOR A CUSTOM VARIABLE
     // you can do this however you want with whatever variables you set up
     console.log(req.isAuthenticated());
-    if (req.isAuthenticated() || req.url=='/login' || req.url=='/' || req.url=='/shoppingcart'|| req.url=='/user' )
+
+
+    if(req.isAuthenticated()){
+        console.log("The user is authentication - " + req.isAuthenticated() + " and hence allowing to process");
         return next();
+    }else if(req.url !='/shoppingcart'){
+        console.log("The URL does not mandate authentication  and hence allowing to process");
+        return next();
+    }else if(req.url !='/order'){
+        console.log("The URL does not mandate authentication  and hence allowing to process");
+        return next();
+    }else if(req.url =='/order' && req.isAuthenticated()){
+        console.log("The URL mandates authentication and user authentication is "+ req.isAuthenticated() +"  and hence allowing to process");
+        return next();
+    }
 
     // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SOMEWHERE
     res.redirect('/login');
 }
-
-
-// we'll create our controller here
-app.use('/', main);
-
-// apply the controller to our application
-app.use('/category', category);
 app.use('/products', products);
 app.use('/shoppingcart', shoppingcart);
 app.use('/supplier', supplier);
@@ -149,5 +166,4 @@ app.use('/order', order);
 app.use('/user', user);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
-
 
