@@ -50,7 +50,7 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
-passport.use(new LocalStrategy(function(username, password, done) {
+passport.use(new LocalStrategy(function(req,res,username, password, done) {
     process.nextTick(function() {
         // Auth Check Logic
 
@@ -61,7 +61,8 @@ passport.use(new LocalStrategy(function(username, password, done) {
                 pass = result.data[0].Bulkwize.password;
                 if(password == pass)
                 var user ={'user':name};
-                return done(null,user);
+                //return done(null,user);
+				return res.redirect(reg.params['loginSuccess']);
             } else {
                 return done(null, false,{message:'Incorrect password'});
             }
