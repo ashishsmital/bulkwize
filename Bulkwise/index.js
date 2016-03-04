@@ -62,7 +62,7 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(username, passw
                 if(password == pass)
                 var user ={'user':name};
                 //return done(null,user);
-				return res.redirect(req.body.loginSuccess);
+				return req.res.status(200).json({message:"Successfully logged in"});
             } else {
                 return done(null, false,{message:'Incorrect password'});
             }
