@@ -31,13 +31,6 @@ main.get('/registration', function(req, res, next) {
 });
 
 
-main.post('/login',
-    passport.authenticate('local', {
-            successRedirect: '/loginSuccess',
-            failureRedirect: '/loginFailure'
-    })
-);
-
 
 main.post('/login',
     passport.authenticate('local', {
@@ -49,11 +42,11 @@ main.post('/login',
 
 
 main.get('/loginFailure', function(req, res, next) {
-        res.send('Failed to authenticate');
+    res.status(401).json({message:"Unauthorized"});
 });
 
 main.get('/loginSuccess', function(req, res, next) {
-        res.send('Successfully authenticated');
+    req.res.status(200).json({message:"Successfully logged in Devaraj"});
 });
 
 //exporting module

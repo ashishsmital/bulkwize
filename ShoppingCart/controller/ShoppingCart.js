@@ -17,7 +17,33 @@ var Bulkwize = "Bulkwize";
  */
 shoppingcart.get('/user/:userid', function (req, res, next) {
 
-    ShoppingCartModel.getByAttribute("id", 'com.bulkwise.Cart::' + req.params['userid'], function (error, result) {
+    ShoppingCartModel.getByAttribute("id", 'com.bulkwize.Cart::' + req.params['userid'], function (error, result) {
+        if (error) {
+            return res.status(400).send(error);
+        } else {
+            if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+                console.log('the retrieved cart is ' + result.data);
+                var sum = 0
+                _.each(result.data[0].Bulkwize.products, function (ele) {
+
+                    sum += ele.variants.length;
+
+                });
+                _.extend(result.data[0].Bulkwize, {'totalCount': sum});
+            }
+
+        }
+        res.send(result);
+    });
+});
+
+
+/**
+ * get Shoppingcart
+ */
+shoppingcart.get('/', function (req, res, next) {
+
+    ShoppingCartModel.getByAttribute("session_id", req.sessionID, function (error, result) {
         if (error) {
             return res.status(400).send(error);
         } else {
@@ -260,8 +286,8 @@ var populateKeyValue = function (req, data, queryData) {
         queryData['key'] = 'session_id';
         queryData['value'] = data.session_id;
     } else {
-        queryData['key'] = 'customer_id';
-        queryData['value'] = data.customer_id;
+        queryData['key'] = 'id';
+        queryData['value'] ='com.bulkwize.Cart::'+data.id;
     }
 
 
@@ -284,6 +310,7 @@ var populateVariants = function (dbVariants, siteVariants) {
 
     }
 };
+
 
 
 // export product module

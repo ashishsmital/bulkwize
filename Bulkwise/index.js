@@ -12,12 +12,14 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var _ = require('underscore');
 
 //importing middleware modules
 var main =require('./main.js');
 var category = require('category/controller/Category.js');
 var products = require('products/controller/Products.js');
 var shoppingcart = require('shoppingcart/controller/ShoppingCart.js');
+var ShoppingCartModel = require('shoppingcart/model/ShoppingCartModel.js');
 var supplier = require('supplier/controller/Supplier.js');
 var promotion = require('promotion/controller/Promotion.js');
 var user = require('user/controller/User.js');
@@ -50,27 +52,41 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
-passport.use(new LocalStrategy(function(username, password, done) {
+passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, password, done) {
     process.nextTick(function() {
         // Auth Check Logic
-
+        console.log(username+'  '+password)
         UserModel.getByAttribute("mobileNumber", username, function (error, result) {
 
             if (result && result.data.length>0) {
                 name  = result.data[0].Bulkwize.mobileNumber;
                 pass = result.data[0].Bulkwize.password;
                 if(password == pass)
-                var user ={'user':name};
-               shoppingcart.populateCartDetails(username,done,function(error,result,done){
-                    if(error){
-                        console.log('Error in updating the cart');
-                        return done(null, false,{message:'Incorrect password'});
-                    }else{
-                        console.log('Success in updating the cart');
-                        return done(null,user);
+                    var user ={'user':name};
+                console.log('Username' + name)
+                ShoppingCartModel.getByAttribute("session_id", req.sessionID, function (error, result) {
+                    if (error) {
+                        console.log('Error updating shopping cart');
+                    } else {
+                        console.log('result from shopping cart'+ result.data.length)
+                        var res = req.res;
+                        if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+                            console.log('Got shopping cart for the session ')
+                            var object  = result.data[0].Bulkwize;
+                            object.customer_id = name;
+                            object.id ='com.bulkwize.Cart::'+name;
+                            ShoppingCartModel.save(object,function(error,result){
+                                console.log('Got shopping cart for the session and saving for the user ')
+                                if(result && result.data.length >0){
+                                    return done(null, user);
+                                }
+                            });
+                        }
+
                     }
                 });
 
+                return done(null, user);
             } else {
                 return done(null, false,{message:'Incorrect password'});
             }
@@ -78,7 +94,6 @@ passport.use(new LocalStrategy(function(username, password, done) {
 
     });
 }));
-
 
 
 

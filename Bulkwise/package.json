@@ -17,16 +17,16 @@
     "dbutil": "../DBUtil",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
+    "order": "../Order",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "products": "../Products",
+    "promotion": "../Promotions",
     "request": "2.69.0",
     "shoppingcart": "../ShoppingCart",
     "supplier": "../Supplier",
-	"promotion": "../Promotions",
-    "user": "../User",
-	"order": "../Order",
     "underscore": "^1.8.3",
+    "user": "../User",
     "uuid": "^2.0.1"
   }
 }

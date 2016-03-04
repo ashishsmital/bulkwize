@@ -21,7 +21,7 @@ user.post('/', function (req, res, next) {
         deliveryAddress: req.body.deliveryAddress
     }
     var key;
-
+    console.log('Creating user');
     if (jsonObject.mobileNumber.indexOf('bulkwise') > -1) {
         key = jsonObject.mobileNumber;
     } else {
@@ -30,13 +30,15 @@ user.post('/', function (req, res, next) {
     }
     UserModel.getByAttribute("mobileNumber", key, function (error, result) {
 
-        if (result) {
+        if (result && result.data.length>0) {
+            console.log("User results "+result)
             return res.status(400).send({"errorMessage": "User already exists"});
         } else {
             UserModel.save(jsonObject, function (error, result) {
                 if (error) {
                     return res.status(400).send(error);
                 }
+                console.log('User Created');
                 res.send(result);
             });
         }

@@ -33,8 +33,13 @@ UserModel.save = function(data, callback) {
         shopAddress:data.shopAddress,
         deliveryAddress:data.deliveryAddress
     }
-    var documentId = data.mobileNumber+'';
+    var documentId;
+    if (jsonObject.mobileNumber.indexOf('bulkwise') > -1) {
+        documentId = jsonObject.mobileNumber;
+    } else {
 
+        documentId = 'com.bulkwise.User::' + jsonObject.mobileNumber;
+    }
     db.upsert(documentId, jsonObject, function(error, result) {
         if(error) {
             callback(error, null);
