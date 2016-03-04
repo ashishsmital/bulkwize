@@ -50,7 +50,7 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 
-passport.use(new LocalStrategy(function(req,res,username, password, done) {
+passport.use(new LocalStrategy(function(username, password, done) {
     process.nextTick(function() {
         // Auth Check Logic
 
@@ -61,8 +61,8 @@ passport.use(new LocalStrategy(function(req,res,username, password, done) {
                 pass = result.data[0].Bulkwize.password;
                 if(password == pass)
                 var user ={'user':name};
-                //return done(null,user);
-				return res.redirect(reg.params['loginSuccess']);
+                return done(null,user);
+				//return res.redirect(reg.params['loginSuccess']);
             } else {
                 return done(null, false,{message:'Incorrect password'});
             }
@@ -133,4 +133,11 @@ app.use('/user', user);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
 
-
+app.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.redirect(re.params['loginSuccess']);
+  }
+);
