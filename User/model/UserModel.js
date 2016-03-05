@@ -35,8 +35,10 @@ UserModel.save = function(data, callback) {
 		type:"com.bulkwise.User",
 		id:data.id
     }
+
     var documentId = data.id+'';
 
+    //documentId = 'com.bulkwise.User::' + jsonObject.mobileNumber;
     db.upsert(documentId, jsonObject, function(error, result) {
         if(error) {
             callback(error, null);

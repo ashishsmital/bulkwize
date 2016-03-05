@@ -23,7 +23,7 @@ user.post('/', function (req, res, next) {
 		id: req.body.mobileNumber
     }
     var key;
-
+    console.log('Creating user');
     if (jsonObject.mobileNumber.indexOf('bulkwise') > -1) {
         key = jsonObject.mobileNumber;
     } else {
@@ -31,15 +31,18 @@ user.post('/', function (req, res, next) {
         key = 'com.bulkwise.User::' + jsonObject.mobileNumber;
     }
 	jsonObject.id=key;
-    UserModel.getByAttribute("mobileNumber", key, function (error, result) {
+    UserModel.getByAttribute("id", key, function (error, result) {
+
 
         if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+
             return res.status(400).send({"errorMessage": "User already exists"});
         } else {
             UserModel.save(jsonObject, function (error, result) {
                 if (error) {
                     return res.status(400).send(error);
                 }
+                console.log('User Created');
                 res.send(result);
             });
         }
