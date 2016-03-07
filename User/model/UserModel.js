@@ -31,10 +31,14 @@ UserModel.save = function(data, callback) {
         pan:data.pan,
         email:data.email,
         shopAddress:data.shopAddress,
-        deliveryAddress:data.deliveryAddress
+        deliveryAddress:data.deliveryAddress,
+		type:"com.bulkwise.User",
+		id:data.id
     }
-    var documentId = data.mobileNumber+'';
 
+    var documentId = data.id+'';
+
+    //documentId = 'com.bulkwise.User::' + jsonObject.mobileNumber;
     db.upsert(documentId, jsonObject, function(error, result) {
         if(error) {
             callback(error, null);
@@ -57,7 +61,7 @@ UserModel.save = function(data, callback) {
  */
 UserModel.getByAttribute = function(attribute,value, callback) {
 
-    var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"'");
+    var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"' and type='com.bulkwise.User'");
     db.query(query, function(error, result) {
         if (error) {
             callback(error, null);

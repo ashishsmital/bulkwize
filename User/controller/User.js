@@ -18,25 +18,31 @@ user.post('/', function (req, res, next) {
         pan: req.body.pan,
         email: req.body.email,
         shopAddress: req.body.shopAddress,
-        deliveryAddress: req.body.deliveryAddress
+        deliveryAddress: req.body.deliveryAddress,
+		type:"com.bulkwise.User",
+		id: req.body.mobileNumber
     }
     var key;
-
+    console.log('Creating user');
     if (jsonObject.mobileNumber.indexOf('bulkwise') > -1) {
         key = jsonObject.mobileNumber;
     } else {
 
         key = 'com.bulkwise.User::' + jsonObject.mobileNumber;
     }
-    UserModel.getByAttribute("mobileNumber", key, function (error, result) {
+	jsonObject.id=key;
+    UserModel.getByAttribute("id", key, function (error, result) {
 
-        if (result) {
+
+        if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+
             return res.status(400).send({"errorMessage": "User already exists"});
         } else {
             UserModel.save(jsonObject, function (error, result) {
                 if (error) {
                     return res.status(400).send(error);
                 }
+                console.log('User Created');
                 res.send(result);
             });
         }
@@ -53,7 +59,7 @@ user.get('/:user', function (req, res, next) {
 
         key = 'com.bulkwise.User::' + mobileNumber;
     }
-    UserModel.getByAttribute("mobileNumber", key, function (error, result) {
+    UserModel.getByAttribute("id", key, function (error, result) {
 
         if (result) {
             res.send(result);

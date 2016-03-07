@@ -2,59 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5497d72-4647-4bf1-a833-e94b93080265" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/.eslintignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/.eslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/component.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/dist/qs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/lib/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/lib/parse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/lib/stringify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/lib/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/test/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/test/parse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/test/stringify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/body-parser/node_modules/qs/test/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/http-signature/lib/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._basetostring/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._basetostring/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._basetostring/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._basetostring/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._createpadding/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._createpadding/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._createpadding/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._createpadding/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._root/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._root/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._root/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash._root/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash.padleft/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash.padleft/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash.padleft/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash.padleft/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash.padright/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash.padright/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash.padright/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/lodash.padright/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/node_modules/npmlog/.npmrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/node_modules/npmlog/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/node_modules/npmlog/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/node_modules/npmlog/example.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/node_modules/npmlog/log.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/node_modules/npmlog/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/node_modules/npmlog/test/basic.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/node_modules/npmlog/test/progress.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/request/disabled.appveyor.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/request/examples/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/request/release.sh" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/couchbase/build/Release/couchbase_impl.node" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/couchbase/build/Release/couchbase_impl.node" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/img/home.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/apple-touch-icon-114x114-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/apple-touch-icon-144x144-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/apple-touch-icon-57x57-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/apple-touch-icon-72x72-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/apple-touch-icon-precomposed.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/apple-touch-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/Mobile-Icon-White-on-Grey.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/android-device-grey.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-ambipur.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-ariel.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-duracell.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-gillete.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-headandshoulder.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-olay.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-oldspice.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-oralb.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-pampers.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-tide.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-vicks.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/brand-whisper.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/britannia.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/itc.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/brand/pg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/bulkwize-logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/bulkwize.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/glyphicons-halflings-white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/glyphicons-halflings.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/hero-img.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/logo/logo-bittersweet.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/logo/logo-black.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/logo/logo-white.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/AddtoCart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/ChoseCategoryBrand.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/RegisterBuyer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/RegisterSupplier.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/ShippingDetails.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/add-to-cart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/choose-category-brand.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/iam-a-supplier.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/register-buyer.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/img/screenshots/shipping-details.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/js/angular-message.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/templates/aboutus.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/templates/confirm.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/templates/faq.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/templates/shipping.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/templates/subcatbrand.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/templates/success.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/MobileFiles/templates/supplier.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/.htaccess" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/404.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/crossdomain.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/css/bootstrap-responsive.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/css/bootstrap-responsive.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/css/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/css/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/humans.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index_files/bootstrap-responsive.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index_files/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index_files/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index_files/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index_files/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index_files/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index_files/modernizr-2.6.2-respond-1.1.0.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/index_files/plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/js/plugins.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/js/vendor/bootstrap.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/js/vendor/bootstrap.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/js/vendor/jquery-1.8.3.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/website/robots.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/couchbase/build/Release/libcbsasl.a" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/couchbase/build/Release/libcbsasl.a" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/couchbase/build/Release/libcjson.a" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/couchbase/build/Release/libcjson.a" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/couchbase/build/Release/libcouchbase.a" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/couchbase/build/Release/libcouchbase.a" />
@@ -170,34 +194,25 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/tar/test/cb-never-called-1.0.1.tgz" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/tar/test/cb-never-called-1.0.1.tgz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/tar/test/dir-normalization.tar" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/tar/test/dir-normalization.tar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/tar/test/fixtures.tgz" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/tar/test/fixtures.tgz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Households/cleaning.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Households/cleaning.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Households/fragrances.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Households/fragrances.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Personalcare/baby-care.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Personalcare/baby-care.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Personalcare/cosmetics.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Personalcare/cosmetics.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Personalcare/grooming.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Personalcare/grooming.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Personalcare/health-care.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Personalcare/health-care.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Personalcare/oral-care.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Personalcare/oral-care.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Personalcare/perfumes.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Personalcare/perfumes.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Personalcare/soaps-shampoos.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Personalcare/soaps-shampoos.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/Personalcare/women-hygiene.png" afterPath="$PROJECT_DIR$/appcontent/images/category/Personalcare/women-hygiene.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/category-perosnalcare.jpg" afterPath="$PROJECT_DIR$/appcontent/images/category/category-perosnalcare.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/foods-beverages.png" afterPath="$PROJECT_DIR$/appcontent/images/category/foods-beverages.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/households.png" afterPath="$PROJECT_DIR$/appcontent/images/category/households.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/personal-care.png" afterPath="$PROJECT_DIR$/appcontent/images/category/personal-care.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/tech.png" afterPath="$PROJECT_DIR$/appcontent/images/category/tech.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/category/tech/batteries.png" afterPath="$PROJECT_DIR$/appcontent/images/category/tech/batteries.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/promotions/carousel/aveda-shampure-dry-shampoo-2.jpg" afterPath="$PROJECT_DIR$/appcontent/images/promotions/carousel/aveda-shampure-dry-shampoo-2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/promotions/carousel/restaurant.jpeg" afterPath="$PROJECT_DIR$/appcontent/images/promotions/carousel/restaurant.jpeg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/promotions/carousel/shutterstock_21820732.jpg" afterPath="$PROJECT_DIR$/appcontent/images/promotions/carousel/shutterstock_21820732.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bulkwise/index.js" afterPath="$PROJECT_DIR$/Bulkwise/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bulkwise/views/registration.html" afterPath="$PROJECT_DIR$/Bulkwise/views/registration.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DBUtil/conf/P&amp;G DEC Updated Price List nw-3.csv" afterPath="$PROJECT_DIR$/DBUtil/conf/P&amp;G DEC Updated Price List nw-3.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Order/Readme.md" afterPath="$PROJECT_DIR$/Order/Readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Order/controller/Order.js" afterPath="$PROJECT_DIR$/Order/controller/Order.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Order/index.js" afterPath="$PROJECT_DIR$/Order/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Order/model/OrderModel.js" afterPath="$PROJECT_DIR$/Order/model/OrderModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Order/package.json" afterPath="$PROJECT_DIR$/Order/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bulkwise/package.json" afterPath="$PROJECT_DIR$/Bulkwise/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/css/owl.theme.default.min.css" afterPath="$PROJECT_DIR$/MobileFiles/css/owl.theme.default.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/css/style.css" afterPath="$PROJECT_DIR$/MobileFiles/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/index.html" afterPath="$PROJECT_DIR$/MobileFiles/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/js/app.js" afterPath="$PROJECT_DIR$/MobileFiles/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/js/controllers.js" afterPath="$PROJECT_DIR$/MobileFiles/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/brand.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/brand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/cart.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/category.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/categorydetail.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/categorydetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/categorylist.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/categorylist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/home.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/menu.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/payment.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/payment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/register.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/search.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/templates/subcategory.html" afterPath="$PROJECT_DIR$/MobileFiles/templates/subcategory.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js" afterPath="$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/model/ShoppingCartModel.js" afterPath="$PROJECT_DIR$/ShoppingCart/model/ShoppingCartModel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/abbrev/.npmignore" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/abbrev/.npmignore" />
@@ -606,8 +621,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/d/test/auto-bind.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/d/test/auto-bind.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/d/test/index.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/d/test/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/d/test/lazy.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/d/test/lazy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/dbutil/conf/config.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/dbutil/conf/config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/dbutil/index.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/dbutil/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/dbutil/package.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/dbutil/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/debug/.jshintrc" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/debug/.jshintrc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/debug/.npmignore" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/debug/.npmignore" />
@@ -1671,7 +1684,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/graceful-readlink/package.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/graceful-readlink/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/LICENSE" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/LICENSE" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/README.md" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/bin/har-validator" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/bin/har-validator" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/lib/error.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/lib/error.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/lib/index.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/lib/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/lib/schemas/cache.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/har-validator/lib/schemas/cache.json" />
@@ -1908,18 +1920,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonist/jsonist.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonist/jsonist.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonist/package.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonist/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonist/test.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonist/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/LICENSE" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/README.markdown" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/README.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/bench.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/bench.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/examples/twitterfeed.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/examples/twitterfeed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/jsonparse.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/jsonparse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/package.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/samplejson/basic.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/samplejson/basic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/samplejson/basic2.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/samplejson/basic2.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/test/boundary.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/test/boundary.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/test/offset.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/test/offset.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/test/primitives.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/test/primitives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/test/utf8.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonparse/test/utf8.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonpointer/.travis.yml" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonpointer/.travis.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonpointer/README.md" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonpointer/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonpointer/jsonpointer.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/jsonpointer/jsonpointer.js" />
@@ -2176,7 +2176,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/lib/remove.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/lib/remove.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/package.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/src/win_delay_load_hook.c" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/src/win_delay_load_hook.c" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/test/docker.sh" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/test/docker.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/test/simple-proxy.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/test/simple-proxy.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/test/test-find-node-directory.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/test/test-find-node-directory.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/test/test-find-python.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/node-gyp/test/test-find-python.js" />
@@ -2323,14 +2322,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/LICENSE" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/LICENSE" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/README.md" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/bower.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/lib/index.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/lib/parse.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/lib/parse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/lib/stringify.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/lib/stringify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/lib/utils.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/lib/utils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/package.json" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/test/parse.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/test/parse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/test/stringify.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/test/stringify.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/test/utils.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/qs/test/utils.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/range-parser/HISTORY.md" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/range-parser/HISTORY.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/range-parser/LICENSE" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/range-parser/LICENSE" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/range-parser/README.md" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/range-parser/README.md" />
@@ -2648,7 +2640,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ShoppingCart/node_modules/xtend/test.js" afterPath="$PROJECT_DIR$/ShoppingCart/node_modules/xtend/test.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/controller/User.js" afterPath="$PROJECT_DIR$/User/controller/User.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/model/UserModel.js" afterPath="$PROJECT_DIR$/User/model/UserModel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/User/package.json" afterPath="$PROJECT_DIR$/User/package.json" />
     </list>
     <ignored path="bulkwize.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -2670,51 +2661,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bulkwise/index.js">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Bulkwise/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="93" selection-start-line="104" selection-start-column="93" selection-end-line="104" selection-end-column="93" />
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/User/package.json">
+      <file leaf-file-name="ShoppingCart.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bulkwise/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DBUtil/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/User/model/UserModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.25167784">
+              <caret line="19" column="85" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -2724,37 +2685,17 @@
         <entry file="file://$PROJECT_DIR$/User/controller/User.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+              <caret line="30" column="29" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShoppingCart.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2421875">
-              <caret line="262" column="39" selection-start-line="262" selection-start-column="39" selection-end-line="262" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShoppingCartModel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ShoppingCart/model/ShoppingCartModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.111111">
-              <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bulkwise/main.js">
+      <file leaf-file-name="UserModel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/User/model/UserModel.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <caret line="70" column="15" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -2767,6 +2708,7 @@
       <list>
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="package_json" />
       </list>
     </option>
   </component>
@@ -2787,7 +2729,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ShoppingCart/package.json" />
-        <option value="$PROJECT_DIR$/Bulkwise/node_modules/shoppingcart/model/ShoppingCartModel.js" />
         <option value="$PROJECT_DIR$/ShoppingCart/index.js" />
         <option value="$PROJECT_DIR$/ShoppingCart/Readme.md" />
         <option value="$PROJECT_DIR$/Category/index.js" />
@@ -2795,12 +2736,9 @@
         <option value="$PROJECT_DIR$/Category/model/CategoryModel.js" />
         <option value="$PROJECT_DIR$/Category/controller/Category.js" />
         <option value="$PROJECT_DIR$/Products/model/ProductModel.js" />
-        <option value="$PROJECT_DIR$/Bulkwise/node_modules/shoppingcart/controller/ShoppingCart.js" />
         <option value="$PROJECT_DIR$/Bulkwise/index.html" />
         <option value="$PROJECT_DIR$/Bulkwise/views/index.html" />
         <option value="$PROJECT_DIR$/Bulkwise/views/main.html" />
-        <option value="$PROJECT_DIR$/Bulkwise/views/registration.html" />
-        <option value="$PROJECT_DIR$/Bulkwise/main.js" />
         <option value="$PROJECT_DIR$/Bulkwise/registration/Register" />
         <option value="$PROJECT_DIR$/User/package.json" />
         <option value="$PROJECT_DIR$/User/model/UserModel" />
@@ -2809,15 +2747,23 @@
         <option value="$PROJECT_DIR$/DBUtil/Database.js" />
         <option value="internal/module.js" />
         <option value="$PROJECT_DIR$/User/node_modules/dbutil/Database.js" />
-        <option value="$PROJECT_DIR$/User/model/UserModel.js" />
         <option value="$PROJECT_DIR$/User/node_modules/dbutil/index.js" />
         <option value="$PROJECT_DIR$/DBUtil/index.js" />
         <option value="$PROJECT_DIR$/DBUtil/conf/config.json" />
-        <option value="$PROJECT_DIR$/User/controller/User.js" />
         <option value="$PROJECT_DIR$/Bulkwise/package.json" />
-        <option value="$PROJECT_DIR$/Bulkwise/index.js" />
+        <option value="$PROJECT_DIR$/ShoppingCart/controller/package.json" />
+        <option value="$PROJECT_DIR$/Bulkwise/views/login.html" />
+        <option value="$PROJECT_DIR$/Bulkwise/views/registration.html" />
+        <option value="$PROJECT_DIR$/Bulkwise/node_modules/user/model/UserModel.js" />
+        <option value="$PROJECT_DIR$/Bulkwise/node_modules/user/controller/User.js" />
+        <option value="$PROJECT_DIR$/Bulkwise/node_modules/shoppingcart/controller/ShoppingCart.js" />
+        <option value="$PROJECT_DIR$/Bulkwise/main.js" />
+        <option value="$PROJECT_DIR$/Bulkwise/node_modules/shoppingcart/model/ShoppingCartModel.js" />
+        <option value="$PROJECT_DIR$/User/model/UserModel.js" />
         <option value="$PROJECT_DIR$/ShoppingCart/model/ShoppingCartModel.js" />
+        <option value="$PROJECT_DIR$/User/controller/User.js" />
         <option value="$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js" />
+        <option value="$PROJECT_DIR$/Bulkwise/index.js" />
       </list>
     </option>
   </component>
@@ -2829,7 +2775,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="734" />
+    <option name="height" value="740" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2927,6 +2873,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bulkwize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bulkwize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bulkwise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bulkwize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bulkwize" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bulkwise" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -2970,7 +2948,7 @@
       <recent name="$PROJECT_DIR$/Bulkwise/views" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.ShoppingCart">
+  <component name="RunManager" selected="Node.js.Bulkwize">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/bulkwize/MobileFiles/index.html">
       <method />
     </configuration>
@@ -3422,7 +3400,11 @@
       <updated>1455058197607</updated>
       <workItem from="1456784489976" duration="288000" />
       <workItem from="1456784795067" duration="5810000" />
-      <workItem from="1456867840526" duration="7352000" />
+      <workItem from="1456867840526" duration="7522000" />
+      <workItem from="1456879169563" duration="17000" />
+      <workItem from="1456880021089" duration="919000" />
+      <workItem from="1456999970692" duration="1280000" />
+      <workItem from="1457015254580" duration="15887000" />
     </task>
     <task id="LOCAL-00001" summary="Removing old folder">
       <created>1455058303878</created>
@@ -3458,10 +3440,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13450000" />
+    <option name="totallyTimeSpent" value="31723000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="734" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="740" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3469,18 +3451,18 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32605305" sideWeight="0.5107228" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32608697" sideWeight="0.48768863" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.318323" sideWeight="0.4892772" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3246154" sideWeight="0.48768863" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3276923" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45692307" sideWeight="0.4892772" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761312" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32615384" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4083851" sideWeight="0.4932486" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4076923" sideWeight="0.4932486" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3514,52 +3496,57 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/User/model/UserModel.js</url>
-          <line>35</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/User/controller/User.js</url>
-          <line>32</line>
+          <line>36</line>
           <option name="timeStamp" value="92" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/User/controller/User.js</url>
-          <line>22</line>
+          <line>29</line>
           <option name="timeStamp" value="93" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js</url>
-          <line>87</line>
+          <line>113</line>
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js</url>
-          <line>55</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js</url>
-          <line>59</line>
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js</url>
-          <line>176</line>
+          <line>202</line>
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js</url>
-          <line>157</line>
+          <line>183</line>
           <option name="timeStamp" value="115" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js</url>
-          <line>152</line>
+          <line>178</line>
           <option name="timeStamp" value="118" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Bulkwise/node_modules/shoppingcart/model/ShoppingCartModel.js</url>
+          <line>133</line>
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Bulkwise/node_modules/shoppingcart/model/ShoppingCartModel.js</url>
+          <line>137</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Bulkwise/node_modules/user/controller/User.js</url>
+          <line>11</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/Bulkwise/node_modules/user/controller/User.js</url>
+          <line>32</line>
+          <option name="timeStamp" value="129" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="119" />
+      <option name="time" value="140" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -3568,53 +3555,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Bulkwise/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DBUtil/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/model/UserModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/controller/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Products/model/ProductModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ShoppingCart/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3633,7 +3573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3777,13 +3716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bulkwise/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Promotions/controller/Promotion.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3802,13 +3734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.25">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="18" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bulkwise/views/registration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.625">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -3837,7 +3762,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="54" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3866,7 +3790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3874,7 +3797,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3882,38 +3804,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ShoppingCart/node_modules/dbutil/conf/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bulkwise/main.js">
+    <entry file="file://$PROJECT_DIR$/User/node_modules/dbutil/conf/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bulkwise/index.js">
+    <entry file="file://$PROJECT_DIR$/Bulkwise/views/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="93" selection-start-line="104" selection-start-column="93" selection-end-line="104" selection-end-column="93" />
+        <state vertical-scroll-proportion="0.43189368">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bulkwise/views/registration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DBUtil/conf/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1266892">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/User/controller/User.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.14950167">
+          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -3921,23 +3850,47 @@
     <entry file="file://$PROJECT_DIR$/User/model/UserModel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <caret line="70" column="15" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/User/controller/User.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="15" selection-end-line="30" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bulkwise/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5692308">
+          <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ShoppingCart/model/ShoppingCartModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.111111">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+        <state vertical-scroll-proportion="1.5907692">
+          <caret line="65" column="55" selection-start-line="65" selection-start-column="55" selection-end-line="65" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Bulkwise/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ShoppingCart/controller/ShoppingCart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2421875">
-          <caret line="262" column="39" selection-start-line="262" selection-start-column="39" selection-end-line="262" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.25167784">
+          <caret line="19" column="85" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="85" />
           <folding />
         </state>
       </provider>
