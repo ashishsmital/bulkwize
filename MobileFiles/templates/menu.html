@@ -7,15 +7,9 @@
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
+        <a href="#/app/home"><img src="img/home.png" class="menu_home"></a>
       </ion-nav-buttons>
         <ion-nav-buttons side="right" class="topbar_menu">
-            <!-- <button class="button" ng-show="!cartNumber.length">
-              <i class="icon ion-bag"></i> 
-            </button>
-            <button class="button" ng-show="cartNumber.length" ui-sref="app.cart">
-              <i class="icon ion-bag"></i> 
-              <span  class="badge badge-assertive cartnumber">{{cartNumber.length}}</span>
-            </button> -->
             <button class="button" ui-sref="app.login">
                 <i class="icon ion-person"></i> 
             </button>
@@ -38,10 +32,6 @@
     <ion-content class="has-subheader">
         
       <ion-list >
-        
-        <ion-item menu-close href="#/app/home">
-            <img src="img/home.png" class="menu_home"> <div class="pl_42">Home</div>
-        </ion-item>
         <ion-item menu-close href="#/app/login">
             Login
         </ion-item>

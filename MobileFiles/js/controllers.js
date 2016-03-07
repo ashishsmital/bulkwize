@@ -953,10 +953,97 @@ angular.module('starter.controllers', [])
     };
 
 })
-.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http){
+.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state){
 
-    $scope.submit = function(valid){
-        console.log(valid);
+    $scope.submit = function(valid, value){
+        console.log(value)
+        if(valid){
+            $ionicLoading.show({
+                content: 'Loading',
+                animation: 'fade-in',
+                showBackdrop: true,
+                maxWidth: 200,
+                showDelay: 0
+            });
+
+            $http({
+                method: 'POST',
+                url: 'http://52.73.228.44:8080/user/',
+                data: 
+                {
+                    "mobileNumber":value.mob,
+                    "shopName":value.mob,
+                    "firstname":value.shopname,
+                    "password":value.password,
+                    "lastname":value.lastname,
+                    "pan":value.panumber,
+                    "email":value.email,
+                    "shopAddress":value.shopaddress,
+                    "deliveryAddress":"1234",
+                    "type":"com.bulkwise.User",
+                    "id":"com.bulkwise.User::"+value.mob
+
+                },
+            }).then(function successCallback(response) {
+                console.log(response.data.data.cas);
+                if(response.data.data.cas){
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Info',
+                        template: 'Thanks for register with us'
+                    });
+
+                    alertPopup.then(function(res) {
+                        console.log(res);
+                        if(res == true){
+                            $state.go('app.login');
+                        }
+                    });
+                }
+                $ionicLoading.hide();
+            }, function errorCallback(data) {
+                console.log(data);
+                $ionicLoading.hide();
+            });
+        }
+
+    }
+
+})
+
+.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state){
+
+    $scope.submit = function(valid, value){
+        console.log(valid, value)
+        if(valid){
+            $ionicLoading.show({
+                content: 'Loading',
+                animation: 'fade-in',
+                showBackdrop: true,
+                maxWidth: 200,
+                showDelay: 0
+            });
+
+            $http({
+                method: 'POST',
+                url: 'http://52.73.228.44:8080/login',
+                data: 
+                {
+                    "username":value.mob,
+                    "password":value.password,
+
+                },
+            }).then(function successCallback(response) {
+                console.log(response.data.message);
+                if(response.data.message){
+                    $state.go('app.home');     
+                }
+                $ionicLoading.hide();
+            }, function errorCallback(data) {
+                console.log(data);
+                $ionicLoading.hide();
+            });
+        }
+
     }
 
 });
