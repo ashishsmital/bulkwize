@@ -25,11 +25,13 @@ var promotion = require('promotion/controller/Promotion.js');
 var user = require('user/controller/User.js');
 var UserModel = require('user/model/UserModel.js');
 var order = require('order/controller/Order.js');
+var morgan  = require('morgan');
 
 
 //post body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(require('morgan'));
 
 //session
 app.use(session({
