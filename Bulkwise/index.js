@@ -108,7 +108,7 @@ console.log('Magic happens on port ' + port);
 app.use(function (req, res, next) {
 
     //console.log("the incoming request is --"+req.body +" and the URL is -->" + req.url);
-	console.log("Request body is -- " JSON.stringify(req.body));
+	console.log("Request body is -- " + JSON.stringify(req.body));
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
 
