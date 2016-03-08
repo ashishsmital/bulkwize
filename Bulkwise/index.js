@@ -31,7 +31,7 @@ var morgan  = require('morgan');
 //post body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(require('morgan'));
+app.use(require('morgan')('combined'));
 
 //session
 app.use(session({
