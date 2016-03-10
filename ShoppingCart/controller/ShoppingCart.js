@@ -56,9 +56,10 @@ shoppingcart.get('/', function (req, res, next) {
 
                 });
                 _.extend(result.data[0].Bulkwize, {'totalCount': sum});
+	        console.log("The count of items in shopping cart is " + result.data[0].Bulkwize.totalCount);
             }
 
-            console.log(result.data[0].Bulkwize.totalCount);
+
         }
         res.send(result);
     });

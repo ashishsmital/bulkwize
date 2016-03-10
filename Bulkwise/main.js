@@ -50,7 +50,7 @@ main.post('/login', function(req, res, next){
 	passport.authenticate('local', {
             successRedirect: '/loginSuccess',
             failureRedirect: '/loginFailure'
-    })
+    });
 }
     
 );
