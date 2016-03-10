@@ -111,7 +111,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope) {
+.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate) {
 
     $ionicLoading.show({
         content: 'Loading',
@@ -144,6 +144,7 @@ angular.module('starter.controllers', [])
     }).then(function successCallback(data) {
         console.log(data.data.carouselURLs);
         $scope.promotionImage = data.data.carouselURLs;
+        $ionicSlideBoxDelegate.update();
         $ionicLoading.hide();
     }, function errorCallback(data) {
         console.log(data);
