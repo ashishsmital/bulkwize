@@ -105,7 +105,7 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
 app.listen(port);
 console.log('Magic happens on port ' + port);
 
-app.use(function (req, res, next) {
+app.all('/*',function (req, res, next) {
 
     //console.log("the incoming request is --"+req.body +" and the URL is -->" + req.url);
 	console.log("Request body is -- " + JSON.stringify(req.body));
@@ -127,6 +127,7 @@ app.use(function (req, res, next) {
     isAuthenticated(req, res, next);
 	
 });
+
 
 // we'll create our controller here
 app.use('/', main);
