@@ -25,11 +25,13 @@ var promotion = require('promotion/controller/Promotion.js');
 var user = require('user/controller/User.js');
 var UserModel = require('user/model/UserModel.js');
 var order = require('order/controller/Order.js');
+var morgan  = require('morgan');
 
 
 //post body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(require('morgan')('combined'));
 
 //session
 app.use(session({
@@ -103,10 +105,10 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
 app.listen(port);
 console.log('Magic happens on port ' + port);
 
-app.use(function (req, res, next) {
+app.all('/*',function (req, res, next) {
 
-    console.log("the incoming request is --"+req.body +" and the URL is -->" + req.url);
-
+    //console.log("the incoming request is --"+req.body +" and the URL is -->" + req.url);
+	console.log("Inside App all method, Request body is -- " + JSON.stringify(req.body));
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -123,7 +125,9 @@ app.use(function (req, res, next) {
     // Pass to next layer of middleware
     //next();
     isAuthenticated(req, res, next);
+	
 });
+
 
 // we'll create our controller here
 app.use('/', main);
