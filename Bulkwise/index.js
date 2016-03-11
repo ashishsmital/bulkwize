@@ -94,7 +94,8 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                 //return done(null, user);
 				return req.res.status(200).json({message:"Successfully logged in"});
             } else {
-                return done(null, false,{message:'Incorrect password'});
+                //return done(null, false,{message:'Incorrect password'});
+				return req.res.status(401).json({message:"Incorrect User name or Password"});
             }
         });
 
