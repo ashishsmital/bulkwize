@@ -82,7 +82,8 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                             ShoppingCartModel.save(object,function(error,result){
                                 console.log('Got shopping cart for the session and saving for the user ')
                                 if(result && result.data.length >0){
-                                    return done(null, user);
+                                    //return done(null, user);
+									return req.res.status(200).json({message:"Successfully logged in"});
                                 }
                             });
                         }
@@ -90,7 +91,8 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                     }
                 });
 
-                return done(null, user);
+                //return done(null, user);
+				return req.res.status(200).json({message:"Successfully logged in"});
             } else {
                 return done(null, false,{message:'Incorrect password'});
             }
