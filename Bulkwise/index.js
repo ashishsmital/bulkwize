@@ -145,25 +145,25 @@ var isAuthenticated = function (req, res, next) {
 
     // CHECK THE USER STORED IN SESSION FOR A CUSTOM VARIABLE
     // you can do this however you want with whatever variables you set up
-    console.log(req.isAuthenticated());
+    console.log("Is user currently authenticated ? -- " + req.isAuthenticated());
 
 
     if(req.isAuthenticated()){
-        console.log("The user is authentication - " + req.isAuthenticated() + " and hence allowing to process");
+        console.log("The user authentication is - " + req.isAuthenticated() + " and hence allowing to process");
         return next();
-    }else if(req.url !='/shoppingcart'){
-        console.log("The URL does not mandate authentication  and hence allowing to process");
-        return next();
-    }else if(req.url !='/order'){
-        console.log("The URL does not mandate authentication  and hence allowing to process");
+    }else if(req.url !='/order' && req.url !='/user'){
+        console.log("The request URL is neither order nor user and hence it does not mandate authentication  and hence allowing to process");
         return next();
     }else if((req.url =='/order' || req.url =='/user' )&& req.isAuthenticated()){
         console.log("The URL mandates authentication and user authentication is "+ req.isAuthenticated() +"  and hence allowing to process");
         return next();
-    }
+    }else{
+		console.log("The URL mandates authentication and user authentication is "+ req.isAuthenticated() +"  and hence redirecting to login");
+			// IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SOMEWHERE
+		res.status(401).json({message:"Access denied. Please login"});
+	}
 
-    // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SOMEWHERE
-    res.redirect('/login');
+    
 }
 app.use('/products', products);
 app.use('/shoppingcart', shoppingcart);
