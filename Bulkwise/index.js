@@ -157,7 +157,7 @@ var isAuthenticated = function (req, res, next) {
     }else if(req.url !='/order'){
         console.log("The URL does not mandate authentication  and hence allowing to process");
         return next();
-    }else if(req.url =='/order' && req.isAuthenticated()){
+    }else if((req.url =='/order' || req.url =='/user' )&& req.isAuthenticated()){
         console.log("The URL mandates authentication and user authentication is "+ req.isAuthenticated() +"  and hence allowing to process");
         return next();
     }
