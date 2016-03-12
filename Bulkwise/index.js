@@ -117,7 +117,7 @@ app.all('/*',function (req, res, next) {
     //console.log("the incoming request is --"+req.body +" and the URL is -->" + req.url);
 	console.log("Inside App all method, Request body is -- " + JSON.stringify(req.body));
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', re.get('Origin'));
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -144,7 +144,7 @@ app.post('/login',
   function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
-	console.log("Inside successful authentication method and the logged in user name is --" + JSON.stringify(req));
+	console.log("Inside successful authentication method and the logged in user name is --" + JSON.stringify(req.body));
 	
 	return req.res.status(200).json({message:"Successfully logged in"});
     //res.redirect('/user/' + req.user.name);
