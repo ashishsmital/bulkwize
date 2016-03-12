@@ -117,7 +117,9 @@ app.all('/*',function (req, res, next) {
     //console.log("the incoming request is --"+req.body +" and the URL is -->" + req.url);
 	console.log("Inside App all method, Request body is -- " + JSON.stringify(req.body));
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', re.get('Origin'));
+	if(req.get('Origin') != null){
+		res.setHeader('Access-Control-Allow-Origin', req.get('Origin'));
+	}
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
