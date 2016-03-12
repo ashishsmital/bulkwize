@@ -63,7 +63,7 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
         console.log("Inside Authentication, the incoming username is --"+username+" & password is  --" + password);
         UserModel.getByAttribute("mobileNumber", username, function (error, result) {
 
-            console.log('The number of records in DB with username '+username + " are -- " result.data.length);
+            console.log('The number of records in DB with username '+username + " are -- "+ result.data.length);
             if (result && result.data.length>0) {
                 name  = result.data[0].Bulkwize.mobileNumber;
                 pass = result.data[0].Bulkwize.password;
