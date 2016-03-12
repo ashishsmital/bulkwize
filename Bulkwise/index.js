@@ -58,7 +58,7 @@ passport.deserializeUser(function(user, done) {
 passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, password, done) {
     process.nextTick(function() {
         // Auth Check Logic
-        console.log(username+password)
+        console.log("The incoming username & password are --" + username+password)
         UserModel.getByAttribute("mobileNumber", username, function (error, result) {
 
             console.log('Username' + result.data.length)
@@ -67,12 +67,13 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                 pass = result.data[0].Bulkwize.password;
                 if(password == pass)
                     var user ={'user':name};
-                console.log('Username' + name)
+					req.session.user = user;
+                console.log('The Username is & the session id is '  + name + " session id - " + req.sessionID);
                 ShoppingCartModel.getByAttribute("session_id", req.sessionID, function (error, result) {
                     if (error) {
                         console.log('Error updating shopping cart');
                     } else {
-                        console.log('result from shopping cart'+ result.data.length)
+                        console.log('There is no existing shopping cart for this users session - '+ result.data.length)
                         var res = req.res;
                         if (result != null && !_.isUndefined(result) && result.data.length > 0) {
                             console.log('Got shopping cart for the session ')
@@ -83,6 +84,7 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                                 console.log('Got shopping cart for the session and saving for the user ')
                                 if(result && result.data.length >0){
                                     //return done(null, user);
+									
 									return req.res.status(200).json({message:"Successfully logged in"});
                                 }
                             });
@@ -146,6 +148,8 @@ var isAuthenticated = function (req, res, next) {
     // CHECK THE USER STORED IN SESSION FOR A CUSTOM VARIABLE
     // you can do this however you want with whatever variables you set up
     console.log("Is user currently authenticated ? -- " + req.isAuthenticated());
+	
+	console.log("The session from incoming user is  -- " + JSON.stringify(req.session));
 
 
     if(req.isAuthenticated()){
