@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+var app = angular.module('starter.controllers', [])
 
 .directive('owlSlider', function ($ionicSideMenuDelegate) {
     return {
@@ -938,22 +938,7 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('FaqCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state){
 
-    $scope.toggleGroup = function(group) {
-        console.log(group);
-        if ($scope.isGroupShown(group)) {
-            $scope.shownGroup = null;
-        } else {
-            $scope.shownGroup = group;
-        }
-    };
-    
-    $scope.isGroupShown = function(group) {
-        return $scope.shownGroup === group;
-    };
-
-})
 .controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state){
 
     $scope.submit = function(valid, value){
