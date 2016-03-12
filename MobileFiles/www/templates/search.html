@@ -22,6 +22,7 @@
 		    <a ui-sref="app.categorydetail({ pId: product.id})" class="item" ng-repeat = "product in products">
 		    	{{product.ProductNameSearch}}
 		    </a>
+			<div class="item text-center" ng-if="products.length === 0">No results found</div>
 		</div>
   	</ion-content>
 </ion-view>
