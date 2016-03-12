@@ -58,7 +58,7 @@ passport.deserializeUser(function(user, done) {
 passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, password, done) {
     process.nextTick(function() {
         // Auth Check Logic
-        console.log("The incoming username & password are --" + username+password)
+        console.log("Inside Authentication, the incoming username & password are --" + username+password)
         UserModel.getByAttribute("mobileNumber", username, function (error, result) {
 
             console.log('Username' + result.data.length)
@@ -68,7 +68,7 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                 if(password == pass)
                     var user ={'user':name};
 					req.session.user = user;
-                console.log('The Username is & the session id is '  + name + " session id - " + req.sessionID);
+                console.log("The Username is " + name  + " & the session id is   "  + req.sessionID);
                 ShoppingCartModel.getByAttribute("session_id", req.sessionID, function (error, result) {
                     if (error) {
                         console.log('Error updating shopping cart');
@@ -83,9 +83,9 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                             ShoppingCartModel.save(object,function(error,result){
                                 console.log('Got shopping cart for the session and saving for the user ')
                                 if(result && result.data.length >0){
-                                    //return done(null, user);
+                                    return done(null, user);
 									
-									return req.res.status(200).json({message:"Successfully logged in"});
+									//return req.res.status(200).json({message:"Successfully logged in"});
                                 }
                             });
                         }
@@ -93,8 +93,8 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                     }
                 });
 
-                //return done(null, user);
-				return req.res.status(200).json({message:"Successfully logged in"});
+                return done(null, user);
+				//return req.res.status(200).json({message:"Successfully logged in"});
             } else {
                 //return done(null, false,{message:'Incorrect password'});
 				return req.res.status(401).json({message:"Incorrect User name or Password"});
@@ -135,7 +135,18 @@ app.all('/*',function (req, res, next) {
 
 
 // we'll create our controller here
-app.use('/', main);
+//app.use('/', main);
+
+app.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+	console.log("Inside successful authentication method and the logged in user name is --" + req.user.name);
+	
+	return req.res.status(200).json({message:"Successfully logged in"});
+    //res.redirect('/user/' + req.user.name);
+  });
 
 
 // apply the controller to our application
