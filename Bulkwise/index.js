@@ -47,10 +47,12 @@ app.use(passport.session());
 
 
 passport.serializeUser(function(user, done) {
+	console.log("Inside serialize user and the value of user is " + JSON.stringify(user));
     done(null, user);
 });
 
 passport.deserializeUser(function(user, done) {
+	console.log("Inside de-serialize user and the value of user is " + JSON.stringify(user));
     done(null, user);
 });
 
@@ -58,10 +60,10 @@ passport.deserializeUser(function(user, done) {
 passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, password, done) {
     process.nextTick(function() {
         // Auth Check Logic
-        console.log("Inside Authentication, the incoming username & password are --" + username+password)
+        console.log("Inside Authentication, the incoming username is --"+username+" & password is  --" + password);
         UserModel.getByAttribute("mobileNumber", username, function (error, result) {
 
-            console.log('Username' + result.data.length)
+            console.log('The number of records in DB with username '+username + " are -- " result.data.length);
             if (result && result.data.length>0) {
                 name  = result.data[0].Bulkwize.mobileNumber;
                 pass = result.data[0].Bulkwize.password;
@@ -142,7 +144,7 @@ app.post('/login',
   function(req, res) {
     // If this function gets called, authentication was successful.
     // `req.user` contains the authenticated user.
-	console.log("Inside successful authentication method and the logged in user name is --" + req.user.name);
+	console.log("Inside successful authentication method and the logged in user name is --" + JSON.stringify(req));
 	
 	return req.res.status(200).json({message:"Successfully logged in"});
     //res.redirect('/user/' + req.user.name);
