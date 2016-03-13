@@ -18,9 +18,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
 
     $scope.submit = function(valid, value){
         console.log(value);
-        debugger;
         if(valid){
-            debugger;
             $ionicLoading.show({
                 content: 'Loading',
                 animation: 'fade-in',
