@@ -16,7 +16,7 @@ app.factory('AuthServices', function ($http,$q) {
             var promise = deferred.promise;
             $http({
                 method: 'GET',
-                url: 'http://52.73.228.44:8080/user/9886273022'
+                url: 'http://52.73.228.44:8080/user/'+id
             }).then(function successCallback(data) {
                 console.log(data.data);
                 localStorage.setItem("isLogin",true);
