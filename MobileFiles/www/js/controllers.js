@@ -97,7 +97,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/user/John'
+        url: 'http://52.73.228.44:8080/shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data);
         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -254,7 +254,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/user/John'
+        url: 'http://52.73.228.44:8080/shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data.data[0].Bulkwize.updatedAt);
         $scope.cartDetails = data.data.data[0].Bulkwize;
@@ -316,7 +316,7 @@ var app = angular.module('starter.controllers', [])
             if(response.data.message == 'success'){
                 $http({
                     method: 'GET',
-                    url: 'http://52.73.228.44:8080/shoppingcart/user/John'
+                    url: 'http://52.73.228.44:8080/shoppingcart/'
                 }).then(function successCallback(data) {
                     console.log(data.data);
                     $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -369,9 +369,8 @@ var app = angular.module('starter.controllers', [])
                 {
                     "type": "com.bulkwise.Cart",
                     "id": "com.bulkwise.Cart::John",
-                    "customer_id": "John",
+                    "customer_id": "",
                     "business_id": "123456789",
-                    "session_id": "f3MyQSAKd6ZBnLVB2Lq--JD9zAVdda4Z",
                     "products": [
                         {
                             "id": data.id,
@@ -405,7 +404,7 @@ var app = angular.module('starter.controllers', [])
                 if(response.data.message == 'success'){
                     $http({
                         method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/user/John'
+                        url: 'http://52.73.228.44:8080/shoppingcart/'
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -586,9 +585,8 @@ var app = angular.module('starter.controllers', [])
                 {
                     "type": "com.bulkwise.Cart",
                     "id": "com.bulkwise.Cart::John",
-                    "customer_id": "John",
+                    "customer_id": "",
                     "business_id": "123456789",
-                    "session_id": "f3MyQSAKd6ZBnLVB2Lq--JD9zAVdda4Z",
                     "products": [
                         {
                             "id": data.brand.id,
@@ -622,7 +620,7 @@ var app = angular.module('starter.controllers', [])
                 if(response.data.message == 'success'){
                     $http({
                         method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/user/John'
+                        url: 'http://52.73.228.44:8080/shoppingcart/'
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -722,9 +720,8 @@ var app = angular.module('starter.controllers', [])
                 {
                     "type": "com.bulkwise.Cart",
                     "id": "com.bulkwise.Cart::John",
-                    "customer_id": "John",
+                    "customer_id": "",
                     "business_id": "123456789",
-                    "session_id": "f3MyQSAKd6ZBnLVB2Lq--JD9zAVdda4Z",
                     "products": [
                         {
                             "id": data.id,
@@ -758,7 +755,7 @@ var app = angular.module('starter.controllers', [])
                 if(response.data.message == 'success'){
                     $http({
                         method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/user/John'
+                        url: 'http://52.73.228.44:8080/shoppingcart/'
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -904,7 +901,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/user/John'
+        url: 'http://52.73.228.44:8080/shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data.data[0].Bulkwize.updatedAt);
         $scope.cartDetails = data.data.data[0].Bulkwize;
