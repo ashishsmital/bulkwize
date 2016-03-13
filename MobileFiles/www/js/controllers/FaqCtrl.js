@@ -1,6 +1,7 @@
 /**
  * Created by ghanavela on 3/12/2016.
  */
+
 app.controller('FaqCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state){
     $ionicLoading.show();
     $http({

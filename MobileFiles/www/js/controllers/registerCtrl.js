@@ -1,5 +1,5 @@
 /**
- * Created by ghanavela on 3/12/2016.
+ * Created by ghanavela on 3/12/2016 .
  */
 app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state){
     $scope.step1 = true;
@@ -15,6 +15,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
            }
        }
     };
+
     $scope.submit = function(valid, value){
         console.log(value);
         debugger;
