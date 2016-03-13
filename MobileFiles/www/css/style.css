@@ -320,3 +320,13 @@ form sup{
     color: #49514D;
     opacity: 1;
 }
+
+.item.login-item{
+    background: #61B7B5 !important;
+}
+
+.bar-pink a{
+    background: #61B7B5 !important;
+    padding: 5px 15px !important;
+    color:#fff;
+}

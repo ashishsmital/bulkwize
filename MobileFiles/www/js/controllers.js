@@ -53,7 +53,10 @@ var app = angular.module('starter.controllers', [])
     };
 })
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $http, $ionicLoading) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $http,
+                                $ionicLoading,$ionicHistory,$ionicNavBarDelegate,
+                                $ionicSideMenuDelegate,$state,AuthServices) {
+
 
       // With the new view caching in Ionic, Controllers are only called
       // when they are recreated or on app start, instead of every page change.
@@ -63,6 +66,23 @@ var app = angular.module('starter.controllers', [])
       //});
     
     $rootScope.cartNumber = 0;
+
+    $scope.isLogin =  AuthServices.isLogin;
+    $scope.userDetails = AuthServices.getUserDetails();
+    console.log($scope.userDetails);
+    $scope.logout = function(){
+        $ionicHistory.clearHistory();
+        $ionicNavBarDelegate.showBackButton(false)
+        $scope.isLogin = AuthServices.isLogin = false;
+        $scope.userDetails = [];
+        localStorage.setItem("isLogin",false);
+        localStorage.setItem("USER_DETAILS",'[]');
+        $state.go('app.home');
+        $ionicSideMenuDelegate.toggleLeft();
+        console.log(AuthServices);
+    };
+
+
 
   // Form data for the login modal
     $scope.loginData = {};
@@ -100,7 +120,7 @@ var app = angular.module('starter.controllers', [])
         url: 'http://52.73.228.44:8080/shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data);
-        $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
+        // $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
         // $ionicLoading.show({ template: 'Item Added!', noBackdrop: true, duration: 2000 });
         console.log($rootScope.cartNumber);
         // $ionicLoading.hide();

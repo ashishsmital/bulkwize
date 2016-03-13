@@ -1,7 +1,7 @@
 /**
  * Created by ghanavela on 3/13/2016.
  */
-app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state){
+app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state,$window,$timeout, $ionicNavBarDelegate,$ionicSideMenuDelegate, $ionicHistory,AuthServices){
 
 
     $scope.submit = function(valid, value){
@@ -27,9 +27,18 @@ app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $
             }).then(function successCallback(response) {
                 console.log(response.data.message);
                 if(response.data.message){
-                    $state.go('app.home');
+                    AuthServices.getUserDetailsById().then(function(data){
+                        $ionicHistory.clearHistory();
+                        $ionicNavBarDelegate.showBackButton(false);
+                        $state.go('app.home');
+                        $timeout(function() {
+                            $window.location.reload();
+                            $ionicLoading.hide();
+                        },0);
+                    });
+
                 }
-                $ionicLoading.hide();
+
             }, function errorCallback(data) {
                 console.log(data);
                 $ionicLoading.hide();
