@@ -822,7 +822,7 @@ var app = angular.module('starter.controllers', [])
         maxWidth: 200,
         showDelay: 0
     });
-
+    $scope.searchKeyword = $stateParams.searchId;
     $http({
         method: 'GET',
         url: 'http://52.73.228.44:8080/products/likeSearch/'+$stateParams.searchId
