@@ -312,9 +312,8 @@ var app = angular.module('starter.controllers', [])
             {
                 "type": "com.bulkwise.Cart",
                 "id": "com.bulkwise.Cart::John",
-                "customer_id": "John",
+                "customer_id": "",
                 "business_id": "123456789",
-                "session_id": "f3MyQSAKd6ZBnLVB2Lq--JD9zAVdda4Z",
                 "products": [
                     {
                         "id": data.id,
