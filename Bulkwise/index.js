@@ -151,6 +151,13 @@ app.post('/login',
 	return req.res.status(200).json({message:"Successfully logged in"});
     //res.redirect('/user/' + req.user.name);
   });
+  
+app.get('/logout', function(req, res){
+  req.logout();
+  req.session.destroy();
+  res.clearCookie('connect.sid');
+  return req.res.status(200).json({message:"Successfully logged out"});
+});
 
 
 // apply the controller to our application
