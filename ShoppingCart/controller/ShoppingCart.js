@@ -282,7 +282,10 @@ var populateSessionDetails = function (req, data) {
 
 };
 var populateKeyValue = function (req, data, queryData) {
-
+	console.log("The user name associated with shopping cart incoming request is " + req.user);
+	if(req.user != undefined && req.user !=null){
+		console.log("The user objects exists with request & the name associated with shopping cart incoming request is " + req.user);
+	}
     if (data.customer_id == '') {
         queryData['key'] = 'session_id';
         queryData['value'] = data.session_id;
