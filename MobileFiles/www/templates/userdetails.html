@@ -4,11 +4,11 @@
         <div id="content">
             <div id="profile-info">
                 <img id="profile-image" src="https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg">
-                <h3 id="profile-name">{{userDetails.firstName}} {{userDetails.lastName}}</h3>
+                <div class="user-profile"><i class="ion-android-camera icon_size"></i> <i class="ion-android-image icon_size"></i></div>
+                <span><h3 id="profile-name">{{userDetails.firstName}} {{userDetails.lastName}}</h3>&nbsp;&nbsp;<i class="ion-edit"></i></span>
                 <span id="profile-description"> <a href="">{{userDetails.email}}</a>,{{userDetails.mobileNumber}} , Shop Name
                 <a href="http://twitter.com/driftyco">{{userDetails.shopName}}</a></span>
                 <div>Pan No :{{userDetails.pan}} </div>
-
             </div>
 
         </div>

@@ -1,14 +1,14 @@
 <ion-view title="FAQ">
-  	<ion-content>
-      	<ion-list class="accordion">
+	<ion-content>
+		<ion-list class="accordion">
 			<ion-item class="item-stable" ng-repeat-start="faq in faqs" ng-click="toggleGroup($index)" ng-class="{active:isGroupShown($index)}">
 				<i class="icon" ng-class="isGroupShown($index) ? 'ion-minus' : 'ion-plus'"></i>
 				{{faq.question}}
 			</ion-item>
-			<ion-item class="item-accordion" ng-repeat-end  ng-show="isGroupShown($index)" ng-bind-html="faq.answer">
+			<ion-item class="item-accordion item-align" ng-repeat-end  ng-show="isGroupShown($index)" ng-bind-html="faq.answer">
 
 			</ion-item>
 
-      	</ion-list>
-  	</ion-content>
+		</ion-list>
+	</ion-content>
 </ion-view>
