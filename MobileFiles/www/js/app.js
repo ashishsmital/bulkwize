@@ -105,6 +105,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
         }
     })
+      .state('app.userDetails', {
+          url: '/userDetails/:id',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/userdetails.html',
+                  controller: 'UserDetailsCtrl'
+              }
+          }
+      })
+
 
     .state('app.faq', {
         url: '/faq',

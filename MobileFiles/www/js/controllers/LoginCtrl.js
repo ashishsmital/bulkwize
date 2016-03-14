@@ -7,6 +7,7 @@ app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $
     $scope.submit = function(valid, value){
         console.log(valid, value)
         if(valid){
+            $scope.mob = value.mob;
             $ionicLoading.show({
                 content: 'Loading',
                 animation: 'fade-in',
@@ -27,7 +28,9 @@ app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $
             }).then(function successCallback(response) {
                 console.log(response.data.message);
                 if(response.data.message){
-                    AuthServices.getUserDetailsById().then(function(data){
+
+                    AuthServices.getUserDetailsById($scope.mob).then(function(data){
+
                         $ionicHistory.clearHistory();
                         $ionicNavBarDelegate.showBackButton(false);
                         $state.go('app.home');
