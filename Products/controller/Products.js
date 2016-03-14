@@ -115,6 +115,21 @@ products.get('/uniquebrands', function(req, res, next) {
 });
 
 /**
+ * Get top discounts from Product
+ */
+products.get('/topdiscounts', function(req, res, next) {
+
+
+    ProductModel.getProductsWithTopDiscounts(function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+
+});
+
+/**
  * Get Brands for a given subcategory id
  */
 products.post('/search', function(req, res, next) {

@@ -180,6 +180,30 @@ ProductModel.getProductsByCategoryIdsAndBrandName = function(categoryIdArray,pro
 }
 
 /**
+ * Get top 10 brands with higest discount
+ *
+ * @param data
+ *          array of category ids
+ * @param callback
+ *          callback for http response
+ */
+ProductModel.getProductsWithTopDiscounts = function(callback) {
+	
+    var query = N1qlQuery.fromString("select MAX(productVariants.productDiscountPercentage) as maxDisc,topDiscounts.* from "+db._name+" as topDiscounts UNNEST topDiscounts.productVariants where topDiscounts.type = 'com.bulkwise.Products' group by  topDiscounts.productBrandName order by maxDisc DESC limit 10");
+	console.log("Executing the query -- " + query);
+	//e.g. select MAX(productVariants.productDiscountPercentage) as maxDisc,topDiscounts.* from Bulkwize as topDiscounts UNNEST topDiscounts.productVariants // where topDiscounts.type = "com.bulkwise.Products" group by  topDiscounts.productBrandName order by maxDisc DESC limit 10;
+    db.query(query, function(error, result) {
+        if (error) {
+			console.log("Error in executing getProductsWithTopDiscounts query ", error);
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
+/**
  * Get all products for given category id and brand
  *
  * @param data
