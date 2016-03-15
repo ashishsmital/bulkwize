@@ -117,7 +117,7 @@ products.get('/uniquebrands', function(req, res, next) {
 /**
  * Get top discounts from Product
  */
-products.get('/topdiscounts', function(req, res, next) {
+products.get('/topdiscounts/:noOfBrandsToRetrieve', function(req, res, next) {
 
 
     ProductModel.getProductsWithTopDiscounts(function(error, result) {
