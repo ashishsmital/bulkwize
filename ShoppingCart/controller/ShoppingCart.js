@@ -307,7 +307,7 @@ var populateKeyValue = function (req, data, queryData) {
 		queryData['key'] = 'id';
         queryData['value'] ='com.bulkwize.Cart::'+req.user.user;
 	}else{
-		console.log("User not found and hence associating the shopping cart with user's current session id -- " + );
+		console.log("User not found and hence associating the shopping cart with user's current session id -- " + data.session_id);
 		queryData['key'] = 'session_id';
         queryData['value'] = data.session_id;
 	}
