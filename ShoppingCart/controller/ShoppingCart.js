@@ -201,7 +201,11 @@ shoppingcart.delete('/product', function (req, res, next) {
         }
 
         //saving final data
-        saveCart(data, res);
+		if(data.length > 0){
+			saveCart(data, res);
+		}else{
+			deleteCart(data,res);
+		}
 
     });
 
@@ -267,6 +271,20 @@ shoppingcart.delete('/variants', function (req, res, next) {
  */
 var saveCart = function (data, res) {
     ShoppingCartModel.save(data, function (error, result) {
+        if (error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+};
+
+/**
+ *
+ * @param data
+ * @param res
+ */
+var deleteCart = function (data, res) {
+    ShoppingCartModel.delete(data.id, function (error, result) {
         if (error) {
             return res.status(400).send(error);
         }
