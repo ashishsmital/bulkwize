@@ -300,17 +300,24 @@ var populateSessionDetails = function (req, data) {
 
 };
 var populateKeyValue = function (req, data, queryData) {
-	console.log("The user name associated with shopping cart incoming request is " + req.user);
+	console.log("The user name associated with shopping cart incoming request is " + JSON.stringify(req.user)));
 	if(req.user != undefined && req.user !=null){
-		console.log("The user objects exists with request & the name associated with shopping cart incoming request is " + req.user);
+		console.log("The user objects exists with request & the name associated with shopping cart incoming request is " + JSON.stringify(req.user.user));
+		console.log("The user is logged in and hence associating the shopping cart id to the user's mobilenumber");
+		queryData['key'] = 'id';
+        queryData['value'] ='com.bulkwize.Cart::'+req.user.user;
+	}else{
+		console.log("User not found and hence associating the shopping cart with user's current session id -- " + );
+		queryData['key'] = 'session_id';
+        queryData['value'] = data.session_id;
 	}
-    if (data.customer_id == '') {
+    /*if (data.customer_id == '') {
         queryData['key'] = 'session_id';
         queryData['value'] = data.session_id;
     } else {
         queryData['key'] = 'id';
         queryData['value'] ='com.bulkwize.Cart::'+data.id;
-    }
+    }*/
 
 
 };
