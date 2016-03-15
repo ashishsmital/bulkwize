@@ -300,7 +300,7 @@ var populateSessionDetails = function (req, data) {
 
 };
 var populateKeyValue = function (req, data, queryData) {
-	console.log("The user name associated with shopping cart incoming request is " + JSON.stringify(req.user)));
+	console.log("The user name associated with shopping cart incoming request is " + JSON.stringify(req.user));
 	if(req.user != undefined && req.user !=null){
 		console.log("The user objects exists with request & the name associated with shopping cart incoming request is " + JSON.stringify(req.user.user));
 		console.log("The user is logged in and hence associating the shopping cart id to the user's mobilenumber");
