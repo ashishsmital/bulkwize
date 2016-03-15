@@ -308,6 +308,7 @@ var app = angular.module('starter.controllers', [])
         $http({
             method: 'DELETE',
             url: 'http://52.73.228.44:8080/shoppingcart/product',
+			headers: {"Content-Type": "application/json;charset=utf-8"},
             data:
             {
                 "type": "com.bulkwise.Cart",
