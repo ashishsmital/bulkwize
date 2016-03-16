@@ -10,7 +10,7 @@ var shoppingcart = express.Router();
 var ShoppingCartModel = require('../model/ShoppingCartModel.js');
 var _ = require('underscore');
 var Bulkwize = "Bulkwize";
-
+var moment = require('moment');
 
 /**
  * get Shoppingcart
@@ -113,8 +113,12 @@ shoppingcart.put('/', function (req, res, next) {
                     });
 
                     data.products = result.data[0].Bulkwize.products;
+					data.createdAt = result.data[0].Bulkwize.createdAt;
+					data.workflowState = "updated";
                 }
-            }
+            }else{
+				data.createdAt =  moment(new Date()).utcOffset("+05:30").format();
+			}
         }
 
         //saving final data

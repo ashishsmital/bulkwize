@@ -9,7 +9,7 @@ var uuid = require('uuid');
 var db = require('dbutil').bucket;
 var ViewQuery = require('dbutil').ViewQuery;
 var N1qlQuery = require('dbutil').N1qlQuery;
-
+var moment = require('moment');
 
 
 /**
@@ -42,9 +42,9 @@ ShoppingCartModel.save = function(data, callback) {
         billing_address:data.billing_address,
         shipping_address:data.shipping_address,
         total_cart_value_after_discount:data.total_cart_value_after_discount,
-        workflow_states:data.workflow_states,
-        createdAt : new Date(),
-        updatedAt : new Date()
+        workflowState:data.workflowState,
+        createdAt : data.createdAt,
+        updatedAt : moment(new Date()).utcOffset("+05:30").format()
     }
     var documentId = data.id ? data.id : data.session_id;
 

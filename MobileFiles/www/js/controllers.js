@@ -413,9 +413,7 @@ var app = angular.module('starter.controllers', [])
                         "address": ""
                     },
                     "total_cart_value_after_discount": 182,
-                    "workflow_states": {
-                        "created": ""
-                    },
+                    "workflowState": "created",
                     "createdAt": "2016-02-20T10:34:08.149Z",
                     "updatedAt": data.updatedAt
                 },
