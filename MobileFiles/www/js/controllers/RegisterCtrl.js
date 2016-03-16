@@ -6,15 +6,19 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
     $scope.step2 = false;
     $scope.step3 = false;
     $scope.step4 = false;
-    $scope.goNext = function(next){
+
+    $scope.goNextPrev = function(step){
+        console.log(step);
        for(var i=1; i <= 4; i++){
-           if(i === next ){
+           if(i === step ){
                $scope["step"+i] = true;
            }else{
                $scope["step"+i] = false;
            }
        }
     };
+
+
 
     $scope.submit = function(valid, value){
         console.log(value);
