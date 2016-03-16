@@ -2,13 +2,21 @@
  * Created by ghanavela on 3/12/2016 .
  */
 app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state){
+
     $scope.step1 = true;
     $scope.step2 = false;
     $scope.step3 = false;
     $scope.step4 = false;
 
+    /*
+    $scope.step1 = true;
+    $scope.step2 = true;
+    $scope.step3 = true;
+    $scope.step4 = true;
+    */
+
+
     $scope.goNextPrev = function(step){
-        console.log(step);
        for(var i=1; i <= 4; i++){
            if(i === step ){
                $scope["step"+i] = true;
@@ -17,8 +25,6 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
            }
        }
     };
-
-
 
     $scope.submit = function(valid, value){
         console.log(value);
