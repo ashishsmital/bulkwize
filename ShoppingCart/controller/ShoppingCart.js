@@ -150,6 +150,9 @@ shoppingcart.put('/shippingDetails', function (req, res, next) {
                 if (shippingAddFromSite != null) {
                     shoppingCartfromDB.shipping_address = shippingAddFromSite;
                     data = result.data[0].Bulkwize;
+					
+					data.createdAt = result.data[0].Bulkwize.createdAt;
+					data.workflowState = "ShippingAddressAdded";
 
                 }
 
@@ -201,6 +204,9 @@ shoppingcart.delete('/product', function (req, res, next) {
                     result.data[0].Bulkwize.products = pdtFromDB;
                     data = result.data[0].Bulkwize;
                 }
+				data.createdAt = result.data[0].Bulkwize.createdAt;
+				data.workflowState = "ProductRemoved";
+
             }
         }
 

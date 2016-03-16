@@ -329,7 +329,9 @@ var app = angular.module('starter.controllers', [])
                         "variants":$scope.variants
                     }
                 ],
-                "updatedAt": "2016-02-20T10:34:08.149Z"
+                "updatedAt": "ToBeAddedByServer",
+				"createdAt": "ToBeAddedByServer",
+				"workflowState":"ProductRemoved"
             },
         }).then(function successCallback(response) {
             console.log(response.data.message);
@@ -878,10 +880,9 @@ var app = angular.module('starter.controllers', [])
                         "country" : user.country
                     },
                     "type": "com.bulkwise.Cart",
-                    "updatedAt": "2016-02-24T12:00:55.501Z",
-                    "workflow_states": {
-                        "Shipping added": ""
-                    }
+                    "updatedAt": "ToBeAddedByServer",
+					"createdAt": "ToBeAddedByServer",
+                    "workflowState": "Shipping added"
                 },
             }).then(function successCallback(response) {
                 console.log(response.status);
