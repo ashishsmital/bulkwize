@@ -14,9 +14,9 @@ var request = require('request');
 /**
  * post order
  */
-order.post('/:userId', function (req, res, next) {
-	console.log("Create order for user with id - " + req.params['userId']);
-    orderModel.save(req.params['userId'], function (error, result) {
+order.post('/', function (req, res, next) {
+	console.log("Create order for user with id - " + req.user.user);
+    orderModel.save(req.user.user, function (error, result) {
         if (error) {
             return res.status(400).send(error);
         } 
