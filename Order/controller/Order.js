@@ -12,11 +12,24 @@ var _ = require('underscore');
 var request = require('request');
 
 /**
- * get order
+ * post order
  */
 order.post('/:userId', function (req, res, next) {
 	console.log("Create order for user with id - " + req.params['userId']);
     orderModel.save(req.params['userId'], function (error, result) {
+        if (error) {
+            return res.status(400).send(error);
+        } 
+        res.send(result);
+    });
+});
+
+/**
+ * get order
+ */
+order.get('/', function (req, res, next) {
+	console.log("Get order for customer_id  - " + req.user.user);
+    orderModel.getByAttribute("customer_id",req.user.user, function (error, result) {
         if (error) {
             return res.status(400).send(error);
         } 
