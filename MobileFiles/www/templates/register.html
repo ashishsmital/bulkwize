@@ -35,7 +35,7 @@
           </label>
       </div>
       <div class="row">
-        <div class="col col-50 col-offset-50"><button class="button  button-positive icon-right ion-chevron-right" ng-disabled="userInfo.$invalid" ng-click="goNextPrev(2)"> Personal Info</button></div>
+        <div class="col text-center"><button class="button  button-positive icon-right ion-chevron-right" ng-disabled="userInfo.$invalid" ng-click="goNextPrev(2)"> Personal Info</button></div>
       </div>
     </form>
     <form class="form-horizontal padding_col6_left" role="form" name="personalInfo" ng-show="step2" novalidate method="post"  autocomplete="off">
@@ -73,8 +73,8 @@
       </div>
 
       <div class="row">
-            <div class="col col-50"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(1)"> Back </a></div>
-            <div class="col"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(3)" ng-disabled="personalInfo.$invalid">Shipping Address</button></div>
+            <div class="col col-25"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(1)"> Back </a></div>
+            <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(3)" ng-disabled="personalInfo.$invalid">Shipping Address</button></div>
       </div>
     </form>
     <form class="form-horizontal padding_col6_left" role="form" name="shopInfo" ng-show="step3" novalidate method="post"  autocomplete="off">
@@ -120,8 +120,8 @@
           </ion-list>
       </div>
       <div class="row">
-            <div class="col col-50"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(2)"> Back </a></div>
-            <div class="col"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(4)"  ng-disabled="shopInfo.$invalid" >Shipping Address</button></div>
+            <div class="col col-25"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(2)"> Back </a></div>
+            <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(4)"  ng-disabled="shopInfo.$invalid" >Shipping Address</button></div>
       </div>
     </form>
 
@@ -164,8 +164,8 @@
         </label>
       </div>
       <div class="row">
-            <div class="col col-50"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(3)"> Back </a></div>
-            <div class="col"><button class="button  button-positive icon-right" ng-disabled = "deliveryInfo.$invalid" type="submit">Save</button></div>
+            <div class="col col-25"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(3)"> Back </a></div>
+            <div class="col text-right"><button class="button  button-positive icon-right" ng-disabled = "deliveryInfo.$invalid" type="submit">Save</button></div>
       </div>
     </form>
 
