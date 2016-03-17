@@ -115,6 +115,9 @@
                   <div ng-message="required" class="error">Pin code is required</div>
               </div>
           </label>
+          <ion-list>
+              <ion-checkbox ng-model="reg.isSameBillingAdd">Billing address is same as shipping address.</ion-checkbox>
+          </ion-list>
       </div>
       <div class="row">
             <div class="col col-50"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(2)"> Back </a></div>
@@ -122,7 +125,7 @@
       </div>
     </form>
 
-    <form class="form-horizontal padding_col6_left" role="form" name="deliveryInfo" ng-show="step4" novalidate method="post" ng-submit="submit(register.$valid, reg)" autocomplete="off">
+    <form class="form-horizontal padding_col6_left" role="form" name="deliveryInfo" ng-show="step4" novalidate method="post" ng-submit="submit(deliveryInfo.$valid, reg)" autocomplete="off">
       <div class="list">
         <label class="item item-input item-stacked-label">
             <span class="input-label">Delivery Address <sup>*</sup></span>
