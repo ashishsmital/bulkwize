@@ -114,7 +114,7 @@ OrderModel.getByAttribute = function(attribute,value, callback) {
  * @param callback
  *          http callback
  */
-OrderModel.getByAllOrders = function(attribute,value, callback) {
+OrderModel.getAllOrders = function(attribute,value, callback) {
 
     var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"' and type='com.bulkwise.Order' order by createdAt DESC");
 
