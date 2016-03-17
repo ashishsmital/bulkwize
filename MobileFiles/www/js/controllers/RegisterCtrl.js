@@ -40,7 +40,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
             $scope.reg.delAddLine1 = "";
             $scope.reg.delAddLine2 = "";
             $scope.reg.delCity = "";
-            $scope.reg.delCity = "";
+            $scope.reg.delState = "";
             $scope.reg.delPincode = "";
 
         }
