@@ -941,7 +941,7 @@ var app = angular.module('starter.controllers', [])
 
         $http({
             method: 'POST',
-            url: 'http://52.73.228.44:8080/order/John',
+            url: 'http://52.73.228.44:8080/order/create/',
         }).then(function successCallback(response) {
             console.log(response);
             

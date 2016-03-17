@@ -9,7 +9,7 @@ var uuid = require('uuid');
 var db = require('dbutil').bucket;
 var ViewQuery = require('dbutil').ViewQuery;
 var N1qlQuery = require('dbutil').N1qlQuery;
-
+var moment = require('moment');
 
 
 /**
@@ -27,7 +27,7 @@ function OrderModel() { };
  * @param callback
  *          callback for http response
  */
-OrderModel.save = function(userId, callback) {
+OrderModel.createOrder = function(userId, callback) {
 
 	var orderId = uuid.v4();
 	console.log("the order id for new order is " + orderId);
@@ -39,6 +39,8 @@ OrderModel.save = function(userId, callback) {
         }
 		console.log("retrieved the shopping cart for user id --" + userId + ". The order is " + result.data[0].default);
 		result.data[0].default.type="com.bulkwise.Order";
+		result.data[0].default.createdAt= moment(new Date()).utcOffset("+05:30").format();
+		result.data[0].default.updatedAt= moment(new Date()).utcOffset("+05:30").format();
 		db.insert(orderId, result.data[0].default, function(error, result) {
 			if(error) {
 				callback(error, null);
@@ -89,6 +91,32 @@ OrderModel.get = function(key, callback) {
 OrderModel.getByAttribute = function(attribute,value, callback) {
 
     var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"' and type='com.bulkwise.Order'");
+
+    db.query(query, function(error, result) {
+        if (error) {
+            callback(error, null);
+            return;
+        }
+		console.log("The result of query in order model is -- " + JSON.stringify(result));
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
+/**
+ *
+ * Get Attribute by Name
+ *
+ * @param attribute
+ *         attribute name
+ * @param value
+ *          attribute value
+ * @param callback
+ *          http callback
+ */
+OrderModel.getByAllOrders = function(attribute,value, callback) {
+
+    var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"' and type='com.bulkwise.Order' order by createdAt DESC");
 
     db.query(query, function(error, result) {
         if (error) {

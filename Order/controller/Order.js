@@ -14,9 +14,9 @@ var request = require('request');
 /**
  * post order
  */
-order.post('/', function (req, res, next) {
+order.post('/create', function (req, res, next) {
 	console.log("Create order for user with id - " + req.user.user);
-    orderModel.save(req.user.user, function (error, result) {
+    orderModel.createOrder(req.user.user, function (error, result) {
         if (error) {
             return res.status(400).send(error);
         } 
@@ -29,7 +29,7 @@ order.post('/', function (req, res, next) {
  */
 order.get('/', function (req, res, next) {
 	console.log("Get order for customer_id  - " + req.user.user);
-    orderModel.getByAttribute("customer_id",req.user.user, function (error, result) {
+    orderModel.getAllOrders("customer_id",req.user.user, function (error, result) {
         if (error) {
             return res.status(400).send(error);
         } 
