@@ -8,13 +8,14 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
     $scope.step3 = false;
     $scope.step4 = false;
 
-    /*
+/*
     $scope.step1 = true;
     $scope.step2 = true;
     $scope.step3 = true;
     $scope.step4 = true;
     */
 
+    $scope.reg = {};
 
     $scope.goNextPrev = function(step){
        for(var i=1; i <= 4; i++){
@@ -25,6 +26,28 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
            }
        }
     };
+
+
+    $scope.$watch('step4', function(newValue, oldValue) {
+
+        if(newValue && $scope.reg.isSameBillingAdd ){
+                $scope.reg.delAddLine1 = $scope.reg.shopAddLine1;
+                $scope.reg.delAddLine2 = $scope.reg.shopAddLine2;
+                $scope.reg.delCity = $scope.reg.shopCity;
+                $scope.reg.delState = $scope.reg.shopState;
+                $scope.reg.delPincode = $scope.reg.shopPincode;
+        }else{
+            $scope.reg.delAddLine1 = "";
+            $scope.reg.delAddLine2 = "";
+            $scope.reg.delCity = "";
+            $scope.reg.delCity = "";
+            $scope.reg.delPincode = "";
+
+        }
+
+    });
+
+
 
     $scope.submit = function(valid, value){
         console.log(value);
@@ -37,24 +60,37 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
                 showDelay: 0
             });
 
+            var regPayload = {
+                "mobileNumber":value.mob,
+                "shopName":value.companyname,
+                "password":value.password,
+                "firstname":value.firstname,
+                "lastname":value.lastname,
+                "pan":value.panumber,
+                "email":value.email,
+                "shopAddressLine1":value.shopAddLine1,
+                "shopAddressLine2":value.shopAddLine2,
+                "shopCity":value.shopCity,
+                "shopCity":value.shopState,
+                "shopPincode":value.shopPincode,
+                "isSameBillingAdd": value.isSameBillingAdd,
+                "delAddressLine1":value.delAddLine1,
+                "delAddressLine2":value.delAddLine2,
+                "delCity":value.delCity,
+                "delCity":value.delState,
+                "delPincode":value.delPincode,
+                "type":"com.bulkwise.User",
+                "id":"com.bulkwise.User::"+value.mob
+
+            };
+
+            console.log(regPayload);
+
+
             $http({
                 method: 'POST',
                 url: 'http://52.73.228.44:8080/user/',
-                data:
-                {
-                    "mobileNumber":value.mob,
-                    "shopName":value.mob,
-                    "firstname":value.shopname,
-                    "password":value.password,
-                    "lastname":value.lastname,
-                    "pan":value.panumber,
-                    "email":value.email,
-                    "shopAddress":value.shopaddress,
-                    "deliveryAddress":"1234",
-                    "type":"com.bulkwise.User",
-                    "id":"com.bulkwise.User::"+value.mob
-
-                },
+                data: regPayload
             }).then(function successCallback(response) {
                 console.log(response.data.data.cas);
                 if(response.data.data.cas){
