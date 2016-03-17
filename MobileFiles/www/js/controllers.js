@@ -866,7 +866,7 @@ var app = angular.module('starter.controllers', [])
             });
 
             $http({
-                method: 'POST',
+                method: 'PUT',
                 url: 'http://52.73.228.44:8080/shoppingcart/shippingDetails',
                 data: {
                     "customer_id": "John",

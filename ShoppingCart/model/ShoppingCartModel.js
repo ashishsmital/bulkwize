@@ -143,5 +143,30 @@ ShoppingCartModel.getByAttribute = function(attribute,value, callback) {
     });
 }
 
+/**
+ *
+ * Get Attribute by Name
+ *
+ * @param attribute
+ *         attribute name
+ * @param value
+ *          attribute value
+ * @param callback
+ *          http callback
+ */
+ShoppingCartModel.getUserById = function(attribute,value, callback) {
+
+    var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"'");
+
+    db.query(query, function(error, result) {
+        if (error) {
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
 //exporting product model
 module.exports = ShoppingCartModel;

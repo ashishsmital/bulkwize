@@ -116,6 +116,7 @@ app.all('/*',function (req, res, next) {
 
     //console.log("the incoming request is --"+req.body +" and the URL is -->" + req.url);
 	console.log("Inside App all method, Request body is -- " + JSON.stringify(req.body));
+	console.log("the session id with incoming request is  -- " + req.sessionID);
     // Website you wish to allow to connect
 	if(req.get('Origin') != null){
 		res.setHeader('Access-Control-Allow-Origin', req.get('Origin'));

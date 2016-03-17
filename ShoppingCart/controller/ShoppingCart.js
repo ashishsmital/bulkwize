@@ -168,6 +168,38 @@ shoppingcart.put('/shippingDetails', function (req, res, next) {
 
 });
 
+/**
+ * Checkout
+ */
+shoppingcart.post('/checkout', function (req, res, next) {
+
+    var data = req.body;
+	if(req.user == undefined && req.user == null){
+		return req.res.status(401).json({message:"Please login before you can checkout !"});
+	}
+    populateSessionDetails(req, data);
+
+
+    ShoppingCartModel.getUserById("id", "com.bulkwise.Cart::" + req.user.user, function (error, result) {
+        if (error) {
+            console.log('No details for the user');
+        } else {
+            if (result.data != null && result.data.length > 0) {
+				if (result) {
+					res.send(result);
+				} else {
+					return res.status(404).send(error);
+				}
+                
+            }
+        }
+      
+
+    });
+
+
+});
+
 
 /**
  * delete products from Shoppingcart
