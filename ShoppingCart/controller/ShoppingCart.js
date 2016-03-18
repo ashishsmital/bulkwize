@@ -11,6 +11,7 @@ var ShoppingCartModel = require('../model/ShoppingCartModel.js');
 var _ = require('underscore');
 var Bulkwize = "Bulkwize";
 var moment = require('moment');
+var numeral = require('numeral');
 
 /**
  * get Shoppingcart
@@ -23,13 +24,23 @@ shoppingcart.get('/user/:userid', function (req, res, next) {
         } else {
             if (result != null && !_.isUndefined(result) && result.data.length > 0) {
                 console.log('the retrieved cart is ' + result.data);
-                var sum = 0
+                var sum = 0;
+				var totalCartValue = 0;
+				// calculate the total number of products in the cart
                 _.each(result.data[0].Bulkwize.products, function (ele) {
 
                     sum += ele.variants.length;
+					// calculate the total cart value
+					_.each(result.data[0].Bulkwize.products.variants, function (ele) {
 
+						totalCartValue += ele.quantity*ele.productMRPUnit*ele.productDiscountPercentage/100;
+
+					});
+				
                 });
                 _.extend(result.data[0].Bulkwize, {'totalCount': sum});
+				_.extend(result.data[0].Bulkwize, {'totalCartValue': numeral(totalCartValue).format('Rs0,0.00')});
+				
             }
 
         }
