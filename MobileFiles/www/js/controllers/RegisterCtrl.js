@@ -68,25 +68,26 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
                 "lastname":value.lastname,
                 "pan":value.panumber,
                 "email":value.email,
-                "shopAddressLine1":value.shopAddLine1,
-                "shopAddressLine2":value.shopAddLine2,
-                "shopCity":value.shopCity,
-                "shopCity":value.shopState,
-                "shopPincode":value.shopPincode,
-                "isSameBillingAdd": value.isSameBillingAdd,
-                "delAddressLine1":value.delAddLine1,
-                "delAddressLine2":value.delAddLine2,
-                "delCity":value.delCity,
-                "delCity":value.delState,
-                "delPincode":value.delPincode,
+                "shopAddress":{
+                    "addressLine1":value.shopAddLine1,
+                    "addressLine2": value.shopAddLine2,
+                    "city":value.shopCity,
+                    "state":value.shopState,
+                    "pincode":value.shopPincode
+                },
+                "deliveryAddress":{
+                    "addressLine1":value.delAddLine1,
+                    "addressLine2":value.delAddLine2,
+                    "city":value.delCity,
+                    "state":value.delState,
+                    "pincode":value.delPincode
+                },
                 "type":"com.bulkwise.User",
                 "id":"com.bulkwise.User::"+value.mob
 
             };
-
-            console.log(regPayload);
-
-
+            $scope.payLoad = regPayload;
+           // console.log(JSON.stringify(regPayload));
             $http({
                 method: 'POST',
                 url: 'http://52.73.228.44:8080/user/',
