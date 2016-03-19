@@ -10,10 +10,13 @@
         <a href="#/app/home"><img src="img/home.png" class="menu_home"></a>
       </ion-nav-buttons>
         <ion-nav-buttons side="right" class="topbar_menu">
-            <button class="button" ui-sref="app.login">
+            <button class="button" ng-if="!isLogin" ui-sref="app.login">
                 <i class="icon ion-person"></i> 
             </button>
-            <button class="button" ui-sref="app.cart">
+            <button class="button" ng-if="isLogin" ui-sref="app.userDetails({ id: userDetails.id})">
+                <i class="icon ion-person"></i>
+            </button>
+            <button class="button"  ui-sref="app.cart">
                 <i class="icon ion-bag"></i>
                 <span  class="badge badge-assertive cartnumber" ng-show="cartNumber != 0">{{cartNumber}}</span>
             </button>
@@ -27,7 +30,7 @@
       <h1 class="title">Menu</h1>
     </ion-header-bar>
     <div class="bar bar-pink has-header" >
-        <div ng-if="isLogin" menu-close>Welcome <a ui-sref="app.userDetails({ id: userDetails.id})">{{userDetails.firstName}}</a></div>
+        <a ng-if="isLogin" menu-close ui-sref="app.userDetails({ id: userDetails.id})">Welcome {{userDetails.firstName}}</a>
         <ion-item menu-close  href="#/app/login" style="border:none" class="login-item" ng-if="!isLogin">
             Login
         </ion-item>
