@@ -20,41 +20,12 @@
 			<div class="row nop_b text-uppercase">
 			  	<div class="col col-75 font_16">Brands with maximum discounts</div>
 			</div>
-			<ion-slide-box on-slide-changed="slideHasChanged($index)">
-			  	<ion-slide>
+			<ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="isProduct">
+			  	<ion-slide  ng-repeat ="productList in productLists">
 			    	<div class="row">
-			            <div class="col col-33">
+			            <div class="col col-33" ng-repeat ="product in productList">
 			                <a ui-sref="app.categorylist">
-			                	<img src="http://initiative.com/wp-content/uploads/2012/10/Unilever.jpg" />
-			                </a>
-			            </div>
-			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="http://vignette4.wikia.nocookie.net/logopedia/images/6/6d/Head_%26_Shoulders_2010.png/revision/latest?cb=20100711131648" />
-			                </a>
-			            </div>
-			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="http://insidetrade.co/wp-content/uploads/2015/01/ups2.jpg" />
-			                </a>
-			            </div>
-			        </div>
-			  	</ion-slide>
-			  	<ion-slide>
-			    	<div class="row">
-			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="https://www.botanytowncentre.co.nz/BotanyTownCentre/media/contents/04_Stores/01_Store_Logos/logo_Amazon.png?ext=.png" />
-			                </a>
-			            </div>
-			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="https://www.technopat.net/wp-content/uploads/2013/07/LG_Logo-640x350.jpg" />
-			                </a>
-			            </div>
-			            <div class="col col-33">
-			                <a ui-sref="app.categorylist">
-			                	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqBXMr2GIxI_p-TmuTzp90YzeGI8Z0TANPeiPjswzpat79uwlXjg" />
+			                	<img ng-src="{{envHost+product.productBrandImageURL}}" />
 			                </a>
 			            </div>
 			        </div>

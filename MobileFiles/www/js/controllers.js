@@ -53,49 +53,6 @@ var app = angular.module('starter.controllers', [])
     };
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,EnvConfig) {
-
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
-
-    $scope.category = [];
-    $http({
-        method: 'GET',
-        url: EnvConfig.HOST+'category'
-    }).then(function successCallback(data) {
-        console.log(data.data.data);
-        for ( i = 0; i<data.data.data.length; i++){  
-            if(data.data.data[i].Bulkwize.parentCategoryId == 0){
-                $scope.category.push(data.data.data[i]);
-            }
-        };
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
-
-    $http({
-        method: 'GET',
-        url: EnvConfig.HOST+'carousel'
-    }).then(function successCallback(data) {
-        console.log(data.data.carouselURLs);
-        $scope.promotionImage = data.data.carouselURLs;
-        $ionicSlideBoxDelegate.update();
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
-
-    console.log($rootScope.cartNumber);
-
-})
 
 .controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state,EnvConfig) {
 
