@@ -12,6 +12,8 @@
     "body-parser": "^1.14.2",
     "dbutil": "../DBUtil",
     "express": "^4.13.4",
-    "uuid": "^2.0.1"
+	"node-gcm": "0.14.0",
+    "uuid": "^2.0.1",
+	"moment":"2.12.0"
   }
 }
