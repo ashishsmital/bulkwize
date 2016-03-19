@@ -3,7 +3,7 @@
  */
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $http,
                                 $ionicLoading,$ionicHistory,$ionicNavBarDelegate,
-                                $ionicSideMenuDelegate,$state,AuthServices) {
+                                $ionicSideMenuDelegate,$state,AuthServices,EnvConfig) {
 
 
     // With the new view caching in Ionic, Controllers are only called
@@ -65,7 +65,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $h
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/'
+        url: EnvConfig.HOST+'shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data);
         // $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;

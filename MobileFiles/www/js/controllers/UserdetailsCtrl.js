@@ -3,7 +3,7 @@
  */
 app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup,
                                            $state,$stateParams,$window,$timeout, $ionicNavBarDelegate,$ionicSideMenuDelegate,
-                                           $ionicHistory,AuthServices){
+                                           $ionicHistory,AuthServices,EnvConfig){
 
 
     AuthServices.getUserDetailsById($stateParams.id.split("::")[1]).then(function(data){

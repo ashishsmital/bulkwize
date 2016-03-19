@@ -53,7 +53,7 @@ var app = angular.module('starter.controllers', [])
     };
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate) {
+.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,EnvConfig) {
 
     $ionicLoading.show({
         content: 'Loading',
@@ -66,7 +66,7 @@ var app = angular.module('starter.controllers', [])
     $scope.category = [];
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/category'
+        url: EnvConfig.HOST+'category'
     }).then(function successCallback(data) {
         console.log(data.data.data);
         for ( i = 0; i<data.data.data.length; i++){  
@@ -82,7 +82,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/promotion/carousel'
+        url: EnvConfig.HOST+'carousel'
     }).then(function successCallback(data) {
         console.log(data.data.carouselURLs);
         $scope.promotionImage = data.data.carouselURLs;
@@ -97,7 +97,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state) {
+.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state,EnvConfig) {
 
     
 
@@ -114,7 +114,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'POST',
-                url: 'http://52.73.228.44:8080/supplier/',
+                url: EnvConfig.HOST+'supplier/',
                 data: {
                     "supplierFirstName" : user.firstname,
                     "supplierLastName" : user.lastname,
@@ -184,7 +184,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http){
+.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http,EnvConfig){
 
     $ionicLoading.show({
         content: 'Loading',
@@ -196,7 +196,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/'
+        url: EnvConfig.HOST+'shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data.data[0].Bulkwize.updatedAt);
         $scope.cartDetails = data.data.data[0].Bulkwize;
@@ -229,7 +229,7 @@ var app = angular.module('starter.controllers', [])
 
         $http({
             method: 'DELETE',
-            url: 'http://52.73.228.44:8080/shoppingcart/product',
+            url: EnvConfig.HOST+'shoppingcart/product',
 			headers: {"Content-Type": "application/json;charset=utf-8"},
             data:
             {
@@ -260,7 +260,7 @@ var app = angular.module('starter.controllers', [])
             if(response.data.message == 'success'){
                 $http({
                     method: 'GET',
-                    url: 'http://52.73.228.44:8080/shoppingcart/'
+                    url: EnvConfig.HOST+'shoppingcart/'
                 }).then(function successCallback(data) {
                     console.log(data.data);
                     $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -308,7 +308,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'PUT',
-                url: 'http://52.73.228.44:8080/shoppingcart',
+                url: EnvConfig.HOST+'shoppingcart',
                 data:
                 {
                     "type": "com.bulkwise.Cart",
@@ -346,7 +346,7 @@ var app = angular.module('starter.controllers', [])
                 if(response.data.message == 'success'){
                     $http({
                         method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/'
+                        url: EnvConfig.HOST+'shoppingcart/'
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -377,7 +377,7 @@ var app = angular.module('starter.controllers', [])
     }
 })
 
-.controller('SubCategoryBrandCtrl', function($scope, $state, $stateParams, $http, $rootScope, $ionicLoading){
+.controller('SubCategoryBrandCtrl', function($scope, $state, $stateParams, $http, $rootScope, $ionicLoading,EnvConfig){
 
     $scope.checked = [];
 
@@ -394,7 +394,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/category/'+$stateParams.subId+'/subcategory'
+        url: EnvConfig.HOST+'category/'+$stateParams.subId+'/subcategory'
     }).then(function successCallback(data) {
         console.log(data.data.data);
         $scope.subCategory = data.data.data;
@@ -434,7 +434,7 @@ var app = angular.module('starter.controllers', [])
 
         $http({
             method: 'POST',
-            url: 'http://52.73.228.44:8080/category/brand/search',
+            url: EnvConfig.HOST+'category/brand/search',
             data: {
                 "categoryIds":subcatgid
             },
@@ -459,7 +459,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('SubCategoryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope){
+.controller('SubCategoryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope,EnvConfig){
 
     $scope.title = $stateParams.prodname;
 
@@ -475,7 +475,7 @@ var app = angular.module('starter.controllers', [])
     
     $http({
         method: 'POST',
-        url: 'http://52.73.228.44:8080/products/search',
+        url: EnvConfig.HOST+'products/search',
         data: {
             "categoryIds":$rootScope.suBrandId,
             "productBrandName":$scope.title
@@ -522,7 +522,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'PUT',
-                url: 'http://52.73.228.44:8080/shoppingcart',
+                url: EnvConfig.HOST+'shoppingcart',
                 data:
                 {
                     "type": "com.bulkwise.Cart",
@@ -562,7 +562,7 @@ var app = angular.module('starter.controllers', [])
                 if(response.data.message == 'success'){
                     $http({
                         method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/'
+                        url: EnvConfig.HOST+'shoppingcart/'
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -595,7 +595,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('CategoryDetailCtrl', function($scope, $stateParams, $http, $rootScope, $ionicSlideBoxDelegate, $ionicLoading) {
+.controller('CategoryDetailCtrl', function($scope, $stateParams, $http, $rootScope, $ionicSlideBoxDelegate, $ionicLoading,EnvConfig) {
 
     $ionicLoading.show({
         content: 'Loading',
@@ -609,7 +609,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/products/'+$stateParams.pId
+        url: EnvConfig.HOST+'products/'+$stateParams.pId
     }).then(function successCallback(response) {
         $ionicLoading.hide();
         console.log(response.data.data[0].Bulkwize);
@@ -657,7 +657,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'PUT',
-                url: 'http://52.73.228.44:8080/shoppingcart',
+                url: EnvConfig.HOST+'shoppingcart',
                 data:
                 {
                     "type": "com.bulkwise.Cart",
@@ -697,7 +697,7 @@ var app = angular.module('starter.controllers', [])
                 if(response.data.message == 'success'){
                     $http({
                         method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/'
+                        url: EnvConfig.HOST+'shoppingcart/'
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -730,7 +730,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('SearchCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state){
+.controller('SearchCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
 
     console.log($stateParams);
 
@@ -747,7 +747,7 @@ var app = angular.module('starter.controllers', [])
     $scope.searchKeyword = $stateParams.searchId;
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/products/likeSearch/'+$stateParams.searchId
+        url: EnvConfig.HOST+'products/likeSearch/'+$stateParams.searchId
     }).then(function successCallback(response) {
         console.log(response);
         $scope.lists = response.data.data;
@@ -772,7 +772,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state){
+.controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
 
     $scope.user = [];
     $scope.user.city = 'Bangalore'
@@ -789,7 +789,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'PUT',
-                url: 'http://52.73.228.44:8080/shoppingcart/shippingDetails',
+                url: EnvConfig.HOST+'shoppingcart/shippingDetails',
                 data: {
                     "customer_id": "John",
                     "id": "com.bulkwise.Cart::John",
@@ -830,7 +830,7 @@ var app = angular.module('starter.controllers', [])
     }
 })
 
-.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state){
+.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
 
     $ionicLoading.show({
         content: 'Loading',
@@ -842,7 +842,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/'
+        url: EnvConfig.HOST+'shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data.data[0].Bulkwize.updatedAt);
         $scope.cartDetails = data.data.data[0].Bulkwize;
@@ -863,7 +863,7 @@ var app = angular.module('starter.controllers', [])
 
         $http({
             method: 'POST',
-            url: 'http://52.73.228.44:8080/order/create/',
+            url: EnvConfig.HOST+'order/create/',
         }).then(function successCallback(response) {
             console.log(response);
             

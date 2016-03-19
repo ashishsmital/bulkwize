@@ -1,7 +1,8 @@
 /**
  * Created by ghanavela on 3/13/2016.
  */
-app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state,$window,$timeout, $ionicNavBarDelegate,$ionicSideMenuDelegate, $ionicHistory,AuthServices){
+app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state,$window,$timeout,
+                                     $ionicNavBarDelegate,$ionicSideMenuDelegate, $ionicHistory,AuthServices,EnvConfig){
 
 
     $scope.submit = function(valid, value){
@@ -18,7 +19,7 @@ app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $
 
             $http({
                 method: 'POST',
-                url: 'http://52.73.228.44:8080/login',
+                url: EnvConfig.HOST+'login',
                 data:
                 {
                     "username":value.mob,
