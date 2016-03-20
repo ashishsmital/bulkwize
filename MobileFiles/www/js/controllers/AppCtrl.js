@@ -18,16 +18,46 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $h
     $scope.isLogin =  AuthServices.isLogin;
     $scope.userDetails = AuthServices.getUserDetails();
     console.log($scope.userDetails);
+
     $scope.logout = function(){
-        $ionicHistory.clearHistory();
-        $ionicNavBarDelegate.showBackButton(false)
-        $scope.isLogin = AuthServices.isLogin = false;
-        $scope.userDetails = [];
-        localStorage.setItem("isLogin",false);
-        localStorage.setItem("USER_DETAILS",'[]');
-        $state.go('app.home');
-        $ionicSideMenuDelegate.toggleLeft();
-        console.log(AuthServices);
+
+        $ionicLoading.show({
+            content: 'Logout...',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        });
+
+
+
+        $http({
+            method: 'GET',
+            url: EnvConfig.HOST+'logout/'
+        }).then(function successCallback(data) {
+
+            $ionicHistory.clearHistory();
+            $ionicNavBarDelegate.showBackButton(false);
+            $scope.isLogin = AuthServices.isLogin = false;
+            $scope.userDetails = [];
+            localStorage.setItem("isLogin",false);
+            localStorage.setItem("USER_DETAILS",'[]');
+            $state.go('app.home');
+
+            console.log(AuthServices);
+            $ionicLoading.hide();
+        }, function errorCallback(data) {
+            console.log(data);
+            $ionicLoading.hide();
+        });
+
+
+
+
+
+
+
+
     };
 
 
