@@ -3,7 +3,7 @@
  */
 app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $http,
                                 $ionicLoading,$ionicHistory,$ionicNavBarDelegate,
-                                $ionicSideMenuDelegate,$state,AuthServices,EnvConfig) {
+                                $ionicSideMenuDelegate,$ionicPopover,$state,AuthServices,EnvConfig) {
 
 
     // With the new view caching in Ionic, Controllers are only called
@@ -15,11 +15,30 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $h
 
     $rootScope.cartNumber = 0;
 
-    $scope.isLogin =  AuthServices.isLogin;
-    $scope.userDetails = AuthServices.getUserDetails();
+    $rootScope.isLogin =  AuthServices.isLogin;
+    $rootScope.userDetails = AuthServices.getUserDetails();
     console.log($scope.userDetails);
 
-    $scope.logout = function(){
+    $scope.closePopover = function() {
+        $scope.popover.hide();
+    };
+
+    $scope.userPopover = function($event){
+        $ionicPopover.fromTemplateUrl('templates/partials/user-menu-popover.html', {
+            scope: $scope,
+        }).then(function(popover) {
+            $scope.popover = popover;
+            $scope.popover.show($event);
+
+        });
+    };
+
+
+
+
+
+
+    $scope.logout = function(isPopover){
 
         $ionicLoading.show({
             content: 'Logout...',
@@ -38,11 +57,15 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $h
 
             $ionicHistory.clearHistory();
             $ionicNavBarDelegate.showBackButton(false);
-            $scope.isLogin = AuthServices.isLogin = false;
-            $scope.userDetails = [];
+            $rootScope.isLogin = AuthServices.isLogin = false;
+            $rootScope.userDetails = [];
             localStorage.setItem("isLogin",false);
-            localStorage.setItem("USER_DETAILS",'[]');
+            localStorage.setItem("USER-DETAILS",'[]');
             $state.go('app.home');
+
+            if(isPopover){
+              $scope.closePopover();
+            }
 
             console.log(AuthServices);
             $ionicLoading.hide();

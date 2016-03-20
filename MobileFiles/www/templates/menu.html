@@ -13,7 +13,7 @@
             <button class="button" ng-if="!isLogin" ui-sref="app.login">
                 <i class="icon ion-person"></i> 
             </button>
-            <button class="button" ng-if="isLogin" ui-sref="app.userDetails({ id: userDetails.id})">
+            <button class="button" ng-if="isLogin" ng-click="userPopover($event)" >
                 <i class="icon ion-person"></i>
             </button>
             <button class="button"  ui-sref="app.cart">

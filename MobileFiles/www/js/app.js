@@ -114,7 +114,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
               }
           }
       })
-
+  .state('app.myOrders', {
+          url: '/myOrders/',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/myOrders.html',
+                  controller: 'MyOrdersCtrl'
+              }
+          }
+  })
 
     .state('app.faq', {
         url: '/faq',
