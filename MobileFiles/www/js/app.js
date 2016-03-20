@@ -135,7 +135,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
     })
 
     .state('app.categorylist',{
-        url:'/categorylist',
+        url:'/categorylist/:name',
         views:{
             'menuContent' : {
                 templateUrl: 'templates/categorylist.html',

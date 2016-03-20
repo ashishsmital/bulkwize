@@ -111,36 +111,6 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('CategoryListCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading) {
-
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
-
-    $scope.loadMore = function(){
-        $http({
-            method: 'GET',
-            url: 'http://localhost/mobile/www/js/dummy.json'
-        }).then(function successCallback(response) {
-            $scope.lists = response.data.data;
-            console.log(response.data.data);
-            $ionicLoading.hide();
-        }, function errorCallback(data) {
-            console.log(data);
-            $ionicLoading.hide();
-        });
-    }
-
-    $scope.$on('$stateChangeSuccess', function() {
-        $scope.loadMore();
-    });
-
-})
-
 
 .controller('SubCategoryBrandCtrl', function($scope, $state, $stateParams, $http, $rootScope, $ionicLoading,EnvConfig){
 
