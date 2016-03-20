@@ -80,9 +80,16 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, En
                     url: EnvConfig.HOST+'shoppingcart/'
                 }).then(function successCallback(data) {
                     console.log(data.data);
-                    $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
-                    $ionicLoading.show({ template: 'Item Deleted!', noBackdrop: true, duration: 2000 });
-                    console.log($rootScope.cartNumber);
+                    if(data.data.data.length > 0){
+                        $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
+                        $scope.cartDetails = data.data.data[0].Bulkwize;
+                        $ionicLoading.show({ template: 'Item Deleted!', noBackdrop: true, duration: 2000 });
+                        console.log($rootScope.cartNumber);
+                    }else{
+                        $rootScope.cartNumber = false;
+                        $scope.cartDetails = [];
+                    }
+
                     // $ionicLoading.hide();
                 }, function errorCallback(data) {
                     console.log(data);
