@@ -69,6 +69,22 @@ user.get('/:user', function (req, res, next) {
     });
 
 });
+// Check if there exists a user with the given mobile number
+user.get('/checkMobileNumber/:mobileNumber', function (req, res, next) {
+    var key;
+    var mobileNumber = req.params['mobileNumber'];
+    key = 'com.bulkwise.User::' + mobileNumber;
+    
+    UserModel.getByAttribute("id", key, function (error, result) {
+
+        if (result) {
+            res.send(result);
+        } else {
+            return res.status(404).send(error);
+        }
+    });
+
+});
 
 //exporting user
 module.exports = user;
