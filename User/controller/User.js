@@ -112,7 +112,7 @@ user.put('/forgotpassword/', function (req, res, next) {
     UserModel.getByAttribute("id", key, function (error, result) {
 
         if (result != null && !_.isUndefined(result) && result.data.length > 0) {
-                console.log('the user retrieved is ' + JSON.stringify(result.data);
+                console.log('the user retrieved is ' + JSON.stringify(result.data));
                 
                 result.data[0].Bulkwize.password=req.body.password;
 				console.log("Saving the user with updated password" + JSON.stringify(result.data[0].Bulkwize))
