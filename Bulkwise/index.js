@@ -181,6 +181,9 @@ var isAuthenticated = function (req, res, next) {
     }else if(req.url !='/order' && !req.url.startsWith('/user')){
         console.log("The request URL is neither order nor user and hence it does not mandate authentication  and hence allowing to process");
         return next();
+    }else if(req.url.startsWith('/user/checkMobileNumber') || req.url.startsWith('/user/forgotpassword')){
+        console.log("The request URL is post user hence it does not mandate authentication  and hence allowing to process");
+        return next();
     }else if(req.url.startsWith('/user') && (req.method=='POST' || req.method=='OPTIONS')){
         console.log("The request URL is post user hence it does not mandate authentication  and hence allowing to process");
         return next();
