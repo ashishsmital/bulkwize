@@ -1,7 +1,7 @@
 /**
  * Created by ghanavela on 3/12/2016 .
  */
-app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state){
+app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state,EnvConfig){
 
     $scope.step1 = true;
     $scope.step2 = false;
@@ -90,7 +90,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
            // console.log(JSON.stringify(regPayload));
             $http({
                 method: 'POST',
-                url: 'http://52.73.228.44:8080/user/',
+                url: EnvConfig.HOST+'user/',
                 data: regPayload
             }).then(function successCallback(response) {
                 console.log(response.data.data.cas);

@@ -1,7 +1,7 @@
 /**
  * Created by ghanavela on 3/13/2016.
  */
-app.factory('AuthServices', function ($http,$q) {
+app.factory('AuthServices', function ($http,$q,EnvConfig) {
     var USER_DETAILS = "USER-DETAILS";
     var AuthServices = {
         isLogin :   JSON.parse(localStorage.getItem("isLogin")) || false,
@@ -16,7 +16,7 @@ app.factory('AuthServices', function ($http,$q) {
             var promise = deferred.promise;
             $http({
                 method: 'GET',
-                url: 'http://52.73.228.44:8080/user/'+id
+                url: EnvConfig.HOST+'user/'+id
             }).then(function successCallback(data) {
                 console.log(data.data);
                 localStorage.setItem("isLogin",true);

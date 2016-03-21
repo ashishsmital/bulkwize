@@ -53,51 +53,8 @@ var app = angular.module('starter.controllers', [])
     };
 })
 
-.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate) {
 
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
-
-    $scope.category = [];
-    $http({
-        method: 'GET',
-        url: 'http://52.73.228.44:8080/category'
-    }).then(function successCallback(data) {
-        console.log(data.data.data);
-        for ( i = 0; i<data.data.data.length; i++){  
-            if(data.data.data[i].Bulkwize.parentCategoryId == 0){
-                $scope.category.push(data.data.data[i]);
-            }
-        };
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
-
-    $http({
-        method: 'GET',
-        url: 'http://52.73.228.44:8080/promotion/carousel'
-    }).then(function successCallback(data) {
-        console.log(data.data.carouselURLs);
-        $scope.promotionImage = data.data.carouselURLs;
-        $ionicSlideBoxDelegate.update();
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
-
-    console.log($rootScope.cartNumber);
-
-})
-
-.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state) {
+.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state,EnvConfig) {
 
     
 
@@ -114,7 +71,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'POST',
-                url: 'http://52.73.228.44:8080/supplier/',
+                url: EnvConfig.HOST+'supplier/',
                 data: {
                     "supplierFirstName" : user.firstname,
                     "supplierLastName" : user.lastname,
@@ -154,230 +111,8 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('CategoryListCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading) {
 
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
-
-    $scope.loadMore = function(){
-        $http({
-            method: 'GET',
-            url: 'http://localhost/mobile/www/js/dummy.json'
-        }).then(function successCallback(response) {
-            $scope.lists = response.data.data;
-            console.log(response.data.data);
-            $ionicLoading.hide();
-        }, function errorCallback(data) {
-            console.log(data);
-            $ionicLoading.hide();
-        });
-    }
-
-    $scope.$on('$stateChangeSuccess', function() {
-        $scope.loadMore();
-    });
-
-})
-
-.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http){
-
-    $ionicLoading.show({
-        content: 'Loading',
-        animation: 'fade-in',
-        showBackdrop: true,
-        maxWidth: 200,
-        showDelay: 0
-    });
-
-    $http({
-        method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/'
-    }).then(function successCallback(data) {
-        console.log(data.data.data[0].Bulkwize.updatedAt);
-        $scope.cartDetails = data.data.data[0].Bulkwize;
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
-
-    $scope.delete = function(data){
-        console.log(data);
-
-        $scope.variants = [];
-
-        for(var i =0 ; i< data.variants.length; i++){
-
-            $scope.variants.push({"sku_id":data.variants[i].sku_id,"quantity":data.variants[i].productOrderedQty,"productCountInCase":data.variants[i].productCountInCase,"productUnitSizeWeightQty":data.variants[i].productUnitSizeWeightQty,"productMRPUnit":data.variants[i].productMRPUnit,"productDiscountPercentage":data.variants[i].productDiscountPercentage});
-        }
-
-        console.log($scope.variants);
-        
-
-        $ionicLoading.show({
-            content: 'Loading',
-            animation: 'fade-in',
-            showBackdrop: true,
-            maxWidth: 200,
-            showDelay: 0
-        });
-
-        $http({
-            method: 'DELETE',
-            url: 'http://52.73.228.44:8080/shoppingcart/product',
-			headers: {"Content-Type": "application/json;charset=utf-8"},
-            data:
-            {
-                "type": "com.bulkwise.Cart",
-                "id": "com.bulkwise.Cart::John",
-                "customer_id": "",
-                "business_id": "123456789",
-                "products": [
-                    {
-                        "id": data.id,
-                        "productDisplayTitle" : data.productDisplayTitle,
-                        "productBrandName": data.productBrandName,
-                        "productBrandImageURL": data.productBrandImageURL,
-                        "productShortSummary": data.productShortSummary,
-                        "productDescription": data.productDescription,
-                        "productName": data.productName,
-                        "productImageURL": data.productImageURL,
-                        "quantity": "10",
-                        "variants":$scope.variants
-                    }
-                ],
-                "updatedAt": "ToBeAddedByServer",
-				"createdAt": "ToBeAddedByServer",
-				"workflowState":"ProductRemoved"
-            },
-        }).then(function successCallback(response) {
-            console.log(response.data.message);
-            if(response.data.message == 'success'){
-                $http({
-                    method: 'GET',
-                    url: 'http://52.73.228.44:8080/shoppingcart/'
-                }).then(function successCallback(data) {
-                    console.log(data.data);
-                    $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
-                    $ionicLoading.show({ template: 'Item Deleted!', noBackdrop: true, duration: 2000 });
-                    console.log($rootScope.cartNumber);
-                    // $ionicLoading.hide();
-                }, function errorCallback(data) {
-                    console.log(data);
-                    $ionicLoading.hide();
-                });
-            }
-            $ionicLoading.hide();
-        }, function errorCallback(data) {
-            console.log(data);
-            $ionicLoading.hide();
-        });
-        
-    }
-
-    $scope.addCart = function(data){
-        console.log(data);
-
-        $scope.variants = [];
-        $scope.cartProcess = '';
-        for(var i =0 ; i< data.variants.length; i++){
-            if(data.variants[i].quantity == 0){
-                $scope.cartProcess = false;
-            }
-            $scope.variants.push({"sku_id":data.variants[i].sku_id,"quantity":data.variants[i].quantity,"productCountInCase":data.variants[i].productCountInCase,"productUnitSizeWeightQty":data.variants[i].productUnitSizeWeightQty,"productMRPUnit":data.variants[i].productMRPUnit,"productDiscountPercentage":data.variants[i].productDiscountPercentage});
-        }
-
-        console.log($scope.variants, $scope.cartProcess);
-
-        if($scope.cartProcess === false){
-            $ionicLoading.show({ template: 'Select the Order Qty !', noBackdrop: true, duration: 2000 });
-        }else{
-            
-            $ionicLoading.show({
-                content: 'Loading',
-                animation: 'fade-in',
-                showBackdrop: true,
-                maxWidth: 200,
-                showDelay: 0
-            });
-
-            $http({
-                method: 'PUT',
-                url: 'http://52.73.228.44:8080/shoppingcart',
-                data:
-                {
-                    "type": "com.bulkwise.Cart",
-                    "id": "com.bulkwise.Cart::John",
-                    "customer_id": "",
-                    "business_id": "123456789",
-                    "products": [
-                        {
-                            "id": data.id,
-                            "productDisplayTitle" : data.productDisplayTitle,
-                            "productBrandName": data.productBrandName,
-                            "productBrandImageURL": data.productBrandImageURL,
-                            "productShortSummary": data.productShortSummary,
-                            "productDescription": data.productDescription,
-                            "productName": data.productName,
-                            "productImageURL": data.productImageURL,
-                            "quantity": "10",
-                            "variants":$scope.variants
-                        }
-                    ],
-                    "coupon_code": "10% discount",
-                    "billing_address": {
-                        "address": ""
-                    },
-                    "shipping_address": {
-                        "address": ""
-                    },
-                    "total_cart_value_after_discount": 182,
-                    "workflowState": "created",
-                    "createdAt": "2016-02-20T10:34:08.149Z",
-                    "updatedAt": data.updatedAt
-                },
-            }).then(function successCallback(response) {
-                console.log(response.data.message);
-                if(response.data.message == 'success'){
-                    $http({
-                        method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/'
-                    }).then(function successCallback(data) {
-                        console.log(data.data);
-                        $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
-                        $ionicLoading.show({ template: 'Item Added!', noBackdrop: true, duration: 2000 });
-                        console.log($rootScope.cartNumber);
-                        // $ionicLoading.hide();
-                    }, function errorCallback(data) {
-                        console.log(data);
-                        $ionicLoading.hide();
-                    });
-                }
-                $ionicLoading.hide();
-            }, function errorCallback(data) {
-                console.log(data);
-                $ionicLoading.hide();
-            });
-        }
-
-    }
-    $scope.increment = function(data){
-        console.log(data.quantity++);
-    }
-
-    $scope.decrement = function(data){
-        if(data.quantity != 0){
-            data.quantity--;
-        }
-    }
-})
-
-.controller('SubCategoryBrandCtrl', function($scope, $state, $stateParams, $http, $rootScope, $ionicLoading){
+.controller('SubCategoryBrandCtrl', function($scope, $state, $stateParams, $http, $rootScope, $ionicLoading,EnvConfig){
 
     $scope.checked = [];
 
@@ -394,7 +129,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/category/'+$stateParams.subId+'/subcategory'
+        url: EnvConfig.HOST+'category/'+$stateParams.subId+'/subcategory'
     }).then(function successCallback(data) {
         console.log(data.data.data);
         $scope.subCategory = data.data.data;
@@ -434,7 +169,7 @@ var app = angular.module('starter.controllers', [])
 
         $http({
             method: 'POST',
-            url: 'http://52.73.228.44:8080/category/brand/search',
+            url: EnvConfig.HOST+'category/brand/search',
             data: {
                 "categoryIds":subcatgid
             },
@@ -459,7 +194,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('SubCategoryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope){
+.controller('SubCategoryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope,EnvConfig){
 
     $scope.title = $stateParams.prodname;
 
@@ -475,7 +210,7 @@ var app = angular.module('starter.controllers', [])
     
     $http({
         method: 'POST',
-        url: 'http://52.73.228.44:8080/products/search',
+        url: EnvConfig.HOST+'products/search',
         data: {
             "categoryIds":$rootScope.suBrandId,
             "productBrandName":$scope.title
@@ -522,7 +257,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'PUT',
-                url: 'http://52.73.228.44:8080/shoppingcart',
+                url: EnvConfig.HOST+'shoppingcart',
                 data:
                 {
                     "type": "com.bulkwise.Cart",
@@ -562,7 +297,7 @@ var app = angular.module('starter.controllers', [])
                 if(response.data.message == 'success'){
                     $http({
                         method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/'
+                        url: EnvConfig.HOST+'shoppingcart/'
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -595,7 +330,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('CategoryDetailCtrl', function($scope, $stateParams, $http, $rootScope, $ionicSlideBoxDelegate, $ionicLoading) {
+.controller('CategoryDetailCtrl', function($scope, $stateParams, $http, $rootScope, $ionicSlideBoxDelegate, $ionicLoading,EnvConfig) {
 
     $ionicLoading.show({
         content: 'Loading',
@@ -609,7 +344,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/products/'+$stateParams.pId
+        url: EnvConfig.HOST+'products/'+$stateParams.pId
     }).then(function successCallback(response) {
         $ionicLoading.hide();
         console.log(response.data.data[0].Bulkwize);
@@ -657,7 +392,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'PUT',
-                url: 'http://52.73.228.44:8080/shoppingcart',
+                url: EnvConfig.HOST+'shoppingcart',
                 data:
                 {
                     "type": "com.bulkwise.Cart",
@@ -697,7 +432,7 @@ var app = angular.module('starter.controllers', [])
                 if(response.data.message == 'success'){
                     $http({
                         method: 'GET',
-                        url: 'http://52.73.228.44:8080/shoppingcart/'
+                        url: EnvConfig.HOST+'shoppingcart/'
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
@@ -730,7 +465,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('SearchCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state){
+.controller('SearchCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
 
     console.log($stateParams);
 
@@ -747,7 +482,7 @@ var app = angular.module('starter.controllers', [])
     $scope.searchKeyword = $stateParams.searchId;
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/products/likeSearch/'+$stateParams.searchId
+        url: EnvConfig.HOST+'products/likeSearch/'+$stateParams.searchId
     }).then(function successCallback(response) {
         console.log(response);
         $scope.lists = response.data.data;
@@ -772,7 +507,7 @@ var app = angular.module('starter.controllers', [])
 
 })
 
-.controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state){
+.controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
 
     $scope.user = [];
     $scope.user.city = 'Bangalore'
@@ -789,7 +524,7 @@ var app = angular.module('starter.controllers', [])
 
             $http({
                 method: 'PUT',
-                url: 'http://52.73.228.44:8080/shoppingcart/shippingDetails',
+                url: EnvConfig.HOST+'shoppingcart/shippingDetails',
                 data: {
                     "customer_id": "John",
                     "id": "com.bulkwise.Cart::John",
@@ -830,7 +565,7 @@ var app = angular.module('starter.controllers', [])
     }
 })
 
-.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state){
+.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
 
     $ionicLoading.show({
         content: 'Loading',
@@ -842,7 +577,7 @@ var app = angular.module('starter.controllers', [])
 
     $http({
         method: 'GET',
-        url: 'http://52.73.228.44:8080/shoppingcart/'
+        url: EnvConfig.HOST+'shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data.data[0].Bulkwize.updatedAt);
         $scope.cartDetails = data.data.data[0].Bulkwize;
@@ -863,7 +598,7 @@ var app = angular.module('starter.controllers', [])
 
         $http({
             method: 'POST',
-            url: 'http://52.73.228.44:8080/order/create/',
+            url: EnvConfig.HOST+'order/create/',
         }).then(function successCallback(response) {
             console.log(response);
             
