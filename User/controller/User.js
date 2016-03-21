@@ -86,5 +86,49 @@ user.get('/checkMobileNumber/:mobileNumber', function (req, res, next) {
 
 });
 
+// Return user's details based on his mobile number
+user.get('/forgotpassword/:mobileNumber', function (req, res, next) {
+    var key;
+    var mobileNumber = req.params['mobileNumber'];
+    key = 'com.bulkwise.User::' + mobileNumber;
+    
+    UserModel.getByAttribute("id", key, function (error, result) {
+
+        if (result) {
+            res.send(result);
+        } else {
+            return res.status(404).send(error);
+        }
+    });
+
+});
+
+// update password for the user
+user.put('/forgotpassword/', function (req, res, next) {
+    var key;
+    var mobileNumber = req.body.mobileNumber;
+    key = 'com.bulkwise.User::' + mobileNumber;
+    
+    UserModel.getByAttribute("id", key, function (error, result) {
+
+        if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+                console.log('the user retrieved is ' + JSON.stringify(result.data);
+                
+                result.data[0].Bulkwize.password=req.body.password;
+				console.log("Saving the user with updated password" + JSON.stringify(result.data[0].Bulkwize))
+				UserModel.save(result.data[0].Bulkwize, function (error, result) {
+					if (error) {
+						return res.status(400).send(error);
+					}
+					console.log('User updated as part of forgot password');
+					res.send(result);
+				});
+        } else {
+            return res.status(404).send(error);
+        }
+    });
+
+});
+
 //exporting user
 module.exports = user;
