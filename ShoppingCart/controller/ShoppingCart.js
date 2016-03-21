@@ -31,9 +31,9 @@ shoppingcart.get('/user/:userid', function (req, res, next) {
 
                     sum += ele.variants.length;
 					// calculate the total cart value
-					_.each(result.data[0].Bulkwize.products.variants, function (ele) {
-
-						totalCartValue += ele.quantity*ele.productMRPUnit*ele.productDiscountPercentage/100;
+					_(ele.variants).each(function (eleV) {
+						console.log("Inside variants loop");
+						totalCartValue += eleV.productCountInCase*eleV.quantity*eleV.productMRPUnit*(100-eleV.productDiscountPercentage)/100;
 
 					});
 				
@@ -64,10 +64,17 @@ shoppingcart.get('/', function (req, res, next) {
                 _.each(result.data[0].Bulkwize.products, function (ele) {
 
                     sum += ele.variants.length;
+					// calculate the total cart value
+					_(ele.variants).each(function (eleV) {
+						console.log("Inside variants loop");
+						totalCartValue += eleV.productCountInCase*eleV.quantity*eleV.productMRPUnit*(100-eleV.productDiscountPercentage)/100;
+
+					});
 
                 });
                 _.extend(result.data[0].Bulkwize, {'totalCount': sum});
 	        console.log("The count of items in shopping cart is " + result.data[0].Bulkwize.totalCount);
+				_.extend(result.data[0].Bulkwize, {'totalCartValue': numeral(totalCartValue).format('Rs0,0.00')});
             }
 
 
