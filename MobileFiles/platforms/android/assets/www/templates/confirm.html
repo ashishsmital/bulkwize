@@ -1,0 +1,60 @@
+<ion-view view-title="Confirm Page">
+	<div class="has-header bar bar-pink">
+		<div class="total">Total: $1538</div>
+	</div>
+  	<ion-content class="has-subheader">
+    	<div class="list font_price category_list">
+		    <div class="item" ng-repeat="cartDetail in cartDetails.products">
+		    	<div ui-sref="app.categorydetail({ pId: cartDetail.id})">
+			    	<div class="left_thumb">
+			      		<img src="http://52.73.228.44:8080{{cartDetail.productBrandImageURL}}">
+			      	</div>
+			      	<div>
+				      	<h2>{{cartDetail.productBrandName}}</h2>
+				      	<p>{{cartDetail.productShortSummary}}</p>
+				    </div>
+			    	<div class="clear"></div>
+			    </div>
+
+			    <div class="mt_10">
+					<table class="table">
+						<tr>
+							<th>Size</th>
+							<th>Units/case</th>
+							<th>Price</th>
+							<th>No of cases</th>
+						</tr>
+						<tbody>
+							<tr ng-repeat="productVariant in cartDetail.variants">
+								<td>{{productVariant.productUnitSizeWeightQty}}</td>
+								<td>{{productVariant.productCountInCase}}</td>
+								<td>{{productVariant.productMRPUnit}}</td>
+								<td>
+									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+							      	<span class="product-quantity">{{productVariant.quantity}}</span>
+							      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="row">
+					
+					<div class="col">
+						<div class="addCartButton" ng-click="addCart(cartDetail)">
+						 	Updated to Cart<i class="ion-android-cart"></i>
+						</div>
+					</div>
+					<div class="col text-right">
+						<div class="addCartButton" ng-click="delete(cartDetail)">
+						 	Remove <i class="ion-close"></i>
+						</div>
+					</div>
+				</div>
+		    </div>
+		</div>
+  	</ion-content>
+	<ion-footer-bar class="bar bar-footer bar-assertive">
+  		<div class="title cart-footer" ng-click="confirm()">Confirm the Order</div>
+  	</ion-footer-bar>
+</ion-view>
