@@ -4,24 +4,52 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+
+var pushNotification;
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessages'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$rootScope,RequestsService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
 
     }
+
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+
+      /*
+      var push = new Ionic.Push({
+          "debug": true
+      });
+
+     push.register(function(token){
+         //debugger;
+         console.log("device token",token.token);
+     });
+       */
+
+      pushNotification = window.plugins.pushNotification;
+      pushNotification.register(
+          onNotification,
+          errorHandler,
+          {
+              'badge': 'true',
+              'sound': 'true',
+              'alert': 'true',
+              'ecb': 'onNotification',
+              //'senderID': 'YOUR GOOGLE CONSOLE PROJECT NUMBER',
+              'senderID': 'AIzaSyBoIsr7M2vjb_2w5lL8hFi0Z9qwXqClxcI',
+          }
+      );
+
+
   });
 })
-
 .config(['$httpProvider',function ($httpProvider) {
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.withCredentials  = true;
@@ -242,3 +270,45 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
   // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/home');
 });
+
+window.onNotification = function(e){
+
+    switch(e.event){
+        case 'registered':
+            if(e.regid.length > 0){
+
+                var device_token = e.regid;
+                RequestsService.register(device_token).then(function(response){
+                    alert('registered!');
+                });
+            }
+            break;
+
+        case 'message':
+            alert('msg received: ' + e.message);
+            /*
+             {
+             "message": "Hello this is a push notification",
+             "payload": {
+             "message": "Hello this is a push notification",
+             "sound": "notification",
+             "title": "New Message",
+             "from": "813xxxxxxx",
+             "collapse_key": "do_not_collapse",
+             "foreground": true,
+             "event": "message"
+             }
+             }
+             */
+            break;
+
+        case 'error':
+            alert('error occured');
+            break;
+
+    }
+};
+
+window.errorHandler = function(error){
+    alert('an error occured');
+}

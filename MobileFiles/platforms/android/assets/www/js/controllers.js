@@ -1,6 +1,6 @@
-var app = angular.module('starter.controllers', [])
+var app = angular.module('starter.controllers', []);
 
-.directive('owlSlider', function ($ionicSideMenuDelegate) {
+app.directive('owlSlider', function ($ionicSideMenuDelegate) {
     return {
         restrict: 'E',
         link: function (scope, element, attrs) {
