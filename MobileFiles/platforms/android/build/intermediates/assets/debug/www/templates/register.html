@@ -1,0 +1,173 @@
+<ion-view title="Register">
+  <ion-content class="has-header">
+    <form class="form-horizontal padding_col6_left" role="form" name="userInfo" ng-show="step1" novalidate method="post" autocomplete="off">
+      <div class="list" >
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Company/Shop Name <sup>*</sup></span>
+              <input type="text" placeholder="XYZ" name="companyname" id="companyname" class ="error" ng-model="reg.companyname" required>
+              <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.companyname.$touched)" ng-messages="userInfo.companyname.$error" >
+                  <div ng-message="required" class="error">Company/Shop Name is required</div>
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Mobile Number <sup>*</sup></span>
+              <input type="text" placeholder="+91 XXXXXXXXXX" name="mob" id="mob" class="error" ng-model="reg.mob" required ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
+              <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.mob.$touched)" ng-messages="userInfo.mob.$error" >
+                  <div ng-message="required" class="error">Mobile Number is required</div>
+                  <div ng-message="pattern" class="error">Must be a valid 10 digit phone number</div>
+
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Password <sup>*</sup></span>
+              <input type="password" placeholder="****" name="password" id="password" class="error" ng-model="reg.password" required>
+              <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.password.$touched)" ng-messages="userInfo.password.$error" >
+                  <div ng-message="required" class="error">Password is required</div>
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Confirm Password <sup>*</sup></span>
+              <input type="password" placeholder="****" name="confirmpassword" id="confirmpassword" class="error" ng-model="reg.confirmpassword" required compare-to="reg.password">
+              <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.confirmpassword.$touched || userInfo.confirmpassword.$error.otherModelValue)" ng-messages="userInfo.confirmpassword.$error" >
+                  <div ng-message="required" class="error">Confirm Password is required</div>
+                  <div ng-message="compareTo" class="error">Oops! Please confirm your password</div>
+              </div>
+          </label>
+      </div>
+      <div class="row">
+        <div class="col text-center"><button class="button  button-positive icon-right ion-chevron-right" ng-disabled="userInfo.$invalid" ng-click="goNextPrev(2)"> Personal Info</button></div>
+      </div>
+    </form>
+    <form class="form-horizontal padding_col6_left" role="form" name="personalInfo" ng-show="step2" novalidate method="post"  autocomplete="off">
+      <div class="list" >
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">First Name <sup>*</sup></span>
+              <input type="text" placeholder="John" name="firstname" id="firstname" class="error" ng-model="reg.firstname" required>
+              <div class="validation-error" ng-if="(register.$submitted || register.firstname.$touched)" ng-messages="register.firstname.$error" >
+                  <div ng-message="required" class="error">First Name is required</div>
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Last Name <sup>*</sup></span>
+              <input type="text" placeholder="Doe" name="lastname" id="lastname" class="error" ng-model="reg.lastname" required>
+              <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.lastname.$touched)" ng-messages="personalInfo.lastname.$error" >
+                  <div ng-message="required" class="error">Last Name is required</div>
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">PAN Number <sup>*</sup></span>
+              <input type="text" placeholder="1234578" name="panumber" id="panumber" class="error" ng-model="reg.panumber" required>
+              <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.panumber.$touched)" ng-messages="personalInfo.panumber.$error" >
+                  <div ng-message="required" class="error">PAN Number is required</div>
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Email <sup>*</sup></span>
+              <input type="email" placeholder="sample@sample.com" name="email" id="email" class="error" ng-model="reg.email" required>
+              <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.email.$touched )" ng-messages="personalInfo.email.$error" >
+                  <div ng-message="required" class="error">Email is required</div>
+                  <div ng-message="email" class="error">This needs to be a valid email</div>
+              </div>
+          </label>
+
+      </div>
+
+      <div class="row">
+            <div class="col col-25"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(1)"> Back </a></div>
+            <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(3)" ng-disabled="personalInfo.$invalid">Shipping Address</button></div>
+      </div>
+    </form>
+    <form class="form-horizontal padding_col6_left" role="form" name="shopInfo" ng-show="step3" novalidate method="post"  autocomplete="off">
+      <div class="list">
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Shop Address <sup>*</sup></span>
+          </label>
+          <label class="item item-input item-stacked-label">
+                  <span class="input-label">Add line 1 <sup>*</sup></span>
+              <textarea ng-model="reg.shopAddLine1" name="shopAddLine1" id="shopAddLine1" required></textarea>
+              <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopAddLine1.$touched )" ng-messages="shopInfo.shopAddLine1.$error" >
+                  <div ng-message="required" class="error">Address1 is required</div>
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Add line 2</span>
+              <textarea ng-model="reg.shopAddLine2" name="shopAddLine2" id="shopAddLine2" required></textarea>
+          </label>
+
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">City <sup>*</sup></span>
+              <textarea ng-model="reg.shopCity" name="shopCity" id="shopCity" required></textarea>
+              <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopCity.$touched )" ng-messages="shopInfo.shopCity.$error" >
+                  <div ng-message="required" class="error">City is required</div>
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">State <sup>*</sup></span>
+              <textarea ng-model="reg.shopState" name="shopState" id="shopState" required></textarea>
+              <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopState.$touched )" ng-messages="shopInfo.shopState.$error" >
+                  <div ng-message="required" class="error">State is required</div>
+              </div>
+          </label>
+          <label class="item item-input item-stacked-label">
+              <span class="input-label">Pin code <sup>*</sup></span>
+              <textarea ng-model="reg.shopPincode" name="shopPincode" id=shopPincode" required></textarea>
+              <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopPincode.$touched )" ng-messages="shopInfo.shopPincode.$error" >
+                  <div ng-message="required" class="error">Pin code is required</div>
+              </div>
+          </label>
+          <ion-list>
+              <ion-checkbox ng-model="reg.isSameBillingAdd">Billing address is same as shipping address.</ion-checkbox>
+          </ion-list>
+      </div>
+      <div class="row">
+            <div class="col col-25"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(2)"> Back </a></div>
+            <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(4)"  ng-disabled="shopInfo.$invalid" >Shipping Address</button></div>
+      </div>
+    </form>
+
+    <form class="form-horizontal padding_col6_left" role="form" name="deliveryInfo" ng-show="step4" novalidate method="post" ng-submit="submit(deliveryInfo.$valid, reg)" autocomplete="off">
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Delivery Address <sup>*</sup></span>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Add line 1 <sup>*</sup></span>
+          <textarea ng-model="reg.delAddLine1" name="delAddLine1" id="delAddLine1" required></textarea>
+          <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delAddLine1.$touched )" ng-messages="deliveryInfo.delAddLine1.$error" >
+              <div ng-message="required" class="error">Address1 is required</div>
+          </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+              <span class="input-label">Add line 2 </span>
+              <textarea ng-model="reg.delAddLine2" name="delAddLine2" id="delAddLine2" required></textarea>
+        </label>
+        <label class="item item-input item-stacked-label">
+              <span class="input-label">City <sup>*</sup></span>
+              <textarea ng-model="reg.delCity" name="delCity" id="delpCity" required></textarea>
+              <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delCity.$touched )" ng-messages="deliveryInfo.delCity.$error" >
+                  <div ng-message="required" class="error">City is required</div>
+              </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+              <span class="input-label">State <sup>*</sup></span>
+              <textarea ng-model="reg.delState" name="delState" id="delState" required></textarea>
+              <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delState.$touched )" ng-messages="deliveryInfo.delState.$error" >
+                  <div ng-message="required" class="error">State is required</div>
+              </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+              <span class="input-label">Pin code <sup>*</sup></span>
+              <textarea ng-model="reg.delPincode" name="delPincode" id=delPincode" required></textarea>
+              <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delPincode.$touched )" ng-messages="deliveryInfo.delPincode.$error" >
+                  <div ng-message="required" class="error">Pin code is required</div>
+              </div>
+        </label>
+      </div>
+      <div class="row">
+            <div class="col col-25"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(3)"> Back </a></div>
+            <div class="col text-right"><button class="button  button-positive icon-right" ng-disabled = "deliveryInfo.$invalid" type="submit">Save</button></div>
+      </div>
+    </form>
+   <!-- <pre>{{payLoad}}</pre> -->
+  </ion-content>
+</ion-view>
