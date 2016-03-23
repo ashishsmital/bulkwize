@@ -1,6 +1,9 @@
 <ion-view view-title="Cart details">
   	<ion-content >
+
+		<div ng-if="cartDetails.length == 0" style="margin-top:10px;" class="text-center">No cart details found</div>
     	<div class="list font_price category_list">
+
 		    <div class="item" ng-repeat="cartDetail in cartDetails.products">
 		    	<div ui-sref="app.categorydetail({ pId: cartDetail.id})">
 			    	<div class="left_thumb">
@@ -51,7 +54,7 @@
 		    </div>
 		</div>
   	</ion-content>
-  	<ion-footer-bar class="bar bar-dark cart_button">
+  	<ion-footer-bar class="bar bar-dark cart_button" ng-if="cartDetails.length != 0">
 		<div class="button-bar">
 			<a class="button button-calm " ui-sref="#">Total: $1538</a>
 			<a class="button button-assertive" ui-sref="app.shipping">Checkout</a>

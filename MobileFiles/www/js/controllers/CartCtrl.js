@@ -3,6 +3,7 @@
  */
 app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, EnvConfig){
 
+    $scope.cartDetails = "ddd";
     $ionicLoading.show({
         content: 'Loading',
         animation: 'fade-in',
@@ -15,8 +16,14 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, En
         method: 'GET',
         url: EnvConfig.HOST+'shoppingcart/'
     }).then(function successCallback(data) {
-        console.log(data.data.data[0].Bulkwize.updatedAt);
-        $scope.cartDetails = data.data.data[0].Bulkwize;
+        //console.log(data.data.data[0].Bulkwize.updatedAt);
+        if(data.data.data.length > 0){
+            $scope.cartDetails = data.data.data[0].Bulkwize;
+        }else{
+            $rootScope.cartNumber = false;
+            $scope.cartDetails = [];
+        }
+
         $ionicLoading.hide();
     }, function errorCallback(data) {
         console.log(data);

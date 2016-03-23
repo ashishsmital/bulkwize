@@ -41,6 +41,9 @@
         <ion-item menu-close href="#/app/register" ng-if="!isLogin">
             Register
         </ion-item>
+        <ion-item menu-close ui-sref="app.myOrders" ng-if="!isLogin" >
+              My order
+        </ion-item>
         <ion-item menu-close href="#/app/supplier">
             I am a supplier
         </ion-item>
