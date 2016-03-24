@@ -49,6 +49,25 @@ user.post('/', function (req, res, next) {
     });
 });
 
+user.get('/', function (req, res, next) {
+    var key;
+    var mobileNumber = req.user.user;
+    if (mobileNumber.indexOf('bulkwise') > -1) {
+        key = mobileNumber;
+    } else {
+
+        key = 'com.bulkwise.User::' + mobileNumber;
+    }
+    UserModel.getByAttribute("id", key, function (error, result) {
+
+        if (result) {
+            res.send(result);
+        } else {
+            return res.status(404).send(error);
+        }
+    });
+
+});
 
 user.get('/:user', function (req, res, next) {
     var key;

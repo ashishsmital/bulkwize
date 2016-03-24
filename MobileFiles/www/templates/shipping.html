@@ -8,7 +8,7 @@
 
 		        <label class="item item-input item-stacked-label">
 		            <span class="input-label">Address1<sup>*</sup></span>
-		            <textarea maxlength="50" name = "address1" id="address1" ng-model="user.address1" required></textarea>
+		            <textarea maxlength="50" name = "address1" id="address1" ng-model="user.address1" ng-value={{userDetails.deliveryAddress.addressLine1}}required></textarea>
 		            <div class="validation-error" ng-if="(shipping.$submitted || shipping.address1.$touched)" ng-messages="shipping.address1.$error" >
 		                <div ng-message="required" class="error">Address is required</div>
 		            </div>
