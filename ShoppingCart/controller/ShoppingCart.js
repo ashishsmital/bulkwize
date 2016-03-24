@@ -61,6 +61,7 @@ shoppingcart.get('/', function (req, res, next) {
             if (result != null && !_.isUndefined(result) && result.data.length > 0) {
                 console.log('the retrieved cart is ' + result.data);
                 var sum = 0
+				var totalCartValue = 0;
                 _.each(result.data[0].Bulkwize.products, function (ele) {
 
                     sum += ele.variants.length;
