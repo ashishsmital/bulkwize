@@ -8,7 +8,7 @@
 
 		        <label class="item item-input item-stacked-label">
 		            <span class="input-label">Address1<sup>*</sup></span>
-		            <textarea maxlength="500" name = "address1" id="address1" ng-model="user.address1" required></textarea>
+		            <textarea maxlength="50" name = "address1" id="address1" ng-model="user.address1" required></textarea>
 		            <div class="validation-error" ng-if="(shipping.$submitted || shipping.address1.$touched)" ng-messages="shipping.address1.$error" >
 		                <div ng-message="required" class="error">Address is required</div>
 		            </div>
@@ -16,12 +16,12 @@
 
 		        <label class="item item-input item-stacked-label">
 		            <span class="input-label">Address2</span>
-		            <textarea maxlength="500" name = "address2" id="address2" ng-model="user.address2" ></textarea>
+		            <textarea maxlength="50" name = "address2" id="address2" ng-model="user.address2" ></textarea>
 		        </label>
 
 		        <label class="item item-input item-stacked-label">
-		            <span class="input-label">Postcode <sup>*</sup></span>
-		            <input type="number" placeholder="PostCode"  name = "postcode" id="postcode" class = "error" ng-model="user.postcode" required>
+		            <span class="input-label">Pin code <sup>*</sup></span>
+		            <input type="number" maxlength="6" placeholder="PostCode"  name = "postcode" id="postcode" class = "error" ng-model="user.postcode" required>
 		            <div class="validation-error" ng-if="(shipping.$submitted || shipping.postcode.$touched)" ng-messages="shipping.postcode.$error" >
 		                <div ng-message="required" class="error">Postcode is required</div>
 		            </div>
