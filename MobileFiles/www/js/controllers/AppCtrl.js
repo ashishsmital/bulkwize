@@ -121,7 +121,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $h
         url: EnvConfig.HOST+'shoppingcart/'
     }).then(function successCallback(data) {
         console.log(data.data);
-        // $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
+        $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
         // $ionicLoading.show({ template: 'Item Added!', noBackdrop: true, duration: 2000 });
         console.log($rootScope.cartNumber);
         // $ionicLoading.hide();
