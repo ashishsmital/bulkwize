@@ -178,7 +178,7 @@ var isAuthenticated = function (req, res, next) {
     if(req.isAuthenticated()){
         console.log("The user authentication is - " + req.isAuthenticated() + " and hence allowing to process");
         return next();
-    }else if(req.url !='/order' && !req.url.startsWith('/user')){
+    }else if(req.url !='/order' && req.url != '/shoppingcart/shippingDetails' && !req.url.startsWith('/user')){
         console.log("The request URL is neither order nor user and hence it does not mandate authentication  and hence allowing to process");
         return next();
     }else if(req.url.startsWith('/user/checkMobileNumber') || req.url.startsWith('/user/forgotpassword')){
