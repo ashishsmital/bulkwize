@@ -514,38 +514,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
 	$scope.user.state = 'Karnataka';
 	$scope.user.country = 'India';
 	
-	$http({
-        method: 'GET',
-        url: EnvConfig.HOST+'user/'
-    }).then(function successCallback(data) {
-        
-		if(response.status == 200){
-				if(data.data.data.length > 0){
-				$scope.userDetails = data.data.data[0].Bulkwize;
-        }
-		}
-        
-		
-		if(response.status == 401){
-					var alertPopup = $ionicPopup.alert({
-                        title: 'Info',
-                        template: 'Ooops! Please login before checkout'
-                    });
-					
-					alertPopup.then(function(res) {
-                        console.log("The user is not logged in and hence needs to be redirected to login page." + res);
-                        if(res == true){
-                            $state.go('app.login');
-                        }
-                    });
-
-		}
-
-        $ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-        $ionicLoading.hide();
-    });
+	
 	
     $scope.submit = function(valid, user){
         console.log(valid);

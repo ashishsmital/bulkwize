@@ -1,7 +1,7 @@
 /**
  * Created by ghanavela on 3/20/2016.
  */
-app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, EnvConfig){
+app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $ionicPopup, $state, EnvConfig){
 
     $scope.cartDetails = "ddd";
     $ionicLoading.show({
@@ -29,6 +29,45 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, En
         console.log(data);
         $ionicLoading.hide();
     });
+	
+	$scope.checkout = function(data){
+		
+		$http({
+        method: 'GET',
+        url: EnvConfig.HOST+'user/'
+    }).then(function successCallback(response) {
+        
+		if(response.status == 200){
+				if(response.data.data.length > 0){
+					$scope.userDetails = response.data.data[0].Bulkwize;
+				}
+				$state.go('app.shipping');
+		}
+        
+		
+		
+        $ionicLoading.hide();
+    }, function errorCallback(response) {
+        console.log(response);
+		if(response.status == 401){
+					var alertPopup = $ionicPopup.alert({
+                        title: 'Info',
+                        template: 'Ooops! Please login before checkout'
+                    });
+					
+					alertPopup.then(function(res) {
+                        console.log("The user is not logged in and hence needs to be redirected to login page." + res);
+                        if(res == true){
+                            $state.go('app.login');
+                        }
+                    });
+
+		}
+
+        $ionicLoading.hide();
+    });
+	
+	}
 
     $scope.delete = function(data){
         console.log(data);
