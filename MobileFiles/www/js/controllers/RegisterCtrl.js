@@ -7,6 +7,13 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
     $scope.step2 = false;
     $scope.step3 = false;
     $scope.step4 = false;
+	
+	$scope.reg.shopCity = 'Bangalore';
+	$scope.reg.shopState = 'Karnataka';
+	
+	$scope.reg.delCity = 'Bangalore';
+	$scope.reg.delState = 'Karnataka';
+	
 
 /*
     $scope.step1 = true;
