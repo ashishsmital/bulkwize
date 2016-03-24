@@ -20,12 +20,12 @@ app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $h
     $scope.reg.delCity = 'Bangalore';
     $scope.reg.delState = 'Karnataka';
 
-    /*
+
      $scope.step1 = true;
      $scope.step2 = true;
      $scope.step3 = true;
      $scope.step4 = true;
-    */
+
 
     $scope.reg = {};
 
@@ -45,14 +45,35 @@ app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $h
 
     AuthServices.getUserDetailsById($stateParams.id.split("::")[1]).then(function(data){
         $scope.userDetails = data;
-        $scope.reg.companyname = $scope.userDetails.shopName;
-        $scope.reg.mob =  $scope.userDetails.mobileNumber;
-        $scope.reg.password = $scope.userDetails.password;
-        $scope.reg.confirmpassword = $scope.userDetails.password;
-        $scope.reg.firstname = $scope.userDetails.firstName;
-        $scope.reg.lastname = $scope.userDetails.lastName;
-        $scope.reg.panumber = $scope.userDetails.pan;
-        $scope.reg.email = $scope.userDetails.email;
+        if($scope.userDetails){
+            $scope.reg.companyname = $scope.userDetails.shopName;
+            $scope.reg.mob =  $scope.userDetails.mobileNumber;
+            $scope.reg.password = $scope.userDetails.password;
+            $scope.reg.confirmpassword = $scope.userDetails.password;
+            $scope.reg.firstname = $scope.userDetails.firstName;
+            $scope.reg.lastname = $scope.userDetails.lastName;
+            $scope.reg.panumber = $scope.userDetails.pan;
+            $scope.reg.email = $scope.userDetails.email;
+        }
+
+
+        if($scope.userDetails && $scope.userDetails.shopAddress){
+            $scope.reg.shopAddLine1 = $scope.userDetails.shopAddress.addressLine1 ;
+            $scope.reg.shopAddLine2 = $scope.userDetails.shopAddress.addressLine2;
+            $scope.reg.shopCity = $scope.userDetails.shopAddress.city;
+            $scope.reg.shopState = $scope.userDetails.shopAddress.state;
+            $scope.reg.shopPincode = $scope.userDetails.shopAddress.pincode;
+
+        }
+
+        if($scope.userDetails && $scope.userDetails.deliveryAddress){
+             $scoe.reg.delshopAddLine1 = $scope.userDetails.deliveryAddress.addressLine1;
+             $scoe.reg.delshopAddLine2 = $scope.userDetails.deliveryAddress.addressLine1;
+             $scoe.reg.delshopCity = $scope.userDetails.deliveryAddress.city;
+             $scoe.reg.delshopState =  $scope.userDetails.deliveryAddress.state;
+             $scoe.reg.delshopPincode = $scope.userDetails.deliveryAddress.pincode;
+        }
+
 
         //$scope.reg.companyname = ;
         console.log($scope.userDetails);
