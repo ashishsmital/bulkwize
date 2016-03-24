@@ -21,10 +21,10 @@ app.controller('MyOrdersCtrl', function($scope, $stateParams, $http, $ionicLoadi
 
     $http({
         method: 'GET',
-        url: 'json/myOrder.json'
+        url: EnvConfig.HOST+'order'
     }).then(function successCallback(data) {
         console.log(data);
-        if(data.data.products.length > 0 ){
+        if(data.data.products && data.data.products.length > 0 ){
             $scope.isMyOrders = true;
             $scope.myOrders = data.data.products;
         }

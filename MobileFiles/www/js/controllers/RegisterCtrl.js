@@ -7,7 +7,8 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
     $scope.step2 = false;
     $scope.step3 = false;
     $scope.step4 = false;
-	
+
+    $scope.reg = {};
 	$scope.reg.shopCity = 'Bangalore';
 	$scope.reg.shopState = 'Karnataka';
 	
@@ -20,7 +21,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
     $scope.step2 = true;
     $scope.step3 = true;
     $scope.step4 = true;
-    */
+*/
 
     $scope.reg = {};
 
