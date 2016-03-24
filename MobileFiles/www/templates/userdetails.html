@@ -44,14 +44,7 @@
                         <div ng-message="required" class="error">Password is required</div>
                     </div>
                 </label>
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label">Confirm Password <sup>*</sup></span>
-                    <input type="password" placeholder="****" name="confirmpassword" id="confirmpassword" class="error" readonly ng-model="reg.confirmpassword" required compare-to="reg.password">
-                    <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.confirmpassword.$touched || userInfo.confirmpassword.$error.otherModelValue)" ng-messages="userInfo.confirmpassword.$error" >
-                        <div ng-message="required" class="error">Confirm Password is required</div>
-                        <div ng-message="compareTo" class="error">Oops! Please confirm your password</div>
-                    </div>
-                </label>
+                
             </div>
             <div class="row">
                 <div class="col text-center"><button class="button  button-positive icon-right ion-chevron-right" ng-disabled="userInfo.$invalid" ng-click="goNextPrev(2)"> Personal Info</button></div>
@@ -62,14 +55,14 @@
             <div class="list" >
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">First Name <sup>*</sup></span>
-                    <input type="text" placeholder="John" name="firstname" id="firstname" class="error" readonly ng-model="reg.firstname" required>
+                    <input type="text" placeholder="John" name="firstname" id="firstname" class="error" ng-model="reg.firstname" required>
                     <div class="validation-error" ng-if="(register.$submitted || register.firstname.$touched)" ng-messages="register.firstname.$error" >
                         <div ng-message="required" class="error">First Name is required</div>
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Last Name <sup>*</sup></span>
-                    <input type="text" placeholder="Doe" name="lastname" id="lastname" class="error" readonly ng-model="reg.lastname" required>
+                    <input type="text" placeholder="Doe" name="lastname" id="lastname" class="error"  ng-model="reg.lastname" required>
                     <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.lastname.$touched)" ng-messages="personalInfo.lastname.$error" >
                         <div ng-message="required" class="error">Last Name is required</div>
                     </div>
@@ -102,33 +95,33 @@
             <div class="list">
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Add line 1 <sup>*</sup></span>
-                    <textarea ng-model="reg.shopAddLine1" name="shopAddLine1" id="shopAddLine1" required></textarea>
+                    <textarea ng-model="reg.shopAddLine1" name="shopAddLine1" readonly id="shopAddLine1" required></textarea>
                     <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopAddLine1.$touched )" ng-messages="shopInfo.shopAddLine1.$error" >
                         <div ng-message="required" class="error">Address1 is required</div>
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Add line 2</span>
-                    <textarea ng-model="reg.shopAddLine2" name="shopAddLine2" id="shopAddLine2" required></textarea>
+                    <textarea ng-model="reg.shopAddLine2" name="shopAddLine2" readonly id="shopAddLine2" required></textarea>
                 </label>
 
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">City <sup>*</sup></span>
-                    <textarea ng-model="reg.shopCity" name="shopCity" id="shopCity" required></textarea>
+                    <textarea ng-model="reg.shopCity" name="shopCity" readonly id="shopCity" required></textarea>
                     <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopCity.$touched )" ng-messages="shopInfo.shopCity.$error" >
                         <div ng-message="required" class="error">City is required</div>
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">State <sup>*</sup></span>
-                    <textarea ng-model="reg.shopState" name="shopState" id="shopState" required></textarea>
+                    <textarea ng-model="reg.shopState" name="shopState" readonly id="shopState" required></textarea>
                     <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopState.$touched )" ng-messages="shopInfo.shopState.$error" >
                         <div ng-message="required" class="error">State is required</div>
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Pin code <sup>*</sup></span>
-                    <textarea ng-model="reg.shopPincode" name="shopPincode" id=shopPincode" required></textarea>
+                    <textarea ng-model="reg.shopPincode" name="shopPincode" readonly id=shopPincode" required></textarea>
                     <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopPincode.$touched )" ng-messages="shopInfo.shopPincode.$error" >
                         <div ng-message="required" class="error">Pin code is required</div>
                     </div>
