@@ -12,3 +12,12 @@ gen
 out
 # Gradle builds
 # /build
+/assets
+/.gradle
+/CordovaLib
+/libs
+/platform_www
+/res
+/src
+
+

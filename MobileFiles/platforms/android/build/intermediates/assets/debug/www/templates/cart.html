@@ -56,7 +56,7 @@
   	</ion-content>
   	<ion-footer-bar class="bar bar-dark cart_button" ng-if="cartDetails.length != 0">
 		<div class="button-bar">
-			<a class="button button-calm " ui-sref="#">Total: $1538</a>
+			<a class="button button-calm " ui-sref="#">Total Payment Amount: {{cartDetails.totalCartValue}}</a>
 			<a class="button button-assertive" ui-sref="app.shipping">Checkout</a>
 		</div>
 	</ion-footer-bar>
