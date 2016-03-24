@@ -84,33 +84,33 @@
         <div class="list">
           <label class="item item-input item-stacked-label">
                   <span class="input-label">Add line 1 <sup>*</sup></span>
-              <textarea ng-model="reg.shopAddLine1" name="shopAddLine1" id="shopAddLine1" required></textarea>
+              <textarea maxlength="50" ng-model="reg.shopAddLine1" name="shopAddLine1" id="shopAddLine1" required></textarea>
               <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopAddLine1.$touched )" ng-messages="shopInfo.shopAddLine1.$error" >
                   <div ng-message="required" class="error">Address1 is required</div>
               </div>
           </label>
           <label class="item item-input item-stacked-label">
               <span class="input-label">Add line 2</span>
-              <textarea ng-model="reg.shopAddLine2" name="shopAddLine2" id="shopAddLine2" required></textarea>
+              <textarea maxlength="50" ng-model="reg.shopAddLine2" name="shopAddLine2" id="shopAddLine2" required></textarea>
           </label>
 
           <label class="item item-input item-stacked-label">
               <span class="input-label">City <sup>*</sup></span>
-              <textarea ng-model="reg.shopCity" name="shopCity" id="shopCity" required></textarea>
+              <input type="text" placeholder="city"  name = "shopCity" id="shopCity" class = "error" ng-model="reg.shopCity" ng-value="Bangalore" readonly="readonly" required>
               <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopCity.$touched )" ng-messages="shopInfo.shopCity.$error" >
                   <div ng-message="required" class="error">City is required</div>
               </div>
           </label>
           <label class="item item-input item-stacked-label">
               <span class="input-label">State <sup>*</sup></span>
-              <textarea ng-model="reg.shopState" name="shopState" id="shopState" required></textarea>
+              <input type="text" placeholder="city"  name = "shopState" id="shopState" class = "error" ng-model="reg.shopState" ng-value="Karnataka" readonly="readonly" required>
               <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopState.$touched )" ng-messages="shopInfo.shopState.$error" >
                   <div ng-message="required" class="error">State is required</div>
               </div>
           </label>
           <label class="item item-input item-stacked-label">
               <span class="input-label">Pin code <sup>*</sup></span>
-              <textarea ng-model="reg.shopPincode" name="shopPincode" id=shopPincode" required></textarea>
+              <input type="number" maxlength="6" placeholder="PostCode"  name = "shopPincode" id="shopPincode" class = "error" ng-model="reg.shopPincode" required>
               <div class="validation-error" ng-if="(shopInfo.$submitted || shopInfo.shopPincode.$touched )" ng-messages="shopInfo.shopPincode.$error" >
                   <div ng-message="required" class="error">Pin code is required</div>
               </div>
@@ -129,32 +129,33 @@
         <div class="list">
         <label class="item item-input item-stacked-label">
           <span class="input-label">Add line 1 <sup>*</sup></span>
-          <textarea ng-model="reg.delAddLine1" name="delAddLine1" id="delAddLine1" required></textarea>
+          <textarea maxlength="50" ng-model="reg.delAddLine1" name="delAddLine1" id="delAddLine1" required></textarea>
           <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delAddLine1.$touched )" ng-messages="deliveryInfo.delAddLine1.$error" >
               <div ng-message="required" class="error">Address1 is required</div>
           </div>
         </label>
         <label class="item item-input item-stacked-label">
               <span class="input-label">Add line 2 </span>
-              <textarea ng-model="reg.delAddLine2" name="delAddLine2" id="delAddLine2" required></textarea>
+              <textarea maxlength="50" ng-model="reg.delAddLine2" name="delAddLine2" id="delAddLine2" required></textarea>
         </label>
         <label class="item item-input item-stacked-label">
               <span class="input-label">City <sup>*</sup></span>
-              <textarea ng-model="reg.delCity" name="delCity" id="delpCity" required></textarea>
+              <input type="text" placeholder="city"  name = "delCity" id="delCity" class = "error" ng-model="reg.delCity" ng-value="Bangalore" readonly="readonly" required>
               <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delCity.$touched )" ng-messages="deliveryInfo.delCity.$error" >
                   <div ng-message="required" class="error">City is required</div>
               </div>
         </label>
         <label class="item item-input item-stacked-label">
               <span class="input-label">State <sup>*</sup></span>
-              <textarea ng-model="reg.delState" name="delState" id="delState" required></textarea>
+              
+			  <input type="text" placeholder="state"  name = "delState" id="delState" class = "error" ng-model="reg.delState" ng-value="Karnataka" readonly="readonly" required>
               <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delState.$touched )" ng-messages="deliveryInfo.delState.$error" >
                   <div ng-message="required" class="error">State is required</div>
               </div>
         </label>
         <label class="item item-input item-stacked-label">
               <span class="input-label">Pin code <sup>*</sup></span>
-              <textarea ng-model="reg.delPincode" name="delPincode" id=delPincode" required></textarea>
+              <input type="number" maxlength="6" placeholder="PostCode"  name = "delPincode" id="delPincode" class = "error" ng-model="reg.delPincode" required>
               <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delPincode.$touched )" ng-messages="deliveryInfo.delPincode.$error" >
                   <div ng-message="required" class="error">Pin code is required</div>
               </div>
