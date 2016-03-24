@@ -510,7 +510,9 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
 .controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
 
     $scope.user = [];
-    $scope.user.city = 'Bangalore'
+    $scope.user.city = 'Bangalore';
+	$scope.user.state = 'Karnataka';
+	$scope.user.country = 'India';
     $scope.submit = function(valid, user){
         console.log(valid);
         if(valid){
