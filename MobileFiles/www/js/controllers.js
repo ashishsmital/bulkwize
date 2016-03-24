@@ -558,6 +558,20 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
                         }
                     });
                 }
+				if(response.status == 401){
+					var alertPopup = $ionicPopup.alert({
+                        title: 'Info',
+                        template: 'Ooops! Please login before checkout'
+                    });
+					
+					alertPopup.then(function(res) {
+                        console.log("The user is not logged in and hence needs to be redirected to login page." + res);
+                        if(res == true){
+                            $state.go('app.login');
+                        }
+                    });
+
+				}
                 $ionicLoading.hide();
             }, function errorCallback(data) {
                 console.log(data);
