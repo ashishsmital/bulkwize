@@ -21,7 +21,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
     $scope.step2 = true;
     $scope.step3 = true;
     $scope.step4 = true;
-    */
+*/
 
     $scope.reg = {};
 

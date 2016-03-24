@@ -1,7 +1,8 @@
 <ion-view title="Register">
   <ion-content class="has-header">
     <form class="form-horizontal padding_col6_left" role="form" name="userInfo" ng-show="step1" novalidate method="post" autocomplete="off">
-      <div class="list" >
+        <h4 class="text-center">User details</h4>
+        <div class="list" >
           <label class="item item-input item-stacked-label">
               <span class="input-label">Company/Shop Name <sup>*</sup></span>
               <input type="text" placeholder="XYZ" name="companyname" id="companyname" class ="error" ng-model="reg.companyname" required>
@@ -39,7 +40,8 @@
       </div>
     </form>
     <form class="form-horizontal padding_col6_left" role="form" name="personalInfo" ng-show="step2" novalidate method="post"  autocomplete="off">
-      <div class="list" >
+        <h4 class="text-center">Personal details</h4>
+        <div class="list" >
           <label class="item item-input item-stacked-label">
               <span class="input-label">First Name <sup>*</sup></span>
               <input type="text" placeholder="John" name="firstname" id="firstname" class="error" ng-model="reg.firstname" required>
@@ -78,10 +80,8 @@
       </div>
     </form>
     <form class="form-horizontal padding_col6_left" role="form" name="shopInfo" ng-show="step3" novalidate method="post"  autocomplete="off">
-      <div class="list">
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Shop Address <sup>*</sup></span>
-          </label>
+        <h4 class="text-center">Shop details</h4>
+        <div class="list">
           <label class="item item-input item-stacked-label">
                   <span class="input-label">Add line 1 <sup>*</sup></span>
               <textarea ng-model="reg.shopAddLine1" name="shopAddLine1" id="shopAddLine1" required></textarea>
@@ -116,7 +116,7 @@
               </div>
           </label>
           <ion-list>
-              <ion-checkbox ng-model="reg.isSameBillingAdd">Billing address is same as shipping address.</ion-checkbox>
+              <ion-checkbox ng-model="reg.isSameBillingAdd" class="wrap-white-space">Billing address is same as shipping address.</ion-checkbox>
           </ion-list>
       </div>
       <div class="row">
@@ -124,12 +124,9 @@
             <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(4)"  ng-disabled="shopInfo.$invalid" >Shipping Address</button></div>
       </div>
     </form>
-
     <form class="form-horizontal padding_col6_left" role="form" name="deliveryInfo" ng-show="step4" novalidate method="post" ng-submit="submit(deliveryInfo.$valid, reg)" autocomplete="off">
-      <div class="list">
-        <label class="item item-input item-stacked-label">
-            <span class="input-label">Delivery Address <sup>*</sup></span>
-        </label>
+        <h4 class="text-center">Delivery details</h4>
+        <div class="list">
         <label class="item item-input item-stacked-label">
           <span class="input-label">Add line 1 <sup>*</sup></span>
           <textarea ng-model="reg.delAddLine1" name="delAddLine1" id="delAddLine1" required></textarea>
