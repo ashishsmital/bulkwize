@@ -34,6 +34,54 @@
                   <div ng-message="compareTo" class="error">Oops! Please confirm your password</div>
               </div>
           </label>
+		  <label class="item item-input item-stacked-label">
+				<div class="item row">
+					<div class="col">
+						<ion-checkbox ng-model="reg.isVatLicense" class="wrap-white-space">VAT #</ion-checkbox>
+					</div>
+					<div class="col">
+						<input type="text" placeholder="VAT License Number #" name="vatLicense" id="vatLicense" class="error" ng-model="reg.vatLicense" ng-readonly="!reg.isVatLicense"/>
+					</div>
+				</div>
+				<div class="item row">
+					<div class="col">
+						<ion-checkbox ng-model="reg.isSTPTLicense" class="wrap-white-space">Service Tax #</ion-checkbox>
+					</div>
+					<div class="col">
+						<input type="text" placeholder="Service/Professional License Number #" name="stptLicense" id="stptLicense" class="error" ng-model="reg.stptLicense" ng-readonly="!reg.isSTPTLicense">
+					</div>
+				</div>
+				<div class="item row">
+					<div class="col">
+						<ion-checkbox ng-model="reg.isSELLicense" class="wrap-white-space">S&E License #</ion-checkbox>
+					</div>
+					<div class="col">
+						<input type="text" placeholder="Shops & Establishments License Number #" name="selLicense" id="selLicense" class="error" ng-model="reg.selLicense" ng-readonly="!reg.isSELLicense">
+					</div>
+				</div>
+				<div class="item row">
+					<div class="col">
+						<ion-checkbox ng-model="reg.isTradeLicense" class="wrap-white-space">Trade #</ion-checkbox>
+					</div>
+					<div class="col">
+						<input type="text" placeholder="Trade License Number #" name="tradeLicense" id="tradeLicense" class="error" ng-model="reg.tradeLicense" ng-readonly="!reg.isTradeLicense">
+					</div>
+				</div>
+				<div class="item row">
+				
+					<div class="col">
+						<ion-checkbox ng-model="reg.isHawkerLicense" class="wrap-white-space">Hawker License #</ion-checkbox>
+					</div>
+					<div class="col">
+						<input type="text" placeholder="Hawker License Number #" name="hawkerLicense" id="hawkerLicense" class="error" ng-model="reg.hawkerLicense" ng-readonly="!reg.isHawkerLicense">
+					</div>
+				</div>
+				<div class="validation-error" ng-if="(userInfo.$submitted || userInfo.tradeLicense.$touched || userInfo.selLicense.$touched || userInfo.stptLicense.$touched || userInfo.vatLicense.$touched || userInfo.licenseNo.$error.otherModelValue)" ng-messages="userInfo.licenseNo.$error" >
+                  <div ng-message="required" class="error">Please enter at least one license no.</div>
+                </div>
+          </label>
+		  
+		  
       </div>
       <div class="row">
         <div class="col text-center"><button class="button  button-positive icon-right ion-chevron-right" ng-disabled="userInfo.$invalid" ng-click="goNextPrev(2)"> Personal Info</button></div>
@@ -58,7 +106,7 @@
           </label>
           <label class="item item-input item-stacked-label">
               <span class="input-label">PAN Number <sup>*</sup></span>
-              <input type="text" placeholder="1234578" name="panumber" id="panumber" class="error" ng-model="reg.panumber" required>
+              <input type="text" maxlength="10" placeholder="1234578" name="panumber" id="panumber" class="error" ng-model="reg.panumber" required>
               <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.panumber.$touched)" ng-messages="personalInfo.panumber.$error" >
                   <div ng-message="required" class="error">PAN Number is required</div>
               </div>
