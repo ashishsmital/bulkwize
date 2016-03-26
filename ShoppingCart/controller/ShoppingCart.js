@@ -167,7 +167,9 @@ shoppingcart.put('/shippingDetails', function (req, res, next) {
                 var shippingAddFromSite = data.shipping_address;
 
                 if (shippingAddFromSite != null) {
+					console.log("Found shipping details posted from app " + JSON.stringify(shippingAddFromSite));
                     shoppingCartfromDB.shipping_address = shippingAddFromSite;
+					console.log("The shipping details in the cart after adding it from UI are  " + JSON.stringify(shoppingCartfromDB));
                     data = result.data[0].Bulkwize;
 					
 					data.createdAt = result.data[0].Bulkwize.createdAt;
@@ -331,6 +333,7 @@ shoppingcart.delete('/variants', function (req, res, next) {
  * @param res
  */
 var saveCart = function (data, res) {
+	console.log("The card details being saved are " + JSON.stringify(data));
     ShoppingCartModel.save(data, function (error, result) {
         if (error) {
             return res.status(400).send(error);
