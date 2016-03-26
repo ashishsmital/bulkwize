@@ -37,7 +37,7 @@ OrderModel.createOrder = function(userId, callback) {
             callback(error, null);
             return;
         }
-		console.log("retrieved the shopping cart for user id --" + userId + ". The order is " + resultdata[0].Bulkwize);
+		console.log("retrieved the shopping cart for user id --" + userId + ". The order is " + result.data[0].Bulkwize);
 		result.data[0].Bulkwize.type="com.bulkwise.Order";
 		result.data[0].Bulkwize.createdAt= moment(new Date()).utcOffset("+05:30").format();
 		result.data[0].Bulkwize.updatedAt= moment(new Date()).utcOffset("+05:30").format();
