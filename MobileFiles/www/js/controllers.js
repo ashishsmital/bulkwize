@@ -507,7 +507,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
 
 })
 
-.controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
+.controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicPopup, $state,EnvConfig){
 
     $scope.user = [];
     $scope.user.city = 'Bangalore';
