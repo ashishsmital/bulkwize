@@ -261,7 +261,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
                 data:
                 {
                     "type": "com.bulkwise.Cart",
-                    "id": "com.bulkwise.Cart::John",
+                    "id": "",
                     "customer_id": "",
                     "business_id": "123456789",
                     "products": [
@@ -396,7 +396,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
                 data:
                 {
                     "type": "com.bulkwise.Cart",
-                    "id": "com.bulkwise.Cart::John",
+                    "id": "",
                     "customer_id": "",
                     "business_id": "123456789",
                     "products": [
@@ -567,8 +567,8 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
                 method: 'PUT',
                 url: EnvConfig.HOST+'shoppingcart/shippingDetails',
                 data: {
-                    "customer_id": "John",
-                    "id": "com.bulkwise.Cart::John",
+                    "customer_id": "",
+                    "id": "",
                     "shipping_address": {
                         "address1": user.address1,
                         "address2": user.address2,
