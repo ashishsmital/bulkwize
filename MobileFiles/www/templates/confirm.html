@@ -1,6 +1,7 @@
 <ion-view view-title="Confirm Page">
 	<div class="has-header bar bar-pink">
-		<div class="total">Total: $1538</div>
+		<div class="total">Total Payment Amount: {{cartDetails.totalCartValue}}</div>
+		<div class="total">| Shipping Address: {{cartDetails.shipping_address.address1}}, {{cartDetails.shipping_address.address2}}, {{cartDetails.shipping_address.city}},  {{cartDetails.shipping_address.postcode}}</div>
 	</div>
   	<ion-content class="has-subheader">
     	<div class="list font_price category_list">
