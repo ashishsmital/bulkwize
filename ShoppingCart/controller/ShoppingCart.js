@@ -157,8 +157,11 @@ shoppingcart.put('/shippingDetails', function (req, res, next) {
 
     populateSessionDetails(req, data);
 
+	var queryData = {key: '', value: ''};
 
-    ShoppingCartModel.getByAttribute("id", "com.bulkwise.Cart::" + data.customer_id, function (error, result) {
+    populateKeyValue(req,data,queryData);
+
+    ShoppingCartModel.getByAttribute("id", "com.bulkwise.Cart::" + req.user.user, function (error, result) {
         if (error) {
             console.log('No previous cart details for the user');
         } else {
@@ -200,7 +203,10 @@ shoppingcart.post('/checkout', function (req, res, next) {
 	}
     populateSessionDetails(req, data);
 
+	var queryData = {key: '', value: ''};
 
+    populateKeyValue(req,data,queryData);
+	
     ShoppingCartModel.getUserById("id", "com.bulkwise.Cart::" + req.user.user, function (error, result) {
         if (error) {
             console.log('No details for the user');
