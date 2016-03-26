@@ -376,10 +376,14 @@ var populateKeyValue = function (req, data, queryData) {
 		console.log("The user is logged in and hence associating the shopping cart id to the user's mobilenumber");
 		queryData['key'] = 'id';
         queryData['value'] ='com.bulkwize.Cart::'+req.user.user;
+		data.id='com.bulkwize.Cart::'+req.user.user;
+		data.customer_id=req.user.user;
 	}else{
 		console.log("User not found and hence associating the shopping cart with user's current session id -- " + data.session_id);
 		queryData['key'] = 'session_id';
         queryData['value'] = data.session_id;
+		data.id='com.bulkwize.Cart::'+data.session_id;
+		data.customer_id=data.session_id;
 	}
     /*if (data.customer_id == '') {
         queryData['key'] = 'session_id';
