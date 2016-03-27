@@ -74,15 +74,17 @@ CategoryModel.getAll = function(attribute,value,callback) {
 			// Get Maximum discount for the given category id
 			/*select MAX(productVariants.productDiscountPercentage) as maxDisc from Bulkwize as prd UNNEST prd.productVariants where  prd.type="com.bulkwise.Products" and ANY category IN prd.productCategoryId SATISFIES category = 6 END;*/
 
-			var maxDiscQuery = N1qlQuery.fromString("select MAX(productVariants.productDiscountPercentage) as maxDisc from Bulkwize as prd UNNEST prd.productVariants where prd.type='com.bulkwise.Products' and ANY category IN prd.productCategoryId SATISFIES category = "+ele.id);
+			var maxDiscQuery = N1qlQuery.fromString("select MAX(productVariants.productDiscountPercentage) as maxDisc from Bulkwize as prd UNNEST prd.productVariants where prd.type='com.bulkwise.Products' and ANY category IN prd.productCategoryId SATISFIES category = "+ele.Bulkwize.id);
+			console.log("Query for maximum discount of category is -- " + maxDiscQuery);
 			db.query(maxDiscQuery,function(error,discResult){
 				if (error) {
 					callback(error, null);
 					return;
 				}
+				console.log("Maximum discount returned from query is --" + JSON.stringify(discResult));
+				ele.maximum_discount_percentage=discResult.data[0].maxDisc;
 			});
-			console.log("Maximum discount returned from query is --" + JSON.stringify(discResult));
-			ele.maximum_discount_percentage=discResult.data[0].maxDisc;
+			
 		});
 				
         callback(null, {message: 'success', data: result});
