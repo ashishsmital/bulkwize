@@ -66,6 +66,12 @@ CategoryModel.getAll = function(attribute,value,callback) {
             return;
         }
 		console.log("The category returned from DB are -- " + JSON.stringify(result));
+		
+		var returnCategories = _.after(result.length, function(){
+			callback(null, {message: 'success', data: result});
+			return;
+		});
+		
 		// get max discount per category
 		_.each(result, function (ele) {
         
@@ -90,8 +96,7 @@ CategoryModel.getAll = function(attribute,value,callback) {
 			
 		});
 				
-        callback(null, {message: 'success', data: result});
-        return;
+        
     });
 }
 
