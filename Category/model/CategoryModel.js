@@ -82,9 +82,10 @@ CategoryModel.getAll = function(attribute,value,callback) {
 					return;
 				}
 				console.log("Maximum discount returned from query is --" + JSON.stringify(discResult));
+				console.log("Maximum discount value is  --" + discResult[0].maxDisc);
 				ele.Bulkwize.maximum_discount_percentage=discResult[0].maxDisc;
-				console.log("Element after adding maxDiscount is -- " + ele);
-				console.log("Result after adding maxDiscount is -- " + result);
+				console.log("Element after adding maxDiscount is -- " + JSON.stringify(ele));
+				console.log("Result after adding maxDiscount is -- " + JSON.stringify(result));
 			});
 			
 		});
