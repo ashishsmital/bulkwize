@@ -25,6 +25,7 @@ var promotion = require('promotion/controller/Promotion.js');
 var user = require('user/controller/User.js');
 var UserModel = require('user/model/UserModel.js');
 var order = require('order/controller/Order.js');
+var utilities = require('utilities/controller/Utilities.js');
 var morgan  = require('morgan');
 
 
@@ -207,6 +208,7 @@ app.use('/supplier', supplier);
 app.use('/promotion', promotion);
 app.use('/order', order);
 app.use('/user', user);
+app.use('/utilities', utilities);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
 
