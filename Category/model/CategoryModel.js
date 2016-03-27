@@ -67,7 +67,7 @@ CategoryModel.getAll = function(attribute,value,callback) {
         }
 		console.log("The category returned from DB are -- " + JSON.stringify(result));
 		// get max discount per category
-		_.each(result.Bulkwize, function (ele) {
+		_.each(result, function (ele) {
         
 		console.log("The category object inside the iterator is -- " + JSON.stringify(ele));
 			
