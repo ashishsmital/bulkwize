@@ -67,11 +67,9 @@ CategoryModel.getAll = function(attribute,value,callback) {
         }
 		console.log("The category returned from DB are -- " + JSON.stringify(result));
 		
-		var returnCategories = _.after(result.length, function(){
-			callback(null, {message: 'success', data: result});
-			return;
-		});
 		
+		var totalCategories = result.length;
+		var maxDiscProcessedForCategory = 0;
 		// get max discount per category
 		_.each(result, function (ele) {
         
@@ -88,15 +86,19 @@ CategoryModel.getAll = function(attribute,value,callback) {
 					return;
 				}
 				console.log("Maximum discount returned from query is --" + JSON.stringify(discResult));
-				console.log("Maximum discount value is  --" + discResult[0].maxDisc);
+				//console.log("Maximum discount value is  --" + discResult[0].maxDisc);
 				ele.Bulkwize.maximum_discount_percentage=discResult[0].maxDisc;
 				console.log("Element after adding maxDiscount is -- " + JSON.stringify(ele));
-				console.log("Result after adding maxDiscount is -- " + JSON.stringify(result));
+				//console.log("Result after adding maxDiscount is -- " + JSON.stringify(result));
+				maxDiscProcessedForCategory = maxDiscProcessedForCategory + 1;
+				if(maxDiscProcessedForCategory==totalCategories){
+						callback(null, {message: 'success', data: result});
+						return;
+				}
 			});
 			
 		});
-				
-        
+		
     });
 }
 
