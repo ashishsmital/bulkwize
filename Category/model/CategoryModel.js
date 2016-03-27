@@ -7,6 +7,7 @@ var uuid = require('uuid');
 var db = require('dbutil').bucket;
 var ViewQuery = require('dbutil').ViewQuery;
 var N1qlQuery = require('dbutil').N1qlQuery;
+var _ = require('underscore');
 
 /**
  * CategoryModel class
@@ -58,12 +59,32 @@ CategoryModel.save = function(data, callback) {
 CategoryModel.getAll = function(attribute,value,callback) {
 
     var query = N1qlQuery.fromString("select * from "+db._name+" where "+attribute+"='"+value+"'");
-
+ 
     db.query(query, function(error, result) {
         if (error) {
             callback(error, null);
             return;
         }
+		console.log("The category returned from DB are -- " + JSON.stringify(result));
+		// get max discount per category
+		_.each(result.data, function (ele) {
+        
+		console.log("The category object inside the iterator is -- " + JSON.stringify(ele));
+			
+			// Get Maximum discount for the given category id
+			/*select MAX(productVariants.productDiscountPercentage) as maxDisc from Bulkwize as prd UNNEST prd.productVariants where  prd.type="com.bulkwise.Products" and ANY category IN prd.productCategoryId SATISFIES category = 6 END;*/
+
+			var maxDiscQuery = N1qlQuery.fromString("select MAX(productVariants.productDiscountPercentage) as maxDisc from Bulkwize as prd UNNEST prd.productVariants where prd.type='com.bulkwise.Products' and ANY category IN prd.productCategoryId SATISFIES category = "+ele.id);
+			db.query(maxDiscQuery,function(error,discResult){
+				if (error) {
+					callback(error, null);
+					return;
+				}
+			});
+			console.log("Maximum discount returned from query is --" + JSON.stringify(discResult));
+			ele.maximum_discount_percentage=discResult.data[0].maxDisc;
+		});
+				
         callback(null, {message: 'success', data: result});
         return;
     });
