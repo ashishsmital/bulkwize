@@ -120,7 +120,7 @@ products.get('/uniquebrands', function(req, res, next) {
 products.get('/topdiscounts/:noOfBrandsToRetrieve', function(req, res, next) {
 
 
-    ProductModel.getProductsWithTopDiscounts(function(error, result) {
+    ProductModel.getProductsWithTopDiscounts(req.params['noOfBrandsToRetrieve'].toLowerCase(),function(error, result) {
         if(error) {
             return res.status(400).send(error);
         }

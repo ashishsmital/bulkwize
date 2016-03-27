@@ -187,9 +187,14 @@ ProductModel.getProductsByCategoryIdsAndBrandName = function(categoryIdArray,pro
  * @param callback
  *          callback for http response
  */
-ProductModel.getProductsWithTopDiscounts = function(callback) {
-	
-    var query = N1qlQuery.fromString("select MAX(productVariants.productDiscountPercentage) as maxDisc,topDiscounts.* from "+db._name+" as topDiscounts UNNEST topDiscounts.productVariants where topDiscounts.type = 'com.bulkwise.Products' group by  topDiscounts.productBrandName order by maxDisc DESC limit 10");
+ProductModel.getProductsWithTopDiscounts = function(noOfBrandsToRetrieve,callback) {
+	var query = N1qlQuery.fromString("select MAX(productVariants.productDiscountPercentage) as maxDisc,topDiscounts.* from "+db._name+" as topDiscounts UNNEST topDiscounts.productVariants where topDiscounts.type = 'com.bulkwise.Products' group by  topDiscounts.productBrandName order by maxDisc DESC ");
+	if(noOfBrandsToRetrieve != undefined && noOfBrandsToRetrieve != null){
+		if(noOfBrandsToRetrieve!='all'){
+			query = query + "limit " + noOfBrandsToRetrieve;
+		}
+	}
+    
 	console.log("Executing the query -- " + query);
 	//e.g. select MAX(productVariants.productDiscountPercentage) as maxDisc,topDiscounts.* from Bulkwize as topDiscounts UNNEST topDiscounts.productVariants // where topDiscounts.type = "com.bulkwise.Products" group by  topDiscounts.productBrandName order by maxDisc DESC limit 10;
     db.query(query, function(error, result) {
