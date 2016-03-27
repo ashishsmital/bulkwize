@@ -82,7 +82,7 @@ CategoryModel.getAll = function(attribute,value,callback) {
 					return;
 				}
 				console.log("Maximum discount returned from query is --" + JSON.stringify(discResult));
-				ele.maximum_discount_percentage=discResult.data[0].maxDisc;
+				ele.maximum_discount_percentage=discResult[0].maxDisc;
 			});
 			
 		});
