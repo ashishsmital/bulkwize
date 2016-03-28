@@ -51,6 +51,7 @@ var productObj = {
 		"productMRPUnit": 550,
 		"productDiscountPercentage": 9,
 		"productVariantIsVisible":true,
+		"productVATPercentage":"14.5",
 		"productVariantPriceApplicableUpto":currentUTCdate
 		}],
  "prd_metafields":[ {
@@ -60,7 +61,7 @@ var productObj = {
 "createdAt":currentUTCdate,
 "updatedAt":currentUTCdate,
 "productCategoryId":["array","because a product can belong to multiple categories"],
-"supplier_id": "suppl::1",
+"supplier_business_name": "suppl::1",
 "override_lead_time_for_delivery_in_days":"5-7 days"
 }
 
@@ -278,6 +279,8 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.productShortSummary = parsedRecord.MaterialDescription;
 				productObj.productDescription =  parsedRecord.MaterialDescription;
 				productObj.productName=parsedRecord.MaterialDescription;
+				productObj.supplier_business_name=parsedRecord.SupplierBusinessName;
+				productObj.override_lead_time_for_delivery_in_days=parsedRecord.LeadTimeForDelivery;
 				productObj.productVariants[0].sku_id=productId;
 				productObj.productVariants[0].productItemId=parsedRecord.ItemID;
 				productObj.productVariants[0].productMaterialCode=parsedRecord.Matcode;
@@ -286,13 +289,15 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.productVariants[0].productCountInCase=parsedRecord.CaseCount;
 				productObj.productVariants[0].productMRPUnit=parsedRecord.MRP;
 				productObj.productVariants[0].productDiscountPercentage=parsedRecord.ProductDiscountPercentage;
+				productObj.productVariants[0].productVATPercentage=parsedRecord.VAT;
 				productObj.productCategoryId[0] = parentCategoryId;
 				productObj.productCategoryId[1] = subCategoryId;
 				db.upsert("productCounter::"+productId, productObj, function(err, res){
-					if (err) {;
+					if (err) {
 						console.log('product creation failed for name ' + parsedRecord.MaterialDescription, err);
 						return;
 					}
+					
 				});
 			});
 			parsedCategoryIndex++;
