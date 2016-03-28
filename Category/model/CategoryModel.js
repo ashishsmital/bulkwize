@@ -119,8 +119,38 @@ CategoryModel.getAllById = function(attribute,value,callback) {
             callback(error, null);
             return;
         }
-        callback(null, {message: 'success', data: result});
-        return;
+		
+		var totalSubCategories = result.length;
+		var maxDiscProcessedForSubCategory = 0;
+		// get max discount per category
+		_.each(result, function (ele) {
+        
+		console.log("The subcategory object inside the iterator is -- " + JSON.stringify(ele));
+			
+			// Get Maximum discount for the given category id
+			/*select MAX(productVariants.productDiscountPercentage) as maxDisc from Bulkwize as prd UNNEST prd.productVariants where  prd.type="com.bulkwise.Products" and ANY category IN prd.productCategoryId SATISFIES category = 6 END;*/
+
+			var maxDiscQuery = N1qlQuery.fromString("select MAX(productVariants.productDiscountPercentage) as maxDisc from Bulkwize as prd UNNEST prd.productVariants where prd.type='com.bulkwise.Products' and ANY category IN prd.productCategoryId SATISFIES category = "+ele.Bulkwize.id + " END");
+			console.log("Query for maximum discount of subcategory is -- " + maxDiscQuery);
+			db.query(maxDiscQuery,function(error,discResult){
+				if (error) {
+					callback(error, null);
+					return;
+				}
+				console.log("Maximum discount returned from query of subcategory is --" + JSON.stringify(discResult));
+				//console.log("Maximum discount value is  --" + discResult[0].maxDisc);
+				ele.Bulkwize.maximum_discount_percentage=discResult[0].maxDisc;
+				console.log("Element after adding maxDiscount in subcategory is -- " + JSON.stringify(ele));
+				//console.log("Result after adding maxDiscount is -- " + JSON.stringify(result));
+				maxDiscProcessedForSubCategory = maxDiscProcessedForSubCategory + 1;
+				if(maxDiscProcessedForSubCategory==totalSubCategories){
+						callback(null, {message: 'success', data: result});
+						return;
+				}
+			});
+			
+		});
+        
     });
 }
 
