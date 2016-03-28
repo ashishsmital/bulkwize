@@ -26,6 +26,7 @@
 			            <div class="col col-33" ng-repeat ="product in productList">
 			                <a ui-sref="app.categorydetail({ pId: product.id})">
 			                	<img ng-src="{{envHost+product.productBrandImageURL}}" />
+								<span class="perctenage_layout">Upto {{product.maxDisc}} %</span>
 			                </a>
 			            </div>
 			        </div>
