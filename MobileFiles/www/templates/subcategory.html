@@ -20,7 +20,7 @@
 					      	<h2>{{list.brand.productBrandName}}</h2>
 					      	<p>{{list.brand.productShortSummary}}</p>
 							<p>COD for total purchase upto 10,000</p>
-							<p>Delivery in </p>{{list.brand.override_lead_time_for_delivery_in_days}}
+							<p>Delivery in {{list.brand.override_lead_time_for_delivery_in_days}}</p>
 					      	<!-- <p>Discount : <span class="red">{{list.bran}}</span></p> -->
 					    </div>
 					    <div class="clear"></div>
@@ -40,7 +40,7 @@
 									<td>
 											MRP / unit:{{productVariant.productMRPUnit}}
 										<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
-											{{productVariant.discount}}
+											Disc. price/unit: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100}}
 									</td>
 									<td>
 										<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
