@@ -650,5 +650,77 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
             $ionicLoading.hide();
         });
     }
+	
+	
+	$scope.cod = function(){
+        $ionicLoading.show({
+            content: 'Loading',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        });
+
+        $http({
+            method: 'POST',
+            url: EnvConfig.HOST+'order/create/',
+        }).then(function successCallback(response) {
+            console.log(response);
+            
+            $ionicLoading.hide();
+        }, function errorCallback(data) {
+            console.log(data);
+            $ionicLoading.hide();
+        });
+    }
+	
+	$scope.payment = function(){
+        $ionicLoading.show({
+            content: 'Loading',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        });
+
+        $http({
+            method: 'POST',
+            url: EnvConfig.HOST+'order/create/',
+        }).then(function successCallback(response) {
+            console.log(response);
+            
+            $ionicLoading.hide();
+			 // if order creation is successful - make payment
+			$http({
+				method: 'POST',
+				url: EnvConfig.HOST+'payment/',
+			}).then(function successCallback(response) {
+				console.log("Payment creation was successful" + response);
+				$ionicLoading.hide();
+				
+				// if payment creation is successful, invoke instamojo long URL
+				
+				$http({
+					method: 'POST',
+					url:response.data[0],
+				}).then(function successCallback(response) {
+					console.log(response);
+					
+					$ionicLoading.hide();
+				}, function errorCallback(data) {
+					console.log(data);
+					$ionicLoading.hide();
+				});
+				// end of invoking instamojo long url
+			}, function errorCallback(data) {
+				console.log( "Payment creation failed" + data);
+				$ionicLoading.hide();
+			});
+			// end of payment creation
+        }, function errorCallback(data) {
+            console.log(data);
+            $ionicLoading.hide();
+        });
+    }
 
 });
