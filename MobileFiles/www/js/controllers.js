@@ -699,18 +699,8 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
 				$ionicLoading.hide();
 				
 				// if payment creation is successful, invoke instamojo long URL
+				$window.location.href=response.data[0];
 				
-				$http({
-					method: 'POST',
-					url:response.data[0],
-				}).then(function successCallback(response) {
-					console.log(response);
-					
-					$ionicLoading.hide();
-				}, function errorCallback(data) {
-					console.log(data);
-					$ionicLoading.hide();
-				});
 				// end of invoking instamojo long url
 			}, function errorCallback(data) {
 				console.log( "Payment creation failed" + data);
