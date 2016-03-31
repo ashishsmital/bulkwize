@@ -10,6 +10,8 @@ var db = require('dbutil').bucket;
 var ViewQuery = require('dbutil').ViewQuery;
 var N1qlQuery = require('dbutil').N1qlQuery;
 var moment = require('moment');
+var _ = require('underscore');
+
 
 
 /**
@@ -42,6 +44,23 @@ OrderModel.createOrder = function(userId, callback) {
 		result.data[0].Bulkwize.id=orderId;
 		result.data[0].Bulkwize.createdAt= moment(new Date()).utcOffset("+05:30").format();
 		result.data[0].Bulkwize.updatedAt= moment(new Date()).utcOffset("+05:30").format();
+		// calculate total order value
+		var sum = 0;
+				var totalOrderValue = 0;
+				// calculate the total number of products in the cart
+                _.each(result.data[0].Bulkwize.products, function (ele) {
+
+                    sum += ele.variants.length;
+					// calculate the total cart value
+					_(ele.variants).each(function (eleV) {
+						console.log("Inside variants loop");
+						totalOrderValue += eleV.productCountInCase*eleV.quantity*eleV.productMRPUnit*(100-eleV.productDiscountPercentage)/100;
+
+					});
+				
+                });
+                _.extend(result.data[0].Bulkwize, {'totalCount': sum});
+				_.extend(result.data[0].Bulkwize, {'totalOrderValue': totalOrderValue});
 		db.insert(orderId, result.data[0].Bulkwize, function(error, result) {
 			if(error) {
 				callback(error, null);
