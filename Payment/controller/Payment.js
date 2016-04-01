@@ -7,9 +7,9 @@
 //importing packages
 var express = require('express');
 var payment = express.Router();
-var paymentModel = require('../model/paymentModel.js');
-var orderModel = require('../../Order/model/OrderModel.js');
-var userModel = require('../../User/model/UserModel.js');
+var paymentModel = require('../model/PaymentModel.js');
+var orderModel = require('order/model/OrderModel.js');
+var userModel = require('user/model/UserModel.js');
 var _ = require('underscore');
 var moment = require('moment');
 var numeral = require('numeral');
