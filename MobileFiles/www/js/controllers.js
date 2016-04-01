@@ -693,7 +693,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
 			 // if order creation is successful - make payment
 			$http({
 				method: 'POST',
-				url: EnvConfig.HOST+'payment/',
+				url: EnvConfig.HOST+'payment/'response.data.id,
 			}).then(function successCallback(response) {
 				console.log("Payment creation was successful" + response);
 				$ionicLoading.hide();
