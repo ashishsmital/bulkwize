@@ -72,24 +72,7 @@ payment.post('/:orderId', function (req, res, next) {
 			}
 		}
 	});
-    paymentModel.getOrderById("id", "com.bulkwise.Cart::" + req.user.user, function (error, result) {
-        if (error) {
-            console.log('No details for the user');
-        } else {
-            if (result.data != null && result.data.length > 0) {
-				if (result) {
-					res.send(result);
-				} else {
-					return res.status(404).send(error);
-				}
-                
-            }
-        }
-      
-
-    });
-
-
+    
 });
 
 
