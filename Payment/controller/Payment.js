@@ -18,11 +18,11 @@ var pmntClient = new RestClient();
 
 var instamojoPmntBody = {
 							data: { 
-									"purpose":result.data[0].Bulkwize.orderId,
-									"amount":result.data[0].Bulkwize.totalOrderAmount,
-									"buyer_name": userResult.data[0].firstName,
-									"email": userResult.data[0].email,
-									"phone": userResult.data[0].mobileNumber,
+									"purpose":"invalid purpose",
+									"amount":"0",
+									"buyer_name": "No Buyer",
+									"email": "info@bulkwize.com",
+									"phone": "9662146647",
 									"send_email":"False",
 									"send_sms":"True",
 									/*"redirect_url":"http%3A%2F%2Fwww.bulkwize.com%2Forder%2F",
