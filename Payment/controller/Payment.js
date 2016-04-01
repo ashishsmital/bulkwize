@@ -33,7 +33,7 @@ payment.post('/:orderId', function (req, res, next) {
             console.log('Order could not be retrieved for making payment, the order id was -- '+ req.params['orderId']);
         }else{
 			console.log("The order returned for making payment is -- " + JSON.stringify(result));
-			if (result.data[0] != null && result.data[0].length > 0) {
+			if (result != undefined && result.data != null) {
 				console.log("about to retrieve user of the order before making payment -- "+req.params['orderId']);
 				userModel.getByAttribute("id","com.bulkwise.User::"+result.data[0].Bulkwize.customer_id,function(error,userResult){
 					if (error) {
