@@ -62,9 +62,9 @@ payment.post('/:orderId', function (req, res, next) {
 						
 						pmntClient.post("https://www.instamojo.com/api/1.1/payment-requests/", args, function (data, response) {
 							// parsed response body as js object 
-							console.log("Response data from create payment request is " + JSON.stringify(data);
+							console.log("Response data from create payment request is " + JSON.stringify(data));
 							// raw response 
-							console.log(response);
+							//console.log(response);
 							res.send({"message":"success","data":data.payment_request.longurl});
 						});
 
