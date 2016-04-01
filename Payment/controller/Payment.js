@@ -22,7 +22,7 @@ var restClient = require('node-rest-client').Client;
  * Make Payment
  */
 payment.post('/payment/:orderId', function (req, res, next) {
-
+	console.log('inside payment post method');
     var data = req.body;
 	if(req.user == undefined && req.user == null){
 		return req.res.status(401).json({message:"Please login before you can checkout !"});
