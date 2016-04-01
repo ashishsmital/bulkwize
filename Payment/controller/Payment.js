@@ -61,10 +61,10 @@ payment.post('/:orderId', function (req, res, next) {
 						
 						// set content-type header and data as json in args parameter 
 						instamojoPmntBody.purpose = result.data[0].Bulkwize.orderId;
-						instamojoPmntBody.amount:result.data[0].Bulkwize.totalOrderAmount;
-						instamojoPmntBody.buyer_name: userResult.data[0].firstName;
-						instamojoPmntBody.email: userResult.data[0].email;
-						instamojoPmntBody.phone: userResult.data[0].mobileNumber;
+						instamojoPmntBody.amount = result.data[0].Bulkwize.totalOrderAmount;
+						instamojoPmntBody.buyer_name = userResult.data[0].firstName;
+						instamojoPmntBody.email = userResult.data[0].email;
+						instamojoPmntBody.phone = userResult.data[0].mobileNumber;
 						console.log("The json object before making payment request is -- " + JSON.stringify(instamojoPmntBody));
 						pmntClient.post("https://www.instamojo.com/api/1.1/payment-requests/", instamojoPmntBody, function (data, response) {
 							// parsed response body as js object 
