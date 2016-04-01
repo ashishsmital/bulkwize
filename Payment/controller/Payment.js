@@ -57,7 +57,7 @@ payment.post('/:orderId', function (req, res, next) {
 									allow_repeated_payment:"False"
 									
 							},
-							headers: { "Content-Type": "application/json","api_key": "f5530c93dc2b257e9f6d38159aac2603", "auth_token":"9a2c3d05a396d68a63c809ae47243906" }
+							headers: { "Content-Type": "application/json","X-Api-Key": "f5530c93dc2b257e9f6d38159aac2603", "X-Auth-Token":"9a2c3d05a396d68a63c809ae47243906" }
 						};
 						
 						pmntClient.post("https://www.instamojo.com/api/1.1/payment-requests/", args, function (data, response) {
