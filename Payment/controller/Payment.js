@@ -60,17 +60,17 @@ payment.post('/:orderId', function (req, res, next) {
 						console.log("The user returned for making payment is -- " + JSON.stringify(userResult));
 						
 						// set content-type header and data as json in args parameter 
-						instamojoPmntBody.purpose = result.data[0].Bulkwize.orderId;
-						instamojoPmntBody.amount = result.data[0].Bulkwize.totalOrderAmount;
-						instamojoPmntBody.buyer_name = userResult.data[0].firstName;
-						instamojoPmntBody.email = userResult.data[0].email;
-						instamojoPmntBody.phone = userResult.data[0].mobileNumber;
+						instamojoPmntBody.data.purpose = result.data[0].Bulkwize.orderId;
+						instamojoPmntBody.data.amount = result.data[0].Bulkwize.totalOrderValue;
+						instamojoPmntBody.data.buyer_name = userResult.data[0].firstName;
+						instamojoPmntBody.data.email = userResult.data[0].email;
+						instamojoPmntBody.data.phone = userResult.data[0].mobileNumber;
 						console.log("The json object before making payment request is -- " + JSON.stringify(instamojoPmntBody));
 						pmntClient.post("https://www.instamojo.com/api/1.1/payment-requests/", instamojoPmntBody, function (data, response) {
 							// parsed response body as js object 
 							console.log("Response data from create payment request is " + JSON.stringify(data));
 							// raw response 
-							console.log(response);
+							//console.log(response);
 							res.send({"message":"success","data":data.payment_request.longurl});
 						});
 
