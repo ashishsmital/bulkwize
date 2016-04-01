@@ -54,7 +54,7 @@ payment.post('/:orderId', function (req, res, next) {
 									send_sms:"True",
 									redirect_url:"http%3A%2F%2Fwww.bulkwize.com%2Forder%2F",
 									webhook:"http%3A%2F%2Fwww.bulkwize.com%2Fpayment%2Fpaymentwebhook%2F",
-									allow_repeated_payment:False
+									allow_repeated_payment:"False"
 									
 							},
 							headers: { "Content-Type": "application/json","api_key": "f5530c93dc2b257e9f6d38159aac2603", "auth_token":"9a2c3d05a396d68a63c809ae47243906" }
