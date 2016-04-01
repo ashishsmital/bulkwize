@@ -71,7 +71,7 @@ payment.post('/:orderId', function (req, res, next) {
 							console.log("Response data from create payment request is " + JSON.stringify(data));
 							// raw response 
 							//console.log(response);
-							res.send({"message":"success","data":data.payment_request.longurl});
+							res.send({"message":"success","data":{"pmntURL":data.payment_request.longurl}});
 						});
 
 					}
