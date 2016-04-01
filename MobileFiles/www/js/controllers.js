@@ -607,7 +607,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
     }
 })
 
-.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
+.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window,EnvConfig){
 
     $ionicLoading.show({
         content: 'Loading',
@@ -694,12 +694,12 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
 			$http({
 				method: 'POST',
 				url: EnvConfig.HOST+'payment/'+response.data.data.id
-			}).then(function successCallback(response) {
-				console.log("Payment creation was successful" + response);
+			}).then(function successCallback(pmntResponse) {
+				console.log("Payment creation was successful" + pmntResponse.data.data.pmntURL);
 				$ionicLoading.hide();
 				
 				// if payment creation is successful, invoke instamojo long URL
-				$window.location.href=response.data[0];
+				$window.location.href=pmntResponse.data.data.pmntURL;
 				
 				// end of invoking instamojo long url
 			}, function errorCallback(data) {
