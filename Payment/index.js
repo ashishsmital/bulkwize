@@ -9,7 +9,7 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 8080;
 var bodyParser = require('body-parser');
-
+var session = require('express-session');
 
 var payment = require('./controller/Payment.js');
 
@@ -18,7 +18,12 @@ var payment = require('./controller/Payment.js');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-
+//session
+app.use(session({
+    secret: 'bulkwizesecret-12340987',
+    resave: true,
+    saveUninitialized: true
+}));
 
 // we'll create our controller here
 
