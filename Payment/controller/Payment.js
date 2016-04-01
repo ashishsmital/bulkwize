@@ -24,9 +24,9 @@ var restClient = require('node-rest-client').Client;
 payment.post('/:orderId', function (req, res, next) {
 	console.log('inside payment post method');
     var data = req.body;
-	if(req.user == undefined && req.user == null){
+	/*if(req.user == undefined && req.user == null){
 		return req.res.status(401).json({message:"Please login before you can checkout !"});
-	}
+	}*/
 
 	orderModel.get(req.params['orderId'], function(error,result){
 		if (error) {
@@ -34,7 +34,8 @@ payment.post('/:orderId', function (req, res, next) {
         }else{
 			console.log("The order returned for making payment is -- " + JSON.stringify(result));
 			if (result.data[0] != null && result.data[0].length > 0) {
-				userModel.getByAttribute("id",result.data[0].Bulkwize.customer_id,function(error,userResult){
+				console.log("about to retrieve user of the order before making payment -- "+req.params['orderId']);
+				userModel.getByAttribute("id","com.bulkwise.User::"+result.data[0].Bulkwize.customer_id,function(error,userResult){
 					if (error) {
 						console.log('User could not be retrieved for making payment, the order id was -- '+ req.params['orderId']);
 					}else{
