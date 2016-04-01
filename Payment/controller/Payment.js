@@ -13,7 +13,8 @@ var userModel = require('user/model/UserModel.js');
 var _ = require('underscore');
 var moment = require('moment');
 var numeral = require('numeral');
-var restClient = require('node-rest-client').Client;
+var RestClient = require('node-rest-client').Client;
+var pmntClient = new RestClient();
 
 
 
@@ -40,7 +41,7 @@ payment.post('/:orderId', function (req, res, next) {
 						console.log('User could not be retrieved for making payment, the order id was -- '+ req.params['orderId']);
 					}else{
 						console.log("The user returned for making payment is -- " + JSON.stringify(userResult));
-						var restClient = new Client();
+						
 						// set content-type header and data as json in args parameter 
 						var args = {
 							data: { 
@@ -59,7 +60,7 @@ payment.post('/:orderId', function (req, res, next) {
 							headers: { "Content-Type": "application/json","api_key": "f5530c93dc2b257e9f6d38159aac2603", "auth_token":"9a2c3d05a396d68a63c809ae47243906" }
 						};
 						
-						client.post("https://www.instamojo.com/api/1.1/payment-requests/", args, function (data, response) {
+						pmntClient.post("https://www.instamojo.com/api/1.1/payment-requests/", args, function (data, response) {
 							// parsed response body as js object 
 							console.log("Response data from create payment request is " + data);
 							// raw response 
