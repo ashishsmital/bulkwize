@@ -31,7 +31,7 @@ function OrderModel() { };
  */
 OrderModel.createOrder = function(userId, callback) {
 
-	var orderId = uuid.v4();
+	var orderId = userId +"-"+ uuid.v4().substring(1,5) +"-"+ moment(new Date()).utcOffset("+05:30").format('DDMMYYYY')	;
 	console.log("the order id for new order is " + orderId);
 	
     OrderModel.getShoppingCartById("id","com.bulkwise.Cart::"+userId, function(error, result) {
