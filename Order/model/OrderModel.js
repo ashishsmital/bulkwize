@@ -61,12 +61,12 @@ OrderModel.createOrder = function(userId, callback) {
                 });
                 _.extend(result.data[0].Bulkwize, {'totalCount': sum});
 				_.extend(result.data[0].Bulkwize, {'totalOrderValue': totalOrderValue});
-		db.insert(orderId, result.data[0].Bulkwize, function(error, result) {
+		db.insert(orderId, result.data[0].Bulkwize, function(error, orderResult) {
 			if(error) {
 				callback(error, null);
 				return;
 			}
-			callback(null, {message: 'success', data: result});
+			callback(null, {message: 'success', data: result.data[0].Bulkwize});
 		});
     });
 
