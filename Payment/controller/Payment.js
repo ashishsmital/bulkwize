@@ -19,7 +19,7 @@ var pmntClient = new RestClient();
 var instamojoPmntBody = {
 							data: { 
 									"purpose":"invalid purpose",
-									"amount":"0",
+									"amount":"11",
 									"buyer_name": "No Buyer",
 									"email": "info@bulkwize.com",
 									"phone": "9662146647",
@@ -61,7 +61,7 @@ payment.post('/:orderId', function (req, res, next) {
 						
 						// set content-type header and data as json in args parameter 
 						instamojoPmntBody.data.purpose = result.data[0].Bulkwize.orderId;
-						instamojoPmntBody.data.amount = result.data[0].Bulkwize.totalOrderValue;
+						//instamojoPmntBody.data.amount = result.data[0].Bulkwize.totalOrderValue;
 						instamojoPmntBody.data.buyer_name = userResult.data[0].firstName;
 						instamojoPmntBody.data.email = userResult.data[0].email;
 						instamojoPmntBody.data.phone = userResult.data[0].mobileNumber;
