@@ -50,8 +50,8 @@ payment.post('/:orderId', function (req, res, next) {
 									buyer_name: userResult.data[0].firstName,
 									email: userResult.data[0].email,
 									phone: userResult.data[0].mobileNumber,
-									send_email:False,
-									send_sms:True,
+									send_email:"False",
+									send_sms:"True",
 									redirect_url:"http%3A%2F%2Fwww.bulkwize.com%2Forder%2F",
 									webhook:"http%3A%2F%2Fwww.bulkwize.com%2Fpayment%2Fpaymentwebhook%2F",
 									allow_repeated_payment:False
