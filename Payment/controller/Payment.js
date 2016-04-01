@@ -16,7 +16,24 @@ var numeral = require('numeral');
 var RestClient = require('node-rest-client').Client;
 var pmntClient = new RestClient();
 
-
+var instamojoPmntBody = {
+							data: { 
+									"purpose":result.data[0].Bulkwize.orderId,
+									"amount":result.data[0].Bulkwize.totalOrderAmount,
+									"buyer_name": userResult.data[0].firstName,
+									"email": userResult.data[0].email,
+									"phone": userResult.data[0].mobileNumber,
+									"send_email":"False",
+									"send_sms":"True",
+									/*"redirect_url":"http%3A%2F%2Fwww.bulkwize.com%2Forder%2F",
+									"webhook":"http%3A%2F%2Fwww.bulkwize.com%2Fpayment%2Fpaymentwebhook%2F",*/
+									"redirect_url":"http://www.bulkwize.com/order/confirm",
+									"webhook":"http://www.bulkwize.com/payment/paymentwebhook/",
+									"allow_repeated_payment":"False"
+									
+							},
+							headers: { "Content-Type": "application/json","X-Api-Key": "f5530c93dc2b257e9f6d38159aac2603", "X-Auth-Token":"9a2c3d05a396d68a63c809ae47243906" }
+						};
 
 
 /**
@@ -43,24 +60,13 @@ payment.post('/:orderId', function (req, res, next) {
 						console.log("The user returned for making payment is -- " + JSON.stringify(userResult));
 						
 						// set content-type header and data as json in args parameter 
-						var args = {
-							data: { 
-									"purpose":result.data[0].Bulkwize.orderId,
-									"amount":result.data[0].Bulkwize.totalOrderAmount,
-									"buyer_name": userResult.data[0].firstName,
-									"email": userResult.data[0].email,
-									"phone": userResult.data[0].mobileNumber,
-									"send_email":"False",
-									"send_sms":"True",
-									"redirect_url":"http%3A%2F%2Fwww.bulkwize.com%2Forder%2F",
-									"webhook":"http%3A%2F%2Fwww.bulkwize.com%2Fpayment%2Fpaymentwebhook%2F",
-									"allow_repeated_payment":"False"
-									
-							},
-							headers: { "Content-Type": "application/json","X-Api-Key": "f5530c93dc2b257e9f6d38159aac2603", "X-Auth-Token":"9a2c3d05a396d68a63c809ae47243906" }
-						};
-						console.log("The json object before making payment request is -- " + JSON.stringify(args));
-						pmntClient.post("https://www.instamojo.com/api/1.1/payment-requests/", args, function (data, response) {
+						instamojoPmntBody.purpose = result.data[0].Bulkwize.orderId;
+						instamojoPmntBody.amount:result.data[0].Bulkwize.totalOrderAmount;
+						instamojoPmntBody.buyer_name: userResult.data[0].firstName;
+						instamojoPmntBody.email: userResult.data[0].email;
+						instamojoPmntBody.phone: userResult.data[0].mobileNumber;
+						console.log("The json object before making payment request is -- " + JSON.stringify(instamojoPmntBody));
+						pmntClient.post("https://www.instamojo.com/api/1.1/payment-requests/", instamojoPmntBody, function (data, response) {
 							// parsed response body as js object 
 							console.log("Response data from create payment request is " + JSON.stringify(data));
 							// raw response 
