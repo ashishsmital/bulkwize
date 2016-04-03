@@ -112,11 +112,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
         url:"/forgotpassword",
         views:{
             'menuContent':{
-                templateUrl:'templates/forgotpassword.html'
+                templateUrl:'templates/forgotpassword.html',
+                controller: 'ForgotPasswordCtrl'
             }
         }
     })
-
     .state('app.home', {
         url: '/home',
         views: {
