@@ -178,7 +178,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
         url:'/brand',
         views:{
             'menuContent' : {
-                templateUrl: 'templates/brand.html'
+                templateUrl: 'templates/brand.html',
+                controller: 'BrandListCtrl'
+
             }
         }
     })

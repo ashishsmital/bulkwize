@@ -19,6 +19,10 @@
 		<div class="thumbnailSlider">
 			<div class="row nop_b text-uppercase">
 			  	<div class="col col-75 font_16">Brands with maximum discounts</div>
+				<div class="col col-26 text-right">
+					<a ui-sref="app.brand">View All</a>
+				</div>
+
 			</div>
 			<ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="isProduct">
 			  	<ion-slide  ng-repeat ="productList in productLists">
