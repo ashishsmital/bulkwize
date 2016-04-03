@@ -61,7 +61,7 @@ order.get('/:orderNo/invoice', function (req, res, next) {
                         description: obj.productBrandName+"-"+obj.productDescription,
                         quantity:variant.quantity,
                         rate: variant.productUnitSizeWeightQty, //TODO check with Ashish and change
-                        amount: variant.productMRPUnit //TODO check with Ashish and change
+                        amount: variant.productMRPUnit*variant.quantity //TODO check with Ashish and change
                     });
                     subtot +=parseInt(variant.productMRPUnit);
                 });
