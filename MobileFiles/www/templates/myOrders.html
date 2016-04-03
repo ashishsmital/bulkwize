@@ -8,8 +8,8 @@
 
         <ion-list class="accordion" ng-if="isMyOrders">
             <ion-item class="item-stable" ng-repeat-start="myOrder in myOrders" ng-click="toggleGroup($index)" ng-class="{active:isGroupShown($index)}">
-                <i class="icon" ng-class="isGroupShown($index) ? 'ion-minus' : 'ion-plus'"></i>
-                {{myOrder.productName }}
+                <i class="icon" ng-class="isGroupShown($index) ? 'ion-minus' : 'ion-plus'" ></i>
+                {{myOrder.Bulkwize.products[0].productName }}
             </ion-item>
             <ion-item class="item-accordion item-align" ng-repeat-end  ng-show="isGroupShown($index)">
                 <table class="table">
@@ -20,7 +20,7 @@
                         <th>No of cases</th>
                     </tr>
                     <tbody>
-                    <tr ng-repeat="productVariant in myOrder.variants">
+                    <tr ng-repeat="productVariant in myOrder.Bulkwize.products[0].variants">
                         <td>{{productVariant.productUnitSizeWeightQty}}</td>
                         <td>{{productVariant.productCountInCase}}</td>
                         <td>
