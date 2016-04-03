@@ -11,7 +11,8 @@ var orderModel = require('../model/OrderModel.js');
 var _ = require('underscore');
 var request = require('request');
 var config = require('../config/invoice-config.json');
-
+var Invoice = require('invoice-ninja');
+var fs = require('fs');
 /**
  * post order
  */
@@ -45,12 +46,56 @@ order.get('/', function (req, res, next) {
 order.get('/:orderNo/invoice', function (req, res, next) {
     console.log("Get invoice for orderId  - " + req.params['orderNo']);
     orderModel.getAllOrders("id",req.params['orderNo'], function (error, result) {
+
         if (error) {
             return res.status(400).send(error);
         }else{
+            pdtItems = [],subtot = 0;
+            var invoiceNumber = 1421;//TODO should be auto generated
             _.extend(result.data[0].Bulkwize, {'bulkwize-address': config.bulkwizeAddress});
+            result.data[0].Bulkwize.products.forEach(function(obj,i){
+              obj.variants.forEach(function (variant,i)
+                {
+
+                    pdtItems.push({
+                        description: obj.productBrandName+"-"+obj.productDescription,
+                        quantity:variant.quantity,
+                        rate: variant.productUnitSizeWeightQty, //TODO check with Ashish and change
+                        amount: variant.productMRPUnit //TODO check with Ashish and change
+                    });
+                    subtot +=parseInt(variant.productMRPUnit);
+                });
+            });
+
+            today = new Date();
+            due = new Date()
+            due.setDate(today.getDate() + 14);
+
+            input = {
+                currencyFormat: "₹%d",
+                invoice_number: invoiceNumber,
+                date_now: today.toDateString(),
+                date_due: due.toDateString(),
+                from_name: 'Bulkwise',
+                client_name: result.data[0].Bulkwize.shipping_address.address1,
+                items: pdtItems,
+                subtotal:subtot,
+                tax:0,
+                shipping:0,
+                paid:0,
+                balance:subtot,
+
+            };
+
+            var invoice = new Invoice();
+            //invoice.generatePDFStream(input).pipe(fs.createWriteStream(invoiceNumber+'-invoice.pdf'));
+          //  res.writeHead(200, {"Content-Type": "application/pdf"});
+            invoice.generatePDFStream(input).pipe(fs.createWriteStream(invoiceNumber+'-invoice.pdf'));
+
         }
+
         res.send(result);
+
     });
 });
 
