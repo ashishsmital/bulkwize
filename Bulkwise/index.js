@@ -39,7 +39,8 @@ app.use(require('morgan')('combined'));
 app.use(session({
     secret: 'bulkwizesecret-12340987',
     resave: true,
-    saveUninitialized: true
+    saveUninitialized: true,
+	cookie:{maxAge:1800000}
 }));
 
 
