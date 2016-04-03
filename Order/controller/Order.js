@@ -10,6 +10,7 @@ var order = express.Router();
 var orderModel = require('../model/OrderModel.js');
 var _ = require('underscore');
 var request = require('request');
+var config = require('../config/invoice-config.json');
 
 /**
  * post order
@@ -36,6 +37,23 @@ order.get('/', function (req, res, next) {
         res.send(result);
     });
 });
+
+
+/**
+ * get invoice for order number
+ */
+order.get('/:orderNo/invoice', function (req, res, next) {
+    console.log("Get invoice for orderId  - " + req.params['orderNo']);
+    orderModel.getAllOrders("id",req.params['orderNo'], function (error, result) {
+        if (error) {
+            return res.status(400).send(error);
+        }else{
+            _.extend(result.data[0].Bulkwize, {'bulkwize-address': config.bulkwizeAddress});
+        }
+        res.send(result);
+    });
+});
+
 
 // export product module
 module.exports = order;

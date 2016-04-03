@@ -1,0 +1,11 @@
+{
+  "bulkwizeAddress":{
+    "companyName":"Bulkwize Enterprise",
+    "addressLine1":"123",
+    "addressLine2":"Kings Cross",
+    "city":"Bangalore",
+    "state":"Karnataka",
+    "pincode":"560045",
+    "country":"India"
+  }
+}
