@@ -39,10 +39,9 @@ app.factory('AuthServices', function ($http,$q,EnvConfig) {
                 method: 'GET',
                 url: EnvConfig.HOST+'user/checkMobileNumber/'+mobNo
             }).then(function successCallback(data) {
-                deferred.resolve(true);
-
-            },function errorCallback(data) {
                 deferred.reject(false);
+            },function errorCallback(data) {
+                deferred.resolve(true);
             });
             return promise;
         },

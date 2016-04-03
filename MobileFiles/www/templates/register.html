@@ -12,11 +12,11 @@
           </label>
           <label class="item item-input item-stacked-label">
               <span class="input-label">Mobile Number <sup>*</sup></span>
-              <input type="text" placeholder="+91 XXXXXXXXXX" name="mob" id="mob" class="error" ng-model="reg.mob" required ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
+              <input type="text" placeholder="+91 XXXXXXXXXX" name="mob" mobile-exist id="mob" class="error" ng-model="reg.mob" required ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
               <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.mob.$touched)" ng-messages="userInfo.mob.$error" >
                   <div ng-message="required" class="error">Mobile Number is required</div>
                   <div ng-message="pattern" class="error">Must be a valid 10 digit phone number</div>
-
+                  <div ng-message="checkMob" class="error">Mobile no is  already used</div>
               </div>
           </label>
           <label class="item item-input item-stacked-label">
