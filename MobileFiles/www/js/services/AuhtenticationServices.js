@@ -31,6 +31,24 @@ app.factory('AuthServices', function ($http,$q,EnvConfig) {
             });
             return promise;
         },
+
+        isMobileExist: function( mobNo ){
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+            $http({
+                method: 'GET',
+                url: EnvConfig.HOST+'user/checkMobileNumber/'+mobNo
+            }).then(function successCallback(data) {
+                deferred.resolve(true);
+
+            },function errorCallback(data) {
+                deferred.reject(false);
+            });
+            return promise;
+        },
+
+
+
         put: function(user){
             return localStorage.setItem(USER_DETAILS,JSON.stringify(user));
         }
