@@ -10,6 +10,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
 
 .run(function($ionicPlatform,$rootScope,RequestsService) {
   $ionicPlatform.ready(function() {
+	  
+	  // initialise google analytics
+
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-75906058-2', 'bulkwize.com');
+		  //ga('send', 'pageview');
+
+
+//        $window.ga('create', 'UA-75906058-2', 'bulkwize.com');
+ 
+        // track pageview on state change
+        $rootScope.$on('$stateChangeSuccess', function (event) {
+			if (!$window.ga)
+                    return;
+            $window.ga('send', 'pageview', { page: $location.path() });
+        });
+		
+		// end Google Analytics
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
