@@ -40,19 +40,17 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
             require: ['ngModel', '^form'],
             scope: true,
             link: function (scope, element, attributes, ctrls) {
+
                 var ngModel = ctrls[0];
                 var form = ctrls[1];
                 ngModel.$asyncValidators.checkMob = function (modelValue, viewValue) {
                     return $q(function (resolve, reject) {
-                        if (result !== false) {
-                            AuthServices.isMobileExist(modelValue).then(function () {
-                                resolve();
-                            }, function () {
-                                reject();
-                            });
-                        } else {
-                            return false;
-                        }
+                    AuthServices.isMobileExist(modelValue).then(function () {
+                      resolve();
+                    }, function () {
+                       reject();
+                    });
+
                     });
                 };
             }

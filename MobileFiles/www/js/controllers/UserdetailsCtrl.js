@@ -20,11 +20,12 @@ app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $h
     $scope.reg.delCity = 'Bangalore';
     $scope.reg.delState = 'Karnataka';
 
-
+    /*
      $scope.step1 = true;
      $scope.step2 = true;
      $scope.step3 = true;
      $scope.step4 = true;
+     */
 
 
     $scope.reg = {};
