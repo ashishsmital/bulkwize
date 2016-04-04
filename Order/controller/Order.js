@@ -27,7 +27,8 @@ order.post('/create', function (req, res, next) {
         res.send(result);
 		 // send order sms to end consumer
 		var smsOptions = smsConfig.smsOptions;
-		smsOptions.path=smsOptions.path+req.user.user+"&Msg=Your%20order%20number%20with%20Bulkwize&is%20"+result.data[0].Bulkwize.id;
+		console.log("Printing order object before sending SMS " + JSON.stringify(result));
+		smsOptions.path=smsOptions.path+result.data[0].Bulkwize.customer_id+"&Msg=Your%20order%20number%20with%20Bulkwize&is%20"+result.data[0].Bulkwize.id;
 		console.log("SMS options is " + JSON.stringify(smsOptions));
 		var req = http.request(smsOptions, function (res) {
 		  var chunks = [];
