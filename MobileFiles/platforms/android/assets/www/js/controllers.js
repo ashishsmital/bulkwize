@@ -1,63 +1,5 @@
 var app = angular.module('starter.controllers', []);
-
-app.directive('owlSlider', function ($ionicSideMenuDelegate) {
-    return {
-        restrict: 'E',
-        link: function (scope, element, attrs) {
-            $ionicSideMenuDelegate.canDragContent(false);
-            scope.initCarousel = function(element) {
-                $(element).owlCarousel({
-                    autoPlay: false,
-                    slideSpeed : 300,
-                    paginationSpeed : 400,
-                    items: 3,
-                    itemsDesktop: [1199, 3],
-                    itemsDesktopSmall: [979, 3],
-                    itemsTablet: [600, 3], 
-                    itemsMobile: false
-                });
-            };
-        }
-    };
-})
-
-.directive('owlCarouselItem', function() {
-    return {
-        restrict: 'A',
-        transclude: false,
-        link: function(scope, element) {
-          // wait for the last item in the ng-repeat then call init
-            if(scope.$last) {
-                scope.initCarousel(element.parent());
-            }
-        }
-    };
-})
-
-.directive('compareTo', function() {
-    return {
-        require: "ngModel",
-        scope: {
-            otherModelValue: "=compareTo"
-        },
-        link: function(scope, element, attributes, ngModel) {
-
-            ngModel.$validators.compareTo = function(modelValue) {
-                return modelValue == scope.otherModelValue;
-            };
-
-            scope.$watch("otherModelValue", function() {
-                ngModel.$validate();
-            });
-        }
-    };
-})
-
-
-.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state,EnvConfig) {
-
-    
-
+app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state,EnvConfig) {
     $scope.submit = function(valid, user){
         console.log(valid);
         if(valid){
@@ -261,7 +203,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
                 data:
                 {
                     "type": "com.bulkwise.Cart",
-                    "id": "com.bulkwise.Cart::John",
+                    "id": "",
                     "customer_id": "",
                     "business_id": "123456789",
                     "products": [
@@ -396,7 +338,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
                 data:
                 {
                     "type": "com.bulkwise.Cart",
-                    "id": "com.bulkwise.Cart::John",
+                    "id": "",
                     "customer_id": "",
                     "business_id": "123456789",
                     "products": [
@@ -507,10 +449,51 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
 
 })
 
-.controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
+.controller('ShippingCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicPopup, $state,EnvConfig){
 
     $scope.user = [];
-    $scope.user.city = 'Bangalore'
+    $scope.user.city = 'Bangalore';
+	$scope.user.state = 'Karnataka';
+	$scope.user.country = 'India';
+	
+	$http({
+        method: 'GET',
+        url: EnvConfig.HOST+'user/'
+    }).then(function successCallback(response) {
+        
+		if(response.status == 200){
+				if(response.data.data.length > 0){
+					$scope.user.address1 = response.data.data[0].Bulkwize.deliveryAddress.addressLine1;
+					$scope.user.address2 = response.data.data[0].Bulkwize.deliveryAddress.addressLine2;
+					$scope.user.postcode = response.data.data[0].Bulkwize.deliveryAddress.pincode;
+				}
+				
+		}
+        
+		
+		
+        $ionicLoading.hide();
+    }, function errorCallback(response) {
+        console.log(response);
+		if(response.status == 401){
+					var alertPopup = $ionicPopup.alert({
+                        title: 'Info',
+                        template: 'Ooops! Please login before checkout'
+                    });
+					
+					alertPopup.then(function(res) {
+                        console.log("The user is not logged in and hence needs to be redirected to login page." + res);
+                        if(res == true){
+                            $state.go('app.login');
+                        }
+                    });
+
+		}
+
+        $ionicLoading.hide();
+    });
+	
+	
     $scope.submit = function(valid, user){
         console.log(valid);
         if(valid){
@@ -526,8 +509,8 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
                 method: 'PUT',
                 url: EnvConfig.HOST+'shoppingcart/shippingDetails',
                 data: {
-                    "customer_id": "John",
-                    "id": "com.bulkwise.Cart::John",
+                    "customer_id": "",
+                    "id": "",
                     "shipping_address": {
                         "address1": user.address1,
                         "address2": user.address2,
@@ -556,6 +539,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
                         }
                     });
                 }
+				
                 $ionicLoading.hide();
             }, function errorCallback(data) {
                 console.log(data);
@@ -565,7 +549,7 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
     }
 })
 
-.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,EnvConfig){
+.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window,EnvConfig){
 
     $ionicLoading.show({
         content: 'Loading',
@@ -603,6 +587,68 @@ app.directive('owlSlider', function ($ionicSideMenuDelegate) {
             console.log(response);
             
             $ionicLoading.hide();
+        }, function errorCallback(data) {
+            console.log(data);
+            $ionicLoading.hide();
+        });
+    }
+	
+	
+	$scope.cod = function(){
+        $ionicLoading.show({
+            content: 'Loading',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        });
+
+        $http({
+            method: 'POST',
+            url: EnvConfig.HOST+'order/create/',
+        }).then(function successCallback(response) {
+            console.log(response);
+            
+            $ionicLoading.hide();
+        }, function errorCallback(data) {
+            console.log(data);
+            $ionicLoading.hide();
+        });
+    }
+	
+	$scope.payment = function(){
+        $ionicLoading.show({
+            content: 'Loading',
+            animation: 'fade-in',
+            showBackdrop: true,
+            maxWidth: 200,
+            showDelay: 0
+        });
+
+        $http({
+            method: 'POST',
+            url: EnvConfig.HOST+'order/create/',
+        }).then(function successCallback(response) {
+            console.log(response);
+            
+            $ionicLoading.hide();
+			 // if order creation is successful - make payment
+			$http({
+				method: 'POST',
+				url: EnvConfig.HOST+'payment/'+response.data.data.id
+			}).then(function successCallback(pmntResponse) {
+				console.log("Payment creation was successful" + pmntResponse.data.data.pmntURL);
+				$ionicLoading.hide();
+				
+				// if payment creation is successful, invoke instamojo long URL
+				$window.location.href=pmntResponse.data.data.pmntURL;
+				
+				// end of invoking instamojo long url
+			}, function errorCallback(data) {
+				console.log( "Payment creation failed" + data);
+				$ionicLoading.hide();
+			});
+			// end of payment creation
         }, function errorCallback(data) {
             console.log(data);
             $ionicLoading.hide();

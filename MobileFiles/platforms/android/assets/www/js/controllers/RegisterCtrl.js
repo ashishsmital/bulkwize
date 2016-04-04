@@ -8,14 +8,29 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
     $scope.step3 = false;
     $scope.step4 = false;
 
+    $scope.reg = {};
+	$scope.shopCity = 'Bangalore';
+	$scope.shopState = 'Karnataka';
+	
+	$scope.delCity = 'Bangalore';
+	$scope.delState = 'Karnataka';
+	
+	$scope.reg.shopCity = 'Bangalore';
+	$scope.reg.shopState = 'Karnataka';
+	
+	$scope.reg.delCity = 'Bangalore';
+	$scope.reg.delState = 'Karnataka';
+	
+
 /*
     $scope.step1 = true;
     $scope.step2 = true;
     $scope.step3 = true;
     $scope.step4 = true;
-    */
+	$scope.reg = {};
+*/
 
-    $scope.reg = {};
+    
 
     $scope.goNextPrev = function(step){
        for(var i=1; i <= 4; i++){

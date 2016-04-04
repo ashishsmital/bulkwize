@@ -21,13 +21,22 @@ app.controller('MyOrdersCtrl', function($scope, $stateParams, $http, $ionicLoadi
 
     $http({
         method: 'GET',
-        url: 'json/myOrder.json'
+        url: EnvConfig.HOST+'order'
     }).then(function successCallback(data) {
         console.log(data);
-        if(data.data.products.length > 0 ){
+
+        if(data.data.data){
+            $scope.isMyOrders = true;
+            $scope.myOrders = data.data.data;
+        }
+
+        /*
+        if(data.data.products && data.data.products.length > 0 ){
             $scope.isMyOrders = true;
             $scope.myOrders = data.data.products;
         }
+        */
+
         $ionicLoading.hide();
     }, function errorCallback(data) {
         console.log(data);

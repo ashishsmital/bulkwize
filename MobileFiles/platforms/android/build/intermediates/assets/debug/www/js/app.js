@@ -34,6 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
        */
       if (window.cordova ){
           pushNotification = window.plugins.pushNotification;
+          alert(pushNotification);
           pushNotification.register(
               onNotification,
               errorHandler,
@@ -112,11 +113,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
         url:"/forgotpassword",
         views:{
             'menuContent':{
-                templateUrl:'templates/forgotpassword.html'
+                templateUrl:'templates/forgotpassword.html',
+                controller: 'ForgotPasswordCtrl'
             }
         }
     })
-
     .state('app.home', {
         url: '/home',
         views: {
@@ -178,7 +179,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
         url:'/brand',
         views:{
             'menuContent' : {
-                templateUrl: 'templates/brand.html'
+                templateUrl: 'templates/brand.html',
+                controller: 'BrandListCtrl'
+
             }
         }
     })
