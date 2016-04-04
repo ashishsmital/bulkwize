@@ -11,8 +11,10 @@ var orderModel = require('../model/OrderModel.js');
 var _ = require('underscore');
 var request = require('request');
 var config = require('../config/invoice-config.json');
+var smsConfig = require('../config/sms-config.json');
 var Invoice = require('invoice-ninja');
 var fs = require('fs');
+var http = require("http");
 /**
  * post order
  */
@@ -23,6 +25,26 @@ order.post('/create', function (req, res, next) {
             return res.status(400).send(error);
         } 
         res.send(result);
+		 // send order sms to end consumer
+		var smsOptions = smsConfig.smsOptions;
+		smsOptions.path=smsOptions.path+req.user.user+"&Msg=Your%20order%20number%20with%20Bulkwize&is%20"+result.data[0].Bulkwize.id;
+		console.log("SMS options is " + JSON.stringify(smsOptions));
+		var req = http.request(smsOptions, function (res) {
+		  var chunks = [];
+
+		  res.on("data", function (chunk) {
+			chunks.push(chunk);
+		  });
+
+		  res.on("end", function () {
+			var body = Buffer.concat(chunks);
+			console.log(body.toString());
+		  });
+		});
+
+		req.end();
+		// end of send SMS
+
     });
 });
 

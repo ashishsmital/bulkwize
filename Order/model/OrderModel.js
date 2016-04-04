@@ -175,5 +175,32 @@ OrderModel.getShoppingCartById = function(attribute,value, callback) {
     });
 }
 
+/**
+ *
+ * Update Order
+ *
+ * @param attribute
+ *         attribute name
+ * @param value
+ *          attribute value
+ * @param callback
+ *          http callback
+ */
+OrderModel.updateOrder = function(documentId, orderObj, callback) {
+
+     db.upsert(documentId, orderObj, function(error, result) {
+        if(error) {
+            callback(error, null);
+            return;
+        }
+       console.log("The order was successfully saved -- " + JSON.stringify(result));
+       callback(null, {message: 'success', data: result});
+
+
+    });
+
+    
+}
+
 //exporting product model
 module.exports = OrderModel;
