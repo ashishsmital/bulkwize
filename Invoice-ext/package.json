@@ -1,0 +1,26 @@
+{
+  "author": {
+    "name": "Edvin Malinovskis"
+  },
+
+  "dependencies": {
+    "duplexer": "^0.1.1",
+    "markdown-pdf": "^2.2.0",
+    "split": "^0.3.0",
+    "through": "^2.3.4"
+  },
+  "description": "Invoice PDF generator API",
+  "keywords": [
+    "invoice",
+    "markdown",
+    "API",
+    "pdf"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "Invoice-ext",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.2.2"
+}
