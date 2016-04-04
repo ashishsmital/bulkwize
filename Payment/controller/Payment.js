@@ -69,9 +69,19 @@ payment.post('/:orderId', function (req, res, next) {
 						pmntClient.post("https://www.instamojo.com/api/1.1/payment-requests/", instamojoPmntBody, function (data, response) {
 							// parsed response body as js object 
 							console.log("Response data from create payment request is " + JSON.stringify(data));
-							// raw response 
-							//console.log(response);
-							res.send({"message":"success","data":{"pmntURL":data.payment_request.longurl}});
+							console.log("Updating Order object with payment URL -- " + JSON.stringify(result.data[0].Bulkwize));
+							var orderJSON = JSON.parse(JSON.stringify(result.data[0].Bulkwize));
+							orderJSON.paymentRequest=data.payment_request;
+							orderModel.updateOrder(req.params['orderId'],orderJSON, function(error,ordersaveResponse){
+									// return payment URL to browser
+								if(data != undefined && data.payment_request != undefined & data.payment_request.longurl != undefined){
+										res.send({"message":"success","data":{"pmntURL":data.payment_request.longurl}});
+								}else{
+									res.send({"message":"failure","data":{"pmntURL":"Oops. Problem connecting to payment gateway. Please try calling customer care"}});
+								}
+							});
+							
+							
 						});
 
 					}
