@@ -74,7 +74,7 @@ payment.post('/:orderId', function (req, res, next) {
 							orderJSON.paymentRequest=data.payment_request;
 							orderModel.updateOrder(req.params['orderId'],orderJSON, function(error,ordersaveResponse){
 									// return payment URL to browser
-								if(data != undefined && data.payment_request != undefined & data.payment_request.longurl != undefined){
+								if(data != undefined && data.success!='false' && data.payment_request != undefined & data.payment_request.longurl != undefined){
 										res.send({"message":"success","data":{"pmntURL":data.payment_request.longurl}});
 								}else{
 									res.send({"message":"failure","data":{"pmntURL":"Oops. Problem connecting to payment gateway. Please try calling customer care"}});
