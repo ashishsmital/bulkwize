@@ -56,6 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
        */
       if (window.cordova ){
           pushNotification = window.plugins.pushNotification;
+          alert(pushNotification);
           pushNotification.register(
               onNotification,
               errorHandler,

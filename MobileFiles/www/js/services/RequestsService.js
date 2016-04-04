@@ -16,14 +16,15 @@
             var deferred = $q.defer();
             $ionicLoading.show();
 
-            $http.post(base_url + '/register', {'device_token': device_token})
+            $http.post(base_url + 'promotion/register', {'deviceToken': device_token})
                 .success(function(response){
-
+                   alert("Push alert suceess");
                     $ionicLoading.hide();
                     deferred.resolve(response);
 
                 })
                 .error(function(data){
+                    alert("Push alert fail");
                     deferred.reject();
                 });
 
