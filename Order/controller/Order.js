@@ -12,7 +12,7 @@ var _ = require('underscore');
 var request = require('request');
 var config = require('../config/invoice-config.json');
 var smsConfig = require('../config/sms-config.json');
-var Invoice = require('invoice-ninja');
+var Invoice = require('Invoice-ext');
 var fs = require('fs');
 var http = require("http");
 /**

@@ -20,6 +20,6 @@
     "uuid": "^2.0.1"
   },
   "dependencies": {
-    "invoice-ninja": "^0.2.2"
+    "Invoice-ext": "../Invoice-ext"
   }
 }
