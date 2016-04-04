@@ -54,28 +54,34 @@ order.get('/:orderNo/invoice', function (req, res, next) {
             var invoiceNumber = 1421;//TODO should be auto generated
             _.extend(result.data[0].Bulkwize, {'bulkwize-address': config.bulkwizeAddress});
             result.data[0].Bulkwize.products.forEach(function(obj,i){
-              obj.variants.forEach(function (variant,i)
+              obj.productVariants.forEach(function (variant,i)
                 {
 
+                    amt=variant.productMRPUnit*variant.productOrderedQty*variant.productCountInCase;
                     pdtItems.push({
-                        description: obj.productBrandName+"-"+obj.productDescription,
-                        quantity:variant.quantity,
-                        rate: variant.productUnitSizeWeightQty, //TODO check with Ashish and change
-                        amount: variant.productMRPUnit*variant.quantity //TODO check with Ashish and change
+                        description: variant.productMaterialDescription,
+                        quantity:variant.productOrderedQty,
+                        rate: variant.productMRPUnit,
+                        amount: amt,
+                        vat:variant.productVATPercentage,
+                        countInCase:variant.productCountInCase,
                     });
-                    subtot +=parseInt(variant.productMRPUnit);
+                    subtot +=parseInt(amt);
                 });
             });
 
-            today = new Date();
-            due = new Date()
-            due.setDate(today.getDate() + 14);
-
+            orderDate = new Date(result.data[0].Bulkwize.updatedAt);
+            invoiceDate = new Date()
             input = {
                 currencyFormat: "₹%d",
                 invoice_number: invoiceNumber,
-                date_now: today.toDateString(),
-                date_due: due.toDateString(),
+                order_number:invoiceNumber, //TODO check with Ashish tomorrow.
+                orderDate: orderDate.toISOString().
+                replace(/T/, ' ').
+                replace(/\..+/, ''),
+                invoiceDate: invoiceDate.toISOString().
+                replace(/T/, ' ').
+                replace(/\..+/, ''),
                 from_name: 'Bulkwise',
                 client_name: result.data[0].Bulkwize.shipping_address.address1,
                 items: pdtItems,
