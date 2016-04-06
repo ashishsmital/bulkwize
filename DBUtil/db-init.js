@@ -13,7 +13,8 @@ var categoryCounter = 0; // this is only for first time, else retrieve this valu
 var supplierCounter = 0; // this is only for first time, else retrieve this value from the counter below.
 
 var parsedCategoryIndex=0;
-var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw-3.csv");
+//var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw-3.csv");
+var stream = fs.createReadStream("./conf/Nestle-processed.csv");
 var parsedRecordInMemory = [];
 
 var currentUTCdate = new Date(moment().utc().format());
@@ -272,13 +273,13 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				// insert the product with incremented counter
 				var productId = res.value;
 				productObj.id=productId;
-				productObj.productDisplayTitle= parsedRecord.MaterialDescription;
+				productObj.productDisplayTitle= parsedRecord.DisplayTitle;
 				productObj.productBrandName=parsedRecord.Brand;
 				productObj.productBrandImageURL=parsedRecord.BrandImgURL;
 				productObj.productImageURL=parsedRecord.ProductImgURL;
-				productObj.productShortSummary = parsedRecord.MaterialDescription;
+				productObj.productShortSummary = parsedRecord.ShortSummary;
 				productObj.productDescription =  parsedRecord.MaterialDescription;
-				productObj.productName=parsedRecord.MaterialDescription;
+				productObj.productName=parsedRecord.DisplayTitle;
 				productObj.supplier_business_name=parsedRecord.SupplierBusinessName;
 				productObj.override_lead_time_for_delivery_in_days=parsedRecord.LeadTimeForDelivery;
 				productObj.productVariants[0].sku_id=productId;
