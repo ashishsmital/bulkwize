@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\ghanavela\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jar="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-bd227050441a903b70f3dc9452ce7befec2b3315.jar" />
+        revision="23.0.3"
+        sha1="d2809db230e490ac69d2fd97be21992e73375be1">
+        <dex dex="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\CordovaLib-unspecified-debug_43c5f2406b493bd87a7479f8d47ca36c9f8a9c54.jar" />
     </item>
     <item
-        jar="D:\bulkwize\MobileFiles\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\libs\internal_impl-23.1.1.jar"
+        jar="E:\Android\android-sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0-alpha1\support-annotations-24.0.0-alpha1.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-684308e1fc878d644f4fd85f81c4e69dc9f917ed.jar" />
+        revision="23.0.3"
+        sha1="b8062546971a3d196343232a19a3c0016272ba47">
+        <dex dex="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-24.0.0-alpha1_e9f4cb8399920181392635ce5defd22767d8f7aa.jar" />
     </item>
     <item
-        jar="D:\bulkwize\MobileFiles\platforms\android\build\intermediates\exploded-aar\android\CordovaLib\unspecified\debug\classes.jar"
+        jar="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\libs\gcm.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="864c3f24f1946a578ebd886d9786cceb3650c1b4">
-        <dex dex="D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\classes-7e84e658e04326e1a5aa1fa9d508a0c4d703b855.jar" />
-    </item>
-    <item
-        jar="D:\bulkwize\MobileFiles\platforms\android\libs\gcm.jar"
-        jumboMode="false"
-        revision="23.0.2"
+        revision="23.0.3"
         sha1="a6d7bce795a14c7f86111756c4ceb44b79de14aa">
-        <dex dex="D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\gcm-36f378611816315489acf7660b07a25afa45c2fe.jar" />
+        <dex dex="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\gcm_8f528f1c265ef26561701e3a477777b98fa59034.jar" />
     </item>
     <item
-        jar="D:\bulkwize\MobileFiles\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\classes.jar"
+        jar="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0-alpha1\jars\classes.jar"
         jumboMode="false"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\classes-76008100912ec395739af6d1273a249a00ba6afa.jar" />
+        revision="23.0.3"
+        sha1="9aaaea3a89040f8176f810c85e288fc74d5d1f12">
+        <dex dex="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0-alpha1_6e78b99a9f95efe0f11d25d564ac5ad28749758d.jar" />
+    </item>
+    <item
+        jar="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0-alpha1\jars\libs\internal_impl-24.0.0-alpha1.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="e57fba0a2d57d3501d8f4ff44c23092978804845">
+        <dex dex="E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-24.0.0-alpha1_ff2fd3a19d87698512ab15ba8db4058cf023f7ab.jar" />
     </item>
 
 </items>

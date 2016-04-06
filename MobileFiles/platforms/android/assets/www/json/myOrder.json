@@ -1,0 +1,57 @@
+{
+  "type": "com.bulkwise.Cart",
+  "id": "com.bulkwise.Cart::Raja",
+  "customer_id": "Raja",
+  "business_id": "123456789",
+  "session_id": "f3MyQSAKd6ZBnLVB2Lq--JD9zAVdda4Z",
+  "products": [
+    {
+      "id": "123",
+      "productDisplayTitle" : "Gillete Mach 3 razor, titanium blade",
+      "productBrandName":"Gillete",
+      "productBrandImageURL": "This is product brand image URL ",
+      "productShortSummary": "A very short summary to be displayed along with title.",
+      "productDescription": "A detailed description about the product",
+      "productName": "Gillete Mach 3",
+      "productImageURL":"This is product image url",
+      "quantity": "10",
+      "variants":[
+
+        {
+          "productCountInCase": 50,
+          "productDiscountPercentage": 9,
+          "productMRPUnit": 550,
+          "productUnitSizeWeightQty": "3",
+          "quantity": "500",
+          "sku_id": "13"
+        },	{
+          "productCountInCase": 50,
+          "productDiscountPercentage": 9,
+          "productMRPUnit": 550,
+          "productUnitSizeWeightQty": "3",
+          "quantity": "500",
+          "sku_id": "12"
+        },	{
+          "productCountInCase": 50,
+          "productDiscountPercentage": 9,
+          "productMRPUnit": 550,
+          "productUnitSizeWeightQty": "3",
+          "quantity": "500",
+          "sku_id": "11"
+        }]
+    }
+  ],
+  "coupon_code": "10% discount",
+  "billing_address": {
+    "address": ""
+  },
+  "shipping_address": {
+    "address": ""
+  },
+  "total_cart_value_after_discount": 182,
+  "workflow_states": {
+    "created": ""
+  },
+  "createdAt": "2016-02-20T10:34:08.149Z",
+  "updatedAt": "2016-02-20T10:34:08.149Z"
+}
