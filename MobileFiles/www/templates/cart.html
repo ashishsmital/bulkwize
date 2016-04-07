@@ -42,7 +42,7 @@
 					
 					<div class="col">
 						<div class="addCartButton" ng-click="addCart(cartDetail)">
-						 	Updated to Cart<i class="ion-android-cart"></i>
+						 	Update Cart<i class="ion-android-cart"></i>
 						</div>
 					</div>
 					<div class="col text-right">
@@ -56,7 +56,7 @@
   	</ion-content>
   	<ion-footer-bar class="bar bar-dark cart_button" ng-if="cartDetails.length != 0">
 		<div class="button-bar">
-			<a class="button button-calm " ui-sref="#">Total Payment Amount: {{cartDetails.totalCartValue}}</a>
+			<a class="button button-calm " ui-sref="#">Total: {{cartDetails.totalCartValue}}</a>
 			<a class="button button-assertive" ng-click="checkout()">Checkout</a>
 		</div>
 	</ion-footer-bar>
