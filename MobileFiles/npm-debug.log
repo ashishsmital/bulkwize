@@ -1,0 +1,69 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'cordova',
+1 verbose cli   'ionic' ]
+2 info using npm@2.15.0
+3 info using node@v4.4.2
+4 verbose install initial load of F:\Bulkwize\bulkwize\MobileFiles\package.json
+5 warn package.json bulkwize@1.1.1 No repository field.
+6 warn package.json bulkwize@1.1.1 No README data
+7 warn package.json bulkwize@1.1.1 No license field.
+8 verbose readDependencies loading dependencies from F:\Bulkwize\bulkwize\MobileFiles\package.json
+9 silly cache add args [ 'cordova', null ]
+10 verbose cache add spec cordova
+11 silly cache add args [ 'ionic', null ]
+12 verbose cache add spec ionic
+13 silly cache add parsed spec Result {
+13 silly cache add   raw: 'cordova',
+13 silly cache add   scope: null,
+13 silly cache add   name: null,
+13 silly cache add   rawSpec: 'cordova',
+13 silly cache add   spec: 'F:\\Bulkwize\\bulkwize\\MobileFiles\\cordova',
+13 silly cache add   type: 'local' }
+14 silly cache add parsed spec Result {
+14 silly cache add   raw: 'ionic',
+14 silly cache add   scope: null,
+14 silly cache add   name: null,
+14 silly cache add   rawSpec: 'ionic',
+14 silly cache add   spec: 'F:\\Bulkwize\\bulkwize\\MobileFiles\\ionic',
+14 silly cache add   type: 'local' }
+15 silly addLocalTarball shasum (computed) 25c7b5fa447c8404365a74a5f2c3a9b0c05b1b13
+16 verbose addTmpTarball F:\Bulkwize\bulkwize\MobileFiles\cordova not in flight; adding
+17 silly addLocalTarball shasum (computed) 632b46c13f386958af7fce96c6d66113bbef4d73
+18 verbose addTmpTarball F:\Bulkwize\bulkwize\MobileFiles\ionic not in flight; adding
+19 verbose correctMkdir C:\Users\Deepak\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose correctMkdir C:\Users\Deepak\AppData\Roaming\npm-cache correctMkdir already in flight; waiting
+21 verbose addTmpTarball validating metadata from F:\Bulkwize\bulkwize\MobileFiles\cordova
+22 verbose tar unpack F:\Bulkwize\bulkwize\MobileFiles\cordova
+23 verbose tar unpacking to C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-aa0275c3e3d8
+24 silly gentlyRm C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-aa0275c3e3d8 is being purged
+25 verbose gentlyRm don't care about contents; nuking C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-aa0275c3e3d8
+26 verbose addTmpTarball validating metadata from F:\Bulkwize\bulkwize\MobileFiles\ionic
+27 verbose tar unpack F:\Bulkwize\bulkwize\MobileFiles\ionic
+28 verbose tar unpacking to C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-ebdaffdeef94
+29 silly gentlyRm C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-ebdaffdeef94 is being purged
+30 verbose gentlyRm don't care about contents; nuking C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-ebdaffdeef94
+31 silly gunzTarPerm modes [ '777', '666' ]
+32 silly gunzTarPerm modes [ '777', '666' ]
+33 error not a package F:\Bulkwize\bulkwize\MobileFiles\ionic
+34 error addLocal Could not install F:\Bulkwize\bulkwize\MobileFiles\ionic
+35 error not a package F:\Bulkwize\bulkwize\MobileFiles\cordova
+36 error addLocal Could not install F:\Bulkwize\bulkwize\MobileFiles\cordova
+37 verbose stack Error: ENOENT: no such file or directory, open 'C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-ebdaffdeef94\package.json'
+37 verbose stack     at Error (native)
+38 verbose cwd F:\Bulkwize\bulkwize\MobileFiles
+39 error Windows_NT 6.2.9200
+40 error argv "C:\\Program Files (x86)\\nodejs\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "cordova" "ionic"
+41 error node v4.4.2
+42 error npm  v2.15.0
+43 error path C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-ebdaffdeef94\package.json
+44 error code ENOENT
+45 error errno -4058
+46 error syscall open
+47 error enoent ENOENT: no such file or directory, open 'C:\Users\Deepak\AppData\Local\Temp\npm-832-748128ea\unpack-ebdaffdeef94\package.json'
+47 error enoent This is most likely not a problem with npm itself
+47 error enoent and is related to npm not being able to find a file.
+48 verbose exit [ -4058, true ]
