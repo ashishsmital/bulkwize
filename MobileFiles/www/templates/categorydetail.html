@@ -23,14 +23,12 @@
 		<div class="mt_10 padding" ng-show="detail.productVariants">
 			<table class="table">
 				<tr>
-					<th>UnitSize/Wt./Qty</th>
 					<th>Units/case</th>
 					<th>Price</th>
 					<th>No of cases</th>
 				</tr>
 				<tbody>
 					<tr ng-repeat="productVariant in detail.productVariants">
-						<td>{{productVariant.productUnitSizeWeightQty}}</td>
 						<td>{{productVariant.productCountInCase}}</td>
 						<td>
 							MRP / unit:{{productVariant.productMRPUnit}}
