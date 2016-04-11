@@ -118,8 +118,6 @@ order.get('/:orderNo/invoice', function (req, res, next) {
             };
 
             var invoice = new Invoice();
-            //invoice.generatePDFStream(input).pipe(fs.createWriteStream(invoiceNumber+'-invoice.pdf'));
-          //  res.writeHead(200, {"Content-Type": "application/pdf"});
             var fileStream = fs.createWriteStream(__dirname+invoiceNumber+'-invoice.pdf');
             invoice.generatePDFStream(input).pipe(fileStream).on('finish', function () {  // finished
                 //_.extend(result.data[0].Bulkwize,{'invoiceFilePath':fileStream.relative})
