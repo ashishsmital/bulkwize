@@ -68,13 +68,14 @@ order.get('/', function (req, res, next) {
  */
 order.get('/:orderNo/invoice', function (req, res, next) {
     console.log("Get invoice for orderId  - " + req.params['orderNo']);
+    var _dirname = process.cwd()
     orderModel.getAllOrders("id",req.params['orderNo'], function (error, result) {
 
         if (error) {
             return res.status(400).send(error);
         }else{
             pdtItems = [],subtot = 0;
-            var invoiceNumber = 1421;//TODO should be auto generated
+            var invoiceNumber = result.data[0].Bulkwize.id;//TODO should be auto generated
             _.extend(result.data[0].Bulkwize, {'bulkwize-address': config.bulkwizeAddress});
             result.data[0].Bulkwize.products.forEach(function(obj,i){
               obj.productVariants.forEach(function (variant,i)
@@ -119,11 +120,29 @@ order.get('/:orderNo/invoice', function (req, res, next) {
             var invoice = new Invoice();
             //invoice.generatePDFStream(input).pipe(fs.createWriteStream(invoiceNumber+'-invoice.pdf'));
           //  res.writeHead(200, {"Content-Type": "application/pdf"});
-            invoice.generatePDFStream(input).pipe(fs.createWriteStream(invoiceNumber+'-invoice.pdf'));
+            var fileStream = fs.createWriteStream(__dirname+invoiceNumber+'-invoice.pdf');
+            invoice.generatePDFStream(input).pipe(fileStream).on('finish', function () {  // finished
+                //_.extend(result.data[0].Bulkwize,{'invoiceFilePath':fileStream.relative})
+                //res.send(result);
 
+                fs.readFile(__dirname+invoiceNumber+'-invoice.pdf', function(error, content) {
+                    if (error) {
+                        res.writeHead(500);
+                        res.end();
+                    }
+                    else {
+                        res.writeHead(200, { 'Content-Type': 'application/pdf',  'Content-Disposition': 'inline; filename='+invoiceNumber+'-invoice.pdf'});
+                        res.end(content, 'utf-8');
+                    }
+                });
+
+
+            });
+
+            console.log('Invoice end');
         }
 
-        res.send(result);
+
 
     });
 });
