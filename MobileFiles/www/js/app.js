@@ -8,7 +8,7 @@
 var pushNotification;
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessages'])
 
-.run(function($ionicPlatform,$rootScope,RequestsService) {
+.run(function($ionicPlatform,$rootScope,$location, $window,RequestsService) {
   $ionicPlatform.ready(function() {
 	  
 	  // initialise google analytics
