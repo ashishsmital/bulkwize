@@ -31,7 +31,11 @@
 					<tr ng-repeat="productVariant in detail.productVariants">
 						<td>{{productVariant.productCountInCase}}</td>
 						<td>
-							MRP / unit:{{productVariant.productMRPUnit}}
+							MRP / unit: <span style='color:black;text-decoration:line-through'>
+							                <span style='color:red'>
+											    {{productVariant.productMRPUnit}}
+											</span>
+										</span>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
 							Disc. price/unit: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100}}
 						</td>

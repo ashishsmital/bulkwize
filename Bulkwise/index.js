@@ -134,6 +134,11 @@ app.all('/*',function (req, res, next) {
     // Set to true if you need the website to include cookies in the requests sent
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
+	
+	// Disable caching for content files
+    res.header("Cache-Control", "no-cache, no-store, must-revalidate");
+    res.header("Pragma", "no-cache");
+    res.header("Expires", 0);
 
     // Pass to next layer of middleware
     //next();
@@ -202,7 +207,7 @@ var isAuthenticated = function (req, res, next) {
 		res.status(401).json({message:"Access denied. Please login"});
 	}
 
-    
+	
 }
 app.use('/products', products);
 app.use('/shoppingcart', shoppingcart);
@@ -214,4 +219,3 @@ app.use('/utilities', utilities);
 app.use('/payment', payment);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));
-
