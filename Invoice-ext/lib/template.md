@@ -1,6 +1,6 @@
 <div class="panel panel-default">
-    <div class="panel-heading center-block">
-        <h1 class="panel-title center-block">INVOICE</h1>
+    <div class="panel-heading center-block" >
+        <h1 class="panel-title center-block"><img src='http://localhost:63342/bulkwize/MobileFiles/www/img/home.png'/></h1>
     </div>
     <div class="panel-body">
         <div class="row">
