@@ -23,17 +23,19 @@
 		<div class="mt_10 padding" ng-show="detail.productVariants">
 			<table class="table">
 				<tr>
-					<th>UnitSize/Wt./Qty</th>
 					<th>Units/case</th>
 					<th>Price</th>
 					<th>No of cases</th>
 				</tr>
 				<tbody>
 					<tr ng-repeat="productVariant in detail.productVariants">
-						<td>{{productVariant.productUnitSizeWeightQty}}</td>
 						<td>{{productVariant.productCountInCase}}</td>
 						<td>
-							MRP / unit:{{productVariant.productMRPUnit}}
+							MRP / unit: <span style='color:black;text-decoration:line-through'>
+							                <span style='color:red'>
+											    {{productVariant.productMRPUnit}}
+											</span>
+										</span>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
 							Disc. price/unit: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100}}
 						</td>

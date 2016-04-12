@@ -8,7 +8,7 @@
 var pushNotification;
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessages'])
 
-.run(function($ionicPlatform,$rootScope,RequestsService) {
+.run(function($ionicPlatform,$rootScope,$location, $window,RequestsService) {
   $ionicPlatform.ready(function() {
 	  
 	  // initialise google analytics
@@ -18,7 +18,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
 		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  ga('create', 'UA-75906058-2', 'bulkwize.com');
+		  ga('create', 'UA-75906058-2', "auto");
 		  //ga('send', 'pageview');
 
 
@@ -141,6 +141,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
         }
     })
     .state('app.home', {
+		cache: false,
         url: '/home',
         views: {
             'menuContent': {

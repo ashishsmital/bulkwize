@@ -52,6 +52,6 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.2",
     "cordova-plugin-whitelist": "1.2.1",
     "ionic-plugin-keyboard": "2.0.1"
-};
+}
 // BOTTOM OF METADATA
 });
