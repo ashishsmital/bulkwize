@@ -220,6 +220,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
                     }).then(function successCallback(data) {
                         console.log(data.data);
                         $rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
+						$scope.cartDetails = data.data.data[0].Bulkwize;
                         $ionicLoading.show({ template: 'Item Added!', noBackdrop: true, duration: 2000 });
                         console.log($rootScope.cartNumber);
                         // $ionicLoading.hide();
