@@ -249,6 +249,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
     })
 
     .state('app.cart', {
+		cache: false,
         url: '/cart',
         views: {
             'menuContent': {
