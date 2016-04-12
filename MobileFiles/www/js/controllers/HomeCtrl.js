@@ -2,8 +2,19 @@
  * Created by ghanavela on 3/19/2016.
  */
 
-app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,EnvConfig) {
-
+app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,$ionicHistory, $ionicNavBarDelegate, $state, EnvConfig) {
+	console.log(JSON.stringify($ionicHistory.currentView()));
+	
+	
+	
+	$rootScope.goToHome = function(){
+		$ionicHistory.nextViewOptions({
+			disableAnimate: false,
+		  disableBack: true
+		});
+		$state.go('app.home');
+	}
+	
     $ionicLoading.show({
         content: 'Loading',
         animation: 'fade-in',

@@ -7,7 +7,10 @@
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
-        <a href="#/app/home"><img src="img/home.png" class="menu_home"></a>
+       <button class="button" ng-click="goToHome()">
+				<img src="img/home.png" class="button-icon button-clear menu_home">
+       
+        </button>
       </ion-nav-buttons>
         <ion-nav-buttons side="right" class="topbar_menu">
             <button class="button" ng-if="!isLogin" ui-sref="app.login">

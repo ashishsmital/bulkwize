@@ -141,6 +141,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
         }
     })
     .state('app.home', {
+		cache: false,
         url: '/home',
         views: {
             'menuContent': {
