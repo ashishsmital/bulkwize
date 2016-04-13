@@ -10,7 +10,7 @@ var app     = express();
 var port    =   process.env.PORT || 8080;
 var bodyParser = require('body-parser');
 
-var supplier = require('./controller/Supplier.js');
+var utilities = require('./controller/Utilities.js');
 
 
 //post body parser
@@ -42,7 +42,7 @@ app.use(function (req, res, next) {
 });
 
 // apply the controller to our application
-app.use('/supplier', supplier);
+app.use('/utilities', utilities);
 
 
 
