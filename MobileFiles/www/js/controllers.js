@@ -231,6 +231,8 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                     "workflow_states": {
                         "created": ""
                     },
+					"override_lead_time_for_delivery_in_days":data.brand.override_lead_time_for_delivery_in_days,
+					"supplier_business_name":data.brand.supplier_business_name,
                     "createdAt": "2016-02-20T10:34:08.149Z",
                     "updatedAt": data.updatedAt
                 },

@@ -44,6 +44,8 @@ ShoppingCartModel.save = function(data, callback) {
         total_cart_value_after_discount:data.total_cart_value_after_discount,
         workflowState:data.workflowState,
         createdAt : data.createdAt,
+		override_lead_time_for_delivery_in_days : data.override_lead_time_for_delivery_in_days,
+		supplier_business_name : data.supplier_business_name
         updatedAt : moment(new Date()).utcOffset("+05:30").format(),
 		meta:{"expiry": 345600} // setting shopping cart TTL to 4 days, after which the document will self destruct !
     }
