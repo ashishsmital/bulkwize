@@ -20,7 +20,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
         if(data.data.data.length > 0){
             $scope.cartDetails = data.data.data[0].Bulkwize;
         }else{
-            $rootScope.cartNumber = false;
+            $rootScope.cartNumber = 0;
             $scope.cartDetails = [];
         }
 
@@ -132,7 +132,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
                         $ionicLoading.show({ template: 'Item Deleted!', noBackdrop: true, duration: 2000 });
                         console.log($rootScope.cartNumber);
                     }else{
-                        $rootScope.cartNumber = false;
+                        $rootScope.cartNumber = 0;
                         $scope.cartDetails = [];
                     }
 

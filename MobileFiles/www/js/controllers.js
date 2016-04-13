@@ -571,30 +571,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         $ionicLoading.hide();
     });
 
-    $scope.confirm = function(){
-        $ionicLoading.show({
-            content: 'Loading',
-            animation: 'fade-in',
-            showBackdrop: true,
-            maxWidth: 200,
-            showDelay: 0
-        });
-
-        $http({
-            method: 'POST',
-            url: EnvConfig.HOST+'order/create/',
-        }).then(function successCallback(response) {
-            console.log(response);
-            
-            $ionicLoading.hide();
-        }, function errorCallback(data) {
-            console.log(data);
-            $ionicLoading.hide();
-        });
-    }
-	
-	
-	$scope.cod = function(){
+   	$scope.cod = function(){
         $ionicLoading.show({
             content: 'Loading',
             animation: 'fade-in',
