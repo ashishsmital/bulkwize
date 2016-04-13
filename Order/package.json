@@ -20,6 +20,6 @@
     "uuid": "^2.0.1"
   },
   "dependencies": {
-    "Invoice-ext": "file:///Users/harman/WebstormProjects/bulkwize/Invoice-ext"
+    "Invoice-ext": "../Invoice-ext"
   }
 }
