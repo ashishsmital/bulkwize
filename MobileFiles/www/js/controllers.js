@@ -17,7 +17,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                 data: {
                     "supplierFirstName" : user.firstname,
                     "supplierLastName" : user.lastname,
-                    "supplierBusinessName" : "Bulkwize",
+                    "supplierBusinessName" : user.businessname,
                     "supplierLeadTimeToDeliver" : 5, 
                     "supplierBusinessAddress": {
                         "country" : "INDIA",

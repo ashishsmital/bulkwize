@@ -16,7 +16,8 @@
 			<h3>{{detail.productDisplayTitle}}</h3>
 			<h4>Summary</h4>
 			<p>{{detail.productDescription}}</p>
-			<p>COD for total purchase upto 10,000</p>
+			<br>
+			<p>COD available for total purchase upto max of Rs. 10000</p>
 			<p>Delivery in {{detail.override_lead_time_for_delivery_in_days}}</p>
 		</div>
 
@@ -36,8 +37,9 @@
 											    {{productVariant.productMRPUnit}}
 											</span>
 										</span>
+							<div>Disc. price/unit: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100}}</div>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
-							Disc. price/unit: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100}}
+							
 						</td>
 						<td>
 							<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
