@@ -159,7 +159,7 @@ ShoppingCartModel.getByAttribute = function(attribute,value, callback) {
  */
 ShoppingCartModel.getUncheckedOutCart = function(customer_id, callback) {
 
-    var query = N1qlQuery.fromString("select * from "+db._name+" where type='com.bulkwise.Cart' and customer_id='"value+"' and workflowState = 'updated' "); //or workflowState = 'ShippingAddressAdded'
+    var query = N1qlQuery.fromString("select * from "+db._name+" where type='com.bulkwise.Cart' and customer_id='"+value+"' and workflowState = 'updated' "); //or workflowState = 'ShippingAddressAdded'
 
     db.query(query, function(error, result) {
         if (error) {
