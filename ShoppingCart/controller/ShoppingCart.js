@@ -78,7 +78,8 @@ shoppingcart.get('/', function (req, res, next) {
 				_.extend(result.data[0].Bulkwize, {'totalCartValue': numeral(totalCartValue).format('Rs0,0.00')});
 				res.send(result);
             }else{ // check if there is any unchecked out cart for the user from previous session.
-				ShoppingCartModel.getUncheckedOutCart(name, function (error, result) {
+				if(req.user != undefined && req.user != null && req.user.user != undefined && req.user.user != null ){
+						ShoppingCartModel.getUncheckedOutCart(req.user.user, function (error, result) {
 					if (error) {
                         console.log('Error fetching unchecked out shopping cart');
                     }else {
@@ -102,6 +103,8 @@ shoppingcart.get('/', function (req, res, next) {
                         }
 					}
 				});
+				}
+				
 			}
 
 
