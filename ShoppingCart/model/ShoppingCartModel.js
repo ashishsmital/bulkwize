@@ -148,6 +148,32 @@ ShoppingCartModel.getByAttribute = function(attribute,value, callback) {
 
 /**
  *
+ * Get Un checked out cart for a given user
+ *
+ * @param attribute
+ *         attribute name
+ * @param value
+ *          attribute value
+ * @param callback
+ *          http callback
+ */
+ShoppingCartModel.getUncheckedOutCart = function(customer_id, callback) {
+
+    var query = N1qlQuery.fromString("select * from "+db._name+" where type='com.bulkwise.Cart' and customer_id='"value+"' and workflowState = 'updated' "); //or workflowState = 'ShippingAddressAdded'
+
+    db.query(query, function(error, result) {
+        if (error) {
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+        return;
+    });
+}
+
+
+/**
+ *
  * Get Attribute by Name
  *
  * @param attribute

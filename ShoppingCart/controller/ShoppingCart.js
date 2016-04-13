@@ -53,7 +53,7 @@ shoppingcart.get('/user/:userid', function (req, res, next) {
  * get Shoppingcart
  */
 shoppingcart.get('/', function (req, res, next) {
-
+	// check if there is a cart for the session and then check if there is an previous un-checked out cart for the user
     ShoppingCartModel.getByAttribute("session_id", req.sessionID, function (error, result) {
         if (error) {
             return res.status(400).send(error);
@@ -74,9 +74,35 @@ shoppingcart.get('/', function (req, res, next) {
 
                 });
                 _.extend(result.data[0].Bulkwize, {'totalCount': sum});
-	        console.log("The count of items in shopping cart is " + result.data[0].Bulkwize.totalCount);
+				console.log("The count of items in shopping cart is " + result.data[0].Bulkwize.totalCount);
 				_.extend(result.data[0].Bulkwize, {'totalCartValue': numeral(totalCartValue).format('Rs0,0.00')});
-            }
+				res.send(result);
+            }else{ // check if there is any unchecked out cart for the user from previous session.
+				ShoppingCartModel.getUncheckedOutCart(name, function (error, result) {
+					if (error) {
+                        console.log('Error fetching unchecked out shopping cart');
+                    }else {
+                        console.log('Number of  existing unchecked out shopping cart for this user  - '+ result.data.length)
+            						
+						if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+                            console.log('Got unchecked out shopping cart for the user ')
+                            var object  = result.data[0].Bulkwize;
+							
+                            object.session_id = req.sessionID;
+                            
+                            ShoppingCartModel.save(object,function(error,result){
+                                console.log('Got un-checked out shopping cart for the user and associating it  with the current session ')
+                                if(result && result.data.length >0){
+                                    return done(null, user);
+									
+									//return req.res.status(200).json({message:"Successfully logged in"});
+                                }
+                            });
+							res.send(result);
+                        }
+					}
+				});
+			}
 
 
         }
@@ -265,7 +291,7 @@ shoppingcart.delete('/product', function (req, res, next) {
                     data = result.data[0].Bulkwize;
                 }
 				data.createdAt = result.data[0].Bulkwize.createdAt;
-				data.workflowState = "ProductRemoved";
+				data.workflowState = "updated";
 
             }
         }
