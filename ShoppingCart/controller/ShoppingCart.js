@@ -371,7 +371,7 @@ shoppingcart.delete('/variants', function (req, res, next) {
  */
 var saveCart = function (data, res) {
 	console.log("The card details being saved are " + JSON.stringify(data));
-	if(data.workflowState == undefined or data.workflowState = null){
+	if(data.workflowState == undefined || data.workflowState = null){
 		data.workflowState = "updated";
 	}
     ShoppingCartModel.save(data, function (error, result) {
