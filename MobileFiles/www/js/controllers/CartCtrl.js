@@ -19,6 +19,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
         //console.log(data.data.data[0].Bulkwize.updatedAt);
         if(data.data.data.length > 0){
             $scope.cartDetails = data.data.data[0].Bulkwize;
+			$rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
         }else{
             $rootScope.cartNumber = 0;
             $scope.cartDetails = [];
