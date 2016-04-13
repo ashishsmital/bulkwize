@@ -166,6 +166,7 @@ shoppingcart.put('/', function (req, res, next) {
                 }
             }else{
 				data.createdAt =  moment(new Date()).utcOffset("+05:30").format();
+				data.workflowState = "created";
 			}
         }
 
@@ -370,6 +371,9 @@ shoppingcart.delete('/variants', function (req, res, next) {
  */
 var saveCart = function (data, res) {
 	console.log("The card details being saved are " + JSON.stringify(data));
+	if(data.workflowState == undefined or data.workflowState = null){
+		data.workflowState = "updated";
+	}
     ShoppingCartModel.save(data, function (error, result) {
         if (error) {
             return res.status(400).send(error);
