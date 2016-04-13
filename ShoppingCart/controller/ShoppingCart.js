@@ -76,7 +76,7 @@ shoppingcart.get('/', function (req, res, next) {
                 _.extend(result.data[0].Bulkwize, {'totalCount': sum});
 				console.log("The count of items in shopping cart is " + result.data[0].Bulkwize.totalCount);
 				_.extend(result.data[0].Bulkwize, {'totalCartValue': numeral(totalCartValue).format('Rs0,0.00')});
-				res.send(result);
+				//res.send(result);
             }else{ // check if there is any unchecked out cart for the user from previous session.
 				if(req.user != undefined && req.user != null && req.user.user != undefined && req.user.user != null ){
 						ShoppingCartModel.getUncheckedOutCart(req.user.user, function (error, result) {
@@ -99,7 +99,7 @@ shoppingcart.get('/', function (req, res, next) {
 									//return req.res.status(200).json({message:"Successfully logged in"});
                                 }
                             });
-							res.send(result);
+							//res.send(result);
                         }
 					}
 				});
