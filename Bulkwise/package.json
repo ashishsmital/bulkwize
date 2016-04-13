@@ -34,6 +34,7 @@
 	"node-gcm":"0.14.0",
 	"utilities":"../Utilities",
 	"nodemailer":"2.3.0",
+	"nodemailer-smtp-transport":"2.4.2",
 	"payment":"../Payment",
 	"node-rest-client":"1.8.0",
 	"morgan":"1.7.0"
