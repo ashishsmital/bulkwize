@@ -1,5 +1,10 @@
 var app = angular.module('starter.controllers', []);
 app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state,EnvConfig) {
+	
+	$scope.user = {};
+	$scope.city='Bangalore';
+	$scope.user.city='Bangalore';
+
     $scope.submit = function(valid, user){
         console.log(valid);
         if(valid){
