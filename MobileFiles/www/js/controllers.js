@@ -320,8 +320,8 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         $scope.variants = [];
         $scope.cartProcess = '';
         for(var i =0 ; i< data.productVariants.length; i++){
-            if(data.productVariants[i].productOrderedQty == 0){
-                $scope.cartProcess = false;
+            if(data.productVariants[i].productOrderedQty != 0){
+                $scope.cartProcess = true;
             }
             $scope.variants.push({"sku_id":data.productVariants[i].sku_id,"quantity":data.productVariants[i].productOrderedQty,"productCountInCase":data.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.productVariants[i].productMRPUnit,"productDiscountPercentage":data.productVariants[i].productDiscountPercentage});
         }

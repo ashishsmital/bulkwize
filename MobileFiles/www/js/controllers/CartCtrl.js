@@ -156,18 +156,24 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
 
         $scope.variants = [];
         $scope.cartProcess = '';
-        for(var i =0 ; i< data.variants.length; i++){
-            if(data.variants[i].quantity != 0){
-                $scope.cartProcess = true;
+        for(var i =0 ; i< data.brand.productVariants.length; i++){
+            
+            if(data.brand.productVariants[i].productOrderedQty != 0){
+                // if the quantity selected for the product variant is > 0 only then process the cart and push the variant else ignore.
+				$scope.cartProcess = true;
+				
+				$scope.variants.push({"sku_id":data.brand.productVariants[i].sku_id,"quantity":data.brand.productVariants[i].productOrderedQty,"productCountInCase":data.brand.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.brand.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.brand.productVariants[i].productMRPUnit,"productDiscountPercentage":data.brand.productVariants[i].productDiscountPercentage});
             }
-            $scope.variants.push({"sku_id":data.variants[i].sku_id,"quantity":data.variants[i].quantity,"productCountInCase":data.variants[i].productCountInCase,"productUnitSizeWeightQty":data.variants[i].productUnitSizeWeightQty,"productMRPUnit":data.variants[i].productMRPUnit,"productDiscountPercentage":data.variants[i].productDiscountPercentage});
         }
+
 
         console.log($scope.variants, $scope.cartProcess);
 
-        if($scope.cartProcess == true){
+        if($scope.cartProcess === false){
+            $ionicLoading.show({ template: 'Select the Order Qty !', noBackdrop: true, duration: 2000 });
+        }else{
 
-            $ionicLoading.show({                                
+            $ionicLoading.show({
                 content: 'Loading',
                 animation: 'fade-in',
                 showBackdrop: true,
@@ -233,10 +239,6 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
                 console.log(data);
                 $ionicLoading.hide();
             });
-        }
-            
-		else{
-			$ionicLoading.show({ template: 'Select the Order Qty !', noBackdrop: true, duration: 2000 });
         }
 
     }
