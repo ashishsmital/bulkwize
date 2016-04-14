@@ -21,9 +21,16 @@
                 <div ng-message="required" class="error">Last Name is required</div>
             </div>
         </label>
+		<label class="item item-input item-stacked-label">
+            <span class="input-label">Business Name <sup>*</sup></span>
+            <input type="text" placeholder="name"  name = "businessname" id="businessname" class = "error" ng-model="user.businessname" required>
+            <div class="validation-error" ng-if="(supplier.$submitted || supplier.businessname.$touched)" ng-messages="supplier.businessname.$error" >
+                <div ng-message="required" class="error">Business Name is required</div>
+            </div>
+        </label>
         <label class="item item-input item-stacked-label">
             <span class="input-label">City <sup>*</sup></span>
-            <input type="text" placeholder="Bangalore" name = "city" id ="city" class = "error" ng-model="user.city">
+            <input type="text" placeholder="bangalore" name = "city" id ="city" class = "error" ng-model="user.city" ng-value="Bangalore" readonly="readonly" required>
             <div class="validation-error" ng-if="(supplier.$submitted || supplier.city.$touched)" ng-messages="supplier.city.$error" required>
                 <div ng-message="required" class="error">City is required</div>
             </div>
@@ -36,7 +43,7 @@
             </div>
         </label>
         <label class="item item-input item-stacked-label">
-            <span class="input-label">Brief note <sup>*</sup></span>
+            <span class="input-label">Brief note about My Business <sup>*</sup></span>
             <textarea maxlength="500" name = "briefNote" id="briefNote" ng-model="user.briefNote" required></textarea>
             <div class="validation-error" ng-if="(supplier.$submitted || supplier.briefNote.$touched)" ng-messages="supplier.briefNote.$error" >
                 <div ng-message="required" class="error">Brief note required</div>
@@ -45,7 +52,7 @@
         
         
         <label class="item">
-          <button class="button button-block button-positive" type="submit">I am interested</button>
+          <button class="button button-block button-positive" type="submit">Please Contact Me</button>
         </label>
       </div>
     </form>

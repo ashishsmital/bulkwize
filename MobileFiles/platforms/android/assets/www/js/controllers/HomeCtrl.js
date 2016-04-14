@@ -78,6 +78,25 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
         console.log(data);
         $ionicLoading.hide();
     });
+	
+	$http({
+        method: 'GET',
+        url: EnvConfig.HOST+'shoppingcart/'
+    }).then(function successCallback(data) {
+        //console.log(data.data.data[0].Bulkwize.updatedAt);
+        if(data.data.data.length > 0){
+            $scope.cartDetails = data.data.data[0].Bulkwize;
+			$rootScope.cartNumber = data.data.data[0].Bulkwize.totalCount;
+        }else{
+            $rootScope.cartNumber = 0;
+            $scope.cartDetails = [];
+        }
+
+        $ionicLoading.hide();
+    }, function errorCallback(data) {
+        console.log(data);
+        $ionicLoading.hide();
+    });
 
     console.log($rootScope.cartNumber);
 
