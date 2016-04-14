@@ -260,10 +260,42 @@ var insertSubCategoryIntoDB = function(parsedRecord, parentCategoryId) {
 			
   				  	
 		}
-		
+var productId = 1;
 var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId) {		  		  
 			console.log("the parsed record before transformation is " + parsedRecord.MaterialDescription);
 			console.log("the parent subcategoryId for product " + parsedRecord.MaterialDescription + " is --" + subCategoryId);
+			if(parsedRecord.VariantOfPrevious != undefined && parsedRecord.VariantOfPrevious != null && parsedRecord.VariantOfPrevious == 'Y'){
+				console.log("the newly read record is a variant of previous one");
+				db.get("com.bulkwise.Product::"+productId, function(err, res){
+					if (err) {
+						console.log('While processing variant record, could not fetch the existing product from db', err);
+						return;
+					}
+					console.log("While processing variant record, the existing product fetched is -- " + JSON.stringify(res));
+					
+					var pdtFromDB = res.value;
+					console.log("While processing variant record, the existing product varaints fetched is -- " + JSON.stringify(pdtFromDB.productVariants));
+					var newVariant = {
+						sku_id:parsedRecord.EAN,
+						productItemId:parsedRecord.ItemID,
+						productMaterialCode:parsedRecord.Matcode,
+						productMaterialDescription:parsedRecord.MaterialDescription,
+						productEAN:parsedRecord.EAN,
+						productCountInCase:parsedRecord.CaseCount,
+						productMRPUnit:parsedRecord.MRP,
+						productDiscountPercentage:parsedRecord.ProductDiscountPercentage,
+						productVATPercentage:parsedRecord.VAT
+					}
+					pdtFromDB.productVariants.push(newVariant);
+					db.upsert("com.bulkwise.Product::"+productId, pdtFromDB, function(err, res){
+					if (err) {
+						console.log('product creation failed for name ' + parsedRecord.MaterialDescription, err);
+						return;
+					}
+					
+				});
+				});
+			} else{// end of variant check
 		  	// increment product counter
 			db.counter('productCounter', 1, function(err, res) {
 				if (err) {
@@ -271,7 +303,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 					return;
 				}
 				// insert the product with incremented counter
-				var productId = res.value;
+				 productId = res.value;
 				productObj.id=productId;
 				productObj.productDisplayTitle= parsedRecord.DisplayTitle;
 				productObj.productBrandName=parsedRecord.Brand;
@@ -293,7 +325,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.productVariants[0].productVATPercentage=parsedRecord.VAT;
 				productObj.productCategoryId[0] = parentCategoryId;
 				productObj.productCategoryId[1] = subCategoryId;
-				db.upsert("productCounter::"+productId, productObj, function(err, res){
+				db.upsert("com.bulkwise.Product::"+productId, productObj, function(err, res){
 					if (err) {
 						console.log('product creation failed for name ' + parsedRecord.MaterialDescription, err);
 						return;
@@ -301,6 +333,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 					
 				});
 			});
+			}
 			parsedCategoryIndex++;
 			if(parsedCategoryIndex < parsedRecordInMemoryLength){
 				insertCategoryIntoDB(parsedRecordInMemory[parsedCategoryIndex]); 	
