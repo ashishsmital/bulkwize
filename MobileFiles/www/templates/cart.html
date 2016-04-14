@@ -22,14 +22,12 @@
 			    <div class="mt_10">
 					<table class="table">
 						<tr>
-							<th>Size</th>
 							<th>Units/case</th>
-							<th>Price</th>
+							<th>Price/Unit</th>
 							<th>No of cases</th>
 						</tr>
 						<tbody>
 							<tr ng-repeat="productVariant in cartDetail.variants">
-								<td>{{productVariant.productUnitSizeWeightQty}}</td>
 								<td>{{productVariant.productCountInCase}}</td>
 								<td>{{productVariant.productMRPUnit}}</td>
 								<td>

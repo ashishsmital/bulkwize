@@ -31,20 +31,20 @@
 							<tr>
 								
 								<th>Units/case</th>
-								<th>Price</th>
+								<th>Price/Unit</th>
 								<th>No of cases</th>
 							</tr>
 							<tbody>
 								<tr ng-repeat="productVariant in list.brand.productVariants">
 									<td>{{productVariant.productCountInCase}}</td>
 									<td>
-											MRP / unit: <span style='color:black;text-decoration:line-through'>
+											MRP: <span style='color:black;text-decoration:line-through'>
 											    <span style='color:red'>
 												    {{productVariant.productMRPUnit}}
 												</span>
 											</span>
 											
-										<div>Disc. price/unit: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100}}</div>
+										<div>Disc. price: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100}}</div>
 										<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
 									</td>
 									<td>
