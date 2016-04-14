@@ -157,17 +157,15 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
         $scope.variants = [];
         $scope.cartProcess = '';
         for(var i =0 ; i< data.variants.length; i++){
-            if(data.variants[i].quantity == 0){
-                $scope.cartProcess = false;
+            if(data.variants[i].quantity != 0){
+                $scope.cartProcess = true;
             }
             $scope.variants.push({"sku_id":data.variants[i].sku_id,"quantity":data.variants[i].quantity,"productCountInCase":data.variants[i].productCountInCase,"productUnitSizeWeightQty":data.variants[i].productUnitSizeWeightQty,"productMRPUnit":data.variants[i].productMRPUnit,"productDiscountPercentage":data.variants[i].productDiscountPercentage});
         }
 
         console.log($scope.variants, $scope.cartProcess);
 
-        if($scope.cartProcess == false){
-            $ionicLoading.show({ template: 'Select the Order Qty !', noBackdrop: true, duration: 2000 });
-        }else{
+        if($scope.cartProcess == true){
 
             $ionicLoading.show({                                
                 content: 'Loading',
@@ -235,6 +233,10 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
                 console.log(data);
                 $ionicLoading.hide();
             });
+        }
+            
+		else{
+			$ionicLoading.show({ template: 'Select the Order Qty !', noBackdrop: true, duration: 2000 });
         }
 
     }
