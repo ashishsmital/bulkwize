@@ -301,9 +301,11 @@ shoppingcart.delete('/product', function (req, res, next) {
         }
 
         //saving final data
-		if(data.length > 0){
+		if(data.products.length > 0){
+			console.log("Inside delete product of shopping cart, after removing this product there are still some other products left in the cart and hence saving the cart");
 			saveCart(data, res);
 		}else{
+			console.log("Inside delete product of shopping cart, after removing this product there are no more products left in the cart and hence deleting the cart");
 			deleteCart(data,res);
 		}
 
