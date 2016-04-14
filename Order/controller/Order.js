@@ -28,7 +28,7 @@ order.post('/create', function (req, res, next) {
         }
         res.send(result);
         // send order sms to end consumer
-        var smsOptions = smsConfig.smsOptions;
+       /* var smsOptions = smsConfig.smsOptions;
         console.log("Printing order object before sending SMS " + JSON.stringify(result));
         smsOptions.path=smsOptions.path+result.data.customer_id+"&Msg=Your%20order%20number%20with%20Bulkwize&is%20"+result.data.id;
         console.log("SMS options is " + JSON.stringify(smsOptions));
@@ -45,7 +45,7 @@ order.post('/create', function (req, res, next) {
             });
         });
 
-        req.end();
+        req.end();*/
         // end of send SMS
 
     });
