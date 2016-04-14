@@ -41,6 +41,20 @@ app.controller('MyOrdersCtrl', function($scope, $stateParams, $http, $ionicLoadi
     }, function errorCallback(data) {
         console.log(data);
         $scope.isMyOrders = false;
+		if(data.status == 401){
+					var alertPopup = $ionicPopup.alert({
+                        title: 'Info',
+                        template: 'Ooops! Please login '
+                    });
+					
+					alertPopup.then(function(res) {
+                        console.log("The user is not logged in and hence needs to be redirected to login page." + res);
+                        if(res == true){
+                            $state.go('app.login');
+                        }
+                    });
+
+		}
         $ionicLoading.hide();
     });
 
