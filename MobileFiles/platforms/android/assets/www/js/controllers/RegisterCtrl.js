@@ -83,6 +83,11 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
                 "lastname":value.lastname,
                 "pan":value.panumber,
                 "email":value.email,
+				"vatLicense":value.vatLicense,
+				"stptLicense":value.stptLicense,
+				"selLicense":value.selLicense,
+				"tradeLicense":value.tradeLicense,
+				"hawkerLicense":value.hawkerLicense,
                 "shopAddress":{
                     "addressLine1":value.shopAddLine1,
                     "addressLine2": value.shopAddLine2,

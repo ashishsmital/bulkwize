@@ -12,6 +12,9 @@
 			      	<div>
 				      	<h2>{{cartDetail.productBrandName}}</h2>
 				      	<p>{{cartDetail.productShortSummary}}</p>
+						<br>
+						<p>COD available for total purchase upto max of Rs. 10000</p>
+			            <p>Delivery in {{cartDetail.override_lead_time_for_delivery_in_days}}</p>
 				    </div>
 			    	<div class="clear"></div>
 			    </div>
@@ -19,14 +22,12 @@
 			    <div class="mt_10">
 					<table class="table">
 						<tr>
-							<th>Size</th>
 							<th>Units/case</th>
-							<th>Price</th>
+							<th>Price/Unit</th>
 							<th>No of cases</th>
 						</tr>
 						<tbody>
 							<tr ng-repeat="productVariant in cartDetail.variants">
-								<td>{{productVariant.productUnitSizeWeightQty}}</td>
 								<td>{{productVariant.productCountInCase}}</td>
 								<td>{{productVariant.productMRPUnit}}</td>
 								<td>

@@ -11,11 +11,20 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
 
         if(value.vat === $scope.vatLicense){
             $scope.step3 = true;
-        }else{
+        }else if(value.vat === $scope.stptLicense){
+			$scope.step3 = true;
+		}else if(value.vat === $scope.selLicense){
+			$scope.step3 = true;
+		}else if(value.vat === $scope.tradeLicense){
+			$scope.step3 = true;
+		}else if(value.vat === $scope.hawkerLicense){
+			$scope.step3 = true;
+		}else{
             var alertPopup = $ionicPopup.alert({
                 title: 'Info',
-                template: 'Please enter valid vat no'
-            });
+                template: 'Please enter the license no. same as entered during registration. For any assistance please contact customer care!'
+			});
+
 
             alertPopup.then(function(res) {
                 console.log(res);
@@ -90,6 +99,18 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
                     }
                     if(response.data.data[0].Bulkwize.vatLicense) {
                         $scope.vatLicense = response.data.data[0].Bulkwize.vatLicense;
+                    }
+					if(response.data.data[0].Bulkwize.selLicense) {
+                        $scope.selLicense = response.data.data[0].Bulkwize.selLicense;
+                    }
+					if(response.data.data[0].Bulkwize.stptLicense) {
+                        $scope.stptLicense = response.data.data[0].Bulkwize.stptLicense;
+                    }
+					if(response.data.data[0].Bulkwize.tradeLicense) {
+                        $scope.tradeLicense = response.data.data[0].Bulkwize.tradeLicense;
+                    }
+					if(response.data.data[0].Bulkwize.hawkerLicense) {
+                        $scope.hawkerLicense = response.data.data[0].Bulkwize.hawkerLicense;
                     }
 
                 }

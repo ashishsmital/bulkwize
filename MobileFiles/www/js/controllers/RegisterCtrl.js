@@ -21,7 +21,6 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
 	$scope.reg.delCity = 'Bangalore';
 	$scope.reg.delState = 'Karnataka';
 	
-
 /*
     $scope.step1 = true;
     $scope.step2 = true;
