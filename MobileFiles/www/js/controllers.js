@@ -177,16 +177,17 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
     $scope.addCart = function(data){
         console.log(data);
 
-        $scope.cartProcess = '';
+        $scope.cartProcess = false;
         $scope.variants = [];
 
         for(var i =0 ; i< data.brand.productVariants.length; i++){
             
-            if(data.brand.productVariants[i].productOrderedQty == 0){
-                $scope.cartProcess = false;
+            if(data.brand.productVariants[i].productOrderedQty != 0){
+                // if the quantity selected for the product variant is > 0 only then process the cart and push the variant else ignore.
+				$scope.cartProcess = true;
+				
+				$scope.variants.push({"sku_id":data.brand.productVariants[i].sku_id,"quantity":data.brand.productVariants[i].productOrderedQty,"productCountInCase":data.brand.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.brand.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.brand.productVariants[i].productMRPUnit,"productDiscountPercentage":data.brand.productVariants[i].productDiscountPercentage});
             }
-
-            $scope.variants.push({"sku_id":data.brand.productVariants[i].sku_id,"quantity":data.brand.productVariants[i].productOrderedQty,"productCountInCase":data.brand.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.brand.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.brand.productVariants[i].productMRPUnit,"productDiscountPercentage":data.brand.productVariants[i].productDiscountPercentage});
         }
 
         console.log($scope.variants);
