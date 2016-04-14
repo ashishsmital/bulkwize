@@ -1,7 +1,7 @@
 /**
  * Created by ghanavela on 3/13/2016.
  */
-app.factory('AuthServices', function ($http,$q,EnvConfig) {
+app.factory('AuthServices', function ($http,$q, $ionicPopup , $state, EnvConfig) {
     var USER_DETAILS = "USER-DETAILS";
     var AuthServices = {
         isLogin :   JSON.parse(localStorage.getItem("isLogin")) || false,
@@ -28,6 +28,20 @@ app.factory('AuthServices', function ($http,$q,EnvConfig) {
                 localStorage.setItem("isLogin",false);
                 localStorage.setItem(USER_DETAILS,'[]');
                 deferred.reject(data);
+				if(data.status == 401){
+					var alertPopup = $ionicPopup.alert({
+                        title: 'Info',
+                        template: 'Ooops! Please login '
+                    });
+					
+					alertPopup.then(function(res) {
+                        console.log("The user is not logged in and hence needs to be redirected to login page." + res);
+                        if(res == true){
+                            $state.go('app.login');
+                        }
+                    });
+
+				}
             });
             return promise;
         },
@@ -39,7 +53,13 @@ app.factory('AuthServices', function ($http,$q,EnvConfig) {
                 method: 'GET',
                 url: EnvConfig.HOST+'user/checkMobileNumber/'+mobNo
             }).then(function successCallback(data) {
-                deferred.reject(false);
+
+                if(data.data.data[0]){
+                    deferred.reject(false);
+                }else{
+                    deferred.resolve(true);
+                }
+
             },function errorCallback(data) {
                 deferred.resolve(true);
             });

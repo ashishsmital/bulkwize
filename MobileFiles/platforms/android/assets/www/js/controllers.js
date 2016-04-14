@@ -17,7 +17,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                 data: {
                     "supplierFirstName" : user.firstname,
                     "supplierLastName" : user.lastname,
-                    "supplierBusinessName" : "Bulkwize",
+                    "supplierBusinessName" : user.businessname,
                     "supplierLeadTimeToDeliver" : 5, 
                     "supplierBusinessAddress": {
                         "country" : "INDIA",
@@ -231,6 +231,8 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                     "workflow_states": {
                         "created": ""
                     },
+					"override_lead_time_for_delivery_in_days":data.brand.override_lead_time_for_delivery_in_days,
+					"supplier_business_name":data.brand.supplier_business_name,
                     "createdAt": "2016-02-20T10:34:08.149Z",
                     "updatedAt": data.updatedAt
                 },
@@ -571,30 +573,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         $ionicLoading.hide();
     });
 
-    $scope.confirm = function(){
-        $ionicLoading.show({
-            content: 'Loading',
-            animation: 'fade-in',
-            showBackdrop: true,
-            maxWidth: 200,
-            showDelay: 0
-        });
-
-        $http({
-            method: 'POST',
-            url: EnvConfig.HOST+'order/create/',
-        }).then(function successCallback(response) {
-            console.log(response);
-            
-            $ionicLoading.hide();
-        }, function errorCallback(data) {
-            console.log(data);
-            $ionicLoading.hide();
-        });
-    }
-	
-	
-	$scope.cod = function(){
+   	$scope.cod = function(){
         $ionicLoading.show({
             content: 'Loading',
             animation: 'fade-in',

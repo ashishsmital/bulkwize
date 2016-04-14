@@ -159,6 +159,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
         }
     })
+	
+	.state('app.contactus', {
+        url: '/contactus',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/contactus.html'
+            }
+        }
+    })
+	
       .state('app.userDetails', {
           url: '/userDetails/:id',
           views: {
@@ -249,6 +259,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
     })
 
     .state('app.cart', {
+		cache: false,
         url: '/cart',
         views: {
             'menuContent': {

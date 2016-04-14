@@ -7,8 +7,8 @@
       <ion-nav-buttons side="left">
         <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
         </button>
-       <button class="button" ng-click="goToHome()">
-				<img src="img/home.png" class="button-icon button-clear menu_home">
+       <button class="button button-clear" ng-click="goToHome()">
+				<img src="img/home.png" class="menu_home">
        
         </button>
       </ion-nav-buttons>
@@ -56,9 +56,12 @@
         <ion-item menu-close href="#/app/faq">
             FAQ
         </ion-item>
-          <ion-item menu-close  ng-if="isLogin" ng-click="logout()">
-              Logout
-          </ion-item>
+        <ion-item menu-close  ng-if="isLogin" ng-click="logout()">
+            Logout
+        </ion-item>
+		<ion-item menu-close href="#/app/contactus">
+            Contact Us
+        </ion-item>  
 
       </ion-list>
     </ion-content>

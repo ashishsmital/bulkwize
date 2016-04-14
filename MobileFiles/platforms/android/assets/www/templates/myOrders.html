@@ -9,25 +9,26 @@
         <ion-list class="accordion" ng-if="isMyOrders">
             <ion-item class="item-stable" ng-repeat-start="myOrder in myOrders" ng-click="toggleGroup($index)" ng-class="{active:isGroupShown($index)}">
                 <i class="icon" ng-class="isGroupShown($index) ? 'ion-minus' : 'ion-plus'" ></i>
-                {{myOrder.Bulkwize.id}}&nbsp&nbsp&nbsp&nbspOrder Amount :- {{myOrder.Bulkwize.products[0].variants[0].productMRPUnit}}
+                <b>Order Id :- </b>{{myOrder.Bulkwize.id}}&nbsp&nbsp&nbsp&nbsp<b>Order Amount :-</b> Rs. {{myOrder.Bulkwize.totalOrderValue}}
             </ion-item>
             <ion-item class="item-accordion item-align" ng-repeat-end  ng-show="isGroupShown($index)">
                 <table class="table">
                     <tr>
-                        <th>Size</th>
                         <th>Units/case</th>
-                        <th>Price</th>
+                        <th>Price/Unit</th>
                         <th>No of cases</th>
                     </tr>
                     <tbody>
                     <tr ng-repeat="productVariant in myOrder.Bulkwize.products[0].variants">
-                        <td>{{productVariant.productUnitSizeWeightQty}}</td>
                         <td>{{productVariant.productCountInCase}}</td>
                         <td>
                             <div class="red">{{productVariant.productDiscountPercentage}}% off</div>
                             {{productVariant.productMRPUnit}}
                             {{productVariant.discount}}
                         </td>
+						<td>
+						    {{productVariant.quantity}}
+						</td>
                     </tr>
                     </tbody>
                 </table>
