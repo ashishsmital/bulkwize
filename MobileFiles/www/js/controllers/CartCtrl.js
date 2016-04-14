@@ -165,11 +165,11 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
 
         console.log($scope.variants, $scope.cartProcess);
 
-        if($scope.cartProcess === false){
+        if($scope.cartProcess == false){
             $ionicLoading.show({ template: 'Select the Order Qty !', noBackdrop: true, duration: 2000 });
         }else{
 
-            $ionicLoading.show({
+            $ionicLoading.show({                                
                 content: 'Loading',
                 animation: 'fade-in',
                 showBackdrop: true,
