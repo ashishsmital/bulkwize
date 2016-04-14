@@ -283,6 +283,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 						productEAN:parsedRecord.EAN,
 						productCountInCase:parsedRecord.CaseCount,
 						productMRPUnit:parsedRecord.MRP,
+						productOrderedQty:0,
 						productDiscountPercentage:parsedRecord.ProductDiscountPercentage,
 						productVATPercentage:parsedRecord.VAT
 					}
@@ -319,6 +320,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.productVariants[0].productMaterialCode=parsedRecord.Matcode;
 				productObj.productVariants[0].productMaterialDescription=parsedRecord.MaterialDescription;
 				productObj.productVariants[0].productEAN=parsedRecord.EAN;
+				productObj.productVariants[0].productOrderedQty=0;
 				productObj.productVariants[0].productCountInCase=parsedRecord.CaseCount;
 				productObj.productVariants[0].productMRPUnit=parsedRecord.MRP;
 				productObj.productVariants[0].productDiscountPercentage=parsedRecord.ProductDiscountPercentage;
