@@ -2,7 +2,7 @@
  * Created by ghanavela on 3/12/2016.
  */
 
-app.controller('MyOrdersCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state , EnvConfig){
+app.controller('MyOrdersCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state ,AuthServices, EnvConfig){
     $ionicLoading.show();
     $scope.isMyOrders = false;
     $scope.toggleGroup = function(group) {
@@ -50,6 +50,10 @@ app.controller('MyOrdersCtrl', function($scope, $stateParams, $http, $ionicLoadi
 					alertPopup.then(function(res) {
                         console.log("The user is not logged in and hence needs to be redirected to login page." + res);
                         if(res == true){
+                            $rootScope.isLogin = AuthServices.isLogin = false;
+                            $rootScope.userDetails = [];
+                            localStorage.setItem("isLogin",false);
+                            localStorage.setItem("USER-DETAILS",'[]');
                             $state.go('app.login');
                         }
                     });
