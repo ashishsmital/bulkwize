@@ -190,7 +190,7 @@ order.get('/:orderNo/invoice/:variantId/variants', function (req, res, next) {
                 obj.productVariants.forEach(function (variant,i)
                 {
                     if(variant.sku_id == variantId) {
-                        amt = variant.productMRPUnit * variant.productOrderedQty * variant.productCountInCase;
+                        amt=variant.productMRPUnit*variant.productOrderedQty*variant.productCountInCase*(variant.productDiscountPercentage/100);
                         pdtItems.push({
                             description: variant.productMaterialDescription,
                             quantity: variant.productOrderedQty,
@@ -198,6 +198,7 @@ order.get('/:orderNo/invoice/:variantId/variants', function (req, res, next) {
                             amount: amt,
                             vat: variant.productVATPercentage,
                             countInCase: variant.productCountInCase,
+                            discount:variant.productDiscountPercentage
                         });
                         subtot += parseInt(amt);
                     }
