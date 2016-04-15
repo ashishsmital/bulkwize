@@ -595,8 +595,8 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
             url: EnvConfig.HOST+'order/create/',
         }).then(function successCallback(response) {
             console.log(response);
-            
             $ionicLoading.hide();
+			$state.transitionTo("app.finalsummary",{orderid:response.data.data[0].Bulkwize.orderId});
         }, function errorCallback(data) {
             console.log(data);
             $ionicLoading.hide();
@@ -641,5 +641,32 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
             $ionicLoading.hide();
         });
     }
+
+});
+
+.controller('FinalSummaryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window,EnvConfig){
+
+    $ionicLoading.show({
+        content: 'Loading',
+        animation: 'fade-in',
+        showBackdrop: true,
+        maxWidth: 200,
+        showDelay: 0
+    });
+
+    $http({
+        method: 'GET',
+        url: EnvConfig.HOST+'orderid/''+$stateParams.subId
+    }).then(function successCallback(data) {
+        console.log(data.data.data[0].Bulkwize.updatedAt);
+        $scope.cartDetails = data.data.data[0].Bulkwize;
+		$scope.isCODapplicable = parseFloat($scope.cartDetails.totalCartValue.replace(',','')) <= parseFloat('10000');
+		console.log("Is COD applicable -- " + $scope.isCODapplicable);
+        $ionicLoading.hide();
+    }, function errorCallback(data) {
+        console.log(data);
+		$ionicLoading.hide();
+    });
+
 
 });

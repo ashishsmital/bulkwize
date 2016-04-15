@@ -278,6 +278,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
         }
     })
+	
+	.state('app.finalsummary', {
+        url: '/finalsummary',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/finalsuumary.html',
+                controller: 'FinalSummaryCtrl'
+            }
+        }
+    })
 
     .state('app.success', {
         url: '/success',
