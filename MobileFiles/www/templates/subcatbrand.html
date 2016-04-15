@@ -16,7 +16,7 @@
                       ng-false-value="''">
 
 	            	<img ng-src="http://52.73.228.44:8080{{items.Bulkwize.category_img_url}}">
-	            	<span class="perctenage_layout">Upto {{items.Bulkwize.maximum_discount_percentage}} %</span>
+	            	<span class="perctenage_layout"> {{items.Bulkwize.maximum_discount_percentage}} % Off</span>
 	            	<div>{{items.Bulkwize.category_name | limitTo: 20}} <span ng-show="items.Bulkwize.category_name.length > 20">...</span></div>
 	            </ion-checkbox>
 
