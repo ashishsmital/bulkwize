@@ -95,7 +95,7 @@ order.get('/:orderNo/invoice', function (req, res, next) {
             result.data[0].Bulkwize.products.forEach(function(obj,i){
                 obj.productVariants.forEach(function (variant,i)
                 {
-                    amt=variant.productMRPUnit*variant.productOrderedQty*variant.productCountInCase;
+                    amt=variant.productMRPUnit*variant.productOrderedQty*variant.productCountInCase*(variant.productDiscountPercentage/100);
                     pdtItems.push({
                         description: variant.productMaterialDescription,
                         quantity:variant.productOrderedQty,
@@ -103,6 +103,7 @@ order.get('/:orderNo/invoice', function (req, res, next) {
                         amount: amt,
                         vat:variant.productVATPercentage,
                         countInCase:variant.productCountInCase,
+                        discount:variant.productDiscountPercentage
                     });
                     subtot +=parseInt(amt);
                 });

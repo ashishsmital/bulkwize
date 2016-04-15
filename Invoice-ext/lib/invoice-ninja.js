@@ -100,6 +100,7 @@ function generateItemList(items, currencyFormat, template) {
           .replace(/COUNTINCASE/g, util.format(currencyFormat, element.countInCase))
       .replace(/RATE/g, util.format(currencyFormat, element.rate))
       .replace(/VAT/g, util.format(currencyFormat, element.vat))
+          .replace(/DISCOUNT/g,element.discount)
       .replace(/AMOUNT/g, util.format(currencyFormat, element.amount));
     });
   }
