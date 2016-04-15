@@ -40,15 +40,16 @@ OrderModel.createOrder = function(userId, callback) {
             return;
         }
 		console.log("retrieved the shopping cart for user id --" + userId + ". The order is " + result.data[0].Bulkwize);
-		result.data[0].Bulkwize.type="com.bulkwise.Order";
-		result.data[0].Bulkwize.id=orderId;
-		result.data[0].Bulkwize.createdAt= moment(new Date()).utcOffset("+05:30").format();
-		result.data[0].Bulkwize.updatedAt= moment(new Date()).utcOffset("+05:30").format();
+		var orderObj = result.data[0].Bulkwize;
+		orderObj.type="com.bulkwise.Order";
+		orderObj.id=orderId;
+		orderObj.createdAt= moment(new Date()).utcOffset("+05:30").format();
+		orderObj.updatedAt= moment(new Date()).utcOffset("+05:30").format();
 		// calculate total order value
 		var sum = 0;
 				var totalOrderValue = 0;
 				// calculate the total number of products in the cart
-                _.each(result.data[0].Bulkwize.products, function (ele) {
+                _.each(orderObj.products, function (ele) {
 
                     sum += ele.variants.length;
 					// calculate the total cart value
@@ -59,14 +60,23 @@ OrderModel.createOrder = function(userId, callback) {
 					});
 				
                 });
-                _.extend(result.data[0].Bulkwize, {'totalCount': sum});
-				_.extend(result.data[0].Bulkwize, {'totalOrderValue': totalOrderValue});
-		db.insert(orderId, result.data[0].Bulkwize, function(error, orderResult) {
+                _.extend(orderObj, {'totalCount': sum});
+				_.extend(orderObj, {'totalOrderValue': totalOrderValue});
+		db.insert(orderId, orderObj, function(error, orderResult) {
 			if(error) {
 				callback(error, null);
 				return;
 			}
-			callback(null, {message: 'success', data: result.data[0].Bulkwize});
+			result.data[0].Bulkwize.workflowState="ordercreated"; // marking the shopping cart as closed.
+			_.extend(result.data[0].Bulkwize, {'orderId': orderId}); // updating shopping cart with order id
+			OrderModel.closeShoppingCart(result.data[0].Bulkwize.id,result.data[0].Bulkwize,function(error,resultSaveShoppingCart){
+				if(error) {
+					callback(error, null);
+					return;
+				}
+				callback(null, {message: 'success', data: orderObj});
+			});
+			
 		});
     });
 
@@ -172,6 +182,31 @@ OrderModel.getShoppingCartById = function(attribute,value, callback) {
 		console.log("The result of query in order model is -- " + JSON.stringify(result));
         callback(null, {message: 'success', data: result});
         return;
+    });
+}
+
+/**
+ *
+ * Get Attribute by Name
+ *
+ * @param attribute
+ *         attribute name
+ * @param value
+ *          attribute value
+ * @param callback
+ *          http callback
+ */
+OrderModel.closeShoppingCart = function(documentId,jsonObject, callback) {
+
+    db.upsert(documentId, jsonObject, function(error, result) {
+        if(error) {
+            callback(error, null);
+            return;
+        }
+       
+        callback(null, {message: 'success', data: result});
+       
+
     });
 }
 
