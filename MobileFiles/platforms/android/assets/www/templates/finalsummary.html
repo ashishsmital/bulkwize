@@ -1,0 +1,52 @@
+<ion-view title="Order Summary">
+    <ion-content class="has-subheader">
+		<div class="list card" >
+            <div class="item text-center">
+               Your order has been successfully placed !!! Please find below the details of your order.
+			   <h2>Your order number is {{cartDetails.id}}</h2>
+			   
+            </div>
+        </div>
+    	<div class="list font_price category_list">
+		    <div class="item" ng-repeat="orderDetail in cartDetails.products">
+		    	<div ui-sref="app.categorydetail({ pId: orderDetail.id})">
+			    	<div class="left_thumb">
+			      		<img src="http://52.73.228.44:8080{{orderDetail.productBrandImageURL}}">
+			      	</div>
+			      	<div>
+				      	<h2>{{orderDetail.productBrandName}}</h2>
+				      	<p>{{orderDetail.productShortSummary}}</p>
+				    </div>
+			    	<div class="clear"></div>
+			    </div>
+
+			    <div class="mt_10">
+					<table class="table">
+						<tr>
+							<th>Units/case</th>
+							<th>Price/Unit</th>
+							<th>No of cases</th>
+						</tr>
+						<tbody>
+							<tr ng-repeat="productVariant in orderDetail.variants">
+								<td>{{productVariant.productCountInCase}}</td>
+								<td>MRP: <span style='color:black;text-decoration:line-through'>
+							                <span style='color:red'>
+											    {{productVariant.productMRPUnit}}
+											</span>
+										</span>
+							<div>Disc. price: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
+							<div class="red">{{productVariant.productDiscountPercentage}}% off</div></td>
+								<td>
+									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+							      	<span class="product-quantity">{{productVariant.quantity}}</span>
+							      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+  	</ion-content>
+</ion-view>
