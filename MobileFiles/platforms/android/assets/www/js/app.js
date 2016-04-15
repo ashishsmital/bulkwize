@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
        */
       if (window.cordova ){
           pushNotification = window.plugins.pushNotification;
-          alert(pushNotification);
+          //alert(pushNotification);
           pushNotification.register(
               onNotification,
               errorHandler,
@@ -159,16 +159,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
         }
     })
-	
-	.state('app.contactus', {
-        url: '/contactus',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/contactus.html'
-            }
-        }
-    })
-	
       .state('app.userDetails', {
           url: '/userDetails/:id',
           views: {

@@ -428,3 +428,22 @@ form sup{
 .wrap-white-space .item-content{
     white-space: normal !important;
 }
+
+
+ion-popover-view.user-menu-popover {
+    height: auto;
+    width:auto
+}
+
+ion-popover-view.user-menu-popover ion-content {
+    position: relative;
+}
+
+.platform-android ion-popover-view.user-menu-popover {
+    margin-top: 10px;
+}
+
+.platform-ios ion-popover-view.user-menu-popover {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
