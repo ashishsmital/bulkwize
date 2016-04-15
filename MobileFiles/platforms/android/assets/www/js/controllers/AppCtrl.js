@@ -73,17 +73,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $h
             console.log(data);
             $ionicLoading.hide();
         });
-
-
-
-
-
-
-
-
     };
-
-
 
     // Form data for the login modal
     $scope.loginData = {};

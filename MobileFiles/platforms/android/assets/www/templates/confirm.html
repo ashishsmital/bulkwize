@@ -27,7 +27,13 @@
 						<tbody>
 							<tr ng-repeat="productVariant in cartDetail.variants">
 								<td>{{productVariant.productCountInCase}}</td>
-								<td>{{productVariant.productMRPUnit}}</td>
+								<td>MRP: <span style='color:black;text-decoration:line-through'>
+							                <span style='color:red'>
+											    {{productVariant.productMRPUnit}}
+											</span>
+										</span>
+							<div>Disc. price: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
+							<div class="red">{{productVariant.productDiscountPercentage}}% off</div></td>
 								<td>
 									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
 							      	<span class="product-quantity">{{productVariant.quantity}}</span>
@@ -54,7 +60,7 @@
 		</div>
   	</ion-content>
 	<ion-footer-bar class="bar bar-footer bar-assertive">
-		<a class="button button-assertive" ng-click="cod()" ng-if="cod()>=10000">Cash On Delivery</a>
+		<a class="button button-assertive" ng-click="cod()" ng-if="isCODapplicable">Cash On Delivery</a>
   		<a class="button button-assertive" ng-click="payment()">Make Payment</a>
 	</ion-footer-bar>
 </ion-view>

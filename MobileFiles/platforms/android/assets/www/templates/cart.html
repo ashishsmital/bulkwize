@@ -13,8 +13,8 @@
 				      	<h2>{{cartDetail.productBrandName}}</h2>
 				      	<p>{{cartDetail.productShortSummary}}</p>
 						<br>
-						<p>COD available for total purchase upto max of Rs. 10000</p>
-			            <p>Delivery in {{cartDetail.override_lead_time_for_delivery_in_days}}</p>
+						<p><b>COD</b> available for total purchase upto max of Rs. 10000</p>
+			            <p><b>Delivery in {{cartDetail.override_lead_time_for_delivery_in_days}}</b></p>
 				    </div>
 			    	<div class="clear"></div>
 			    </div>
@@ -29,7 +29,13 @@
 						<tbody>
 							<tr ng-repeat="productVariant in cartDetail.variants">
 								<td>{{productVariant.productCountInCase}}</td>
-								<td>{{productVariant.productMRPUnit}}</td>
+								<td>MRP: <span style='color:black;text-decoration:line-through'>
+							                <span style='color:red'>
+											    {{productVariant.productMRPUnit}}
+											</span>
+										</span>
+							<div>Disc. price: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
+							<div class="red">{{productVariant.productDiscountPercentage}}% off</div></td>
 								<td>
 									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
 							      	<span class="product-quantity">{{productVariant.quantity}}</span>

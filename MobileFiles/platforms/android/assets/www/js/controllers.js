@@ -1,5 +1,10 @@
 var app = angular.module('starter.controllers', []);
 app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state,EnvConfig) {
+	
+	$scope.user = {};
+	$scope.city='Bangalore';
+	$scope.user.city='Bangalore';
+
     $scope.submit = function(valid, user){
         console.log(valid);
         if(valid){
@@ -172,16 +177,17 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
     $scope.addCart = function(data){
         console.log(data);
 
-        $scope.cartProcess = '';
+        $scope.cartProcess = false;
         $scope.variants = [];
 
         for(var i =0 ; i< data.brand.productVariants.length; i++){
             
-            if(data.brand.productVariants[i].productOrderedQty == 0){
-                $scope.cartProcess = false;
+            if(data.brand.productVariants[i].productOrderedQty != 0){
+                // if the quantity selected for the product variant is > 0 only then process the cart and push the variant else ignore.
+				$scope.cartProcess = true;
+				
+				$scope.variants.push({"sku_id":data.brand.productVariants[i].sku_id,"quantity":data.brand.productVariants[i].productOrderedQty,"productCountInCase":data.brand.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.brand.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.brand.productVariants[i].productMRPUnit,"productDiscountPercentage":data.brand.productVariants[i].productDiscountPercentage});
             }
-
-            $scope.variants.push({"sku_id":data.brand.productVariants[i].sku_id,"quantity":data.brand.productVariants[i].productOrderedQty,"productCountInCase":data.brand.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.brand.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.brand.productVariants[i].productMRPUnit,"productDiscountPercentage":data.brand.productVariants[i].productDiscountPercentage});
         }
 
         console.log($scope.variants);
@@ -314,8 +320,8 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         $scope.variants = [];
         $scope.cartProcess = '';
         for(var i =0 ; i< data.productVariants.length; i++){
-            if(data.productVariants[i].productOrderedQty == 0){
-                $scope.cartProcess = false;
+            if(data.productVariants[i].productOrderedQty != 0){
+                $scope.cartProcess = true;
             }
             $scope.variants.push({"sku_id":data.productVariants[i].sku_id,"quantity":data.productVariants[i].productOrderedQty,"productCountInCase":data.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.productVariants[i].productMRPUnit,"productDiscountPercentage":data.productVariants[i].productDiscountPercentage});
         }
@@ -567,10 +573,12 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
     }).then(function successCallback(data) {
         console.log(data.data.data[0].Bulkwize.updatedAt);
         $scope.cartDetails = data.data.data[0].Bulkwize;
+		$scope.isCODapplicable = parseFloat($scope.cartDetails.totalCartValue.replace(',','')) <= parseFloat('10000');
+		console.log("Is COD applicable -- " + $scope.isCODapplicable);
         $ionicLoading.hide();
     }, function errorCallback(data) {
         console.log(data);
-        $ionicLoading.hide();
+		$ionicLoading.hide();
     });
 
    	$scope.cod = function(){
