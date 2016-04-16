@@ -578,7 +578,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 		$scope.isCODapplicable = parseFloat($scope.cartDetails.totalCartValue.replace(',','')) <= parseFloat('10000');
 		console.log("Is COD applicable -- " + $scope.isCODapplicable);
         $ionicLoading.hide();
-    }, function errorCallback(data) {
+	}, function errorCallback(data) {
         console.log(data);
 		$ionicLoading.hide();
     });
@@ -599,6 +599,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
             console.log(response);
             $ionicLoading.hide();
 			$rootScope.orderId=response.data.data.id;
+			$state.go('app.finalsummary');
         }, function errorCallback(data) {
             console.log(data);
             $ionicLoading.hide();
