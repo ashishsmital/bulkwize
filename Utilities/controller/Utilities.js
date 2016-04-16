@@ -8,8 +8,10 @@ var express = require('express');
 var utilities = express.Router();
 var utilitiesModel = require('../model/UtilitiesModel.js');
 var mailConfig = require('../config/mail-config.json');
+var smsConfig = require('../config/sms-config.json');
 var smtpTransport = require("nodemailer-smtp-transport");
 var nodemailer = require('nodemailer');
+var http = require("http");
 var smtpTransport = nodemailer.createTransport(smtpTransport({
     host : mailConfig.mailConfig.smtpHost,
     secureConnection : false,
@@ -97,6 +99,37 @@ utilities.sendEmail = function(toEmail,emailSubject,emailTxt,emailHTML,callback)
 		callback(null, {'status':'success', 'data':info.response});
 		
 	});
+}
+
+
+utilities.sendSMS = function(toNumber,msgTxt,callback){
+	console.log("Inside send SMS function -- " );
+	// create reusable transporter object using the default SMTP transport
+	var senderId = smsConfig.smsSenderId;
+	
+    
+	var smsOptions = smsConfig.smsConfig;
+
+        //smsOptions.path=smsOptions.path+"&Msg="+querystring.stringify(msgTxt);
+		console.log("SMS Message text before encoding is   " + msgTxt);
+        var req = http.request(smsOptions, function (res) {
+            var chunks = [];
+
+            res.on("data", function (chunk) {
+                chunks.push(chunk);
+            });
+
+            res.on("end", function () {
+                var body = Buffer.concat(chunks);
+                console.log(body.toString());
+				callback(null, {'status':'success', 'data':body.toString()});
+            });
+        });
+		req.write(JSON.stringify({ From: senderId,
+		  To: toNumber,
+		  Msg: msgTxt
+		  }));
+        req.end();
 }
 
 

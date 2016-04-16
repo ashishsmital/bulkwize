@@ -13,7 +13,6 @@ var uuid = require('uuid');
 var moment = require('moment');
 var request = require('request');
 var config = require('../config/invoice-config.json');
-var smsConfig = require('../config/sms-config.json');
 var Invoice = require('Invoice-ext');
 var fs = require('fs');
 var http = require("http");
@@ -24,37 +23,32 @@ var moment = require('moment');
  */
 order.post('/create', function (req, res, next) {
     console.log("Create order for user with id - " + req.user.user);
-    orderModel.createOrder(req.user.user, function (error, result) {
+    orderModel.createOrder(req.user.user, function (error, orderResult) {
         if (error) {
             return res.status(400).send(error);
         }
-		utilities.sendEmail('info@bulkwize.com',"Order is Requested - " +moment(new Date()).utcOffset("+05:30").format(),JSON.stringify(req.body),"None",function(error, result){
+		utilities.sendEmail('info@bulkwize.com',"Order placed - " +moment(new Date()).utcOffset("+05:30").format(),JSON.stringify(orderResult.data),"None",function(error, sendEmailResult){
 				if(error) {
 					console.log("Could not send self email for order creation.");
 				}
-        res.send(result);
+        
         // send order sms to end consumer
-       /* var smsOptions = smsConfig.smsOptions;
-        console.log("Printing order object before sending SMS " + JSON.stringify(result));
-        smsOptions.path=smsOptions.path+result.data.customer_id+"&Msg=Your%20order%20number%20with%20Bulkwize&is%20"+result.data.id;
-        console.log("SMS options is " + JSON.stringify(smsOptions));
-        var req = http.request(smsOptions, function (res) {
-            var chunks = [];
-
-            res.on("data", function (chunk) {
-                chunks.push(chunk);
-            });
-
-            res.on("end", function () {
-                var body = Buffer.concat(chunks);
-                console.log(body.toString());
-            });
-        });
-
-        req.end();*/
+		  utilities.sendSMS(req.user.user,"Thanks for placing your order with us, your order id is " + orderResult.data.id, function(error,result){
+				if(error) {
+						console.log("There was an error sending SMS to supplier and the error message was " + result.data);
+					}
+				if(result.data.Status != undefined && result.data.Status != null && result.data.Status=='Error'){
+					console.log("There was an error sending SMS to supplier and the error message was " + result.data);
+				}
+					console.log("SMS was successfully sent to supplier " + result.data);
+			});
         // end of send SMS
 
     });
+	
+	res.send(orderResult);
+});
+
 });
 
 /**
