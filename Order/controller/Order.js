@@ -17,6 +17,8 @@ var smsConfig = require('../config/sms-config.json');
 var Invoice = require('Invoice-ext');
 var fs = require('fs');
 var http = require("http");
+var utilities = require('utilities/controller/Utilities.js');
+var moment = require('moment');
 /**
  * post order
  */
@@ -26,6 +28,10 @@ order.post('/create', function (req, res, next) {
         if (error) {
             return res.status(400).send(error);
         }
+		utilities.sendEmail('info@bulkwize.com',"Order is Requested - " +moment(new Date()).utcOffset("+05:30").format(),JSON.stringify(req.body),"None",function(error, result){
+				if(error) {
+					console.log("Could not send self email for order creation.");
+				}
         res.send(result);
         // send order sms to end consumer
        /* var smsOptions = smsConfig.smsOptions;
