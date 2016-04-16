@@ -27,7 +27,7 @@ order.post('/create', function (req, res, next) {
         if (error) {
             return res.status(400).send(error);
         }
-		utilities.sendEmail('info@bulkwize.com',"Order placed - " +moment(new Date()).utcOffset("+05:30").format(),JSON.stringify(result.orderResult),"None",function(error, sendEmailResult){
+		utilities.sendEmail('info@bulkwize.com',"Order placed - " +moment(new Date()).utcOffset("+05:30").format(),JSON.stringify(orderResult.data),"None",function(error, sendEmailResult){
 				if(error) {
 					console.log("Could not send self email for order creation.");
 				}
