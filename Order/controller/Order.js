@@ -23,17 +23,17 @@ var moment = require('moment');
  */
 order.post('/create', function (req, res, next) {
     console.log("Create order for user with id - " + req.user.user);
-    orderModel.createOrder(req.user.user, function (error, result) {
+    orderModel.createOrder(req.user.user, function (error, orderResult) {
         if (error) {
             return res.status(400).send(error);
         }
-		utilities.sendEmail('info@bulkwize.com',"Order placed - " +moment(new Date()).utcOffset("+05:30").format(),JSON.stringify(result.data),"None",function(error, result){
+		utilities.sendEmail('info@bulkwize.com',"Order placed - " +moment(new Date()).utcOffset("+05:30").format(),JSON.stringify(result.orderResult),"None",function(error, sendEmailResult){
 				if(error) {
 					console.log("Could not send self email for order creation.");
 				}
         
         // send order sms to end consumer
-		  utilities.sendSMS(result.data.customer_id,"Thanks for placing your order with us, your order id is " + result.data.id, function(error,result){
+		  utilities.sendSMS(req.user.user,"Thanks for placing your order with us, your order id is " + orderResult.data.id, function(error,result){
 				if(error) {
 						console.log("There was an error sending SMS to supplier and the error message was " + result.data);
 					}
@@ -46,7 +46,7 @@ order.post('/create', function (req, res, next) {
 
     });
 	
-	res.send(result);
+	res.send(orderResult);
 });
 
 });
