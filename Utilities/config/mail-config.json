@@ -3,7 +3,7 @@
     "smtpHost":"smtp.gmail.com",
     "smtpPort":587,
     "smtpAuthUser":"ashishsmital@bulkwize.com",
-    "smtpAuthPwd":"******",
+    "smtpAuthPwd":"*****",
     "state":"Karnataka",
     "pincode":"560045",
     "country":"India"
