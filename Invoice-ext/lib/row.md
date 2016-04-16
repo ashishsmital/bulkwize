@@ -4,5 +4,6 @@
   <td>COUNTINCASE</td>
   <td>RATE</td>
   <td>VAT</td>
+  <td>DISCOUNT</td>
   <td>AMOUNT</td>
 </tr>

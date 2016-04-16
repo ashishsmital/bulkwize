@@ -50,6 +50,7 @@
                 <th>Count In Case</th>
                 <th>Rate</th>
                 <th>Vat</th>
+                 <th>Discount %</th>
                 <th>Amount</th>
             </tr>
             ITEM_LIST
