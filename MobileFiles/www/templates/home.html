@@ -12,7 +12,7 @@
 		<ion-slide-box on-slide-changed="slideHasChanged($index)">
 		  	<ion-slide ng-repeat="bannerImage in promotionImage">
 		    	<div class="box">
-		    		<img ng-src="http://52.73.228.44:8080{{bannerImage}}" alt="" class="img-responsive height1">
+		    		<img ng-src="{{envHost+bannerImage}}" alt="" class="img-responsive height1">
 		    	</div>
 		  	</ion-slide>
 		</ion-slide-box>
