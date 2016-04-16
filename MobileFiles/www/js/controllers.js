@@ -291,7 +291,9 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
     });
     $scope.shortForm =[];
     $scope.discount = [];
-
+	
+	$scope.envHost = EnvConfig.HOST.substring(0, EnvConfig.HOST.length - 1);
+	
     $http({
         method: 'GET',
         url: EnvConfig.HOST+'products/'+$stateParams.pId
