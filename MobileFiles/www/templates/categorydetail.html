@@ -10,7 +10,7 @@
 	</div>
   	<ion-content class="has-subheader">
 		<div class="padding text-center">
-			<img ng-src="http://52.73.228.44:8080{{detail.productBrandImageURL}}">
+			<img ng-src="{{envHost+detail.productBrandImageURL}}">
 		</div>
 		<div class="padding">
 			<h3>{{detail.productDisplayTitle}}</h3>
@@ -39,7 +39,7 @@
 										</span>
 							<div>Disc. price: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
-							
+
 						</td>
 						<td>
 							<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		
+
   	</ion-content>
   	<!-- <ion-footer-bar class="bar bar-dark cart_button">
 		<div class="button-bar">

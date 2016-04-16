@@ -7,7 +7,7 @@
 		    <div class="item" ng-repeat="cartDetail in cartDetails.products">
 		    	<div ui-sref="app.categorydetail({ pId: cartDetail.id})">
 			    	<div class="left_thumb">
-			      		<img src="http://52.73.228.44:8080{{cartDetail.productBrandImageURL}}">
+			      		<img src="{{envHost+cartDetail.productBrandImageURL}}">
 			      	</div>
 			      	<div>
 				      	<h2>{{cartDetail.productBrandName}}</h2>
@@ -46,7 +46,7 @@
 					</table>
 				</div>
 				<div class="row">
-					
+
 					<div class="col">
 						<div class="addCartButton" ng-click="addCart(cartDetail)">
 						 	Update cart<i class="ion-android-cart"></i>

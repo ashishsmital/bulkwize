@@ -14,7 +14,7 @@
 			    <div class="item" ng-repeat="list in lists" ng-show="list.brand">
 			    	<div ui-sref="app.categorydetail({ pId: list.brand.id})">
 				    	<div class="left_thumb">
-				      		<img ng-src="http://52.73.228.44:8080{{list.brand.productBrandImageURL}}">
+				      		<img ng-src="{{envHost+list.brand.productBrandImageURL}}">
 				      	</div>
 				      	<div>
 					      	<h2>{{list.brand.productBrandName}}</h2>
@@ -29,7 +29,7 @@
 					<div class="mt_10">
 						<table class="table">
 							<tr>
-								
+
 								<th>Units/case</th>
 								<th>Price/Unit</th>
 								<th>No of cases</th>
@@ -43,7 +43,7 @@
 												    {{productVariant.productMRPUnit}}
 												</span>
 											</span>
-											
+
 										<div>Disc. price: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
 										<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
 									</td>
@@ -56,7 +56,7 @@
 							</tbody>
 						</table>
 					</div>
-					
+
 					<div class="row">
 						<div class="col">
 							<a ui-sref="app.categorydetail({ pId: list.brand.id})" class="more_link">

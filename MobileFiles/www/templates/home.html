@@ -46,7 +46,7 @@
 			<owl-slider class="owl-carousel">
 	           <div class="item" owl-carousel-item="" ng-repeat="items in category">
 	              	<a ui-sref="app.subcatbrand({ subId: items.Bulkwize.id, productName : items.Bulkwize.category_name})">
-	              		<img ng-src="http://52.73.228.44:8080{{items.Bulkwize.category_img_url}}" />
+	              		<img ng-src="{{envHost+items.Bulkwize.category_img_url}}" />
 	              		<span class="perctenage_layout"> {{items.Bulkwize.maximum_discount_percentage}} % Off</span>
 	              		<div>{{items.Bulkwize.category_name | limitTo: 20}} <span ng-show="items.Bulkwize.category_name.length > 20">...</span></div>
 	              	</a>
