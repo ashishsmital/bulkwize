@@ -49,6 +49,8 @@ order.post('/create', function (req, res, next) {
 	res.send(result);
 });
 
+});
+
 /**
  * get order
  */
