@@ -448,6 +448,12 @@ ion-popover-view.user-menu-popover ion-content {
     margin-top: 10px;
 }
 
+.item  p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+
 .platform-ios ion-popover-view.user-menu-popover {
     padding-top: 10px;
     padding-bottom: 10px;
