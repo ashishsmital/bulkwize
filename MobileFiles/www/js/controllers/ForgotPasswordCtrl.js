@@ -87,6 +87,11 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
 
             }).then(function successCallback(response) {
 
+                if(!response.data.data[0]){
+                    $ionicLoading.hide();
+                    return;
+                }
+
                 if(response.data.data[0].Bulkwize){
                     $scope.step1 = false;
                     $scope.step2 = true;
@@ -117,6 +122,7 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
 
                 $ionicLoading.hide();
             }, function errorCallback(data) {
+                debugger;
                 console.log(data);
                 var alertPopup = $ionicPopup.alert({
                     title: 'Info',
