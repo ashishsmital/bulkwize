@@ -293,7 +293,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
     $scope.shortForm =[];
     $scope.discount = [];
 
-		envHost+detail.productBrandImageURL
+		//envHost+detail.productBrandImageURL
 	$scope.envHost = EnvConfig.HOST.substring(0, EnvConfig.HOST.length - 1);
 
     $http({
