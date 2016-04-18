@@ -17,7 +17,7 @@ app.controller('MyOrdersCtrl', function($scope, $stateParams, $http, $ionicLoadi
     $scope.isGroupShown = function(group) {
         return $scope.shownGroup === group;
     };
-
+    $scope.envHost = EnvConfig.HOST.substring(0, EnvConfig.HOST.length - 1);
 
     $http({
         method: 'GET',
@@ -46,7 +46,7 @@ app.controller('MyOrdersCtrl', function($scope, $stateParams, $http, $ionicLoadi
                         title: 'Info',
                         template: 'Ooops! Please login '
                     });
-					
+
 					alertPopup.then(function(res) {
                         console.log("The user is not logged in and hence needs to be redirected to login page." + res);
                         if(res == true){
