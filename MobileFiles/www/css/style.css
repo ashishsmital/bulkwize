@@ -73,6 +73,9 @@ a{
     background: #61B7B5;
     color: #fff;
 }
+.padding h3{
+  color:#F37365
+}
 .product-quantity {
     margin-left: 10px;
     margin-right: 10px;
@@ -451,7 +454,7 @@ ion-popover-view.user-menu-popover ion-content {
 .item  p {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
 .platform-ios ion-popover-view.user-menu-popover {
