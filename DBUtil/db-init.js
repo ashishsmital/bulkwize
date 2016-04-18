@@ -13,8 +13,8 @@ var categoryCounter = 0; // this is only for first time, else retrieve this valu
 var supplierCounter = 0; // this is only for first time, else retrieve this value from the counter below.
 
 var parsedCategoryIndex=0;
-//var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw-3.csv");
-var stream = fs.createReadStream("./conf/Nestle-processed.csv");
+var stream = fs.createReadStream("./conf/P&G DEC Updated Price List nw-6.csv");
+//var stream = fs.createReadStream("./conf/Nestle-processed.csv");
 var parsedRecordInMemory = [];
 
 var currentUTCdate = new Date(moment().utc().format());
