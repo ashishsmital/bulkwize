@@ -14,7 +14,7 @@
 			    <div class="item" ng-repeat="list in lists" ng-show="list.brand">
 			    	<div ui-sref="app.categorydetail({ pId: list.brand.id})">
 				    	<div class="left_thumb">
-				      		<img ng-src="{{envHost+list.brand.productBrandImageURL}}">
+				      		<img ng-src="{{envHost+list.brand.productImageURL}}">
 				      	</div>
 				      	<div>
 					      	<h2>{{list.brand.productBrandName}}</h2>
