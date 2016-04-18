@@ -12,9 +12,9 @@ user.post('/', function (req, res, next) {
     var jsonObject = {
         mobileNumber: req.body.mobileNumber,
         shopName: req.body.shopName,
-        firstName: req.body.firstName,
+        firstName: req.body.firstname,
         password: req.body.password,
-        lastName: req.body.lastName,
+        lastName: req.body.lastname,
         pan: req.body.pan,
         email: req.body.email,
         shopAddress: req.body.shopAddress,
