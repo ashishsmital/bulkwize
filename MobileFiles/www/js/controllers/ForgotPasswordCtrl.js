@@ -69,6 +69,18 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
         }
     };
 
+
+    $scope.goNextPrev = function(step){
+        for(var i=1; i <= 4; i++){
+            if(i === step ){
+                $scope["step"+i] = true;
+            }else{
+                $scope["step"+i] = false;
+            }
+        }
+    };
+
+
     $scope.checkMob = function(valid , reg){
 
         if(valid){
