@@ -12,7 +12,7 @@
 		<ion-slide-box on-slide-changed="slideHasChanged($index)">
 		  	<ion-slide ng-repeat="bannerImage in promotionImage">
 		    	<div class="box">
-		    		<img ng-src="http://52.73.228.44:8080{{bannerImage}}" alt="" class="img-responsive height1">
+		    		<img ng-src="{{envHost+bannerImage}}" alt="" class="img-responsive height1">
 		    	</div>
 		  	</ion-slide>
 		</ion-slide-box>
@@ -30,7 +30,7 @@
 			            <div class="col col-33" ng-repeat ="product in productList">
 			                <a ui-sref="app.categorydetail({ pId: product.id})">
 			                	<img ng-src="{{envHost+product.productBrandImageURL}}" />
-								<span class="perctenage_layout">Upto {{product.maxDisc}} %</span>
+								<span class="perctenage_layout"> {{product.maxDisc}} % Off</span>
 			                </a>
 			            </div>
 			        </div>
@@ -46,8 +46,8 @@
 			<owl-slider class="owl-carousel">
 	           <div class="item" owl-carousel-item="" ng-repeat="items in category">
 	              	<a ui-sref="app.subcatbrand({ subId: items.Bulkwize.id, productName : items.Bulkwize.category_name})">
-	              		<img ng-src="http://52.73.228.44:8080{{items.Bulkwize.category_img_url}}" />
-	              		<span class="perctenage_layout">Upto {{items.Bulkwize.maximum_discount_percentage}} %</span>
+	              		<img ng-src="{{envHost+items.Bulkwize.category_img_url}}" />
+	              		<span class="perctenage_layout"> {{items.Bulkwize.maximum_discount_percentage}} % Off</span>
 	              		<div>{{items.Bulkwize.category_name | limitTo: 20}} <span ng-show="items.Bulkwize.category_name.length > 20">...</span></div>
 	              	</a>
 	            </div>

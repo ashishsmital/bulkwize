@@ -11,7 +11,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
         maxWidth: 200,
         showDelay: 0
     });
-
+    $scope.envHost = EnvConfig.HOST.substring(0, EnvConfig.HOST.length - 1);
     $http({
         method: 'GET',
         url: EnvConfig.HOST+'shoppingcart/'
@@ -30,23 +30,23 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
         console.log(data);
         $ionicLoading.hide();
     });
-	
+
 	$scope.checkout = function(data){
-		
+
 		$http({
         method: 'GET',
         url: EnvConfig.HOST+'user/'
     }).then(function successCallback(response) {
-        
+
 		if(response.status == 200){
 				if(response.data.data.length > 0){
 					$scope.userDetails = response.data.data[0].Bulkwize;
 				}
 				$state.go('app.shipping');
 		}
-        
-		
-		
+
+
+
         $ionicLoading.hide();
     }, function errorCallback(response) {
         console.log(response);
@@ -55,7 +55,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
                         title: 'Info',
                         template: 'Ooops! Please login before checkout'
                     });
-					
+
 					alertPopup.then(function(res) {
                         console.log("The user is not logged in and hence needs to be redirected to login page." + res);
                         if(res == true){
@@ -67,7 +67,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
 
         $ionicLoading.hide();
     });
-	
+
 	}
 
     $scope.delete = function(data){
@@ -155,15 +155,24 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
         console.log(data);
 
         $scope.variants = [];
-        $scope.cartProcess = '';
+/*        $scope.cartProcess = '';
         for(var i =0 ; i< data.brand.productVariants.length; i++){
-            
+
             if(data.brand.productVariants[i].productOrderedQty != 0){
                 // if the quantity selected for the product variant is > 0 only then process the cart and push the variant else ignore.
 				$scope.cartProcess = true;
-				
+
 				$scope.variants.push({"sku_id":data.brand.productVariants[i].sku_id,"quantity":data.brand.productVariants[i].productOrderedQty,"productCountInCase":data.brand.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.brand.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.brand.productVariants[i].productMRPUnit,"productDiscountPercentage":data.brand.productVariants[i].productDiscountPercentage});
             }
+        }
+*/
+		 $scope.cartProcess = false;
+		 for(var i =0 ; i< data.variants.length; i++){
+            if(data.variants[i].quantity != 0){
+                $scope.cartProcess = true;
+				$scope.variants.push({"sku_id":data.variants[i].sku_id,"quantity":data.variants[i].quantity,"productCountInCase":data.variants[i].productCountInCase,"productUnitSizeWeightQty":data.variants[i].productUnitSizeWeightQty,"productMRPUnit":data.variants[i].productMRPUnit,"productDiscountPercentage":data.variants[i].productDiscountPercentage});
+            }
+            
         }
 
 
