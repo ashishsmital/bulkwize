@@ -155,6 +155,11 @@ a{
 .category_list .item-thumbnail-left .item-content .item-image{
     top: 38px;
 }
+.category_list
+{
+margin-top:15px;
+margin-left:10px
+}
 .table{
     width: 100%;
 }
@@ -441,6 +446,12 @@ ion-popover-view.user-menu-popover ion-content {
 
 .platform-android ion-popover-view.user-menu-popover {
     margin-top: 10px;
+}
+
+.item  p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
 }
 
 .platform-ios ion-popover-view.user-menu-popover {

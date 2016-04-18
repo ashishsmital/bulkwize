@@ -10,14 +10,14 @@
 	</div>
   	<ion-content class="has-subheader">
 		<div class="padding text-center">
-			<img ng-src="http://52.73.228.44:8080{{detail.productBrandImageURL}}">
+			<img ng-src="{{envHost+detail.productBrandImageURL}}">
 		</div>
 		<div class="padding">
 			<h3>{{detail.productDisplayTitle}}</h3>
 			<h4>Summary</h4>
 			<p>{{detail.productDescription}}</p>
 			<br>
-			<h4><b>COD</b> available for total purchase upto max of Rs. 10000</h4>
+			<h4><b>COD</b> available on total purchase up to Rs. 10000</h4>
 			<h4><b>Delivery in {{detail.override_lead_time_for_delivery_in_days}}</b></h4>
 		</div>
 
@@ -39,7 +39,7 @@
 										</span>
 							<div>Disc. price: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
-							
+
 						</td>
 						<td>
 							<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
@@ -58,7 +58,7 @@
 				</div>
 			</div>
 		</div>
-		
+
   	</ion-content>
   	<!-- <ion-footer-bar class="bar bar-dark cart_button">
 		<div class="button-bar">

@@ -2,7 +2,7 @@
  * Created by ghanavela on 3/20/2016.
  */
 
-app.controller('CategoryListCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading) {
+app.controller('CategoryListCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, EnvConfig) {
 
 
     $scope.categoryName = $stateParams['name'];
@@ -27,6 +27,9 @@ app.controller('CategoryListCtrl', function($scope, $stateParams, $http, $rootSc
             $ionicLoading.hide();
         });
     }
+	
+
+	console.log("nitesh is"+$scope.envHost);
 
     $scope.$on('$stateChangeSuccess', function() {
         $scope.loadMore();

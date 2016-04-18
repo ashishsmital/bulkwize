@@ -1,6 +1,6 @@
 var app = angular.module('starter.controllers', []);
 app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope, $ionicLoading, $ionicPopup, $state,EnvConfig) {
-	
+
 	$scope.user = {};
 	$scope.city='Bangalore';
 	$scope.user.city='Bangalore';
@@ -23,7 +23,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                     "supplierFirstName" : user.firstname,
                     "supplierLastName" : user.lastname,
                     "supplierBusinessName" : user.businessname,
-                    "supplierLeadTimeToDeliver" : 5, 
+                    "supplierLeadTimeToDeliver" : 5,
                     "supplierBusinessAddress": {
                         "country" : "INDIA",
                         "city" : user.city
@@ -58,7 +58,6 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 
 })
 
-
 .controller('SubCategoryBrandCtrl', function($scope, $state, $stateParams, $http, $rootScope, $ionicLoading,EnvConfig){
 
     $scope.checked = [];
@@ -73,6 +72,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         maxWidth: 200,
         showDelay: 0
     });
+		$scope.envHost = EnvConfig.HOST.substring(0, EnvConfig.HOST.length - 1);
 
     $http({
         method: 'GET',
@@ -133,7 +133,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         });
     }
 
-    
+
 
     $scope.categoryLink = function(list){
         $state.go('app.subcategory', {prodname:list.brand.productBrandName});
@@ -154,7 +154,8 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         maxWidth: 200,
         showDelay: 0
     });
-    
+
+    $scope.envHost = EnvConfig.HOST.substring(0, EnvConfig.HOST.length - 1);
     $http({
         method: 'POST',
         url: EnvConfig.HOST+'products/search',
@@ -181,17 +182,17 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         $scope.variants = [];
 
         for(var i =0 ; i< data.brand.productVariants.length; i++){
-            
+
             if(data.brand.productVariants[i].productOrderedQty != 0){
                 // if the quantity selected for the product variant is > 0 only then process the cart and push the variant else ignore.
 				$scope.cartProcess = true;
-				
+
 				$scope.variants.push({"sku_id":data.brand.productVariants[i].sku_id,"quantity":data.brand.productVariants[i].productOrderedQty,"productCountInCase":data.brand.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.brand.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.brand.productVariants[i].productMRPUnit,"productDiscountPercentage":data.brand.productVariants[i].productDiscountPercentage});
             }
         }
 
         console.log($scope.variants);
-        
+
         if($scope.cartProcess === false){
             $ionicLoading.show({ template: 'Select the Order Qty !', noBackdrop: true, duration: 2000 });
         }else{
@@ -265,7 +266,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                 $ionicLoading.hide();
             });
         }
-        
+
     }
 
     $scope.increment = function(data){
@@ -292,12 +293,15 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
     $scope.shortForm =[];
     $scope.discount = [];
 
+		//envHost+detail.productBrandImageURL
+	$scope.envHost = EnvConfig.HOST.substring(0, EnvConfig.HOST.length - 1);
+
     $http({
         method: 'GET',
         url: EnvConfig.HOST+'products/'+$stateParams.pId
     }).then(function successCallback(response) {
         $ionicLoading.hide();
-        console.log(response.data.data[0].Bulkwize);
+			console.log(response.data.data[0].Bulkwize);
         $scope.detail = response.data.data[0].Bulkwize;
         $scope.title = response.data.data[0].Bulkwize.productBrandName;
         $scope.shortForm = response.data.data[0].Bulkwize.productVariants;
@@ -318,12 +322,13 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         console.log(data);
 
         $scope.variants = [];
-        $scope.cartProcess = '';
+        $scope.cartProcess = false;
         for(var i =0 ; i< data.productVariants.length; i++){
             if(data.productVariants[i].productOrderedQty != 0){
                 $scope.cartProcess = true;
+				$scope.variants.push({"sku_id":data.productVariants[i].sku_id,"quantity":data.productVariants[i].productOrderedQty,"productCountInCase":data.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.productVariants[i].productMRPUnit,"productDiscountPercentage":data.productVariants[i].productDiscountPercentage});
             }
-            $scope.variants.push({"sku_id":data.productVariants[i].sku_id,"quantity":data.productVariants[i].productOrderedQty,"productCountInCase":data.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.productVariants[i].productMRPUnit,"productDiscountPercentage":data.productVariants[i].productDiscountPercentage});
+            
         }
 
         console.log($scope.variants, $scope.cartProcess);
@@ -331,7 +336,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         if($scope.cartProcess === false){
             $ionicLoading.show({ template: 'Select the Order Qty !', noBackdrop: true, duration: 2000 });
         }else{
-            
+
             $ionicLoading.show({
                 content: 'Loading',
                 animation: 'fade-in',
@@ -463,23 +468,23 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
     $scope.user.city = 'Bangalore';
 	$scope.user.state = 'Karnataka';
 	$scope.user.country = 'India';
-	
+
 	$http({
         method: 'GET',
         url: EnvConfig.HOST+'user/'
     }).then(function successCallback(response) {
-        
+
 		if(response.status == 200){
 				if(response.data.data.length > 0){
 					$scope.user.address1 = response.data.data[0].Bulkwize.deliveryAddress.addressLine1;
 					$scope.user.address2 = response.data.data[0].Bulkwize.deliveryAddress.addressLine2;
 					$scope.user.postcode = response.data.data[0].Bulkwize.deliveryAddress.pincode;
 				}
-				
+
 		}
-        
-		
-		
+
+
+
         $ionicLoading.hide();
     }, function errorCallback(response) {
         console.log(response);
@@ -488,7 +493,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                         title: 'Info',
                         template: 'Ooops! Please login before checkout'
                     });
-					
+
 					alertPopup.then(function(res) {
                         console.log("The user is not logged in and hence needs to be redirected to login page." + res);
                         if(res == true){
@@ -500,8 +505,8 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 
         $ionicLoading.hide();
     });
-	
-	
+
+
     $scope.submit = function(valid, user){
         console.log(valid);
         if(valid){
@@ -547,7 +552,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                         }
                     });
                 }
-				
+
                 $ionicLoading.hide();
             }, function errorCallback(data) {
                 console.log(data);
@@ -566,7 +571,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         maxWidth: 200,
         showDelay: 0
     });
-
+    $scope.envHost = EnvConfig.HOST.substring(0, EnvConfig.HOST.length - 1);
     $http({
         method: 'GET',
         url: EnvConfig.HOST+'shoppingcart/'
@@ -602,7 +607,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
             $ionicLoading.hide();
         });
     }
-	
+
 	$scope.payment = function(){
         $ionicLoading.show({
             content: 'Loading',
@@ -617,7 +622,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
             url: EnvConfig.HOST+'order/create/',
         }).then(function successCallback(response) {
             console.log(response);
-            
+
             $ionicLoading.hide();
 			 // if order creation is successful - make payment
 			$http({
@@ -626,10 +631,10 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 			}).then(function successCallback(pmntResponse) {
 				console.log("Payment creation was successful" + pmntResponse.data.data.pmntURL);
 				$ionicLoading.hide();
-				
+
 				// if payment creation is successful, invoke instamojo long URL
 				$window.location.href=pmntResponse.data.data.pmntURL;
-				
+
 				// end of invoking instamojo long url
 			}, function errorCallback(data) {
 				console.log( "Payment creation failed" + data);

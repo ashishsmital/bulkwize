@@ -69,6 +69,18 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
         }
     };
 
+
+    $scope.goNextPrev = function(step){
+        for(var i=1; i <= 4; i++){
+            if(i === step ){
+                $scope["step"+i] = true;
+            }else{
+                $scope["step"+i] = false;
+            }
+        }
+    };
+
+
     $scope.checkMob = function(valid , reg){
 
         if(valid){
@@ -86,6 +98,11 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
                 url: EnvConfig.HOST+'user/forgotpassword/'+reg.mob
 
             }).then(function successCallback(response) {
+
+                if(!response.data.data[0]){
+                    $ionicLoading.hide();
+                    return;
+                }
 
                 if(response.data.data[0].Bulkwize){
                     $scope.step1 = false;
@@ -117,6 +134,7 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
 
                 $ionicLoading.hide();
             }, function errorCallback(data) {
+                debugger;
                 console.log(data);
                 var alertPopup = $ionicPopup.alert({
                     title: 'Info',

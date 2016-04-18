@@ -4,9 +4,9 @@
 
 app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,$ionicHistory, $ionicNavBarDelegate, $state, EnvConfig) {
 	console.log(JSON.stringify($ionicHistory.currentView()));
-	
-	
-	
+
+
+
 	$rootScope.goToHome = function(){
 		$ionicHistory.nextViewOptions({
 			disableAnimate: false,
@@ -14,7 +14,7 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
 		});
 		$state.go('app.home');
 	}
-	
+
     $ionicLoading.show({
         content: 'Loading',
         animation: 'fade-in',
@@ -78,7 +78,7 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
         console.log(data);
         $ionicLoading.hide();
     });
-	
+
 	$http({
         method: 'GET',
         url: EnvConfig.HOST+'shoppingcart/'
@@ -101,4 +101,3 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
     console.log($rootScope.cartNumber);
 
 });
-

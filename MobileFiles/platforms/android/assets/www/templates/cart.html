@@ -7,13 +7,13 @@
 		    <div class="item" ng-repeat="cartDetail in cartDetails.products">
 		    	<div ui-sref="app.categorydetail({ pId: cartDetail.id})">
 			    	<div class="left_thumb">
-			      		<img src="http://52.73.228.44:8080{{cartDetail.productBrandImageURL}}">
+			      		<img src="{{envHost+cartDetail.productBrandImageURL}}">
 			      	</div>
 			      	<div>
 				      	<h2>{{cartDetail.productBrandName}}</h2>
 				      	<p>{{cartDetail.productShortSummary}}</p>
 						<br>
-						<p><b>COD</b> available for total purchase upto max of Rs. 10000</p>
+						<p><b>COD</b> available on total purchase up to Rs. 10000</p>
 			            <p><b>Delivery in {{cartDetail.override_lead_time_for_delivery_in_days}}</b></p>
 				    </div>
 			    	<div class="clear"></div>
@@ -46,7 +46,7 @@
 					</table>
 				</div>
 				<div class="row">
-					
+
 					<div class="col">
 						<div class="addCartButton" ng-click="addCart(cartDetail)">
 						 	Update cart<i class="ion-android-cart"></i>
