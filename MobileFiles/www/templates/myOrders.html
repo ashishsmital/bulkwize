@@ -13,6 +13,14 @@
             </ion-item>
             <ion-item class="item-accordion item-align" ng-repeat-end  ng-show="isGroupShown($index)">
               <p><b>Order Created On:-</b> {{myOrder.Bulkwize.createdAt | date:'dd-MM-yyyy'}}</p>
+            <div class="left_thumb">
+              <img src="{{envHost+myOrder.Bulkwize.products[0].productBrandImageURL}}">
+            </div>
+            <div class="padding">
+        			<h3 style="color:#F37365">{{myOrder.Bulkwize.products[0].productDisplayTitle}}</h3>
+        			<p>{{myOrder.Bulkwize.products[0].productDescription}}</p>
+        			<br>
+        		</div>
                 <table class="table">
                     <tr>
                         <th>Units/case</th>
