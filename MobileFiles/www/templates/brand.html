@@ -15,6 +15,8 @@
 				  	<div class="item item-text-wrap">
 				    	<a ui-sref="app.categorydetail({ pId: product.id})">
 							<img ng-src="{{envHost+product.productBrandImageURL}}" class="img-responsive">
+							<a ui-sref="app.subcategory({ prodname: product.productBrandName})">
+								<img ng-src="{{envHost+product.productImageURL}}" />
 							<span class="perctenage_layout"> {{product.maxDisc}} % Off</span>
 						</a>
 				  	</div>
