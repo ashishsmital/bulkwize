@@ -454,7 +454,7 @@ ion-popover-view.user-menu-popover ion-content {
 .item  p {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .platform-ios ion-popover-view.user-menu-popover {
