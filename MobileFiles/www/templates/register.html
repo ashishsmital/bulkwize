@@ -1,97 +1,87 @@
 <ion-view title="Register">
   <ion-content class="has-header">
-    <form class="form-horizontal padding_col6_left" role="form" name="userInfo" ng-show="step1" novalidate method="post" autocomplete="off">
+      <form class="form-horizontal padding_col6_left" role="form" name="userInfo" ng-show="step1" novalidate method="post" autocomplete="off">
         <h4 class="text-center">User details</h4>
-        <div class="list" >
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Company/Shop Name <sup>*</sup></span>
-              <input type="text" placeholder="XYZ" name="companyname" id="companyname" class ="error" ng-model="reg.companyname" required>
-              <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.companyname.$touched)" ng-messages="userInfo.companyname.$error" >
-                  <div ng-message="required" class="error">Company/Shop Name is required</div>
-              </div>
-          </label>
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Mobile Number <sup>*</sup></span>
+          <div class="list" >
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Company/Shop Name <sup>*</sup></span>
+                  <input type="text" placeholder="XYZ" name="companyname" id="companyname" class ="error" ng-model="reg.companyname" required>
+                  <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.companyname.$touched)" ng-messages="userInfo.companyname.$error" >
+                      <div ng-message="required" class="error">Company/Shop Name is required</div>
+                  </div>
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Mobile Number <sup>*</sup></span>
               <input type="text" placeholder="+91 XXXXXXXXXX" name="mob" mobile-exist id="mob" class="error" ng-model="reg.mob" required ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
-              <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.mob.$touched)" ng-messages="userInfo.mob.$error" >
-                  <div ng-message="required" class="error">Mobile Number is required</div>
-                  <div ng-message="pattern" class="error">Must be a valid 10 digit phone number</div>
+                  <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.mob.$touched)" ng-messages="userInfo.mob.$error" >
+                      <div ng-message="required" class="error">Mobile Number is required</div>
+                      <div ng-message="pattern" class="error">Must be a valid 10 digit phone number</div>
                   <div ng-message="checkMob" class="error">Mobile no is  already used</div>
-              </div>
-          </label>
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Password <sup>*</sup></span>
-              <input type="password" placeholder="****" name="password" id="password" class="error" ng-model="reg.password" required>
-              <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.password.$touched)" ng-messages="userInfo.password.$error" >
-                  <div ng-message="required" class="error">Password is required</div>
-              </div>
-          </label>
-          <label class="item item-input item-stacked-label">
-              <span class="input-label">Confirm Password <sup>*</sup></span>
-              <input type="password" placeholder="****" name="confirmpassword" id="confirmpassword" class="error" ng-model="reg.confirmpassword" required compare-to="reg.password">
-              <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.confirmpassword.$touched || userInfo.confirmpassword.$error.otherModelValue)" ng-messages="userInfo.confirmpassword.$error" >
-                  <div ng-message="required" class="error">Confirm Password is required</div>
-                  <div ng-message="compareTo" class="error">Oops! Please confirm your password</div>
-              </div>
-          </label>
-
+                  </div>
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Password <sup>*</sup></span>
+                  <input type="password" placeholder="****" name="password" id="password" class="error" ng-model="reg.password" required>
+                  <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.password.$touched)" ng-messages="userInfo.password.$error" >
+                      <div ng-message="required" class="error">Password is required</div>
+                  </div>
+              </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">Confirm Password <sup>*</sup></span>
+                  <input type="password" placeholder="****" name="confirmpassword" id="confirmpassword" class="error" ng-model="reg.confirmpassword" required compare-to="reg.password">
+                  <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.confirmpassword.$touched || userInfo.confirmpassword.$error.otherModelValue)" ng-messages="userInfo.confirmpassword.$error" >
+                      <div ng-message="required" class="error">Confirm Password is required</div>
+                      <div ng-message="compareTo" class="error">Oops! Please confirm your password</div>
+                  </div>
+              </label>
+          </div>
+          <div>
             <label class="item item-input item-stacked-label">
-                <span class="input-label">Please check & enter at least one following license no. <sup>*</sup></span>
+                <span class="input-label">Please enter at least one following license no. <sup>*</sup></span>
             </label>
-            <div class="item row">
-                    <div class="col">
-                        <ion-checkbox ng-model="reg.isVatLicense" name="vatNo" class="wrap-white-space">VAT #</ion-checkbox>
-                    </div>
-                    <div class="col">
-                        <label class="item item-input item-stacked-label">
-                            <input type="text" placeholder="VAT License Number #" name="vatLicense" id="vatLicense" class="error" ng-model="reg.vatLicense" ng-readonly="!reg.isVatLicense"/>
-                            <div class="error" ng-if="reg.isVatLicense && !reg.vatLicense">VAT License Number # is required.</div>
-                        </label>
-                    </div>
-              </div>
-            <div class="item row">
-                <div class="col">
-                    <ion-checkbox ng-model="reg.isSTPTLicense" class="wrap-white-space">Service Tax #</ion-checkbox>
-                </div>
-                <div class="col">
-                    <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Service/Professional License Number #" name="stptLicense" id="stptLicense" class="error" ng-model="reg.stptLicense" ng-readonly="!reg.isSTPTLicense">
-                        <div class="error" ng-if="reg.isSTPTLicense && !reg.stptLicense">Service/Professional License Number # is required.</div>
-                    </label>
-                </div>
-            </div>
-            <div class="item row">
-                <div class="col">
-                    <ion-checkbox ng-model="reg.isSELLicense" class="wrap-white-space">S&E License #</ion-checkbox>
-                </div>
-                <div class="col">
-                    <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Shops & Establishments License Number #" name="selLicense" id="selLicense" class="error" ng-model="reg.selLicense" ng-readonly="!reg.isSELLicense">
-                        <div class="error" ng-if="reg.isSELLicense && !reg.selLicense">Shops & Establishments License Number # is required.</div>
-                    </label>
-                </div>
-            </div>
-            <div class="item row">
-                <div class="col">
-                    <ion-checkbox ng-model="reg.isTradeLicense" class="wrap-white-space">Trade #</ion-checkbox>
-                </div>
-                <div class="col">
-                    <label class="item item-input item-stacked-label">
-                        <input type="text" placeholder="Trade License Number #" name="tradeLicense" id="tradeLicense" class="error" ng-model="reg.tradeLicense" ng-readonly="!reg.isTradeLicense">
-                        <div class="error" ng-if="reg.isTradeLicense && !reg.tradeLicense">Shops & Establishments License Number # is required.</div>
-                    </label>
-                </div>
 
-                <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.tradeLicense.$touched || userInfo.selLicense.$touched || userInfo.stptLicense.$touched || userInfo.vatLicense.$touched || userInfo.licenseNo.$error.otherModelValue)"  >
-                    <div ng-message="required" class="error">Please enter at least one license no.</div>
-                </div>
+
+              <ion-checkbox ng-model="reg.isVatLicense" name="vatNo" class="wrap-white-space">VAT #</ion-checkbox>
+              <label class="item item-input item-stacked-label" ng-if="reg.isVatLicense">
+                  <input type="text" placeholder="VAT License Number #" name="vatLicense" id="vatLicense" class="error" ng-model="reg.vatLicense" required />
+                 <div class="validation-error" ng-if="userInfo.vatLicense.$invalid" ng-messages="userInfo.vatLicense.$error" >
+                      <div class="error">VAT License Number # is required.</div>
+                  </div>
+
+              </label>
+
+              <ion-checkbox ng-model="reg.isSTPTLicense" class="wrap-white-space">Service Tax #</ion-checkbox>
+              <label class="item item-input item-stacked-label" ng-if="reg.isSTPTLicense">
+                  <input type="text" placeholder="Service/Professional License Number #" name="stptLicense" id="stptLicense" class="error" required ng-model="reg.stptLicense" >
+
+                  <div class="validation-error" ng-if="userInfo.stptLicense.$invalid" ng-messages="userInfo.stptLicense.$error" >
+                    <div class="error">Service/Professional License Number # is required.</div>
+                  </div>
+              </label>
+
+              <ion-checkbox ng-model="reg.isSELLicense" class="wrap-white-space"  >S&E License #</ion-checkbox>
+              <label class="item item-input item-stacked-label" ng-if ="reg.isSELLicense">
+                  <input type="text" placeholder="Shops & Establishments License Number #" name="selLicense" id="selLicense" class="error" required ng-model="reg.selLicense" >
+                  <div class="validation-error" ng-if="userInfo.selLicense.$invalid" ng-messages="userInfo.selLicense.$error" >
+                      <div class="error" >Shops & Establishments License Number # is required.</div>
+                  </div>
+              </label>
+
+              <ion-checkbox ng-model="reg.isTradeLicense" class="wrap-white-space">Trade #</ion-checkbox>
+              <label class="item item-input item-stacked-label" ng-if="reg.isTradeLicense">
+                  <input type="text" placeholder="Trade License Number #" name="tradeLicense" id="tradeLicense" class="error" required ng-model="reg.tradeLicense" >
+                  <div class="validation-error" ng-if="userInfo.tradeLicense.$invalid" ng-messages="userInfo.tradeLicense.$error" >
+                      <div class="error" ng-if="reg.isTradeLicense && !reg.tradeLicense">Trade License Number # is required.</div>
+                  </div>
+              </label>
             </div>
 
-      <div class="row">
-        <div class="col text-center"><button class="button  button-positive icon-right ion-chevron-right" ng-disabled="userInfo.$invalid || (!reg.vatLicense && !reg.stptLicense && !reg.selLicense && !reg.tradeLicense)   " ng-click="goNextPrev(2)"> Personal Info</button></div>
-      </div>
+          <div class="row" >
+              <div class="col text-center">
+                  <button class="button  button-positive icon-right ion-chevron-right" ng-disabled="userInfo.$invalid || (!reg.vatLicense && !reg.stptLicense && !reg.selLicense && !reg.tradeLicense)" ng-click="goNextPrev(2)"> Personal Info</button></div>
+          </div>
 
-    </form>
+      </form>
     <form class="form-horizontal padding_col6_left" role="form" name="personalInfo" ng-show="step2" novalidate method="post"  autocomplete="off">
         <h4 class="text-center">Personal details</h4>
         <div class="list" >
