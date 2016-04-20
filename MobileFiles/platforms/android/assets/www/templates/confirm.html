@@ -23,13 +23,16 @@
 			    <div class="mt_10">
 					<table class="table">
 						<tr>
-							<th>Units/case</th>
+							<th>Case of</th>
 							<th>Price/Unit</th>
 							<th>No of cases</th>
 						</tr>
 						<tbody>
 							<tr ng-repeat="productVariant in cartDetail.variants">
-								<td>{{productVariant.productCountInCase}}</td>
+								<td>
+                    <span>{{productVariant.productCountInCase}}</span>
+                    <div> units</div>
+                </td>
 								<td>MRP: <span style='color:black;text-decoration:line-through'>
 							                <span style='color:red'>
 											    {{productVariant.productMRPUnit}}
