@@ -230,7 +230,7 @@ form sup{
     text-align: center;
     z-index: 1;
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 300;
     line-height: 11px;
 }
 .bar.item-input-inset .item-input-wrapper input {
@@ -461,3 +461,85 @@ ion-popover-view.user-menu-popover ion-content {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.subcategory{
+    position: relative;
+    text-align: left;
+	font-size: 11px;
+}
+
+.bz-lic-container .item-checkbox {
+    border:none;
+}
+
+.bz-lic-container input[type="text"]{
+    width: 100%;
+    height: 16px !important;
+}
+
+.bz-lic-container .error::-webkit-input-placeholder {
+    color: red;
+}
+
+.bz-lic-container .error:-moz-placeholder { /* Firefox 18- */
+    color: red;
+}
+
+.bz-lic-container .error::-moz-placeholder {  /* Firefox 19+ */
+    color: red;
+}
+
+.bz-lic-container .error:-ms-input-placeholder {
+    color: red;
+}
+
+
+
+
+
+@media screen and (max-width: 411px){
+
+
+    .bz-lic-container ::-webkit-input-placeholder {
+        font-size: 11px;
+    }
+
+    .bz-lic-container :-moz-placeholder { /* Firefox 18- */
+        font-size: 11px;
+    }
+
+    .bz-lic-container ::-moz-placeholder {  /* Firefox 19+ */
+        font-size: 11px;
+    }
+
+    .bz-lic-container :-ms-input-placeholder {
+        font-size: 11px;
+    }
+
+}
+
+
+
+@media screen and (max-width: 568px){
+    .bz-lic-container{
+        padding-left: 0;
+    }
+
+    .bz-lic-container .col-10{
+        padding-left: 0 !important;
+    }
+    .bz-lic-container .bz-content-item-col{
+        padding-left: 20px;
+    }
+
+    .bz-lic-container .item-checkbox {
+        padding-left: 30px;
+    }
+    .bz-lic-container.item-checkbox .checkbox{
+        padding-left: 0px;
+        padding-right: 0px;
+
+    }
+
+}
+
+

@@ -1,4 +1,4 @@
-<ion-view title="">
+	<ion-view title="">
 	<div class="item-input-inset has-header padding_6">
 		<label class="item-input-wrapper">
 		    <i class="icon ion-ios-search placeholder-icon"></i>
@@ -28,14 +28,12 @@
 			  	<ion-slide  ng-repeat ="productList in productLists">
 			    	<div class="row">
 			            <div class="col col-33" ng-repeat ="product in productList">
-			                <a ui-sref="app.categorydetail({ pId: product.id})">
+			               <a ui-sref="app.subcategory({ prodname: product.productBrandName})">
 			                	<img ng-src="{{envHost+product.productBrandImageURL}}" />
-			                <a ui-sref="app.subcategory({ prodname: product.productBrandName})">
-			                	<img ng-src="{{envHost+product.productImageURL}}" />
 								        <span class="perctenage_layout"> {{product.maxDisc}} % Off</span>
 			                </a>
 			            </div>
-			        </div>
+			        	</div>
 			  	</ion-slide>
 			</ion-slide-box>
 		</div>
