@@ -46,7 +46,7 @@
                   <div class="col col-10"><ion-checkbox ng-model="reg.isVatLicense" name="vatNo" class="bz-ls-chk-item"></ion-checkbox></div>
                   <div class="col bz-content-item-col">
                       <div class="item" ng-if="reg.isVatLicense">
-                          <input type="text" placeholder="VAT License # is required" name="vatLicense" id="vatLicense"  ng-class="{ 'error': userInfo.vatLicense.$invalid}" ng-model="reg.vatLicense" required />
+                          <input type="text" placeholder="VAT License # is required" name="vatLicense" id="vatLicense"  ng-class="{ 'error': userInfo.vatLicense.$invalid}" ng-model="reg.vatLicense" required ng-pattern="/^[2]{1}?[-\s\.]?[9]{1}[-\s\.]?[0-9]{9}$/"/>
                       </div>
                       <div class="item " ng-if="!reg.isVatLicense">
                           <input type="text" placeholder="VAT License Number #" name="vatLicense" id="vatLicense"  ng-model="reg.vatLicense" readonly />
@@ -61,7 +61,7 @@
                   </div>
                   <div class="col bz-content-item-col">
                       <div class="item" ng-if="reg.isSTPTLicense">
-                          <input type="text" placeholder="Service/Professional License # is required" name="stptLicense" id="stptLicense" ng-class="{ 'error': userInfo.stptLicense.$invalid}" required ng-model="reg.stptLicense" >
+                          <input type="text" placeholder="Service/Professional License # is required" name="stptLicense" id="stptLicense" ng-class="{ 'error': userInfo.stptLicense.$invalid}" ng-model="reg.stptLicense" required ng-pattern="/^[0-9]{10}?[-\s\.]?[S]{1}[-\s\.]?[T]{1}[-\s\.]?[0-9]{3}$/" />
                       </div>
 
                       <div class="item" ng-if="!reg.isSTPTLicense">
@@ -82,7 +82,7 @@
                           <input type="text" placeholder="Shops & Establishments License # is required." name="selLicense" id="selLicense" ng-class="{ 'error': userInfo.selLicense.$invalid}" required ng-model="reg.selLicense" >
                       </label>
                       <label class="item" ng-if="!reg.isSELLicense">
-                          <input type="text" placeholder="Shops & Establishments License #" name="selLicense" id="selLicense"  readonly  ng-model="reg.stptLicense" >
+                          <input type="text" placeholder="Shops & Establishments License #" name="selLicense" id="selLicense"  readonly  ng-model="reg.sel  License" >
                       </label>
                   </div>
               </div>
