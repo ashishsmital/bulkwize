@@ -28,7 +28,7 @@
               </label>
               <label class="item item-input item-stacked-label">
                   <span class="input-label">Confirm Password <sup>*</sup></span>
-                  <input type="password" placeholder="****" name="confirmpassword" id="confirmpassword" class="error" ng-model="reg.confirmpassword" required compare-to="reg.password">
+                  <input type="password" placeholder="****" name="confirmpassword" id="confirmpassword" class="error"  ng-model="reg.confirmpassword" required compare-to="reg.password">
                   <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.confirmpassword.$touched || userInfo.confirmpassword.$error.otherModelValue)" ng-messages="userInfo.confirmpassword.$error" >
                       <div ng-message="required" class="error">Confirm Password is required</div>
                       <div ng-message="compareTo" class="error">Oops! Please confirm your password</div>
@@ -36,6 +36,76 @@
               </label>
           </div>
           <div>
+
+
+              <label class="item wrap-white-space wrap-white-space ">
+                  Please check & enter at least one following license no. <sup>*</sup>
+              </label>
+
+              <div class="row bz-lic-container">
+                  <div class="col col-10"><ion-checkbox ng-model="reg.isVatLicense" name="vatNo" class="bz-ls-chk-item"></ion-checkbox></div>
+                  <div class="col bz-content-item-col">
+                      <div class="item" ng-if="reg.isVatLicense">
+                          <input type="text" placeholder="VAT License # is required" name="vatLicense" id="vatLicense"  ng-class="{ 'error': userInfo.vatLicense.$invalid}" ng-model="reg.vatLicense" required />
+                      </div>
+                      <div class="item " ng-if="!reg.isVatLicense">
+                          <input type="text" placeholder="VAT License Number #" name="vatLicense" id="vatLicense"  ng-model="reg.vatLicense" readonly />
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="row bz-lic-container">
+                  <div class="col col-10">
+                      <ion-checkbox ng-model="reg.isSTPTLicense" class="bz-ls-chk-item"></ion-checkbox>
+                  </div>
+                  <div class="col bz-content-item-col">
+                      <div class="item" ng-if="reg.isSTPTLicense">
+                          <input type="text" placeholder="Service/Professional License # is required" name="stptLicense" id="stptLicense" ng-class="{ 'error': userInfo.stptLicense.$invalid}" required ng-model="reg.stptLicense" >
+                      </div>
+
+                      <div class="item" ng-if="!reg.isSTPTLicense">
+                          <input type="text" placeholder="Service/Professional License #" name="stptLicense" id="stptLicense" readonly ng-model="reg.stptLicense" >
+                      </div>
+
+                  </div>
+              </div>
+
+
+
+              <div class="row bz-lic-container">
+                  <div class="col col-10">
+                      <ion-checkbox ng-model="reg.isSELLicense" class="bz-ls-chk-item" ></ion-checkbox>
+                  </div>
+                  <div class="col bz-content-item-col">
+                      <label class="item" ng-if ="reg.isSELLicense">
+                          <input type="text" placeholder="Shops & Establishments License # is required." name="selLicense" id="selLicense" ng-class="{ 'error': userInfo.selLicense.$invalid}" required ng-model="reg.selLicense" >
+                      </label>
+                      <label class="item" ng-if="!reg.isSELLicense">
+                          <input type="text" placeholder="Shops & Establishments License #" name="selLicense" id="selLicense"  readonly  ng-model="reg.stptLicense" >
+                      </label>
+                  </div>
+              </div>
+
+
+
+
+              <div class="row bz-lic-container">
+                  <div class="col col-10">
+                      <ion-checkbox ng-model="reg.isTradeLicense" class="bz-ls-chk-item"></ion-checkbox>
+                  </div>
+                  <div class="col bz-content-item-col">
+                      <label class="item" ng-if ="reg.isTradeLicense">
+                          <input type="text" placeholder="Trade License # is required" name="tradeLicense" id="tradeLicense" ng-class="{ 'error': userInfo.tradeLicense.$invalid}"  required ng-model="reg.tradeLicense" >
+                      </label>
+                      <label class="item " ng-if="!reg.isTradeLicense">
+                          <input type="text" placeholder="Trade License #" name="tradeLicense" id="tradeLicense" readonly ng-model="reg.tradeLicense" >
+                      </label>
+
+                  </div>
+              </div>
+
+              <!--
             <label class="item wrap-white-space wrap-white-space ">
                 Please check & enter at least one following license no. <sup>*</sup>
             </label>
@@ -75,6 +145,7 @@
                       <div class="error" ng-if="reg.isTradeLicense && !reg.tradeLicense">Trade License Number # is required.</div>
                   </div>
               </label>
+              -->
             </div>
 
           <div class="row" >

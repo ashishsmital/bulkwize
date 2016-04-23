@@ -1,5 +1,5 @@
 {
-  "name": "2factor",
+  "name": "sms2factor",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "request": "^2.72.0"
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "request": "^2.72.0",
+    "underscore": "^1.8.3",
+    "uuid": "^2.0.1"
   }
 }
