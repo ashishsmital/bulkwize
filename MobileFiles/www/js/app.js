@@ -283,7 +283,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
         url: '/finalsummary',
         views: {
             'menuContent': {
-                templateUrl: 'templates/finalsuumary.html',
+                templateUrl: 'templates/finalsummary.html',
                 controller: 'FinalSummaryCtrl'
             }
         }
