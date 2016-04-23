@@ -1,0 +1,12 @@
+{
+  "smsConfig":{
+    "method": "POST",
+    "hostname": "2factor.in",
+    "port": null,
+    "path": "API/V1",
+    "token":"50c446fc-037a-11e6-9a14-00163ef91450",
+    "headers": {}
+  },
+
+  "smsSenderId":"TESTFC"
+}
