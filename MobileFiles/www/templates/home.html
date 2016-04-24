@@ -29,8 +29,8 @@
 			    	<div class="row">
 			            <div class="col col-33" ng-repeat ="product in productList">
 			               <a ui-sref="app.subcategory({ prodname: product.productBrandName})">
+								<span class="perctenage_layout"> {{product.maxDisc}}% Off</span>
 			                	<img ng-src="{{envHost+product.productBrandImageURL}}" />
-								        <span class="perctenage_layout"> {{product.maxDisc}}% Off</span>
 			                </a>
 			            </div>
 			        	</div>
