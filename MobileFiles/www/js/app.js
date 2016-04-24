@@ -229,6 +229,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
     })
 
     .state('app.subcategory',{
+		cache: false,
         url:'/subcategory/:prodname',
         views:{
             'menuContent' : {

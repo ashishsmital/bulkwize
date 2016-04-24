@@ -166,7 +166,7 @@
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Pin code <sup>*</sup></span>
                     <textarea ng-model="reg.delshopPincode" name="delshopPincode" id=delPincode" required></textarea>
-                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delshopPincode.$touched )" ng-messages="deliveryInfo.delshopPincode.$error" >
+                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delshopPincode.$touched )" ng-messages="deliveryInfo.delPincode.$error" >
                         <div ng-message="required" class="error">Pin code is required</div>
                     </div>
                 </label>

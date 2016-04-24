@@ -68,7 +68,7 @@ app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $h
         }
 
         if($scope.userDetails && $scope.userDetails.deliveryAddress){
-             $scope.reg.delshopAddLine1 = $scope.userDetails.shopAddress.addressLine1;
+             $scope.reg.delshopAddLine1 = $scope.userDetails.deliveryAddress.addressLine1;
              $scope.reg.delshopAddLine2 = $scope.userDetails.deliveryAddress.addressLine1;
              $scope.reg.delshopCity = $scope.userDetails.deliveryAddress.city;
              $scope.reg.delshopState =  $scope.userDetails.deliveryAddress.state;
