@@ -542,7 +542,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                 if(response.status == 200){
                     var alertPopup = $ionicPopup.alert({
                         title: 'Info',
-                        template: 'Thanks for providing the details !'
+                        template: 'Please review the order details & confirm !'
                     });
 
                     alertPopup.then(function(res) {
