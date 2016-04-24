@@ -68,11 +68,11 @@ app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $h
         }
 
         if($scope.userDetails && $scope.userDetails.deliveryAddress){
-             $scoe.reg.delshopAddLine1 = $scope.userDetails.deliveryAddress.addressLine1;
-             $scoe.reg.delshopAddLine2 = $scope.userDetails.deliveryAddress.addressLine1;
-             $scoe.reg.delshopCity = $scope.userDetails.deliveryAddress.city;
-             $scoe.reg.delshopState =  $scope.userDetails.deliveryAddress.state;
-             $scoe.reg.delshopPincode = $scope.userDetails.deliveryAddress.pincode;
+             $scoe.reg.delAddLine1 = $scope.userDetails.deliveryAddress.addressLine1;
+             $scoe.reg.delAddLine2 = $scope.userDetails.deliveryAddress.addressLine1;
+             $scoe.reg.delCity = $scope.userDetails.deliveryAddress.city;
+             $scoe.reg.delState =  $scope.userDetails.deliveryAddress.state;
+             $scoe.reg.delPincode = $scope.userDetails.deliveryAddress.pincode;
         }
 
 
