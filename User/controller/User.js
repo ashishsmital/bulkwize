@@ -43,6 +43,15 @@ user.post('/', function (req, res, next) {
                     return res.status(400).send(error);
                 }
                 console.log('User Created');
+				utilities.sendSMS(req.user.user,"Thanks for registering at Bulkwiize, Your user name is " + orderResult.data.mobileNumber + "and password is" + orderResult.data.password + ". Happy to serve you. - Bulkwize", function(error,result){
+				if(error) {
+						console.log("There was an error sending SMS to supplier and the error message was " + result.data);
+					}
+				if(result.data.Status != undefined && result.data.Status != null && result.data.Status=='Error'){
+					console.log("There was an error sending SMS to supplier and the error message was " + result.data);
+				}
+					console.log("SMS was successfully sent to supplier " + result.data);
+			});
                 res.send(result);
             });
         }
