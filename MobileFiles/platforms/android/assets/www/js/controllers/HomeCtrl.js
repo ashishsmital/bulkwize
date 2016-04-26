@@ -99,5 +99,5 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
     });
 
     console.log($rootScope.cartNumber);
-
+	
 });

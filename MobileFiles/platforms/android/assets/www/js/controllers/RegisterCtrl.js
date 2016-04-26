@@ -11,16 +11,16 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
     $scope.reg = {};
 	$scope.shopCity = 'Bangalore';
 	$scope.shopState = 'Karnataka';
-	
+
 	$scope.delCity = 'Bangalore';
 	$scope.delState = 'Karnataka';
-	
+
 	$scope.reg.shopCity = 'Bangalore';
 	$scope.reg.shopState = 'Karnataka';
-	
+
 	$scope.reg.delCity = 'Bangalore';
 	$scope.reg.delState = 'Karnataka';
-	
+
 /*
     $scope.step1 = true;
     $scope.step2 = true;
@@ -71,7 +71,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
         { id: 9 },
         { id: 10 }
     ];
-    
+
 
     $scope.goNextPrev = function(step){
        for(var i=1; i <= 4; i++){
@@ -122,7 +122,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
                 "password":value.password,
                 "firstname":value.firstname,
                 "lastname":value.lastname,
-                "pan":value.panumber,
+                /*"pan":value.panumber,*/
                 "email":value.email,
 				"vatLicense":value.vatLicense,
 				"stptLicense":value.stptLicense,
@@ -158,7 +158,7 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
                 if(response.data.data.cas){
                     var alertPopup = $ionicPopup.alert({
                         title: 'Info',
-                        template: 'Thanks for register with us'
+                        template: 'Thank you for registering with us'
                     });
 
                     alertPopup.then(function(res) {

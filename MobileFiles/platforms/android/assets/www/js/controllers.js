@@ -328,7 +328,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                 $scope.cartProcess = true;
 				$scope.variants.push({"sku_id":data.productVariants[i].sku_id,"quantity":data.productVariants[i].productOrderedQty,"productCountInCase":data.productVariants[i].productCountInCase,"productUnitSizeWeightQty":data.productVariants[i].productUnitSizeWeightQty,"productMRPUnit":data.productVariants[i].productMRPUnit,"productDiscountPercentage":data.productVariants[i].productDiscountPercentage});
             }
-            
+
         }
 
         console.log($scope.variants, $scope.cartProcess);
@@ -542,7 +542,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
                 if(response.status == 200){
                     var alertPopup = $ionicPopup.alert({
                         title: 'Info',
-                        template: 'Thanks for providing the details !'
+                        template: 'Please review the order details & confirm !'
                     });
 
                     alertPopup.then(function(res) {
@@ -602,6 +602,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
             console.log(response);
             $ionicLoading.hide();
 			$rootScope.orderId=response.data.data.id;
+			$state.go('app.finalsummary');
         }, function errorCallback(data) {
             console.log(data);
             $ionicLoading.hide();

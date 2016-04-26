@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.ionicframework.myapp876495;
+package com.bulkwize.com;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
