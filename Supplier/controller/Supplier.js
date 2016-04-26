@@ -43,7 +43,7 @@ supplier.post('/', function(req, res, next) {
 				res.send(result); // return response to browser
 		});
 		
-		utilities.sendSMS("9620147746","Thanks for registering with Bulkwize. We will get in touch with you shortly !", function(error,result){
+		utilities.sendSMS('req.body.supplierContactDetails.mobileNumber',"Thanks for registering with Bulkwize. We will get in touch with you shortly !", function(error,result){
 			if(error) {
 					console.log("There was an error sending SMS to supplier and the error message was " + result.data);
 				}

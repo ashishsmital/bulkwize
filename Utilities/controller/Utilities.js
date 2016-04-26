@@ -72,6 +72,36 @@ var mailOptions = {
 });
 });
 
+utilities.post('/sendSMS', function(req, res, next) {
+
+	var senderId = smsConfig.smsSenderId;
+	
+	var smsOptions = smsConfig.smsConfig;
+	
+	if(req.body.senderId != undefined && req.body.senderId != null ){
+		var senderId = req.body.senderId;
+	}
+	console.log("SMS Message text before encoding is   " + msgTxt);
+	
+        var req = http.request(smsOptions, function (res) {
+            var chunks = [];
+
+            res.on("data", function (chunk) {
+                chunks.push(chunk);
+            });
+
+            res.on("end", function () {
+                var body = Buffer.concat(chunks);
+                console.log(body.toString());
+				return res.status(200).send({'status':'success', 'data':body.toString()});
+            });
+        });
+		req.write(JSON.stringify({ From: senderId,
+		  To: toNumber,
+		  Msg: msgTxt
+		  }));
+        req.end();
+}
 utilities.sendEmail = function(toEmail,emailSubject,emailTxt,emailHTML,callback){
 	console.log("Inside send email function -- " );
 	// create reusable transporter object using the default SMTP transport
@@ -107,8 +137,7 @@ utilities.sendSMS = function(toNumber,msgTxt,callback){
 	// create reusable transporter object using the default SMTP transport
 	var senderId = smsConfig.smsSenderId;
 	
-    
-	var smsOptions = smsConfig.smsConfig;
+    var smsOptions = smsConfig.smsConfig;
 
         //smsOptions.path=smsOptions.path+"&Msg="+querystring.stringify(msgTxt);
 		console.log("SMS Message text before encoding is   " + msgTxt);
