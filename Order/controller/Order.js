@@ -33,7 +33,7 @@ order.post('/create', function (req, res, next) {
 				}
         
         // send order sms to end consumer
-		  utilities.sendSMS(req.user.user,"Thanks for placing your order with us, your order id is " + orderResult.data.id, function(error,result){
+		  utilities.sendSMS(req.user.user,"Thanks for placing your order with Bulkwize, your order id is " + orderResult.data.id, function(error,result){
 				if(error) {
 						console.log("There was an error sending SMS to supplier and the error message was " + result.data);
 					}
