@@ -83,7 +83,7 @@ utilities.post('/sendSMS', function(req, res, next) {
 	}
 	console.log("SMS Message text before encoding is   " + msgTxt);
 	
-        var req = http.request(smsOptions, function (res) {
+        var smsReq = http.request(smsOptions, function (res) {
             var chunks = [];
 
             res.on("data", function (chunk) {
@@ -96,11 +96,11 @@ utilities.post('/sendSMS', function(req, res, next) {
 				return res.status(200).send({'status':'success', 'data':body.toString()});
             });
         });
-		req.write(JSON.stringify({ From: senderId,
-		  To: toNumber,
-		  Msg: msgTxt
+		smsReq.write(JSON.stringify({ From: senderId,
+		  To: req.body.toNumber,
+		  Msg: req.body.msgTxt
 		  }));
-        req.end();
+        smsReq.end();
 }
 utilities.sendEmail = function(toEmail,emailSubject,emailTxt,emailHTML,callback){
 	console.log("Inside send email function -- " );
