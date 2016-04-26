@@ -101,7 +101,8 @@ utilities.post('/sendSMS', function(req, res, next) {
 		  Msg: req.body.msgTxt
 		  }));
         smsReq.end();
-}
+});
+
 utilities.sendEmail = function(toEmail,emailSubject,emailTxt,emailHTML,callback){
 	console.log("Inside send email function -- " );
 	// create reusable transporter object using the default SMTP transport
