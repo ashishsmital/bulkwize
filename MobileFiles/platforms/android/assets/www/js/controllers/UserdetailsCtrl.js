@@ -68,20 +68,15 @@ app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $h
         }
 
         if($scope.userDetails && $scope.userDetails.deliveryAddress){
-             $scoe.reg.delshopAddLine1 = $scope.userDetails.deliveryAddress.addressLine1;
-             $scoe.reg.delshopAddLine2 = $scope.userDetails.deliveryAddress.addressLine1;
-             $scoe.reg.delshopCity = $scope.userDetails.deliveryAddress.city;
-             $scoe.reg.delshopState =  $scope.userDetails.deliveryAddress.state;
-             $scoe.reg.delshopPincode = $scope.userDetails.deliveryAddress.pincode;
+             $scope.reg.delshopAddLine1 = $scope.userDetails.deliveryAddress.addressLine1;
+             $scope.reg.delshopAddLine2 = $scope.userDetails.deliveryAddress.addressLine1;
+             $scope.reg.delshopCity = $scope.userDetails.deliveryAddress.city;
+             $scope.reg.delshopState =  $scope.userDetails.deliveryAddress.state;
+             $scope.reg.delshopPincode = $scope.userDetails.deliveryAddress.pincode;
         }
 
 
         //$scope.reg.companyname = ;
         console.log($scope.userDetails);
     });
-
-
-
-
-
 });

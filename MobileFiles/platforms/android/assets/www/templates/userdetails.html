@@ -44,7 +44,7 @@
                         <div ng-message="required" class="error">Password is required</div>
                     </div>
                 </label>
-                
+
             </div>
             <div class="row">
                 <div class="col text-center"><button class="button  button-positive icon-right ion-chevron-right" ng-disabled="userInfo.$invalid" ng-click="goNextPrev(2)"> Personal Info</button></div>
@@ -69,7 +69,7 @@
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">PAN Number <sup>*</sup></span>
-                    <input type="text" placeholder="1234578" name="panumber" id="panumber" class="error" readonly ng-model="reg.panumber" required>
+                    <input type="text" placeholder="1234578" name="panumber" id="panumber" class="error" ng-model="reg.panumber" required>
                     <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.panumber.$touched)" ng-messages="personalInfo.panumber.$error" >
                         <div ng-message="required" class="error">PAN Number is required</div>
                     </div>
@@ -140,33 +140,33 @@
             <div class="list">
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Add line 1 <sup>*</sup></span>
-                    <textarea ng-model="reg.delAddLine1" name="delAddLine1" id="delAddLine1" required></textarea>
-                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delAddLine1.$touched )" ng-messages="deliveryInfo.delAddLine1.$error" >
+                    <textarea ng-model="reg.delshopAddLine1" name="delshopAddLine1" id="delshopAddLine1" required></textarea>
+                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delshopAddLine1.$touched )" ng-messages="deliveryInfo.delshopAddLine1.$error" >
                         <div ng-message="required" class="error">Address1 is required</div>
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Add line 2 </span>
-                    <textarea ng-model="reg.delAddLine2" name="delAddLine2" id="delAddLine2" required></textarea>
+                    <textarea ng-model="reg.delshopAddLine2" name="delshopAddLine2" id="delshopAddLine2" required></textarea>
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">City <sup>*</sup></span>
-                    <textarea ng-model="reg.delCity" name="delCity" id="delpCity" required></textarea>
-                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delCity.$touched )" ng-messages="deliveryInfo.delCity.$error" >
+                    <textarea ng-model="reg.delshopCity" name="delshopCity" id="delshopCity" required></textarea>
+                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delshopCity.$touched )" ng-messages="deliveryInfo.delshopCity.$error" >
                         <div ng-message="required" class="error">City is required</div>
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">State <sup>*</sup></span>
-                    <textarea ng-model="reg.delState" name="delState" id="delState" required></textarea>
-                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delState.$touched )" ng-messages="deliveryInfo.delState.$error" >
+                    <textarea ng-model="reg.delshopState" name="delshopState" id="delshopState" required></textarea>
+                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delshopState.$touched )" ng-messages="deliveryInfo.delshopState.$error" >
                         <div ng-message="required" class="error">State is required</div>
                     </div>
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Pin code <sup>*</sup></span>
-                    <textarea ng-model="reg.delPincode" name="delPincode" id=delPincode" required></textarea>
-                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delPincode.$touched )" ng-messages="deliveryInfo.delPincode.$error" >
+                    <textarea ng-model="reg.delshopPincode" name="delshopPincode" id=delPincode" required></textarea>
+                    <div class="validation-error" ng-if="(deliveryInfo.$submitted || deliveryInfo.delshopPincode.$touched )" ng-messages="deliveryInfo.delPincode.$error" >
                         <div ng-message="required" class="error">Pin code is required</div>
                     </div>
                 </label>

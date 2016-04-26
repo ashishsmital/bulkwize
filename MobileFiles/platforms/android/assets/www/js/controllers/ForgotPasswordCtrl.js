@@ -101,7 +101,11 @@ app.controller('ForgotPasswordCtrl', function($scope, $rootScope, $ionicLoading,
 
                 if(!response.data.data[0]){
                     $ionicLoading.hide();
-                    return;
+                    var alertPopup = $ionicPopup.alert({
+                        title: 'Info',
+                        template: 'The mobile number does not exist, Please check the mobile number'
+                    });
+
                 }
 
                 if(response.data.data[0].Bulkwize){
