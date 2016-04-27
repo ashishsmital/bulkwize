@@ -55,6 +55,39 @@ app.factory('AuthServices', function ($http,$q, $ionicPopup , $state, EnvConfig)
             }).then(function successCallback(data) {
 
                 if(data.data.data[0]){
+
+                    //send otp for the entered mobile number
+                    $http({
+                        method: 'POST',
+                        url: EnvConfig.HOST+'sms2factor/sendOTP/',
+                        data: {'phonenumber':mobNo}
+                    }).then(function successCallback(data) {
+                        deferred.resolve(false);
+                    },function errorCallback(data) {
+                        deferred.resolve(true);
+                    });
+
+
+                }else{
+                    deferred.resolve(true);
+                }
+            },function errorCallback(data) {
+                deferred.resolve(true);
+            });
+            return promise;
+
+        },
+
+        //checking if the user entered OTP is valid
+        isOTPValid: function( otpValue ){
+            var deferred = $q.defer();
+            var promise = deferred.promise;
+            $http({
+                method: 'GET',
+                url: EnvConfig.HOST+'sms2factor/verifyOTP/'+otpValue
+            }).then(function successCallback(data) {
+
+                if(data.message=='Success'){
                     deferred.reject(false);
                 }else{
                     deferred.resolve(true);
@@ -65,6 +98,7 @@ app.factory('AuthServices', function ($http,$q, $ionicPopup , $state, EnvConfig)
             });
             return promise;
         },
+
 
 
 

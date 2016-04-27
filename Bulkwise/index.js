@@ -28,6 +28,7 @@ var order = require('order/controller/Order.js');
 var utilities = require('utilities/controller/Utilities.js');
 var payment = require('payment/controller/Payment.js');
 var morgan  = require('morgan');
+var sms2factor = require('sms2factor');
 
 
 //post body parser
@@ -224,5 +225,6 @@ app.use('/order', order);
 app.use('/user', user);
 app.use('/utilities', utilities);
 app.use('/payment', payment);
+app.use('/sms2factor', sms2factor);
 console.log("The dir name is -- "+ __dirname+'../appcontent');
 app.use('/appcontent',express.static(__dirname+'/../appcontent'));

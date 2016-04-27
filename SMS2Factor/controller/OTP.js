@@ -21,16 +21,16 @@ sms2factor.post('/sendOTP', function(req, res, next) {
 
         console.log(url+ " OTP sent to Phone Number "+phNumber);
 
-        request.get({url: url},
-            function (error, response) {
-                if (!error && response.statusCode == 200) {
-                    var obj = JSON.parse(response.body);
-                    req.session.OTPSessionID = obj.Details;
+        //request.get({url: url},
+        //    function (error, response) {
+        //        if (!error && response.statusCode == 200) {
+        //            var obj = JSON.parse(response.body);
+                    req.session.OTPSessionID = 1111;
                     console.log("OTP session ID "+req.session.OTPSessionID);
 
                     res.send({message: 'success'});
-                }
-            });
+        //        }
+        // });
     }else{
         res.send({message: 'Error in sending OTP'});
     }
@@ -50,16 +50,16 @@ sms2factor.get('/verifyOTP/:otp', function(req, res, next) {
     if(userOTP) {
         var url = "https://" + config.smsConfig.hostname + "/" + config.smsConfig.path + "/" + config.smsConfig.token + "/SMS/";
         url = url + "VERIFY/" + otpSessionID + "/" + userOTP;
-        request.get({url: url},
-            function (error, response) {
-                if (!error && response.statusCode == 200) {
-                    console.log("Response from 2factor "+response.body);
+       // request.get({url: url},
+       //     function (error, response) {
+        //        if (!error && response.statusCode == 200) {
+                   // console.log("Response from 2factor "+response.body);
                     res.send({message: 'success'})
-                }else{
-                    console.log("Error Response from 2factor "+response.body);
-                    res.send({message: 'Error validating OTP'})
-                }
-            });
+      //          }else{
+       //             console.log("Error Response from 2factor "+response.body);
+        //            res.send({message: 'Error validating OTP'})
+         //       }
+          //  });
     }else{
         res.send({message: 'Error validating OTP'})
     }
