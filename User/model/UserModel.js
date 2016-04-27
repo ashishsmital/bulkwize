@@ -4,6 +4,7 @@ var uuid = require('uuid');
 var db = require('dbutil').bucket;
 var ViewQuery = require('dbutil').ViewQuery;
 var N1qlQuery = require('dbutil').N1qlQuery;
+var moment = require('moment');
 
 /**
  * CategoryModel class
@@ -38,7 +39,8 @@ UserModel.save = function(data, callback) {
         shopAddress:data.shopAddress,
         deliveryAddress:data.deliveryAddress,
 		type:"com.bulkwise.User",
-		id:data.id
+		id:data.id,
+		createdDate:moment(new Date()).utcOffset("+05:30").format()
     }
 
     var documentId = data.id+'';

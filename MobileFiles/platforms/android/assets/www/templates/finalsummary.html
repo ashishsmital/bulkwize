@@ -1,11 +1,15 @@
-<ion-view title="Order Summary">
+  <ion-view title="Order Summary">
     <ion-content class="has-subheader">
 		<div class="list card" >
             <div class="item text-center">
                Your order has been successfully placed !!! Please find below the details of your order.
 			   <h2>Your order number is {{cartDetails.id}}</h2>
-			   
             </div>
+        </div>
+        <div>
+          <div class="total">&nbsp Total Payment Amount: {{cartDetails.totalOrderValue | number:2}}</div><br>
+          <div class="total">&nbsp Created Date: {{cartDetails.createdAt | date:'dd-MM-yyyy'}}</div><br>
+          <div class="total"><b>&nbsp Shipping Address :-</b> <br>&nbsp {{cartDetails.shipping_address.address1}},</br>&nbsp {{cartDetails.shipping_address.address2}},<br>&nbsp {{cartDetails.shipping_address.city}},  {{cartDetails.shipping_address.postcode}}</div><br>
         </div>
     	<div class="list font_price category_list">
 		    <div class="item" ng-repeat="orderDetail in cartDetails.products">
@@ -23,7 +27,7 @@
 			    <div class="mt_10">
 					<table class="table">
 						<tr>
-							<th>Units/case</th>
+							<th>Case of x units</th>
 							<th>Price/Unit</th>
 							<th>No of cases</th>
 						</tr>
@@ -35,7 +39,7 @@
 											    {{productVariant.productMRPUnit}}
 											</span>
 										</span>
-							<div>Disc. price: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
+							<div>You Pay: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div></td>
 								<td>
 									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>

@@ -2,11 +2,10 @@
  * Created by ghanavela on 3/19/2016.
  */
 
-app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,$ionicHistory, $ionicNavBarDelegate, $state, EnvConfig) {
+app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,$ionicHistory,
+                                    $ionicNavBarDelegate, $state, EnvConfig , AuthServices) {
+
 	console.log(JSON.stringify($ionicHistory.currentView()));
-
-
-
 	$rootScope.goToHome = function(){
 		$ionicHistory.nextViewOptions({
 			disableAnimate: false,
@@ -64,6 +63,39 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
     });
 
 
+    $http({
+        method: 'GET',
+        url: EnvConfig.HOST+'user/'
+    }).then(function successCallback(data) {
+        localStorage.setItem("isLogin",true);
+        localStorage.setItem("USER-DETAILS",JSON.stringify(data.data.data[0].Bulkwize));
+        if(data.data.data[0].Bulkwize){
+            $rootScope.isLogin =  true;
+            $rootScope.userDetails = AuthServices.getUserDetails();
+        }else{
+            $ionicHistory.clearHistory();
+            $ionicNavBarDelegate.showBackButton(false);
+            $rootScope.isLogin = AuthServices.isLogin = false;
+            $rootScope.userDetails = [];
+            localStorage.setItem("isLogin",false);
+            localStorage.setItem("USER-DETAILS",'[]');
+            $state.go('app.home');
+
+        }
+
+    }, function errorCallback(data) {
+        $ionicHistory.clearHistory();
+        $ionicNavBarDelegate.showBackButton(false);
+        $rootScope.isLogin = AuthServices.isLogin = false;
+        $rootScope.userDetails = [];
+        localStorage.setItem("isLogin",false);
+        localStorage.setItem("USER-DETAILS",'[]');
+        $state.go('app.home');
+    });
+
+
+
+
 
     $http({
         method: 'GET',
@@ -99,5 +131,5 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
     });
 
     console.log($rootScope.cartNumber);
-
+	
 });

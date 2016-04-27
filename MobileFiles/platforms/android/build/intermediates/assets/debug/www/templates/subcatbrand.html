@@ -1,0 +1,39 @@
+<ion-view title="{{title}}" ng-init="count=0">
+	<div class="item-input-inset has-header padding_6">
+		<label class="item-input-wrapper">
+		    <i class="icon ion-ios-search placeholder-icon"></i>
+		    <input type="search" placeholder="Search" ng-model="search">
+		</label>
+		<button class="button button-small button-calm" ui-sref="app.search({ searchId: search})">
+	     	<i class="icon ion-ios-search"></i>
+	    </button>
+	</div>
+  	<ion-content class="has-subheader">
+
+	  		<owl-slider class="owl-carousel checkbox-slider">
+
+	          	<ion-checkbox ng-model="checked[$index]" owl-carousel-item="" ng-repeat="items in subCategory" owl-carousel-item="" class="item" ng-change="change(items)" ng-true-value="{{items.Bulkwize.id}}"
+                      ng-false-value="''">
+
+	            	<img ng-src="{{envHost+items.Bulkwize.category_img_url}}">
+	            	<span class="perctenage_layout"> {{items.Bulkwize.maximum_discount_percentage}}% Off</span>
+	            	<div class="subcategory">{{items.Bulkwize.category_name | limitTo: 20}} <span ng-show="items.Bulkwize.category_name.length > 20">...</span></div>
+	            </ion-checkbox>
+
+	    	</owl-slider>
+
+        <div class="list font_price">
+        	<div class="list font_price category_list">
+			    <div class="item" ng-repeat="list in lists" ng-show="list.brand" ng-click="categoryLink(list)">
+			    	<div class="left_thumb">
+			      		<img ng-src="{{envHost+list.brand.productBrandImageURL}}">
+			      	</div>
+			      	<div>
+				      	<h2>{{list.brand.productBrandName}}</h2>
+				      	<!--<p>{{list.brand.productShortSummary}}</p>-->
+				    </div>
+			    </div>
+			</div>
+		</div>
+  	</ion-content>
+</ion-view>

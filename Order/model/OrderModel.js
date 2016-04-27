@@ -40,7 +40,7 @@ OrderModel.createOrder = function(userId, callback) {
             return;
         }
 		console.log("retrieved the shopping cart for user id --" + userId + ". The order is " + result.data[0].Bulkwize);
-		var orderObj = result.data[0].Bulkwize;
+		var orderObj = _.clone(result.data[0].Bulkwize);
 		orderObj.type="com.bulkwise.Order";
 		orderObj.id=orderId;
 		orderObj.createdAt= moment(new Date()).utcOffset("+05:30").format();
@@ -197,7 +197,7 @@ OrderModel.getShoppingCartById = function(attribute,value, callback) {
  *          http callback
  */
 OrderModel.closeShoppingCart = function(documentId,jsonObject, callback) {
-
+	console.log("Closing shopping cart for cart id -- " + documentId + " and the cart value being updated is " + JSON.stringify(jsonObject));
     db.upsert(documentId, jsonObject, function(error, result) {
         if(error) {
             callback(error, null);

@@ -27,6 +27,7 @@ app.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope, $h
         $ionicPopover.fromTemplateUrl('templates/partials/user-menu-popover.html', {
             scope: $scope,
         }).then(function(popover) {
+            $rootScope.isLogin = AuthServices.isLogin = true;
             $scope.popover = popover;
             $scope.popover.show($event);
 
