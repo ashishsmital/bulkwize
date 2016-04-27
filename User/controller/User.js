@@ -2,6 +2,8 @@ var express = require('express');
 var _ = require('underscore');
 var user = express.Router();
 var UserModel = require('../model/UserModel.js');
+var utilities = require('utilities/controller/Utilities.js');
+var request = require('request');
 
 
 /**
@@ -43,14 +45,14 @@ user.post('/', function (req, res, next) {
                     return res.status(400).send(error);
                 }
                 console.log('User Created');
-				utilities.sendSMS(req.user.user,"Thanks for registering at Bulkwiize, Your user name is " + orderResult.data.mobileNumber + "and password is" + orderResult.data.password + ". Happy to serve you. - Bulkwize", function(error,result){
+				utilities.sendSMS(req.user.user,"Thanks for registering at Bulkwiize, Your user name is " + req.body.mobileNumber + "and password is" + req.body.password + ". Happy to serve you. - Bulkwize", function(error,result){
 				if(error) {
-						console.log("There was an error sending SMS to supplier and the error message was " + result.data);
+						console.log("There was an error while sending sms for registration success message" + result.data);
 					}
 				if(result.data.Status != undefined && result.data.Status != null && result.data.Status=='Error'){
-					console.log("There was an error sending SMS to supplier and the error message was " + result.data);
+					console.log("There was an error while sending sms for registration success message" + result.data);
 				}
-					console.log("SMS was successfully sent to supplier " + result.data);
+					console.log("SMS was successfully sent for registration" + result.data);
 			});
                 res.send(result);
             });
