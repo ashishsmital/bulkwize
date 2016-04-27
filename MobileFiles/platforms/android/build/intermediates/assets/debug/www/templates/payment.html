@@ -1,0 +1,24 @@
+<ion-view view-title="Payment">
+  	<ion-content>
+    	<div class="list font_price">
+		    <div class="item item-divider">
+			    Card Info
+			</div>
+			<label class="item item-input card-num-input">
+			  	<input type="tel" ng-model="checkout.cc" ng-focus="onNumFocus()" ng-blur="onNumBlur()" placeholder="Credit Card Number" class="ng-valid ng-dirty">
+			  	<i class="icon ion-card" style="width: 40px; text-align: center; color: rgb(51, 51, 51);"></i>
+			</label>
+			<label class="item item-input card-num-input">
+			  	<input type="tel" ng-model="checkout.cc" ng-focus="onNumFocus()" ng-blur="onNumBlur()" placeholder="MM/YYYY" class="ng-valid ng-dirty">
+			  	<!-- <i class="icon ion-card" style="width: 40px; text-align: center; color: rgb(51, 51, 51);"></i> -->
+			</label>
+			<label class="item item-input card-num-input">
+			  	<input type="tel" ng-model="checkout.cc" ng-focus="onNumFocus()" ng-blur="onNumBlur()" placeholder="Pin" class="ng-valid ng-dirty">
+			  	<!-- <i class="icon ion-card" style="width: 40px; text-align: center; color: rgb(51, 51, 51);"></i> -->
+			</label>
+		</div>
+  	</ion-content>
+  	<ion-cart-footer class="bar bar-footer bar-assertive">
+  		<div class="title cart-footer">Pay</div>
+  	</ion-cart-footer>
+</ion-view>

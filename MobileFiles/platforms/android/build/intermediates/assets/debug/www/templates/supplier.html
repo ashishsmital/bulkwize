@@ -1,0 +1,60 @@
+<ion-view title="I am a supplier">
+  <ion-content class="has-header">
+    <div class="padding">
+        Thanks for showing your interest to become a supplier on our platform. Please fill the below details and we will get in touch with you at the earliest to know more about your business
+    </div>
+
+    <form class="form-horizontal padding_col6_left" role="form" name="supplier" novalidate method="post" ng-submit="submit(supplier.$valid, user)" autocomplete="off">
+      <div class="list">
+
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">First Name <sup>*</sup></span>
+            <input type="text" placeholder="John" name = "firstname"  id ="firstname" class = "error" ng-model="user.firstname" required>
+            <div class="validation-error" ng-if="(supplier.$submitted || supplier.firstname.$touched)" ng-messages="supplier.firstname.$error" >
+                <div ng-message="required" class="error">First Name is required</div>
+            </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Last Name <sup>*</sup></span>
+            <input type="text" placeholder="Doe"  name = "lastname" id="lastname" class = "error" ng-model="user.lastname" required>
+            <div class="validation-error" ng-if="(supplier.$submitted || supplier.lastname.$touched)" ng-messages="supplier.lastname.$error" >
+                <div ng-message="required" class="error">Last Name is required</div>
+            </div>
+        </label>
+		<label class="item item-input item-stacked-label">
+            <span class="input-label">Business Name <sup>*</sup></span>
+            <input type="text" placeholder="name"  name = "businessname" id="businessname" class = "error" ng-model="user.businessname" required>
+            <div class="validation-error" ng-if="(supplier.$submitted || supplier.businessname.$touched)" ng-messages="supplier.businessname.$error" >
+                <div ng-message="required" class="error">Business Name is required</div>
+            </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">City <sup>*</sup></span>
+            <input type="text" placeholder="bangalore" name = "city" id ="city" class = "error" ng-model="user.city" ng-value="Bangalore" readonly="readonly" required>
+            <div class="validation-error" ng-if="(supplier.$submitted || supplier.city.$touched)" ng-messages="supplier.city.$error" required>
+                <div ng-message="required" class="error">City is required</div>
+            </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Mobile Number <sup>*</sup></span>
+            <input type="number" placeholder="+91 XXXXXXXXXX" name = "mobileNumber" id="mobileNumber" class = "error" ng-model="user.mobileNumber" maxlength="13" required>
+            <div class="validation-error" ng-if="(supplier.$submitted || supplier.mobileNumber.$touched)" ng-messages="supplier.mobileNumber.$error" >
+                <div ng-message="required" class="error">MobileNumber required</div>
+            </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Brief note about my business <sup>*</sup></span>
+            <textarea maxlength="500" name = "briefNote" id="briefNote" ng-model="user.briefNote" required></textarea>
+            <div class="validation-error" ng-if="(supplier.$submitted || supplier.briefNote.$touched)" ng-messages="supplier.briefNote.$error" >
+                <div ng-message="required" class="error">Brief note required</div>
+            </div>
+        </label>
+        
+        
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Please Contact Me</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>
