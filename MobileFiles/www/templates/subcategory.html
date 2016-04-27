@@ -27,12 +27,12 @@
 					    <div class="clear"></div>
 					</div>
 					<div class="mt_10">
-						<table class="table">
+						<table class="table bz-sub-cat-tbl" >
 							<tr>
 
-								<th>Case of</th>
-								<th>Price/Unit</th>
-								<th>No of cases</th>
+								<th >Case of</th>
+								<th width="80%">Price/Unit</th>
+								<th >No of cases</th>
 							</tr>
 							<tbody>
 								<tr ng-repeat="productVariant in list.brand.productVariants">
@@ -51,13 +51,21 @@
 										<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
 									</td>
 									<td>
-										<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
-								      	<span class="product-quantity">{{productVariant.productOrderedQty}}</span>
-								      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
+										<div class="text-center bz-mar-bot">
+											<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+										</div>
+								      	<div class="text-center ">
+											<div class="product-quantity">{{productVariant.productOrderedQty}}</div>
+										</div>
+										<div class="text-center bz-mar-top">
+											<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
+										</div>
+
 									</td>
 								</tr>
 							</tbody>
 						</table>
+
 					</div>
 
 					<div class="row">

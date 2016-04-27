@@ -543,3 +543,17 @@ ion-popover-view.user-menu-popover ion-content {
 }
 
 
+
+.bz-mar-top{
+    margin-top: 5px !important;
+}
+
+.bz-mar-bot{
+    margin-bottom: 5px !important;
+}
+
+.bz-sub-cat-tbl {
+    font-size: 14px;
+}
+
+

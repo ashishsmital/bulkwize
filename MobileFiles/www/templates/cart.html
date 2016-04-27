@@ -20,10 +20,10 @@
 			    </div>
 
 			    <div class="mt_10">
-					<table class="table">
+					<table class="table bz-sub-cat-tbl">
 						<tr>
 							<th>Case of</th>
-							<th>Price/Unit</th>
+							<th width="80%">Price/Unit</th>
 							<th>No of cases</th>
 						</tr>
 						<tbody>
@@ -40,9 +40,16 @@
 							<div>You Pay: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div></td>
 								<td>
-									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
-							      	<span class="product-quantity">{{productVariant.quantity}}</span>
-							      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
+									<div class="text-center bz-mar-bot">
+										<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+									</div>
+							      	<div class="text-center">
+										<div class="product-quantity">{{productVariant.quantity}}</div>
+									</div>
+
+							      	<div class="text-center bz-mar-top">
+										<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
+									</div>
 								</td>
 							</tr>
 						</tbody>
