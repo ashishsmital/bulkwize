@@ -558,20 +558,18 @@ ion-popover-view.user-menu-popover ion-content {
 
 
 .bz-product-icon-container{
-    border:1px solid #999;
+    margin-bottom:15px;
+    border:1px solid #E2E1E1;
     text-align: center;
     margin-right: 2px;
 }
 
+
 .bz-product-icon-container img{
-    max-height: 100px;
-    min-height: 80px;
+    max-height: 90px;
+    min-height: 90px;
     padding-top: 5px;
     padding-bottom: 5px;
-}
-
-.bz-product-slider .slider-pager{
-   bottom: 10px !important;
 }
 
 
