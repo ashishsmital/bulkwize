@@ -19,10 +19,16 @@ user.post('/', function (req, res, next) {
         lastName: req.body.lastname,
         pan: req.body.pan,
         email: req.body.email,
+		vatLicense:data.vatLicense,
+		stptLicense:data.stptLicense,
+		selLicense:data.selLicense,
+		tradeLicense:data.tradeLicense,
+		hawkerLicense:data.hawkerLicense,
         shopAddress: req.body.shopAddress,
         deliveryAddress: req.body.deliveryAddress,
 		type:"com.bulkwise.User",
-		id: req.body.mobileNumber
+		id: req.body.mobileNumber,
+		createdDate:moment(new Date()).utcOffset("+05:30").format()
     }
     var key;
     console.log('Creating user');
