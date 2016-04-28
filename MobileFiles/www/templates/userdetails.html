@@ -37,13 +37,6 @@
 
                     </div>
                 </label>
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label">Password <sup>*</sup></span>
-                    <input type="password" placeholder="****" name="password" id="password" class="error" readonly ng-model="reg.password" required>
-                    <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.password.$touched)" ng-messages="userInfo.password.$error" >
-                        <div ng-message="required" class="error">Password is required</div>
-                    </div>
-                </label>
 
             </div>
             <div class="row">
@@ -67,13 +60,7 @@
                         <div ng-message="required" class="error">Last Name is required</div>
                     </div>
                 </label>
-                <label class="item item-input item-stacked-label">
-                    <span class="input-label">PAN Number <sup>*</sup></span>
-                    <input type="text" placeholder="1234578" name="panumber" id="panumber" class="error" ng-model="reg.panumber" required>
-                    <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.panumber.$touched)" ng-messages="personalInfo.panumber.$error" >
-                        <div ng-message="required" class="error">PAN Number is required</div>
-                    </div>
-                </label>
+                
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Email <sup>*</sup></span>
                     <input type="email" placeholder="sample@sample.com" name="email" id="email" class="error" readonly ng-model="reg.email" required>
