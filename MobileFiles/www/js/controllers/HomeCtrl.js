@@ -15,11 +15,11 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ioni
 	}
 
     // Called each time the slide changes
-    $scope.slideHasChanged = function(index) {
+    $scope.slideHasChangedProd = function(index) {
         if ( ($ionicSlideBoxDelegate.count() -1 ) == index ) {
             $timeout(function(){
                 $ionicSlideBoxDelegate.slide(0);
-            },3000);
+            },5000);
         }
     };
 

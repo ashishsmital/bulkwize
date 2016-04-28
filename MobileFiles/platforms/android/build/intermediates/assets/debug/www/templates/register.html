@@ -34,6 +34,14 @@
                       <div ng-message="compareTo" class="error">Oops! Please confirm your password</div>
                   </div>
               </label>
+              <label class="item item-input item-stacked-label">
+                  <span class="input-label">OTP <sup>*</sup></span>
+                  <input type="text" placeholder="OTP" name="otp" id="otp" otp-check class="error"  ng-model="reg.otp" required >
+                  <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.otp.$touched || userInfo.otp.$error.otherModelValue)" ng-messages="userInfo.otp.$error" >
+                      <div ng-message="required" class="error">OTP is required</div>
+                      <div ng-message="checkOtp" class="error">Invalid OTP</div>
+                  </div>
+              </label>
           </div>
           <div>
 
