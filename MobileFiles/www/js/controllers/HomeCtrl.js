@@ -15,8 +15,10 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ioni
 	}
 
     // Called each time the slide changes
-    $scope.slideChanged = function(index) {
+    $scope.slideHasChanged = function(index) {
+
         $scope.slideIndex = index;
+       console.log("index "+index);
     };
 
     $timeout(function(){
