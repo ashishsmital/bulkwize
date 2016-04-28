@@ -16,19 +16,15 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ioni
 
     // Called each time the slide changes
     $scope.slideHasChanged = function(index) {
-
-        $scope.slideIndex = index;
-       console.log("index "+index);
+        if ( ($ionicSlideBoxDelegate.count() -1 ) == index ) {
+            $timeout(function(){
+                $ionicSlideBoxDelegate.slide(0);
+            },3000);
+        }
     };
 
-    $timeout(function(){
-        $scope.slides = ['1','2'];
-        $ionicSlideBoxDelegate.update();
-    },900);
 
-
-
-    $ionicLoading.show({
+     $ionicLoading.show({
         content: 'Loading',
         animation: 'fade-in',
         showBackdrop: true,
@@ -64,6 +60,7 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ioni
     });
 
 
+
     $http({
         method: 'GET',
         url: EnvConfig.HOST+'products/topdiscounts/10'
@@ -71,8 +68,9 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ioni
 
        $scope.productLists = _.chunk(data.data.data, 3);
         $timeout(function(){
-            $scope.slides = $scope.productLists;
+
             $ionicSlideBoxDelegate.update();
+            $ionicSlideBoxDelegate.start();
         },900);
 
 
