@@ -24,10 +24,10 @@
 				</div>
 
 			</div>
-			<ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="isProduct">
-			  	<ion-slide  ng-repeat ="productList in productLists">
+			<ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="isProduct" class="bz-product-slider">
+			  	<ion-slide  ng-repeat ="productList in productLists" >
 			    	<div class="row">
-			            <div class="col col-33" ng-repeat ="product in productList">
+			            <div class="col col-33 bz-product-icon-container" ng-repeat ="product in productList">
 			               <a ui-sref="app.subcategory({ prodname: product.productBrandName})">
 								<span class="perctenage_layout"> {{product.maxDisc}}% Off</span>
 			                	<img ng-src="{{envHost+product.productBrandImageURL}}" />
