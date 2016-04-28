@@ -51,7 +51,25 @@ user.post('/', function (req, res, next) {
                     return res.status(400).send(error);
                 }
                 console.log('User Created');
-				utilities.sendSMS(req.body.mobileNumber,"Thanks for registering at Bulkwiize, Your user name is " + req.body.mobileNumber + "and password is" + req.body.password + ". Happy to serve you. - Bulkwize", function(error,result){
+				utilities.sendEmail('info@bulkwize.com',"User Mobile Number - " + req.body.mobileNumber + "User registered on - " +moment(new Date()).utcOffset("+05:30").format(),JSON.stringify(req.body),"None",function(error, result){
+				    if(error) {
+					    console.log("Could not send Email for user Registration.");
+				}
+				console.log('User Details Are :-');
+				console.log('Shop Name :-' + jsonObject.shopName);
+				console.log('First Name :-' + jsonObject.firstName);
+				console.log('Last Name :-' + jsonObject.lastName);
+				console.log('Password :-' + jsonObject.password);
+				console.log('PAN :-' + jsonObject.pan);
+				console.log('E-mail :-' + jsonObject.email);
+				console.log('Vat License :-' + jsonObject.vatLicense);
+				console.log('Service/Professional License :-' + jsonObject.stptLicense);
+				console.log('Shops & Establishment License :-' + jsonObject.selLicense);
+				console.log('Trade License :-' + jsonObject.tradeLicense);
+				console.log('Shop Address :-' + jsonObject.shopAddress);
+				console.log('Delivery Address :-' + jsonObject.deliveryAddress);
+		    });
+				utilities.sendSMS(req.body.mobileNumber,"Thanks for registering at Bulkwize, Your user name is " + req.body.mobileNumber + "and password is" + req.body.password + ". Happy to serve you. - Bulkwize", function(error,result){
 					if(error) {
 							console.log("There was an error while sending sms for registration success message" + result.data);
 						}
@@ -139,6 +157,28 @@ user.get('/forgotpassword/:mobileNumber', function (req, res, next) {
 
 });
 
+user.put('/', function (req, res, next) {
+    var key;
+    var mobileNumber = req.body.mobileNumber;
+    key = 'com.bulkwise.User::' + mobileNumber;
+    
+    UserModel.getByAttribute("id", key, function (error, result) {
+
+        if (result != null && !_.isUndefined(result) && result.data.length > 0) {
+                console.log('the user retrieved is ' + JSON.stringify(result.data));
+				var retrivedUser = result.data[0].Bulkwize;
+				retrivedUser.deliveryAddress = req.body.deliveryAddress;
+				UserModel.save(retrivedUser, function (error, result) {
+					if (error) {
+						return res.status(400).send(error);
+					}
+					console.log('User updated as part of save user from my profile');
+					res.send(result);
+				});
+		}   
+	});		
+});
+
 // update password for the user
 user.put('/forgotpassword/', function (req, res, next) {
     var key;
@@ -163,7 +203,6 @@ user.put('/forgotpassword/', function (req, res, next) {
             return res.status(404).send(error);
         }
     });
-
 });
 
 //exporting user
