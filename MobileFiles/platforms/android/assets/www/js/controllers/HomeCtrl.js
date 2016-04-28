@@ -2,7 +2,7 @@
  * Created by ghanavela on 3/19/2016.
  */
 
-app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,$ionicHistory,
+app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,$ionicHistory,
                                     $ionicNavBarDelegate, $state, EnvConfig , AuthServices) {
 
 	console.log(JSON.stringify($ionicHistory.currentView()));
@@ -13,6 +13,18 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
 		});
 		$state.go('app.home');
 	}
+
+    // Called each time the slide changes
+    $scope.slideChanged = function(index) {
+        $scope.slideIndex = index;
+    };
+
+    $timeout(function(){
+        $scope.slides = ['1','2'];
+        $ionicSlideBoxDelegate.update();
+    },900);
+
+
 
     $ionicLoading.show({
         content: 'Loading',
@@ -56,6 +68,12 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
     }).then(function successCallback(data) {
 
        $scope.productLists = _.chunk(data.data.data, 3);
+        $timeout(function(){
+            $scope.slides = $scope.productLists;
+            $ionicSlideBoxDelegate.update();
+        },900);
+
+
        $scope.isProduct = true;
      }, function errorCallback(data) {
         console.log(data);

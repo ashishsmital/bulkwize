@@ -4,7 +4,7 @@ var user = express.Router();
 var UserModel = require('../model/UserModel.js');
 var utilities = require('utilities/controller/Utilities.js');
 var request = require('request');
-
+var moment = require('moment');
 
 /**
  * Save User
@@ -19,10 +19,16 @@ user.post('/', function (req, res, next) {
         lastName: req.body.lastname,
         pan: req.body.pan,
         email: req.body.email,
+		vatLicense:req.body.vatLicense,
+		stptLicense:req.body.stptLicense,
+		selLicense:req.body.selLicense,
+		tradeLicense:req.body.tradeLicense,
+		hawkerLicense:req.body.hawkerLicense,
         shopAddress: req.body.shopAddress,
         deliveryAddress: req.body.deliveryAddress,
 		type:"com.bulkwise.User",
-		id: req.body.mobileNumber
+		id: req.body.mobileNumber,
+		createdDate:moment(new Date()).utcOffset("+05:30").format()
     }
     var key;
     console.log('Creating user');
@@ -45,14 +51,14 @@ user.post('/', function (req, res, next) {
                     return res.status(400).send(error);
                 }
                 console.log('User Created');
-				utilities.sendSMS(req.user.user,"Thanks for registering at Bulkwiize, Your user name is " + req.body.mobileNumber + "and password is" + req.body.password + ". Happy to serve you. - Bulkwize", function(error,result){
-				if(error) {
+				utilities.sendSMS(req.body.mobileNumber,"Thanks for registering at Bulkwiize, Your user name is " + req.body.mobileNumber + "and password is" + req.body.password + ". Happy to serve you. - Bulkwize", function(error,result){
+					if(error) {
+							console.log("There was an error while sending sms for registration success message" + result.data);
+						}
+					if(result.data.Status != undefined && result.data.Status != null && result.data.Status=='Error'){
 						console.log("There was an error while sending sms for registration success message" + result.data);
 					}
-				if(result.data.Status != undefined && result.data.Status != null && result.data.Status=='Error'){
-					console.log("There was an error while sending sms for registration success message" + result.data);
-				}
-					console.log("SMS was successfully sent for registration" + result.data);
+						console.log("SMS was successfully sent for registration" + result.data);
 			});
                 res.send(result);
             });

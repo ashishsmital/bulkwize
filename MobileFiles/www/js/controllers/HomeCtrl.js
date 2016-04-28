@@ -2,7 +2,7 @@
  * Created by ghanavela on 3/19/2016.
  */
 
-app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,$ionicHistory,
+app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ionicLoading, $rootScope, $ionicSlideBoxDelegate,$ionicHistory,
                                     $ionicNavBarDelegate, $state, EnvConfig , AuthServices) {
 
 	console.log(JSON.stringify($ionicHistory.currentView()));
@@ -14,7 +14,17 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
 		$state.go('app.home');
 	}
 
-    $ionicLoading.show({
+    // Called each time the slide changes
+    $scope.slideHasChanged = function(index) {
+        if ( ($ionicSlideBoxDelegate.count() -1 ) == index ) {
+            $timeout(function(){
+                $ionicSlideBoxDelegate.slide(0);
+            },3000);
+        }
+    };
+
+
+     $ionicLoading.show({
         content: 'Loading',
         animation: 'fade-in',
         showBackdrop: true,
@@ -50,12 +60,20 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $ionicLoading, 
     });
 
 
+
     $http({
         method: 'GET',
         url: EnvConfig.HOST+'products/topdiscounts/10'
     }).then(function successCallback(data) {
 
        $scope.productLists = _.chunk(data.data.data, 3);
+        $timeout(function(){
+
+            $ionicSlideBoxDelegate.update();
+            $ionicSlideBoxDelegate.start();
+        },900);
+
+
        $scope.isProduct = true;
      }, function errorCallback(data) {
         console.log(data);

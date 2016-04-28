@@ -34,14 +34,6 @@
                       <div ng-message="compareTo" class="error">Oops! Please confirm your password</div>
                   </div>
               </label>
-              <label class="item item-input item-stacked-label">
-                  <span class="input-label">OTP <sup>*</sup></span>
-                  <input type="text" placeholder="OTP" name="otp" id="otp" otp-check class="error"  ng-model="reg.otp" required >
-                  <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.otp.$touched || userInfo.otp.$error.otherModelValue)" ng-messages="userInfo.otp.$error" >
-                      <div ng-message="required" class="error">OTP is required</div>
-                      <div ng-message="checkOtp" class="error">Invalid OTP</div>
-                  </div>
-              </label>
           </div>
           <div>
 
@@ -59,6 +51,10 @@
                       <div class="item " ng-if="!reg.isVatLicense">
                           <input type="text" placeholder="VAT License Number #" name="vatLicense" id="vatLicense"  ng-model="reg.vatLicense" readonly />
                       </div>
+					  <div class="validation-error" ng-if="reg.isVatLicense && reg.vatLicense.$invalid" ng-messages="reg.vatLicense.$error" >
+						<div ng-message="required" class="error">VAT License Number # is required.</div>
+						<div ng-message="pattern" class="error">Must be a valid 11 digit VAT number</div>
+					  </div>
 
                   </div>
               </div>
@@ -204,7 +200,7 @@
       </div>
     </form>
     <form class="form-horizontal padding_col6_left" role="form" name="shopInfo" ng-show="step3" novalidate method="post"  autocomplete="off">
-        <h4 class="text-center">Shop details</h4>
+        <h4 class="text-center">Shop Address</h4>
         <div class="list">
           <label class="item item-input item-stacked-label">
                   <span class="input-label">Add line 1 <sup>*</sup></span>
@@ -240,7 +236,7 @@
               </div>
           </label>
           <ion-list>
-              <ion-checkbox ng-model="reg.isSameBillingAdd" class="wrap-white-space">Billing address is same as shipping address.</ion-checkbox>
+              <ion-checkbox ng-model="reg.isSameBillingAdd" class="wrap-white-space">Delivery Address is same as Shop address.</ion-checkbox>
           </ion-list>
       </div>
       <div class="row">
@@ -249,7 +245,7 @@
       </div>
     </form>
     <form class="form-horizontal padding_col6_left" role="form" name="deliveryInfo" ng-show="step4" novalidate method="post" ng-submit="submit(deliveryInfo.$valid, reg)" autocomplete="off">
-        <h4 class="text-center">Delivery details</h4>
+        <h4 class="text-center">Delivery Address</h4>
         <div class="list">
         <label class="item item-input item-stacked-label">
           <span class="input-label">Add line 1 <sup>*</sup></span>

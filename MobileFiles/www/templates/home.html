@@ -9,7 +9,7 @@
 	  </button>
 	</div>
   	<ion-content class="has-subheader">
-		<ion-slide-box on-slide-changed="slideHasChanged($index)">
+		<ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager='true' slide-interval="3000" auto-play="true">
 		  	<ion-slide ng-repeat="bannerImage in promotionImage">
 		    	<div class="box">
 		    		<img ng-src="{{envHost+bannerImage}}" alt="" class="img-responsive height1">
@@ -24,11 +24,11 @@
 				</div>
 
 			</div>
-			<ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="isProduct">
-			  	<ion-slide  ng-repeat ="productList in productLists">
+			<ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="isProduct" class="bz-product-slider">
+			  	<ion-slide  ng-repeat ="productList in productLists" >
 			    	<div class="row">
-			            <div class="col col-33" ng-repeat ="product in productList">
-			               <a ui-sref="app.subcategory({ prodname: product.productBrandName})">
+			            <div class="col col-33 bz-product-icon-container" ng-repeat ="product in productList">
+			               <a ui-sref="app.subcategory({ prodname: product.productBrandName})" class="bz-prod-item">
 								<span class="perctenage_layout"> {{product.maxDisc}}% Off</span>
 			                	<img ng-src="{{envHost+product.productBrandImageURL}}" />
 			                </a>

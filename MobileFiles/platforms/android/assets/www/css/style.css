@@ -557,3 +557,33 @@ ion-popover-view.user-menu-popover ion-content {
 }
 
 
+.bz-product-icon-container{
+    margin-bottom:15px;
+    border:1px solid #E2E1E1;
+    text-align: center;
+    margin-right: 2px;
+}
+
+
+.bz-product-icon-container img{
+    max-height: 90px;
+    min-height: 90px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.bz-product-icon-container .perctenage_layout{
+    position: absolute;
+    padding: 3px 6px;
+    border-radius: 64px;
+    border: 2px solid #FFF;
+    background: #D55757;
+    color: #FFF;
+    top: 8px;
+    text-align: center;
+    z-index: 1;
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 11px;
+}
