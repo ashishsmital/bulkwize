@@ -319,7 +319,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.productVariants[0].sku_id=productId;
 				productObj.productVariants[0].productItemId=parsedRecord.ItemID;
 				productObj.productVariants[0].productMaterialCode=parsedRecord.Matcode;
-				productObj.productVariants[0].productUnitSizeWeightQty:parsedRecord.ProductSizeWeightQty,
+				productObj.productVariants[0].productUnitSizeWeightQty=parsedRecord.ProductSizeWeightQty,
 				productObj.productVariants[0].productMaterialDescription=parsedRecord.MaterialDescription;
 				productObj.productVariants[0].productEAN=parsedRecord.EAN;
 				productObj.productVariants[0].productOrderedQty=0;
