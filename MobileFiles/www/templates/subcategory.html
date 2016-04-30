@@ -29,13 +29,16 @@
 					<div class="mt_10">
 						<table class="table bz-sub-cat-tbl" >
 							<tr>
-
+								<th>Size</th>
 								<th >Case of</th>
 								<th width="80%">Price/Unit</th>
 								<th >No of cases</th>
 							</tr>
 							<tbody>
 								<tr ng-repeat="productVariant in list.brand.productVariants">
+									<td>
+										<span>{{productVariant.productUnitSizeWeightQty}}</span>
+								    </td>
 									<td>
 										<span>{{productVariant.productCountInCase}}</span>
 										<div> units</div>
