@@ -279,6 +279,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 						sku_id:parsedRecord.EAN,
 						productItemId:parsedRecord.ItemID,
 						productMaterialCode:parsedRecord.Matcode,
+						productUnitSizeWeightQty= parsedRecord.ProductSizeWeightQty,
 						productMaterialDescription:parsedRecord.MaterialDescription,
 						productEAN:parsedRecord.EAN,
 						productCountInCase:parsedRecord.CaseCount,
