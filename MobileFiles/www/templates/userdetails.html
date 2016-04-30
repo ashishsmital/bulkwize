@@ -60,13 +60,11 @@
                         <div ng-message="required" class="error">Last Name is required</div>
                     </div>
                 </label>
-                
+
                 <label class="item item-input item-stacked-label">
-                    <span class="input-label">Email <sup>*</sup></span>
-                    <input type="email" placeholder="sample@sample.com" name="email" id="email" class="error" readonly ng-model="reg.email" required>
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="sample@sample.com" name="email" id="email" class="error" readonly ng-model="reg.email">
                     <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.email.$touched )" ng-messages="personalInfo.email.$error" >
-                        <div ng-message="required" class="error">Email is required</div>
-                        <div ng-message="email" class="error">This needs to be a valid email</div>
                     </div>
                 </label>
 
