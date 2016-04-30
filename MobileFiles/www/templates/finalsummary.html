@@ -41,11 +41,9 @@
 										</span>
 							<div>You Pay: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div></td>
-								<td>
-									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
-							      	<span class="product-quantity">{{productVariant.quantity}}</span>
-							      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
-								</td>
+              <td>
+                  {{productVariant.quantity}}
+              </td>
 							</tr>
 						</tbody>
 					</table>
