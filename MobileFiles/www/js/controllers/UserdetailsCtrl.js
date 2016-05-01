@@ -135,12 +135,7 @@ app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $h
                             template: 'Thank you for updating with us'
                         });
 
-                        alertPopup.then(function(res) {
-                            console.log(res);
-                            if(res == true){
-                                $state.go('app.login');
-                            }
-                        });
+
                     }
                     $ionicLoading.hide();
                 }, function errorCallback(data) {
