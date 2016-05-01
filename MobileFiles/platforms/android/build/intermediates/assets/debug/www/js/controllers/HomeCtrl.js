@@ -91,8 +91,8 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ioni
             $rootScope.isLogin =  true;
             $rootScope.userDetails = AuthServices.getUserDetails();
         }else{
-            $ionicHistory.clearHistory();
-            $ionicNavBarDelegate.showBackButton(false);
+            //$ionicHistory.clearHistory();
+            //$ionicNavBarDelegate.showBackButton(false);
             $rootScope.isLogin = AuthServices.isLogin = false;
             $rootScope.userDetails = [];
             localStorage.setItem("isLogin",false);
@@ -102,8 +102,9 @@ app.controller('HomeCtrl', function($scope, $stateParams, $http, $timeout, $ioni
         }
 
     }, function errorCallback(data) {
-        $ionicHistory.clearHistory();
-        $ionicNavBarDelegate.showBackButton(false);
+
+        //$ionicHistory.clearHistory();
+        //$ionicNavBarDelegate.showBackButton(false);
         $rootScope.isLogin = AuthServices.isLogin = false;
         $rootScope.userDetails = [];
         localStorage.setItem("isLogin",false);
