@@ -13,7 +13,7 @@
   			<div class="col col-50 bz-product-icon-container" ng-repeat="product in brand">
   				<div class="card">
 				  	<div class="item item-text-wrap">
-				    	<a ui-sref="app.subcategory({ prodname: product.productBrandName})">
+				    	<a ui-sref="app.subcategory({ prodname: product.productBrandName, suBrandId:product.productCategoryId})">
 							<span class="perctenage_layout"> {{product.maxDisc}}% Off</span>
 							<img ng-src="{{envHost+product.productBrandImageURL}}" class="img-responsive">
 						</a>

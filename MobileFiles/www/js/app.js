@@ -230,12 +230,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
 
     .state('app.subcategory',{
 		cache: false,
-        url:'/subcategory/:prodname',
-        views:{
+		url:'/subcategory/:prodname',
+		params:{prodname:null, suBrandId:null},
+		views:{
             'menuContent' : {
                 templateUrl: 'templates/subcategory.html',
                 controller: 'SubCategoryCtrl'
-            }
+			}
         }
     })
 
