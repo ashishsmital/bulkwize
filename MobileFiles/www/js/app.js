@@ -8,7 +8,7 @@
 var pushNotification;
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessages'])
 
-.run(function($ionicPlatform,$rootScope,$location, $window,RequestsService) {
+.run(function($ionicPlatform,$rootScope,$location, $window,$ionicNavBarDelegate,RequestsService) {
   $ionicPlatform.ready(function() {
 	  
 	  // initialise google analytics
@@ -25,10 +25,19 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
 //        $window.ga('create', 'UA-75906058-2', 'bulkwize.com');
  
         // track pageview on state change
-        $rootScope.$on('$stateChangeSuccess', function (event) {
+        $rootScope.$on('$stateChangeSuccess', function (event,toState) {
 			if (!$window.ga)
                     return;
             $window.ga('send', 'pageview', { page: $location.path() });
+
+            if(toState.name === 'app.finalsummary'){
+                $ionicNavBarDelegate.showBackButton(false);
+                debugger;
+            }else{
+
+                $ionicNavBarDelegate.showBackButton(true);
+            }
+
         });
 		
 		// end Google Analytics

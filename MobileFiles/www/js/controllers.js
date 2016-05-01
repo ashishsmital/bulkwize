@@ -510,7 +510,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 
 })
 
-.controller('FinalSummaryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window,$ionicNavBarDelegate,EnvConfig){
+.controller('FinalSummaryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window ,EnvConfig){
 
     $ionicLoading.show({
         content: 'Loading',
@@ -520,20 +520,24 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         showDelay: 0
     });
 
+    if($rootScope.orderId){
+        $http({
+            method: 'GET',
+            url: EnvConfig.HOST+'order/orderid/'+$rootScope.orderId+'/'
+        }).then(function successCallback(data) {
+            console.log(data.data.data[0].Bulkwize.updatedAt);
+            $scope.cartDetails = data.data.data[0].Bulkwize;
+            $ionicLoading.hide();
+        }, function errorCallback(data) {
+            console.log(data);
+            debugger;
+            $ionicLoading.hide();
+        });
 
-    $ionicNavBarDelegate.showBackButton(false);
+    }else{
+        $ionicLoading.hide();
+    }
 
-    $http({
-        method: 'GET',
-        url: EnvConfig.HOST+'order/orderid/'+$rootScope.orderId+'/'
-    }).then(function successCallback(data) {
-        console.log(data.data.data[0].Bulkwize.updatedAt);
-        $scope.cartDetails = data.data.data[0].Bulkwize;
-		$ionicLoading.hide();
-    }, function errorCallback(data) {
-        console.log(data);
-		$ionicLoading.hide();
-    });
 
 
 });
