@@ -23,12 +23,16 @@
         		</div>
                 <table class="table">
                     <tr>
+                       <th>Size</th>
                         <th>Case of</th>
-                        <th>Price/Unit</th>
+                        <th width="60%">Price/Unit</th>
                         <th>No of cases</th>
                     </tr>
                     <tbody>
                     <tr ng-repeat="productVariant in myOrder.Bulkwize.products[0].variants">
+                      <td>
+      									<span>{{productVariant.productUnitSizeWeightQty}}</span>
+      								</td>
                       <td>
                           <span>{{productVariant.productCountInCase}}</span>
                           <div> units</div>
