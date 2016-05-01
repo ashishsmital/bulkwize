@@ -10,7 +10,7 @@
 	</div>
   	<ion-content class="has-subheader">
   		<div class="row" ng-repeat="brand in brands">
-  			<div class="col col-50" ng-repeat="product in brand">
+  			<div class="col col-50 bz-product-icon-container" ng-repeat="product in brand">
   				<div class="card">
 				  	<div class="item item-text-wrap">
 				    	<a ui-sref="app.subcategory({ prodname: product.productBrandName})">
