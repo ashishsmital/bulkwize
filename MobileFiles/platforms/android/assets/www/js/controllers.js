@@ -510,7 +510,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 
 })
 
-.controller('FinalSummaryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window,EnvConfig){
+.controller('FinalSummaryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window,$ionicNavBarDelegate,EnvConfig){
 
     $ionicLoading.show({
         content: 'Loading',
@@ -519,6 +519,9 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         maxWidth: 200,
         showDelay: 0
     });
+
+
+    $ionicNavBarDelegate.showBackButton(false);
 
     $http({
         method: 'GET',

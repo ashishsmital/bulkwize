@@ -2,7 +2,7 @@
   "mailConfig":{
     "smtpHost":"smtp.gmail.com",
     "smtpPort":587,
-    "smtpAuthUser":"amit.tyagi@gmail.com",
+    "smtpAuthUser":"amit.tyagi@bulkwize.com",
     "smtpAuthPwd":"login1-2",
     "state":"Karnataka",
     "pincode":"560045",
