@@ -89,6 +89,14 @@ passport.use(new LocalStrategy({passReqToCallback:true},function(req,username, p
                             ShoppingCartModel.save(object,function(error,result){
                                 console.log('Got shopping cart for the session and saving for the user ')
                                 if(result && result.data.length >0){
+									console.log('Successfully converted session cart with the session id' + req.sessionID + " to a user specific session cart");
+									ShoppingCartModel.delete('com.bulkwise.Cart::'+req.sessionID,function(error, deleteSessionShoppingCart){
+										if (error) {
+											console.log('Error deleting session cart with the session id' + req.sessionID);
+										} else {
+											console.log('Successfully deleted session cart with the session id' + req.sessionID);
+										}
+									});
                                     return done(null, user);
 									
 									//return req.res.status(200).json({message:"Successfully logged in"});
