@@ -139,7 +139,7 @@ shoppingcart.put('/', function (req, res, next) {
 
                     var match = false;
                     var pdtFromDB = result.data[0].Bulkwize.products;
-
+					
                     _.each(pdtFromSite, function (ele) {
 
                         var prod = _.findWhere(pdtFromDB, {'id': ele.id});
@@ -147,9 +147,14 @@ shoppingcart.put('/', function (req, res, next) {
                             _.each(ele.variants, function (ele) {
 
                                 var variant = _.findWhere(prod.variants, {'sku_id': ele.sku_id});
-                                if (variant != null) {
-                                    variant.quantity = ele.quantity;
-                                } else {
+                                if (variant != null) { // existing variant coming from ui, so update its quantity if > 0 or delete that variant from array 
+									if(variant.quantity == 0){
+										prod = _.without(prod.variants, variant);
+									}else{
+										variant.quantity = ele.quantity;
+									}
+                                    
+                                } else { // new variant is coming from UI which did not earlier exist
                                     prod.variants.push(ele);
                                 }
 

@@ -170,8 +170,8 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
 		 for(var i =0 ; i< data.variants.length; i++){
             if(data.variants[i].quantity != 0){
                 $scope.cartProcess = true;
-				$scope.variants.push({"sku_id":data.variants[i].sku_id,"quantity":data.variants[i].quantity,"productCountInCase":data.variants[i].productCountInCase,"productUnitSizeWeightQty":data.variants[i].productUnitSizeWeightQty,"productMRPUnit":data.variants[i].productMRPUnit,"productDiscountPercentage":data.variants[i].productDiscountPercentage});
-            }
+			} // allow to call update even if 1 of the variants on the cart page as count >0 and then on server remove variants whose count is 0
+			$scope.variants.push({"sku_id":data.variants[i].sku_id,"quantity":data.variants[i].quantity,"productCountInCase":data.variants[i].productCountInCase,"productUnitSizeWeightQty":data.variants[i].productUnitSizeWeightQty,"productMRPUnit":data.variants[i].productMRPUnit,"productDiscountPercentage":data.variants[i].productDiscountPercentage});
             
         }
 
