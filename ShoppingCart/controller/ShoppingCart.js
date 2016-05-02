@@ -149,7 +149,8 @@ shoppingcart.put('/', function (req, res, next) {
                                 var variant = _.findWhere(prod.variants, {'sku_id': ele.sku_id});
                                 if (variant != null) { // existing variant coming from ui, so update its quantity if > 0 or delete that variant from array 
 									if(variant.quantity == 0){
-										prod = _.without(prod.variants, variant);
+										console.log("Product variant quantity is -- " + variant.quantity);
+										prod.variants = _.without(prod.variants, variant);
 									}else{
 										variant.quantity = ele.quantity;
 									}
