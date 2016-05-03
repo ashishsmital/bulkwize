@@ -1,0 +1,166 @@
+lsb_release -a
+openssl version -v
+
+# Couchbase Installation
+# http://docs.couchbase.com/admin/admin/Install/Ubuntu-install.html
+
+# Node JS installation
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash - sudo apt-get install -y nodejs
+
+# Couchbase init
+/opt/couchbase/bin/couchbase-cli cluster-init  --cluster-username=Administrator --cluster-password=Bulkwize --cluster-ramsize=2560 --cluster-index-ramsize=2560 --services=data,index,query -c 10.0.1.84:8091
+
+# Create Bucket
+/opt/couchbase/bin/couchbase-cli bucket-create --bucket=Bulkwize --bucket-type=couchbase --bucket-ramsize=1024 --bucket-replica=1 --enable-flush=1 --wait -c 10.0.1.84:8091 -u Administrator -p Bulkwize
+
+# Generic Ubuntu Instance AMI id -- ami-d05e75b8
+
+# install Oracle java 7 -- http://www.webupd8.org/2012/01/install-oracle-java-jdk-7-in-ubuntu-via.html
+sudo mkdir /opt/java-7
+cd /opt/java-7
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java7-installer
+sudo apt-get install oracle-java7-set-default
+
+# install Elastic search -- https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-14-04
+
+sudo mkdir elasticsearch-1.7.2
+cd elasticsearch-1.7.2
+sudo wget https://download.elastic.co/elasticsearch/elasticsearch/elasticsearch-1.7.2.deb
+sudo wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.2.0/elasticsearch-2.2.0.deb
+sudo dpkg -i elasticsearch-1.7.2.deb
+sudo update-rc.d elasticsearch defaults
+sudo service elasticsearch start
+
+# install elasticsearch couchbase plugin  -- http://developer.couchbase.com/documentation/server/4.1/connectors/elasticsearch-2.1/install-intro.html
+# https://github.com/couchbaselabs/elasticsearch-transport-couchbase
+
+cd /usr/share/elasticsearch
+
+sudo bin/plugin -install transport-couchbase -url https://github.com/couchbaselabs/elasticsearch-transport-couchbase/releases/download/v2.2.1.2/elasticsearch-transport-couchbase-2.2.1.2.zip
+
+sudo bin/plugin -install transport-couchbase -url http://packages.couchbase.com.s3.amazonaws.com/releases/elastic-search-adapter/2.1.1/elasticsearch-transport-couchbase-2.1.1.zip
+
+sudo vi /etc/elasticsearch/elasticsearch.yml "couchbase.password: Bulkwize"; 
+sudo vi /etc/elasticsearch/elasticsearch.yml "couchbase.username: Administrator" 
+
+curl -XPUT http://localhost:9200/_template/couchbase -d @plugins/transport-couchbase/couchbase_template.json 
+curl -XPUT http://localhost:9200/bulkwize
+curl -X POST -u Administrator:Bulkwize http://10.0.1.137:8091/internalSettings -d xdcrMaxConcurrentReps=8
+sudo service elasticsearch restart
+
+# Setting up XDCR replication  -- http://docs.couchbase.com/admin/admin/CLI/CBcli/cbcli-xdcr.html
+
+./couchbase-cli xdcr-setup -c 10.0.1.137:8091 -u Administrator  -p Bulkwize   --create  --xdcr-cluster-name=bulkwizedevcluster --xdcr-hostname=10.0.0.124:9200 --xdcr-username=Administrator  --xdcr-password=Bulkwize
+
+./couchbase-cli xdcr-replicate -c 10.0.1.137:8091 -u Administrator -p Bulkwize --xdcr-cluster-name=bulkwizedevcluster  --xdcr-from-bucket=Bulkwize --xdcr-to-bucket=bulkwize
+
+./couchbase-cli xdcr-setup -c 10.0.1.137:8091 -u Administrator -p Bulkwize --list 
+./couchbase-cli xdcr-setup -c 10.0.1.137:8091 -u Administrator -p Bulkwize --delete --xdcr-cluster-name=Elasticsearch
+
+# setting up Apache website
+
+https://www.digitalocean.com/community/tutorials/how-to-set-up-apache-virtual-hosts-on-ubuntu-14-04-lts
+
+
+#setting up mysql
+
+sudo apt-get install mysql-server-5.6
+
+got an error :
+
+ERROR 
+---------
+Errors were encountered while processing:
+ mysql-server-5.6
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+
+Then read:
+-----------
+http://askubuntu.com/questions/690855/mysql-5-6-dpkg-install-error-even-after-complete-uninstall
+
+Solutions
+-- -------
+http://askubuntu.com/questions/457923/why-did-installation-of-mysql-5-6-on-ubuntu-14-04-fail
+
+https://www.digitalocean.com/community/questions/mysql-5-6-ubuntu-14-04-unable-to-start-service
+
+added the below line 
+
+innodb_buffer_pool_size = 20M in /etc/mysql/my.cnf
+---------------
+
+mysql -u root -p
+
+create database wordpress;
+
+create user wordpressuser@localhost identified by 'Bulkwize01*';
+
+ grant all privileges on wordpress.* to wordpressuser@localhost;
+
+flush privileges;
+
+Then followed the below steps
+
+https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
+
+--------------------------------
+
+snapshot details :
+
+snap-7a94a87a (Before-WordPress-Apache-Config)
+
+-----------
+
+install php5
+sudo apt-get install php5
+sudo apt-get install php5-mysql
+
+-------------
+
+After that configurations
+
+username :ashishsm
+password : )Z(5ItDALzjHbYI7&3
+
+email :ashishsmital@gmail.com
+
+URL : http://bulkwize.com/blog/wp-admin/
+
+Please login with above username and password
+
+
+------------------------------------------------
+
+
+Apache proxy for Couchbase admin console in 8091 port
+
+Enable 8091 port in ports.conf
+
+add new Virtual host 
+
+<VirtualHost *:8091>
+#ServerName bulkwize.com:8091   
+ProxyPass / http://10.0.1.137:8091/
+ProxyPassReverse / http://10.0.1.137:8091/
+
+</VirtualHost>
+
+------------------------------------------------
+########## Publishing app on Google Play store
+http://ionicframework.com/docs/guide/publishing.html
+cordova build --release android
+keytool -genkey -v -keystore android-release-key.keystore -alias bulkwize -keyalg RSA -keysize 2048 -validity 10000
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore android-release-key.keystore .\platforms\android\build\outputs\apk\android-release-unsigned.apk bulkwize
+
+Passphrase Bulkwize01*
+
+
+cd E:\Android\android-sdk\build-tools\22.0.1
+zipalign -v 4 E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\android\build\outputs\apk\android-release-unsigned.apk Bulkwize.apk
+
+####### Enabling less secure apps on Google ###############
+https://support.google.com/a/answer/6260879?hl=en
+https://support.google.com/accounts/answer/6010255
+https://www.google.com/settings/security/lesssecureapps
