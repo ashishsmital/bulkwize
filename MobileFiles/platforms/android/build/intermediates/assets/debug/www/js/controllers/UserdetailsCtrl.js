@@ -78,5 +78,76 @@ app.controller('UserDetailsCtrl', function($scope, $rootScope, $ionicLoading, $h
 
         //$scope.reg.companyname = ;
         console.log($scope.userDetails);
+
+        $scope.submit = function(valid, value){
+            console.log(value);
+            if(valid){
+                $ionicLoading.show({
+                    content: 'Loading',
+                    animation: 'fade-in',
+                    showBackdrop: true,
+                    maxWidth: 200,
+                    showDelay: 0
+                });
+
+                var regPayload = {
+                    "mobileNumber":value.mob,
+                    "shopName":value.companyname,
+                    "password":value.password,
+                    "firstname":value.firstname,
+                    "lastname":value.lastname,
+                    /*"pan":value.panumber,*/
+                    "email":value.email,
+                    "vatLicense":value.vatLicense,
+                    "stptLicense":value.stptLicense,
+                    "selLicense":value.selLicense,
+                    "tradeLicense":value.tradeLicense,
+                    "hawkerLicense":value.hawkerLicense,
+                    "shopAddress":{
+                        "addressLine1":value.shopAddLine1,
+                        "addressLine2": value.shopAddLine2,
+                        "city":value.shopCity,
+                        "state":value.shopState,
+                        "pincode":value.shopPincode
+                    },
+                    "deliveryAddress":{
+                        "addressLine1":value.delAddLine1,
+                        "addressLine2":value.delAddLine2,
+                        "city":value.delCity,
+                        "state":value.delState,
+                        "pincode":value.delPincode
+                    },
+                    "type":"com.bulkwise.User",
+                    "id":"com.bulkwise.User::"+value.mob
+
+                };
+                $scope.payLoad = regPayload;
+                // console.log(JSON.stringify(regPayload));
+                $http({
+                    method: 'PUT',
+                    url: EnvConfig.HOST+'user/',
+                    data: regPayload
+                }).then(function successCallback(response) {
+                    console.log(response.data.data.cas);
+                    if(response.data.data.cas){
+                        var alertPopup = $ionicPopup.alert({
+                            title: 'Info',
+                            template: 'Thank you for updating with us'
+                        });
+
+
+                    }
+                    $ionicLoading.hide();
+                }, function errorCallback(data) {
+                    console.log(data);
+                    $ionicLoading.hide();
+                });
+            }
+
+        }
+
+
+
+
     });
 });

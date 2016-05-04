@@ -1,6 +1,9 @@
 app.controller('SubCategoryCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope,EnvConfig){
 
     $scope.title = $stateParams.prodname;
+	if($stateParams.suBrandId && $stateParams.suBrandId != null){
+		$rootScope.suBrandId = $stateParams.suBrandId;
+	}
 
     console.log($rootScope.suBrandId);
 

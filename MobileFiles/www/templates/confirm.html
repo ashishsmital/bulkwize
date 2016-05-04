@@ -23,12 +23,16 @@
 			    <div class="mt_10">
 					<table class="table">
 						<tr>
+							<th>Size</th>
 							<th>Case of</th>
-							<th>Price/Unit</th>
+							<th width="60%">Price/Unit</th>
 							<th>No of cases</th>
 						</tr>
 						<tbody>
 							<tr ng-repeat="productVariant in cartDetail.variants">
+								<td>
+									<span>{{productVariant.productUnitSizeWeightQty}}</span>
+								</td>
 								<td>
                     <span>{{productVariant.productCountInCase}}</span>
                     <div> units</div>
@@ -67,6 +71,6 @@
   	</ion-content>
 	<ion-footer-bar class="bar bar-footer bar-assertive">
 		<a class="button button-assertive" ng-click="cod()" ng-if="isCODapplicable">Cash On Delivery</a>
-  		<a class="button button-assertive" ng-click="payment()">Make Payment</a>
+  		<!--<a class="button button-assertive" ng-click="payment()">Make Payment</a>-->
 	</ion-footer-bar>
 </ion-view>

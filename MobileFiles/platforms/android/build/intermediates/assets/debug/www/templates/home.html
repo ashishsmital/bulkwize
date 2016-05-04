@@ -28,7 +28,7 @@
 			  	<ion-slide  ng-repeat ="productList in productLists" >
 			    	<div class="row">
 			            <div class="col col-33 bz-product-icon-container" ng-repeat ="product in productList">
-			               <a ui-sref="app.subcategory({ prodname: product.productBrandName})" class="bz-prod-item">
+			               <a ui-sref="app.subcategory({ prodname: product.productBrandName,suBrandId:product.productCategoryId})" class="bz-prod-item">
 								<span class="perctenage_layout"> {{product.maxDisc}}% Off</span>
 			                	<img ng-src="{{envHost+product.productBrandImageURL}}" />
 			                </a>

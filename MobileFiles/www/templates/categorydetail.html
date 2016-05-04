@@ -24,12 +24,16 @@
 		<div class="mt_10 padding" ng-show="detail.productVariants">
 			<table class="table bz-sub-cat-tbl">
 				<tr>
+					<th>Size</th>
 					<th>Case of</th>
-					<th width="80%">Price/Unit</th>
+					<th width="60%">Price/Unit</th>
 					<th>No of cases</th>
 				</tr>
 				<tbody>
 					<tr ng-repeat="productVariant in detail.productVariants">
+						<td>
+										<span>{{productVariant.productUnitSizeWeightQty}}</span>
+						</td>
 						<td>
 								<span>{{productVariant.productCountInCase}}</span>
 								<div> units</div>

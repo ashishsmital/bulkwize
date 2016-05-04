@@ -36,7 +36,7 @@
               </label>
               <label class="item item-input item-stacked-label">
                   <span class="input-label">OTP <sup>*</sup></span>
-                  <input type="text" placeholder="OTP" name="otp" id="otp" otp-check class="error"  ng-model="reg.otp" required >
+                  <input type="text" placeholder="OTP" name="otp" id="otp" otp-check class="error"  ng-model="reg.otp"  >
                   <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.otp.$touched || userInfo.otp.$error.otherModelValue)" ng-messages="userInfo.otp.$error" >
                       <div ng-message="required" class="error">OTP is required</div>
                       <div ng-message="checkOtp" class="error">Invalid OTP</div>
@@ -194,9 +194,10 @@
         -->
           <label class="item item-input item-stacked-label">
               <span class="input-label">Email</span>
-              <input type="text" placeholder="sample@sample.com" name="email" id="email" class="error" ng-model="reg.email">
+              <input type="text" placeholder="sample@sample.com" name="email" id="email" class="error" ng-model="reg.email" ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/">
               <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.email.$touched )" ng-messages="personalInfo.email.$error" >
                   <div ng-message="required" class="error">Email is required</div>
+				  <div ng-message="pattern">Please enter a valid email address!</div>
               </div>
           </label>
 
@@ -204,7 +205,7 @@
 
       <div class="row">
             <div class="col col-25"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(1)"> Back </a></div>
-            <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(3)" ng-disabled="personalInfo.$invalid">Shipping Address</button></div>
+            <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(3)" ng-disabled="personalInfo.$invalid">Shop Address</button></div>
       </div>
     </form>
     <form class="form-horizontal padding_col6_left" role="form" name="shopInfo" ng-show="step3" novalidate method="post"  autocomplete="off">
@@ -249,7 +250,7 @@
       </div>
       <div class="row">
             <div class="col col-25"><a class="button  button-positive icon-left button-clear button-dark ion-chevron-left"  ng-click="goNextPrev(2)"> Back </a></div>
-            <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(4)"  ng-disabled="shopInfo.$invalid" >Shipping Address</button></div>
+            <div class="col text-right"><button class="button button-positive icon-right ion-chevron-right" ng-click="goNextPrev(4)"  ng-disabled="shopInfo.$invalid" >Delivery Address</button></div>
       </div>
     </form>
     <form class="form-horizontal padding_col6_left" role="form" name="deliveryInfo" ng-show="step4" novalidate method="post" ng-submit="submit(deliveryInfo.$valid, reg)" autocomplete="off">

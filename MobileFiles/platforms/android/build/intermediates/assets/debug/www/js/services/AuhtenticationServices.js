@@ -30,7 +30,7 @@ app.factory('AuthServices', function ($http,$q, $ionicPopup , $state, EnvConfig)
                 deferred.reject(data);
 				if(data.status == 401){
 					var alertPopup = $ionicPopup.alert({
-                        title: 'Info',
+                        title: 'Alert',
                         template: 'Ooops! Please login '
                     });
 					
@@ -55,8 +55,10 @@ app.factory('AuthServices', function ($http,$q, $ionicPopup , $state, EnvConfig)
             }).then(function successCallback(data) {
 
                 if(data.data.data[0]){
-
-                    //send otp for the entered mobile number
+					deferred.reject(false);
+                   
+                }else{
+					 //send otp for the entered mobile number
                     $http({
                         method: 'POST',
                         url: EnvConfig.HOST+'sms2factor/sendOTP/',
@@ -66,9 +68,6 @@ app.factory('AuthServices', function ($http,$q, $ionicPopup , $state, EnvConfig)
                     },function errorCallback(data) {
                         deferred.resolve(true);
                     });
-
-
-                }else{
                     deferred.resolve(true);
                 }
             },function errorCallback(data) {

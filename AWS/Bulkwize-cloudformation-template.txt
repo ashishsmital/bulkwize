@@ -1,0 +1,561 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Description" : "Bulkwize CloudFormation template for a generic VPC with public and private subnets (with private network Internet access via NAT)",
+
+  "Parameters" : {
+    
+    "KeyName": {
+      "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instance",
+      "Type": "AWS::EC2::KeyPair::KeyName",
+      "ConstraintDescription": "must be the name of an existing EC2 KeyPair."
+    },
+	
+	"InstanceType": {
+      "Description": "WebServer EC2 instance type",
+      "Type": "String",
+      "Default": "t2.micro",
+      "AllowedValues": [
+        "t1.micro",
+        "t2.nano",
+        "t2.micro",
+        "t2.small",
+        "t2.medium",
+        "t2.large"
+		],
+	  "ConstraintDescription": "must be a valid EC2 instance type."
+	},
+	
+	"vpcName": {
+      "Description": "Name of the VPC",
+      "Type": "String",
+      "Default": "bulkwize-dev",
+      "AllowedValues": [
+        "bulkwize-dev",
+        "bulkwize-uat",
+        "bulkwize-prod"
+		],
+	  "ConstraintDescription": "must be one of bulkwize-dev, bulkwize-uat or bulkwize-prod."
+	},
+
+    "ServerAccess" : {
+      "Description" : "CIDR IP range allowed to login to the NAT instance",
+      "Type" : "String",
+      "MinLength": "9",
+      "MaxLength": "18",
+      "Default" : "0.0.0.0/0",
+      "AllowedPattern" : "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})",
+      "ConstraintDescription" : "must be a valid CIDR range of the form x.x.x.x/x."
+    },
+	
+	"CouchbaseAccess" : {
+      "Description" : "CIDR IP range allowed to login to the NAT instance",
+      "Type" : "String",
+      "MinLength": "9",
+      "MaxLength": "18",
+      "Default" : "106.0.0.0/0",
+      "AllowedPattern" : "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})",
+      "ConstraintDescription" : "must be a valid CIDR range of the form x.x.x.x/x."
+    }
+    
+  },
+
+  "Mappings" : {
+    "SubnetConfig" : {
+      "VPC"     : { "CIDR" : "10.0.0.0/16" },
+      "Public"  : { "CIDR" : "10.0.0.0/24" },
+      "Private" : { "CIDR" : "10.0.1.0/24" }
+    },
+    "NatRegionMap" : {
+      "us-east-1"      : { "AMI" : "ami-184dc970" },
+      "us-west-1"      : { "AMI" : "ami-a98396ec" },
+      "us-west-2"      : { "AMI" : "ami-290f4119" },
+      "eu-west-1"      : { "AMI" : "ami-14913f63" },
+      "eu-central-1"   : { "AMI" : "ami-ae380eb3" },
+      "sa-east-1"      : { "AMI" : "ami-8122969c" },
+      "ap-southeast-1" : { "AMI" : "ami-6aa38238" },
+      "ap-southeast-2" : { "AMI" : "ami-893f53b3" },
+      "ap-northeast-1" : { "AMI" : "ami-27d6e626" }
+    }
+  },
+
+  "Resources" : {
+
+    "VPC" : {
+      "Type" : "AWS::EC2::VPC",
+      "Properties" : {
+        "CidrBlock" : { "Fn::FindInMap" : [ "SubnetConfig", "VPC", "CIDR" ]},
+        "Tags" : [
+          { "Key" : "Application", "Value" : { "Ref" : "AWS::StackName" } },
+          { "Key" : "Network", "Value" : "Public" },
+	  { "Key" : "Name", "Value" : "NAT VPC" }
+        ]
+      }
+    },
+
+    "PublicSubnet" : {
+      "DependsOn" : ["VPC"],
+      "Type" : "AWS::EC2::Subnet",
+      "Properties" : {
+        "VpcId" : { "Ref" : "VPC" },
+        "CidrBlock" : { "Fn::FindInMap" : [ "SubnetConfig", "Public", "CIDR" ]},
+        "Tags" : [
+          { "Key" : "Application", "Value" : { "Ref" : "AWS::StackName" } },
+          { "Key" : "Network", "Value" : "Public" },
+	  { "Key" : "Name", "Value" : "Dev Public Subnet" }
+        ]
+      }
+    },
+
+    "InternetGateway" : {
+      "Type" : "AWS::EC2::InternetGateway",
+      "Properties" : {
+        "Tags" : [
+          { "Key" : "Application", "Value" : { "Ref" : "AWS::StackName" } },
+          { "Key" : "Network", "Value" : "Public" }
+        ]
+      }
+    },
+
+    "GatewayToInternet" : {
+       "DependsOn" : ["VPC", "InternetGateway"],
+       "Type" : "AWS::EC2::VPCGatewayAttachment",
+       "Properties" : {
+         "VpcId" : { "Ref" : "VPC" },
+         "InternetGatewayId" : { "Ref" : "InternetGateway" }
+       }
+    },
+
+    "PublicRouteTable" : {
+      "DependsOn" : ["VPC"],
+      "Type" : "AWS::EC2::RouteTable",
+      "Properties" : {
+        "VpcId" : { "Ref" : "VPC" },
+        "Tags" : [
+          { "Key" : "Application", "Value" : { "Ref" : "AWS::StackName" } },
+          { "Key" : "Network", "Value" : "Public" },
+		  { "Key" : "Name", "Value" : "Dev Public Route table" }
+        ]
+      }
+    },
+
+    "PublicRoute" : {
+      "DependsOn" : ["PublicRouteTable", "InternetGateway"],
+      "Type" : "AWS::EC2::Route",
+      "Properties" : {
+        "RouteTableId" : { "Ref" : "PublicRouteTable" },
+        "DestinationCidrBlock" : "0.0.0.0/0",
+        "GatewayId" : { "Ref" : "InternetGateway" }
+      }
+    },
+
+    "PublicSubnetRouteTableAssociation" : {
+      "DependsOn" : ["PublicSubnet", "PublicRouteTable"],
+      "Type" : "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties" : {
+        "SubnetId" : { "Ref" : "PublicSubnet" },
+        "RouteTableId" : { "Ref" : "PublicRouteTable" }
+      }
+    },
+
+    "PrivateSubnet" : {
+      "DependsOn" : ["VPC"],
+      "Type" : "AWS::EC2::Subnet",
+      "Properties" : {
+        "VpcId" : { "Ref" : "VPC" },
+        "CidrBlock" : { "Fn::FindInMap" : [ "SubnetConfig", "Private", "CIDR" ]},
+        "Tags" : [
+          { "Key" : "Application", "Value" : { "Ref" : "AWS::StackName" } },
+          { "Key" : "Network", "Value" : "Private" },
+	  { "Key" : "Name", "Value" : "Dev Private Subnet" }
+        ]
+      }
+    },
+
+    "PrivateRouteTable" : {
+      "DependsOn" : ["VPC"],
+      "Type" : "AWS::EC2::RouteTable",
+      "Properties" : {
+        "VpcId" : { "Ref" : "VPC" },
+        "Tags" : [
+          { "Key" : "Application", "Value" : { "Ref" : "AWS::StackName" } },
+          { "Key" : "Network", "Value" : "Private" },
+		  { "Key" : "Name", "Value" : "Dev Private Route table" }
+        ]
+      }
+    },
+
+    "PrivateSubnetRouteTableAssociation" : {
+      "DependsOn" : ["PrivateSubnet", "PrivateRouteTable"],
+      "Type" : "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties" : {
+        "SubnetId" : { "Ref" : "PrivateSubnet" },
+        "RouteTableId" : { "Ref" : "PrivateRouteTable" }
+      }
+    },
+
+    "PrivateSecurityGroup" : {
+      "DependsOn" : ["VPC"],
+      "Type" : "AWS::EC2::SecurityGroup",
+      "Properties" : {
+        "GroupDescription" : "Bulkwize Dev Private Security Group",
+        "VpcId" : { "Ref" : "VPC" },
+	"SecurityGroupIngress" : [{
+            "IpProtocol" : "tcp",
+            "FromPort" : "22",
+            "ToPort" : "22",
+            "CidrIp" : { "Ref" : "ServerAccess" }
+        }],
+	"Tags" : [
+	  { "Key" : "Name", "Value" : "Bulkwize Dev Private Security Group" }
+        ]
+      }
+    },
+	
+	"PublicSecurityGroup" : {
+      "DependsOn" : ["VPC"],
+      "Type" : "AWS::EC2::SecurityGroup",
+      "Properties" : {
+        "GroupDescription" : "Bulkwize Dev Public Security Group",
+        "VpcId" : { "Ref" : "VPC" },
+	"SecurityGroupIngress" : [{
+            "IpProtocol" : "tcp",
+            "FromPort" : "22",
+            "ToPort" : "22",
+            "CidrIp" : { "Ref" : "ServerAccess" }
+        },
+		{
+            "IpProtocol" : "tcp",
+            "FromPort" : "80",
+            "ToPort" : "80",
+            "CidrIp" : { "Ref" : "ServerAccess" }
+        },
+		{
+            "IpProtocol" : "tcp",
+            "FromPort" : "8080",
+            "ToPort" : "8080",
+            "CidrIp" : { "Ref" : "ServerAccess" }
+        },
+		{
+            "IpProtocol" : "tcp",
+            "FromPort" : "443",
+            "ToPort" : "443",
+            "CidrIp" : { "Ref" : "ServerAccess" }
+        },
+		{
+            "IpProtocol" : "tcp",
+            "FromPort" : "9200",
+            "ToPort" : "9200",
+            "CidrIp" : { "Ref" : "ServerAccess" }
+        },
+		{
+            "IpProtocol" : "tcp",
+            "FromPort" : "9091",
+            "ToPort" : "9091,
+            "CidrIp" : { "Ref" : "ServerAccess" }
+        },
+		{
+            "IpProtocol" : "tcp",
+            "FromPort" : "8091",
+            "ToPort" : "8091,
+            "CidrIp" : { "Ref" : "CouchbaseAccess" }
+        },
+		{
+            "IpProtocol" : "tcp",
+            "FromPort" : "8094",
+            "ToPort" : "8094,
+            "CidrIp" : { "Ref" : "CouchbaseAccess" }
+        }],
+	"Tags" : [
+	  { "Key" : "Name", "Value" : "Bulkwize Dev Public Security Group" }
+        ]
+      }
+    },
+
+    "PrivateSecurityGroupIngress1" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "icmp",
+	"FromPort": "-1",
+	"ToPort": "-1",
+	"SourceSecurityGroupId": { "Ref": "PrivateSecurityGroup" }
+      }
+    },
+
+    "PrivateSecurityGroupIngress22" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "22",
+	"ToPort": "22",
+	"SourceSecurityGroupId": { "Ref": "PrivateSecurityGroup" }
+      }
+    },
+    
+    "PrivateSecurityGroupIngress80" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "80",
+	"ToPort": "80",
+	"SourceSecurityGroupId": { "Ref": "PrivateSecurityGroup" }
+      }
+    },
+
+    "PrivateSecurityGroupIngress443" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "443",
+	"ToPort": "443",
+	"SourceSecurityGroupId": { "Ref": "PrivateSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress8091" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "8091",
+	"ToPort": "8091",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress8092" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "8092",
+	"ToPort": "8092",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress8093" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "8093",
+	"ToPort": "8093",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress11207" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "11207",
+	"ToPort": "11207",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress11210" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "11210",
+	"ToPort": "11210",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress11211" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "11211",
+	"ToPort": "11211",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress18091" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "18091",
+	"ToPort": "18091",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress18092" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "18092",
+	"ToPort": "18092",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+	
+	"PrivateSecurityGroupIngress9091" : {
+      "DependsOn" : ["PrivateSecurityGroup"],
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+	"GroupId": { "Ref": "PrivateSecurityGroup" },
+	"IpProtocol": "tcp",
+	"FromPort": "9091",
+	"ToPort": "9091",
+	"SourceSecurityGroupId": { "Ref": "PublicSecurityGroup" }
+      }
+    },
+
+    "NATInstance" : {
+      "DependsOn" : ["PublicSubnet", "PrivateSecurityGroup"],
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "InstanceType" : "t2.micro",
+        "KeyName"  : { "Ref" : "KeyName" },
+        "SourceDestCheck" : "false",
+        "ImageId" : { "Fn::FindInMap" : [ "NatRegionMap", { "Ref" : "AWS::Region" }, "AMI" ]},
+	"NetworkInterfaces" : [{
+          "GroupSet"                 : [{ "Ref" : "PrivateSecurityGroup" }],
+          "AssociatePublicIpAddress" : "true",
+          "DeviceIndex"              : "0",
+          "DeleteOnTermination"      : "true",
+          "SubnetId"                 : { "Ref" : "PublicSubnet" }
+        }],
+	"Tags" : [
+	  { "Key" : "Name", "Value" : { "Ref" : "vpcName" } }
+        ],
+	"UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+	  "#!/bin/bash\n",
+	  "yum update -y && yum install -y yum-cron && chkconfig yum-cron on"
+	]]}}
+      }
+    },
+	
+	"BastionInstance" : {
+      "DependsOn" : ["PublicSubnet", "PublicSecurityGroup"],
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "InstanceType" : "t2.micro",
+        "KeyName"  : { "Ref" : "KeyName" },
+        "SourceDestCheck" : "false",
+        "ImageId" : "ami-9e3319f4",
+	"NetworkInterfaces" : [{
+          "GroupSet"                 : [{ "Ref" : "PublicSecurityGroup" }],
+          "AssociatePublicIpAddress" : "true",
+          "DeviceIndex"              : "0",
+          "DeleteOnTermination"      : "true",
+          "SubnetId"                 : { "Ref" : "PublicSubnet" }
+        }],
+	"Tags" : [
+	  { "Key" : "Name", "Value" : "Dev Bastion Server" }
+        ],
+	"UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+	  "#!/bin/bash\n",
+	  "yum update -y && yum install -y yum-cron && chkconfig yum-cron on"
+	]]}}
+      }
+    },
+	
+	"NodeServerInstance1" : {
+      "DependsOn" : ["PublicSubnet", "PublicSecurityGroup"],
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "InstanceType" : "t2.micro",
+        "KeyName"  : { "Ref" : "KeyName" },
+        "SourceDestCheck" : "false",
+        "ImageId" : "ami-cf97aca5",
+	"NetworkInterfaces" : [{
+          "GroupSet"                 : [{ "Ref" : "PublicSecurityGroup" }],
+          "AssociatePublicIpAddress" : "true",
+          "DeviceIndex"              : "0",
+          "DeleteOnTermination"      : "true",
+          "SubnetId"                 : { "Ref" : "PublicSubnet" }
+        }],
+	"Tags" : [
+	  { "Key" : "Name", "Value" : "Dev Node Server Instance" }
+        ],
+	"UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+	  "#!/bin/bash\n",
+	  "yum update -y && yum install -y yum-cron && chkconfig yum-cron on"
+	]]}}
+      }
+    },
+	
+	"IPAssoc" : {
+		 "DependsOn" : ["NodeServerInstance1"],
+         "Type" : "AWS::EC2::EIPAssociation",
+         "Properties" : {
+             "InstanceId" : { "Ref" : "NodeServerInstance1" },
+             "EIP" : "52.73.228.44"
+         }
+     },
+	
+	"CouchbaseInstance" : {
+      "DependsOn" : ["PublicSubnet", "PrivateSecurityGroup"],
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "InstanceType" : "t2.large",
+        "KeyName"  : { "Ref" : "KeyName" },
+        "SourceDestCheck" : "false",
+        "ImageId" : "ami-063d176c",
+	"NetworkInterfaces" : [{
+          "GroupSet"                 : [{ "Ref" : "PrivateSecurityGroup" }],
+          "AssociatePublicIpAddress" : "true",
+          "DeviceIndex"              : "0",
+          "DeleteOnTermination"      : "true",
+          "SubnetId"                 : { "Ref" : "PrivateSubnet" }
+        }],
+	"Tags" : [
+	  { "Key" : "Name", "Value" : "Dev Couchbase Instance" }
+        ],
+	"UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
+	  "#!/bin/bash\n",
+	  "yum update -y && yum install -y yum-cron && chkconfig yum-cron on"
+	]]}}
+      }
+    },
+	
+	"PrivateRoute" : {
+      "DependsOn" : ["PrivateRouteTable", "NATInstance"],
+      "Type" : "AWS::EC2::Route",
+      "Properties" : {
+        "RouteTableId" : { "Ref" : "PrivateRouteTable" },
+        "DestinationCidrBlock" : "0.0.0.0/0",
+        "InstanceId" : { "Ref" : "NATInstance" }
+      }
+    }
+
+  },
+
+  "Outputs" : {
+    "CouchbaseInstanceIP" : {
+      "Description" : "CouchbaseInstance IP address",
+      "Value" : { "Fn::GetAtt" : [ "CouchbaseInstance", "PublicIp" ] }
+    }
+	
+    }
+  
+  
+}

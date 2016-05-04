@@ -36,7 +36,7 @@
               </label>
               <label class="item item-input item-stacked-label">
                   <span class="input-label">OTP <sup>*</sup></span>
-                  <input type="text" placeholder="OTP" name="otp" id="otp" otp-check class="error"  ng-model="reg.otp" required >
+                  <input type="text" placeholder="OTP" name="otp" id="otp" otp-check class="error"  ng-model="reg.otp"  >
                   <div class="validation-error" ng-if="(userInfo.$submitted || userInfo.otp.$touched || userInfo.otp.$error.otherModelValue)" ng-messages="userInfo.otp.$error" >
                       <div ng-message="required" class="error">OTP is required</div>
                       <div ng-message="checkOtp" class="error">Invalid OTP</div>
@@ -193,8 +193,8 @@
           </label>
         -->
           <label class="item item-input item-stacked-label">
-              <span class="input-label">Email <sup>*</sup></span>
-              <input type="text" placeholder="sample@sample.com" name="email" id="email" class="error" ng-model="reg.email" required>
+              <span class="input-label">Email</span>
+              <input type="text" placeholder="sample@sample.com" name="email" id="email" class="error" ng-model="reg.email">
               <div class="validation-error" ng-if="(personalInfo.$submitted || personalInfo.email.$touched )" ng-messages="personalInfo.email.$error" >
                   <div ng-message="required" class="error">Email is required</div>
               </div>

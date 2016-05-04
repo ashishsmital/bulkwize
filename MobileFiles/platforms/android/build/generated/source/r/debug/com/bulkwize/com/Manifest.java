@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.ionicframework.myapp876495;
+package com.bulkwize.com;
 
 public final class Manifest {
     public static final class permission {

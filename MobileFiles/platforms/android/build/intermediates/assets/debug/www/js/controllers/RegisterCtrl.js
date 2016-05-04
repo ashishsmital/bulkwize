@@ -95,8 +95,6 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
         }else{
             $scope.reg.delAddLine1 = "";
             $scope.reg.delAddLine2 = "";
-            $scope.reg.delCity = "";
-            $scope.reg.delState = "";
             $scope.reg.delPincode = "";
 
         }

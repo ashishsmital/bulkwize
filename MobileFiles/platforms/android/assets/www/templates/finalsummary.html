@@ -27,12 +27,16 @@
 			    <div class="mt_10">
 					<table class="table">
 						<tr>
+              <th>Size</th>
 							<th>Case of x units</th>
-							<th>Price/Unit</th>
+							<th width="60%">Price/Unit</th>
 							<th>No of cases</th>
 						</tr>
 						<tbody>
 							<tr ng-repeat="productVariant in orderDetail.variants">
+                <td>
+									<span>{{productVariant.productUnitSizeWeightQty}}</span>
+								</td>
 								<td>{{productVariant.productCountInCase}}</td>
 								<td>MRP: <span style='color:black;text-decoration:line-through'>
 							                <span style='color:red'>
@@ -41,11 +45,9 @@
 										</span>
 							<div>You Pay: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
 							<div class="red">{{productVariant.productDiscountPercentage}}% off</div></td>
-								<td>
-									<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
-							      	<span class="product-quantity">{{productVariant.quantity}}</span>
-							      	<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
-								</td>
+              <td>
+                  {{productVariant.quantity}}
+              </td>
 							</tr>
 						</tbody>
 					</table>
