@@ -2,33 +2,322 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d5497d72-4647-4bf1-a833-e94b93080265" name="Default" comment="Category &#10;&#10;1.Get invoice &#10;&#10;&#10;URL : http://localhost/category">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/Bulkwize.apk" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/Bulkwize.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/android-debug-unaligned.apk" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/android-debug-unaligned.apk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/server-check.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/android-release-key.keystore" afterPath="$PROJECT_DIR$/MobileFiles/android-release-key.keystore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/resources-debug.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/js/controllers/HomeCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/js/controllers/HomeCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/HomeCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/HomeCtrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/www/js/controllers/HomeCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/www/js/controllers/HomeCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/img/googleplay-1024x500.jpg" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/img/googleplay-1024x500.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/img/googleplay-512x512.jpg" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/img/googleplay-512x512.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/controls.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/controls.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/googleplay-1024x500.jpg" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/googleplay-1024x500.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/googleplay-512x512.jpg" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/googleplay-512x512.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/home.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/home.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/ionic.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/ionic.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/logo.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/img/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/fonts/ionicons.eot" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/fonts/ionicons.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/fonts/ionicons.ttf" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/fonts/ionicons.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/fonts/ionicons.woff" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/fonts/ionicons.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/bulkwize/com/MainActivity.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/bulkwize/com/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionic/keyboard/IonicKeyboard$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionic/keyboard/IonicKeyboard$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionic/keyboard/IonicKeyboard$2.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionic/keyboard/IonicKeyboard$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionic/keyboard/IonicKeyboard$3.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionic/keyboard/IonicKeyboard$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionic/keyboard/IonicKeyboard.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionic/keyboard/IonicKeyboard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/BuildConfig.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/BuildConfig.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/MainActivity.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/MainActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/Manifest$permission.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/Manifest$permission.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/Manifest.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/Manifest.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R$attr.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R$attr.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R$drawable.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R$drawable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R$string.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R$xml.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R$xml.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/ionicframework/myapp876495/R.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/plugin/gcm/CordovaGCMBroadcastReceiver.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/plugin/gcm/CordovaGCMBroadcastReceiver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/plugin/gcm/GCMIntentService.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/plugin/gcm/GCMIntentService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/plugin/gcm/PushHandlerActivity.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/plugin/gcm/PushHandlerActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/plugin/gcm/PushPlugin.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/com/plugin/gcm/PushPlugin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard$2.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard$3$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard$3.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/io/ionic/keyboard/IonicKeyboard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/device/Device.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/device/Device.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$2.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$3$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$3$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$3.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$4$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$4$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$4.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$5$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$5.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$6.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/splashscreen/SplashScreen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar$2.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar$3.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar$4.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/statusbar/StatusBar.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/whitelist/WhitelistPlugin$1.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/whitelist/WhitelistPlugin$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/whitelist/WhitelistPlugin$CustomConfigXmlParser.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/whitelist/WhitelistPlugin$CustomConfigXmlParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/whitelist/WhitelistPlugin.class" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/classes/debug/org/apache/cordova/whitelist/WhitelistPlugin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/dex/debug/classes.dex" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/dex/debug/classes.dex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/classes.jar" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/annotations.zip" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/annotations.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/classes.jar" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/libs/internal_impl-23.1.1.jar" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/libs/internal_impl-23.1.1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/incremental/aidl/debug/dependency.store" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/incremental/aidl/debug/dependency.store" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/classes-76008100912ec395739af6d1273a249a00ba6afa.jar" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/classes-76008100912ec395739af6d1273a249a00ba6afa.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/classes-7e84e658e04326e1a5aa1fa9d508a0c4d703b855.jar" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/classes-7e84e658e04326e1a5aa1fa9d508a0c4d703b855.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/gcm-36f378611816315489acf7660b07a25afa45c2fe.jar" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/gcm-36f378611816315489acf7660b07a25afa45c2fe.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-684308e1fc878d644f4fd85f81c4e69dc9f917ed.jar" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-23.1.1-684308e1fc878d644f4fd85f81c4e69dc9f917ed.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-bd227050441a903b70f3dc9452ce7befec2b3315.jar" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-23.1.1-bd227050441a903b70f3dc9452ce7befec2b3315.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-hdpi-v4/icon.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-hdpi-v4/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-hdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-hdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-ldpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-ldpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-mdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-mdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-xhdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-xhdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-xxhdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-xxhdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-xxxhdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-land-xxxhdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-ldpi-v4/icon.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-ldpi-v4/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-mdpi-v4/icon.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-mdpi-v4/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-hdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-hdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-ldpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-ldpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-mdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-mdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-xhdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-xhdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-xxhdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-xxhdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-xxxhdpi-v4/screen.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-port-xxxhdpi-v4/screen.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-xhdpi-v4/icon.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-xhdpi-v4/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-xxhdpi-v4/icon.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-xxhdpi-v4/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-xxxhdpi-v4/icon.png" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/drawable-xxxhdpi-v4/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/Bulkwize.apk" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/Bulkwize.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/android-debug-unaligned.apk" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/android-debug-unaligned.apk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/www/img/googleplay-1024x500.jpg" afterPath="$PROJECT_DIR$/MobileFiles/www/img/googleplay-1024x500.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/www/img/googleplay-512x512.jpg" afterPath="$PROJECT_DIR$/MobileFiles/www/img/googleplay-512x512.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/brand/brand-b-natural.jpg" afterPath="$PROJECT_DIR$/appcontent/images/brand/brand-b-natural.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/brand/brand-vi-john.jpg" afterPath="$PROJECT_DIR$/appcontent/images/brand/brand-vi-john.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Guava_Gush_1_Ltr.PNG" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Guava_Gush_1_Ltr.PNG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Guava_Gush_200_ml.PNG" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Guava_Gush_200_ml.PNG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Jamun_Joy_1_ltr.PNG" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Jamun_Joy_1_ltr.PNG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Jamun_Joy_200_ml.PNG" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Jamun_Joy_200_ml.PNG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Litchi_Luscious_1_Ltr.PNG" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Litchi_Luscious_1_Ltr.PNG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Litchi_Luscious_200_ml.PNG" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Litchi_Luscious_200_ml.PNG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Mango_Magic_1_ltr.png" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Mango_Magic_1_ltr.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Mango_Magic_200_ml.png" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Mango_Magic_200_ml.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Mixed_Fruit_Merry_1_ltr.png" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Mixed_Fruit_Merry_1_ltr.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Mixed_Fruit_Merry_200_ml.png" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Mixed_Fruit_Merry_200_ml.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Orange_Oomph.png" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Orange_Oomph.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Orange_Oomph_200_ml.png" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Orange_Oomph_200_ml.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Pineapple_Poise_1_ltr.png" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Pineapple_Poise_1_ltr.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Pineapple_Poise_200_ml.png" afterPath="$PROJECT_DIR$/appcontent/images/product/B-Natural/Pineapple_Poise_200_ml.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Black_Sea_After_Shave.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Black_Sea_After_Shave.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Cobra_After_Shave.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Cobra_After_Shave.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Lime.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Lime.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Lime_60g_25g.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Lime_60g_25g.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Rose.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Rose.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Rose_60g_25g.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Rose_60g_25g.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Saffron_and_Honey_25g_60g.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Saffron_and_Honey_25g_60g.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Saffron_and_Honey_60g_25g_.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Saffron_and_Honey_60g_25g_.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Sandal.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Sandal.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Sandal_60g_25g.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Hair_Removal_Cream_Sandal_60g_25g.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Premium_Shaving_Cream.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Premium_Shaving_Cream.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Saffron.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Saffron.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Saffron_Gold.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Saffron_Gold.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Saffron_Green.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Saffron_Green.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Shaving_Cream_Lime.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Shaving_Cream_Lime.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Shaving_Cream_Menthol.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Shaving_Cream_Menthol.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Shaving_Cream_Regular.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Shaving_Cream_Regular.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Splash_After_Shave.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Splash_After_Shave.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Style_Set_1.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Style_Set_1.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Style_Set_2.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Style_Set_2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Style_Set_3.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Style_Set_3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Style_Set_Hair_Gel_Regular_Hold.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Style_Set_Hair_Gel_Regular_Hold.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Vi_John_Shave_Foam.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Vi_John_Shave_Foam.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Vi_John_Shave_Foam100.jpg" afterPath="$PROJECT_DIR$/appcontent/images/product/Vi-John/Vi_John_Vi_John_Shave_Foam100.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bulkwize.iml" afterPath="$PROJECT_DIR$/.idea/bulkwize.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/templates/categorydetail.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/templates/categorydetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/categorydetail.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/categorydetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/www/templates/categorydetail.html" afterPath="$PROJECT_DIR$/MobileFiles/www/templates/categorydetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/templates/home.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/home.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/www/templates/home.html" afterPath="$PROJECT_DIR$/MobileFiles/www/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/templates/register.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/templates/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/register.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/css/style.css" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/css/style.css" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/templates/subcategory.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/templates/subcategory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/subcategory.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/subcategory.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/www/templates/subcategory.html" afterPath="$PROJECT_DIR$/MobileFiles/www/templates/subcategory.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bulkwise/package.json" afterPath="$PROJECT_DIR$/Bulkwise/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DBUtil/conf/P&amp;G DEC Updated Price List nw-4.csv" afterPath="$PROJECT_DIR$/DBUtil/conf/P&amp;G DEC Updated Price List nw-4.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DBUtil/conf/P&amp;G DEC Updated Price List nw-5.csv" afterPath="$PROJECT_DIR$/DBUtil/conf/P&amp;G DEC Updated Price List nw-5.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/debug.log" afterPath="$PROJECT_DIR$/MobileFiles/debug.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/.gradle/2.2.1/taskArtifacts/cache.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/android.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/android.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/js/controllers/SubCategoryCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/assets/www/js/controllers/SubCategoryCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/android/nativeapiprovider.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/android/nativeapiprovider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/android/promptbasednativeapi.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/android/promptbasednativeapi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/exec.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/exec.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/platform.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/platform.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/plugin/android/app.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova-js-src/plugin/android/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova_plugins.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/cordova_plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/css/owl.carousel.min.css" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/css/owl.carousel.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/css/owl.theme.default.min.css" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/css/owl.theme.default.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/css/style.css" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/index.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/PushNotification.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/PushNotification.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/angular-message.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/angular-message.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/app.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/AppCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/AppCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/BrandListCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/BrandListCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/CartCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/CartCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/CategoryListCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/CategoryListCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/FaqCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/FaqCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/ForgotPasswordCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/ForgotPasswordCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/HomeCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/HomeCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/LoginCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/LoginCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/MyOrderCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/MyOrderCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/RegisterCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/RegisterCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/SubCategoryCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/SubCategoryCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/UserdetailsCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/controllers/UserdetailsCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/directives/directives.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/directives/directives.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/jquery.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/jquery.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/lodash.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/lodash.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/ng-cordova.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/ng-cordova.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/owl-carousel.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/owl-carousel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/services/AuhtenticationServices.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/services/AuhtenticationServices.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/services/CommonServices.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/services/CommonServices.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/services/EnvironmnetService.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/services/EnvironmnetService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/services/RequestsService.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/js/services/RequestsService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/json/MyOrder1.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/json/MyOrder1.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/json/faqs.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/json/faqs.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/json/myOrder.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/json/myOrder.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/LICENSE" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/README.md" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/bower.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/changelog.md" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/changelog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/ionic-core.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/ionic-core.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/package.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/test.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-core/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/README.md" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/bower.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/bower.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/changelog.md" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/changelog.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/ionic-push.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/ionic-push.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/package.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic-service-push/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/css/ionic.css" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/css/ionic.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/css/ionic.min.css" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/css/ionic.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/fonts/ionicons.svg" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/fonts/ionicons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular-ui/angular-ui-router.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular-ui/angular-ui-router.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular-ui/angular-ui-router.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular-ui/angular-ui-router.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-animate.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-animate.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-animate.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-animate.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-resource.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-resource.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-resource.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-resource.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-sanitize.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-sanitize.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-sanitize.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular-sanitize.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/angular/angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic-angular.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic-angular.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic-angular.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic-angular.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.bundle.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.bundle.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.bundle.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.io.bundle.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.io.bundle.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.min.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/js/ionic.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_action-sheet.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_action-sheet.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_animations.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_animations.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_backdrop.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_backdrop.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_badge.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_badge.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_bar.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_bar.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_button-bar.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_button-bar.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_button.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_button.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_checkbox.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_checkbox.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_form.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_form.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_grid.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_grid.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_items.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_items.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_list.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_list.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_loading.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_loading.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_menu.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_menu.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_mixins.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_mixins.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_modal.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_modal.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_platform.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_platform.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_popover.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_popover.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_popup.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_popup.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_progress.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_progress.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_radio.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_radio.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_range.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_range.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_refresher.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_refresher.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_reset.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_reset.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_scaffolding.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_scaffolding.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_select.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_select.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_slide-box.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_slide-box.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_slides.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_slides.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_spinner.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_spinner.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_tabs.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_tabs.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_toggle.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_toggle.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_transitions.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_transitions.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_type.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_type.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_util.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_util.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_variables.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/_variables.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionic.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionic.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionicons/_ionicons-font.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionicons/_ionicons-font.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionicons/_ionicons-icons.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionicons/_ionicons-variables.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionicons/_ionicons-variables.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionicons/ionicons.scss" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/scss/ionicons/ionicons.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/version.json" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/lib/ionic/version.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-device/www/device.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-device/www/device.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-splashscreen/www/splashscreen.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-splashscreen/www/splashscreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-statusbar/www/statusbar.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-statusbar/www/statusbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-whitelist/whitelist.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/cordova-plugin-whitelist/whitelist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/ionic-plugin-keyboard/www/android/keyboard.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/plugins/ionic-plugin-keyboard/www/android/keyboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/aboutus.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/aboutus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/brand.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/brand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/cart.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/cart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/category.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/categorydetail.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/categorydetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/categorylist.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/categorylist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/confirm.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/confirm.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/contactus.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/contactus.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/faq.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/faq.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/finalsummary.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/finalsummary.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/forgotpassword.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/forgotpassword.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/home.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/login.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/menu.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/menu.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/myOrders.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/myOrders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/partials/user-menu-popover.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/partials/user-menu-popover.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/payment.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/payment.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/register.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/register.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/search.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/search.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/shipping.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/shipping.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/subcatbrand.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/subcatbrand.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/subcategory.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/subcategory.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/success.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/success.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/supplier.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/supplier.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/userdetails.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/userdetails.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/vehicleGroup.html" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/assets/debug/www/templates/vehicleGroup.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aapt/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/MediaMetadataCompat.aidl" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/MediaMetadataCompat.aidl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/RatingCompat.aidl" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/RatingCompat.aidl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/session/MediaSessionCompat.aidl" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/session/MediaSessionCompat.aidl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/session/ParcelableVolumeInfo.aidl" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/session/ParcelableVolumeInfo.aidl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/session/PlaybackStateCompat.aidl" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/media/session/PlaybackStateCompat.aidl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/os/ResultReceiver.aidl" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/aidl/android/support/v4/os/ResultReceiver.aidl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/incremental/mergeResources/debug/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/values/values.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/values/values.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/xml/config.xml" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/res/debug/xml/config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/tmp/dex/debug/inputList.txt" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/intermediates/tmp/dex/debug/inputList.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/build/outputs/apk/manifest-merger-debug-report.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/cordova_plugins.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/cordova_plugins.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/com.phonegap.plugins.PushPlugin/www/PushNotification.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/cordova-plugin-device/www/device.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/cordova-plugin-device/www/device.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/cordova-plugin-splashscreen/www/splashscreen.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/cordova-plugin-splashscreen/www/splashscreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/cordova-plugin-statusbar/www/statusbar.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/cordova-plugin-statusbar/www/statusbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/cordova-plugin-whitelist/whitelist.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/cordova-plugin-whitelist/whitelist.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/ionic-plugin-keyboard/www/android/keyboard.js" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/platform_www/plugins/ionic-plugin-keyboard/www/android/keyboard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/src/com/bulkwize/com/MainActivity.java" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/src/com/bulkwize/com/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/platforms/android/src/com/ionicframework/myapp876495/MainActivity.java" afterPath="$PROJECT_DIR$/MobileFiles/platforms/android/src/com/ionicframework/myapp876495/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MobileFiles/www/js/controllers/SubCategoryCtrl.js" afterPath="$PROJECT_DIR$/MobileFiles/www/js/controllers/SubCategoryCtrl.js" />
     </list>
     <ignored path="bulkwize.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,75 +338,72 @@
     <favorites_list name="bulkwize" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="OTP.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SMS2Factor/controller/OTP.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="38" column="84" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="84" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="directives.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/directives/directives.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="47" column="45" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AuhtenticationServices.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/services/AuhtenticationServices.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MobileFiles/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.3207545">
-              <caret line="43" column="84" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
+            <state vertical-scroll-proportion="-12.083333">
+              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MobileFiles/www/css/style.css">
+      <file leaf-file-name="server-check.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/server-check.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.344828">
-              <caret line="561" column="29" selection-start-line="561" selection-start-column="29" selection-end-line="561" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.413793">
-              <caret line="241" column="30" selection-start-line="241" selection-start-column="16" selection-end-line="241" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subcategory.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/subcategory.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28608248">
-              <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#span#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.2452831">
-              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HomeCtrl.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/controllers/HomeCtrl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="categorydetail.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/categorydetail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.0">
-              <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.32687652">
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -150,8 +436,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Bulkwise/views/login.html" />
-        <option value="$PROJECT_DIR$/Bulkwise/views/registration.html" />
         <option value="$PROJECT_DIR$/Bulkwise/node_modules/user/model/UserModel.js" />
         <option value="$PROJECT_DIR$/Bulkwise/node_modules/user/controller/User.js" />
         <option value="$PROJECT_DIR$/Bulkwise/node_modules/shoppingcart/controller/ShoppingCart.js" />
@@ -201,6 +485,8 @@
         <option value="$PROJECT_DIR$/MobileFiles/www/templates/home.html" />
         <option value="$PROJECT_DIR$/MobileFiles/www/templates/subcategory.html" />
         <option value="$PROJECT_DIR$/MobileFiles/www/templates/categorydetail.html" />
+        <option value="$PROJECT_DIR$/MobileFiles/www/js/directives/directives.js" />
+        <option value="$PROJECT_DIR$/scripts/server-check.sh" />
       </list>
     </option>
   </component>
@@ -216,14 +502,10 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="NamedScopeManager">
-    <order />
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="740" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -246,8 +528,11 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -277,98 +562,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MobileFiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bulkwize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bulkwize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileFiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bulkwize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bulkwize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileFiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bulkwize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bulkwize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileFiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bulkwize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bulkwize" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileFiles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,34 +613,391 @@
       <recent name="$PROJECT_DIR$/Bulkwise/views" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.SMS2Factor">
-    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/bulkwize/MobileFiles/www/index.html">
       <method />
     </configuration>
-    <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma" config-file="">
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="SELECTED_CLOUD_DEVICE_CONFIGURATION_ID" value="0" />
+      <option name="SELECTED_CLOUD_DEVICE_PROJECT_ID" value="" />
+      <option name="IS_VALID_CLOUD_MATRIX_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_MATRIX_SELECTION_ERROR" value="" />
+      <option name="IS_VALID_CLOUD_DEVICE_SELECTION" value="false" />
+      <option name="INVALID_CLOUD_DEVICE_SELECTION_ERROR" value="" />
+      <option name="CLOUD_DEVICE_SERIAL_NUMBER" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
       <envs />
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="JsTestDriver-test-runner" factoryName="JsTestDriver">
-      <setting name="configLocationType" value="CONFIG_FILE" />
-      <setting name="settingsFile" value="" />
-      <setting name="serverType" value="INTERNAL" />
-      <setting name="preferredDebugBrowser" value="Chrome" />
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="bulkwize" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
       <method />
     </configuration>
-    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
-      <option name="cucumberJsArguments" value="" />
-      <option name="executablePath" />
-      <option name="filePath" />
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -452,6 +1009,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
@@ -459,8 +1022,15 @@
       <envs />
       <ui>bdd</ui>
       <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
       <test-directory />
       <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
     <configuration default="false" name="SMS2Factor" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/SMS2Factor">
@@ -475,12 +1045,18 @@
     <configuration default="false" name="User" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/User">
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Node.js.SMS2Factor" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.Bulkwize" />
       <item index="2" class="java.lang.String" itemvalue="Node.js.ShoppingCart" />
       <item index="3" class="java.lang.String" itemvalue="Node.js.User" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -510,6 +1086,9 @@
       <workItem from="1460927247558" duration="598000" />
       <workItem from="1461183011649" duration="2523000" />
       <workItem from="1461238431022" duration="4548000" />
+      <workItem from="1461922314869" duration="157000" />
+      <workItem from="1461922614469" duration="562000" />
+      <workItem from="1462388470119" duration="690000" />
     </task>
     <task id="LOCAL-00001" summary="Removing old folder">
       <created>1455058303878</created>
@@ -623,7 +1202,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67178000" />
+    <option name="totallyTimeSpent" value="68587000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -635,59 +1214,59 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="740" extended-state="1" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2313988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45588234" sideWeight="0.51339287" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32352942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32253087" sideWeight="0.48768863" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2777778" sideWeight="0.48660713" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4074074" sideWeight="0.4932486" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45588234" sideWeight="0.51339287" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.48768863" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2777778" sideWeight="0.48660713" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4074074" sideWeight="0.4932486" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45588234" sideWeight="0.51339287" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32253087" sideWeight="0.48768863" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2777778" sideWeight="0.48660713" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2313988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32352942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4074074" sideWeight="0.4932486" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45588234" sideWeight="0.51339287" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32253087" sideWeight="0.48768863" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2777778" sideWeight="0.48660713" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2313988" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32352942" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4074074" sideWeight="0.4932486" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -801,26 +1380,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/MobileFiles/www/img/logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MobileFiles/www/img/ionic.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MobileFiles/www/img/controls.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MobileFiles/resources/android/icon/drawable-hdpi-icon.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MobileFiles/resources/android/icon/drawable-mdpi-icon.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -973,15 +1532,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SMS2Factor/controller/OTP.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52459013">
-          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,7 +1539,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20788531">
           <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1005,7 +1554,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,23 +1561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/services/EnvironmnetService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/services/AuhtenticationServices.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1037,7 +1568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4789916">
           <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,7 +1575,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1053,7 +1582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1061,7 +1589,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5748792">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,7 +1596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,7 +1603,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.1724138">
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,7 +1610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
           <caret line="1" column="33" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1093,7 +1617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.1923075">
           <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,23 +1624,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MobileFiles/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.3207545">
-          <caret line="43" column="84" selection-start-line="43" selection-start-column="84" selection-end-line="43" selection-end-column="84" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MobileFiles/www/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.344828">
+        <state vertical-scroll-proportion="0.0">
           <caret line="561" column="29" selection-start-line="561" selection-start-column="29" selection-end-line="561" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,13 +1638,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4265928">
           <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/controllers/HomeCtrl.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.40996784">
           <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="30" />
           <folding />
         </state>
@@ -1139,36 +1651,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.413793">
+        <state vertical-scroll-proportion="0.0">
           <caret line="241" column="30" selection-start-line="241" selection-start-column="16" selection-end-line="241" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.2452831">
+        <state vertical-scroll-proportion="0.4013378">
           <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/categorydetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.0">
+        <state vertical-scroll-proportion="1.680602">
           <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/subcategory.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28608248">
+        <state vertical-scroll-proportion="0.44147158">
           <caret line="54" column="65" selection-start-line="54" selection-start-column="65" selection-end-line="54" selection-end-column="65" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/services/EnvironmnetService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20361991">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MobileFiles/www/templates/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="84" selection-start-line="38" selection-start-column="75" selection-end-line="38" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/directives/directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="45" selection-start-line="47" selection-start-column="37" selection-end-line="47" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SMS2Factor/controller/OTP.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MobileFiles/www/js/services/AuhtenticationServices.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MobileFiles/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.083333">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/server-check.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32687652">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
