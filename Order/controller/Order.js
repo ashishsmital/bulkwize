@@ -93,12 +93,14 @@ order.get('/:orderNo/invoice', function (req, res, next) {
             var invoiceNumber =uuid.v4().substring(1,5) +"-"+ moment(new Date()).utcOffset("+05:30").format('DDMMYYYY');//TODO should be auto generated
             _.extend(result.data[0].Bulkwize, {'bulkwize-address': config.bulkwizeAddress});
             result.data[0].Bulkwize.products.forEach(function(obj,i){
-                obj.productVariants.forEach(function (variant,i)
+                obj.variants.forEach(function (variant,i)
                 {
-                    amt=variant.productMRPUnit*variant.productOrderedQty*variant.productCountInCase*(variant.productDiscountPercentage/100);
+                   // amt=variant.productMRPUnit*variant.productOrderedQty*variant.productCountInCase*(variant.productDiscountPercentage/100);
+                    amt=variant.productMRPUnit*variant.quantity*variant.productCountInCase*(variant.productDiscountPercentage/100);
                     pdtItems.push({
                         description: variant.productMaterialDescription,
-                        quantity:variant.productOrderedQty,
+                       // quantity:variant.productOrderedQty,
+                        quantity:variant.quantity,
                         rate: variant.productMRPUnit,
                         amount: amt,
                         vat:variant.productVATPercentage,
@@ -187,7 +189,7 @@ order.get('/:orderNo/invoice/:variantId/variants', function (req, res, next) {
             var invoiceNumber = uuid.v4().substring(1,5) +"-"+ moment(new Date()).utcOffset("+05:30").format('DDMMYYYY');//TODO should be auto generated
             _.extend(result.data[0].Bulkwize, {'bulkwize-address': config.bulkwizeAddress});
             result.data[0].Bulkwize.products.forEach(function(obj,i){
-                obj.productVariants.forEach(function (variant,i)
+                obj.variants.forEach(function (variant,i)
                 {
                     if(variant.sku_id == variantId) {
                         amt=variant.productMRPUnit*variant.productOrderedQty*variant.productCountInCase*(variant.productDiscountPercentage/100);
