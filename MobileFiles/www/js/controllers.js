@@ -81,8 +81,11 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
         console.log(data.data.data);
         $scope.subCategory = data.data.data;
         if($scope.subCategory.length){
-            $scope.checked = [data.data.data[0].Bulkwize.id];
-            $scope.productList(data.data.data[0].Bulkwize.id);
+			for(var i=0; i < $scope.subCategory.length; i++){
+				$scope.checked.push($scope.subCategory[i].Bulkwize.id);
+			}
+            
+            $scope.productList($scope.checked);
         }else{
             $ionicLoading.hide();
         }
@@ -351,7 +354,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 		if(response.status == 401){
 					var alertPopup = $ionicPopup.alert({
                         title: 'Info',
-                        template: 'Ooops! Please login before checkout'
+                        template: 'Please login before checkout'
                     });
 
 					alertPopup.then(function(res) {
