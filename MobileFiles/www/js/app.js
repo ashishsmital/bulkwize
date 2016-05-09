@@ -196,6 +196,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
         }
     })
+	
+	.state('app.contactus', {
+        url: '/contactus',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/contactus.html',
+                controller: 'FaqCtrl'
+            }
+        }
+    })
 
     .state('app.categorylist',{
         url:'/categorylist/:name',
