@@ -164,3 +164,36 @@ zipalign -v 4 E:\B2B-ecom\code\bulkwize-code\bulkwize\MobileFiles\platforms\andr
 https://support.google.com/a/answer/6260879?hl=en
 https://support.google.com/accounts/answer/6010255
 https://www.google.com/settings/security/lesssecureapps
+
+
+---------------------------------------------------------------------
+
+------------------------------------------------
+
+Apache proxy for Couchbase query tool in 8094 port
+
+Enable 8094 port in ports.conf
+
+add new Virtual host 
+
+<VirtualHost *:8094>
+#ServerName bulkwize.com:8091   
+ProxyPass / http://10.0.1.137:8094/
+ProxyPassReverse / http://10.0.1.137:8094/
+
+</VirtualHost>
+
+
+
+------------------------------------------------
+
+Word press disabling all the auto updates
+
+cd /var/www/html/blog
+
+vi wp-config.php
+
+add the below line
+
+/**#@-*/
+define( 'AUTOMATIC_UPDATER_DISABLED', true );
