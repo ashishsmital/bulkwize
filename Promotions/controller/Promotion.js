@@ -93,7 +93,7 @@ promotion.post('/push', function(req, res){
             return res.status(400).send(error);
         } else {
 			if (result != null && !_.isUndefined(result) && result.data.length > 0) {
-				console.log('Device tokens found' );
+				console.log('Device tokens found' + JSON.stringify(result));
                 
 				// iterate over device token and add it to array
                 _.each(result.data[0].Bulkwize, function (ele) {
