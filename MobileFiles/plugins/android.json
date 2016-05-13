@@ -86,9 +86,6 @@
         }
     },
     "installed_plugins": {
-        "com.phonegap.plugins.PushPlugin": {
-            "PACKAGE_NAME": "com.ionicframework.myapp876495"
-        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.ionicframework.myapp876495"
         },
@@ -106,6 +103,10 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.myapp876495"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "246022430024",
+            "PACKAGE_NAME": "com.bulkwize.com"
         }
     },
     "dependent_plugins": {}

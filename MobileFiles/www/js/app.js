@@ -63,22 +63,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
          console.log("device token",token.token);
      });
        */
-      if (window.cordova ){
-          pushNotification = window.plugins.pushNotification;
-          //alert(pushNotification);
-          pushNotification.register(
-              onNotification,
-              errorHandler,
-              {
-                  'badge': 'true',
-                  'sound': 'true',
-                  'alert': 'true',
-                  'ecb': 'onNotification',
-                  //'senderID': 'YOUR GOOGLE CONSOLE PROJECT NUMBER',
-                  'senderID': 'AIzaSyBoIsr7M2vjb_2w5lL8hFi0Z9qwXqClxcI',
-              }
-          );
-      }
+	  
+      
 
 
 
