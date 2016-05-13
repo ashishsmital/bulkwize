@@ -107,7 +107,7 @@ promotion.post('/push', function(req, res){
 
     sender.send(message, device_tokens, retry_times, function(result){
         console.log(result);
-        console.log('push sent to: ' + device_token);
+        console.log('push sent to: ' + device_tokens);
     });
 
     res.status(200).json({message:"Notification sent successfully"});
