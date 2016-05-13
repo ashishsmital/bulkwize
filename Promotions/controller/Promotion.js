@@ -73,7 +73,7 @@ promotion.post('/push', function(req, res){
     var device_tokens = []; //create array for storing device tokens
     var retry_times = 1; //the number of times to retry sending the message if it fails
 
-    var sender = new gcm.Sender('AIzaSyBoIsr7M2vjb_2w5lL8hFi0Z9qwXqClxcI'); //create a new sender
+    var sender = new gcm.Sender('AIzaSyCU3t-cokL5WZRZ9ym6-wpOsKFlGbZBzTM'); //create a new sender
     var message = new gcm.Message(); //create a new message
 
     message.addData('title', req.body.promotionTitle);

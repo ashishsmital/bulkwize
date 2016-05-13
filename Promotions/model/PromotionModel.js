@@ -60,7 +60,7 @@ PromotionModel.saveToken = function(data, callback) {
         
 
     }
-    db.insert(data.deviceToken, jsonObject, function(error, result) {
+    db.upsert(data.deviceToken, jsonObject, function(error, result) {
         if(error) {
             callback(error, null);
             return;
