@@ -101,16 +101,18 @@ promotion.post('/push', function(req, res){
 					console.log("The device token while iterating is " + ele.Bulkwize.deviceToken);
 					device_tokens.push(ele.deviceToken);
 				});
+				
+				sender.send(message, device_tokens, retry_times, function(result){
+					console.log(result);
+					console.log('push sent to: ' + device_tokens);
+				});
 			}
 		}
 	});
 	
     //device_tokens = req.body.promotionDeviceTokens;
 
-    sender.send(message, device_tokens, retry_times, function(result){
-        console.log(result);
-        console.log('push sent to: ' + device_tokens);
-    });
+    
 
     res.status(200).json({message:"Notification sent successfully"});
 });
