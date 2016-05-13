@@ -96,8 +96,9 @@ promotion.post('/push', function(req, res){
 				console.log('Device tokens found' + JSON.stringify(result));
                 
 				// iterate over device token and add it to array
-                _.each(result.data[0].Bulkwize, function (ele) {
-					console.log("The device token while iterating is " + ele.deviceToken);
+                _.each(result.data, function (ele) {
+					console.log("The element while iterating device token is " + JSON.stringify(ele));
+					console.log("The device token while iterating is " + ele.Bulkwize.deviceToken);
 					device_tokens.push(ele.deviceToken);
 				});
 			}
