@@ -9,6 +9,7 @@ var promotion = express.Router();
 var promotionModel = require('../model/PromotionModel.js');
 var fs = require('fs');
 var gcm = require('node-gcm');
+var _ = require('underscore');
 
 /**
  * Get All promotions
