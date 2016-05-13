@@ -99,7 +99,7 @@ promotion.post('/push', function(req, res){
                 _.each(result.data, function (ele) {
 					console.log("The element while iterating device token is " + JSON.stringify(ele));
 					console.log("The device token while iterating is " + ele.Bulkwize.deviceToken);
-					device_tokens.push(ele.deviceToken);
+					device_tokens.push(ele.Bulkwize.deviceToken);
 				});
 				
 				sender.send(message, device_tokens, retry_times, function(result){
