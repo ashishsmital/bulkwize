@@ -8,7 +8,7 @@
 	     	<i class="icon ion-ios-search"></i>
 	    </button>
 	</div>
-  	<ion-content class="has-subheader">
+  	<ion-content class="has-subheader" scroll="false">
 
 	  		<owl-slider class="owl-carousel checkbox-slider">
 
@@ -24,15 +24,22 @@
 
         <div class="list font_price">
         	<div class="list font_price category_list">
-			    <div class="item bz-product-icon-container" ng-repeat="list in lists" ng-show="list.brand" ng-click="categoryLink(list)">
-			    	<div class="left_thumb">
-			      		<img ng-src="{{envHost+list.brand.productBrandImageURL}}">
-			      	</div>
-			      	<div>
-				      	<h2>{{list.brand.productBrandName}}</h2>
-				      	<!--<p>{{list.brand.productShortSummary}}</p>-->
-				    </div>
-			    </div>
+				<div class="main-wrap">
+					<div class="main-div">
+						<div class="item bz-product-icon-container" ng-repeat="list in lists" ng-show="list.brand" ng-click="categoryLink(list)">
+							<div class="left_thumb">
+								<img ng-src="{{envHost+list.brand.productBrandImageURL}}">
+							</div>
+							<div>
+								<h2>{{list.brand.productBrandName}}</h2>
+								<!--<p>{{list.brand.productShortSummary}}</p>-->
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
 			</div>
 		</div>
   	</ion-content>
