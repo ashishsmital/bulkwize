@@ -17,7 +17,7 @@ sms2factor.post('/sendOTP', function(req, res, next) {
     var url = "https://"+config.smsConfig.hostname+"/"+config.smsConfig.path+"/"+config.smsConfig.token+"/SMS/";console.log(req.body.phonenumber);
     var phNumber = req.body.phonenumber;
     if(phNumber) {
-        url = url + phNumber + "/AUTOGEN";
+        url = url + phNumber + "/AUTOGEN/BLKREGOTP";
 
         console.log(url+ " OTP sent to Phone Number "+phNumber);
 
