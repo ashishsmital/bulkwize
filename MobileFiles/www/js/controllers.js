@@ -125,7 +125,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
             },
         }).then(function successCallback(response) {
             console.log(response.data.data);
-            $scope.lists = response.data.data;
+            $scope.lists =  _.chunk(response.data.data , 2);
             console.log($scope.lists.length);
             setTimeout(function() {
                 $ionicLoading.hide();

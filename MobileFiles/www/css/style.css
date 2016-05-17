@@ -601,8 +601,12 @@ ion-popover-view.user-menu-popover ion-content {
     overflow-y: scroll;
     overflow-x: hidden;
     position:absolute;
-    right: -15px;
+    /*right: -15px;*/
     width:100%;
     padding: 0 10px 0 2px;
 }
 
+.category_list .item{
+    border: none !important;
+
+}
