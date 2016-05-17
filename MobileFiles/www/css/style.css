@@ -161,7 +161,7 @@ a{
 .category_list
 {
 margin-top:15px;
-margin-left:10px
+/*margin-left:10px*/
 }
 .table{
     width: 100%;
@@ -588,3 +588,21 @@ ion-popover-view.user-menu-popover ion-content {
     font-weight: 300;
     line-height: 11px;
 }
+
+
+.main-wrap{
+    position: absolute;
+    width:100%;
+    z-index: 3;
+}
+
+.main-div{
+    max-height: 250px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position:absolute;
+    right: -15px;
+    width:100%;
+    padding: 0 10px 0 2px;
+}
+
