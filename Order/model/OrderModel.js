@@ -197,8 +197,8 @@ OrderModel.getShoppingCartById = function(attribute,value, callback) {
  *          http callback
  */
 OrderModel.closeShoppingCart = function(documentId,jsonObject, callback) {
-	console.log("Closing shopping cart for cart id -- " + documentId + " and the cart value being updated is " + JSON.stringify(jsonObject));
-    db.upsert(documentId, jsonObject, function(error, result) {
+	console.log("Deleting shopping cart for cart id -- " + documentId + " and the cart value being updated is " + JSON.stringify(jsonObject));
+    db.remove(documentId, function(error, result) {
         if(error) {
             callback(error, null);
             return;
