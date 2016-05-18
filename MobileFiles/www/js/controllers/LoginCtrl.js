@@ -45,6 +45,15 @@ app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $
 
             }, function errorCallback(data) {
                 console.log(data);
+				if(data.status == 401){
+					var alertPopup = $ionicPopup.alert({
+                        title: 'Error',
+                        template: 'Either the username or password is incorrect.'
+                    });
+
+					
+
+				}
                 $ionicLoading.hide();
             });
         }
