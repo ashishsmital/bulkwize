@@ -33,7 +33,7 @@ OrderModel.createOrder = function(userId, callback) {
 
 	var orderId = userId +"-"+ uuid.v4().substring(1,5) +"-"+ moment(new Date()).utcOffset("+05:30").format('DDMMYYYY')	;
 	console.log("the order id for new order is " + orderId);
-	
+
     OrderModel.getShoppingCartById("id","com.bulkwise.Cart::"+userId, function(error, result) {
         if (error) {
             callback(error, null);
@@ -45,20 +45,22 @@ OrderModel.createOrder = function(userId, callback) {
 		orderObj.id=orderId;
 		orderObj.createdAt= moment(new Date()).utcOffset("+05:30").format();
 		orderObj.updatedAt= moment(new Date()).utcOffset("+05:30").format();
+
 		// calculate total order value
 		var sum = 0;
 				var totalOrderValue = 0;
 				// calculate the total number of products in the cart
-                _.each(orderObj.products, function (ele) {
+                _.each(orderObj.products, function (ele,productIndex) {
 
                     sum += ele.variants.length;
 					// calculate the total cart value
-					_(ele.variants).each(function (eleV) {
+					_(ele.variants).each(function (eleV,variantIndex) {
 						console.log("Inside variants loop");
+						_.extend(orderObj.products[productIndex].variants[variantIndex],{'deliveryStatus':'PD'});
 						totalOrderValue += eleV.productCountInCase*eleV.quantity*eleV.productMRPUnit*(100-eleV.productDiscountPercentage)/100;
 
 					});
-				
+
                 });
                 _.extend(orderObj, {'totalCount': sum});
 				_.extend(orderObj, {'totalOrderValue': totalOrderValue});
@@ -76,11 +78,11 @@ OrderModel.createOrder = function(userId, callback) {
 				}
 				callback(null, {message: 'success', data: orderObj});
 			});
-			
+
 		});
     });
 
-    
+
 }
 
 /**
@@ -203,9 +205,9 @@ OrderModel.closeShoppingCart = function(documentId,jsonObject, callback) {
             callback(error, null);
             return;
         }
-       
+
         callback(null, {message: 'success', data: result});
-       
+
 
     });
 }
@@ -234,7 +236,7 @@ OrderModel.updateOrder = function(documentId, orderObj, callback) {
 
     });
 
-    
+
 }
 
 //exporting product model
