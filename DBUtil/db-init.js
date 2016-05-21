@@ -39,7 +39,7 @@ var productObj = {
 "productDescription": "A detailed description about the product",
 "productName": "Gillete Mach 3",
 "productImageURL":"This is product image url",
-"productIsVisible":true,
+"productIsVisible":'Y',
 "productVariants":[{
 		"sku_id":"id",
 		"productItemId":" 82243252",
@@ -51,7 +51,7 @@ var productObj = {
 		"productUnitSizeWeightQty":"3",
 		"productMRPUnit": 550,
 		"productDiscountPercentage": 9,
-		"productVariantIsVisible":true,
+		"productVariantIsVisible":"true",
 		"productVATPercentage":"14.5",
 		"productVariantPriceApplicableUpto":currentUTCdate
 		}],
@@ -316,6 +316,7 @@ var insertProductIntoDB = function(parsedRecord, parentCategoryId, subCategoryId
 				productObj.productName=parsedRecord.DisplayTitle;
 				productObj.supplier_business_name=parsedRecord.SupplierBusinessName;
 				productObj.override_lead_time_for_delivery_in_days=parsedRecord.LeadTimeForDelivery;
+				productObj.productIsVisible=parsedRecord.productIsVisible;
 				productObj.productVariants[0].sku_id=productId;
 				productObj.productVariants[0].productItemId=parsedRecord.ItemID;
 				productObj.productVariants[0].productMaterialCode=parsedRecord.Matcode;

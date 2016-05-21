@@ -165,7 +165,7 @@ ProductModel.getUniqueAttributes = function(attribute, callback) {
 ProductModel.getProductsByCategoryIdsAndBrandName = function(categoryIdArray,productBrandName,callback) {
 	console.log("category id array inside the model object for querying products is -- " + categoryIdArray);
 	console.log("Brand name inside the model object for querying products is -- " + productBrandName);
-    var query = N1qlQuery.fromString("select * from "+db._name+" as brand UNNEST brand.productCategoryId where productCategoryId IN ["+ categoryIdArray+"] and brand.productBrandName = '" + productBrandName+"' group by brand.productName");
+    var query = N1qlQuery.fromString("select * from "+db._name+" as brand UNNEST brand.productCategoryId where productCategoryId IN ["+ categoryIdArray+"] and brand.productBrandName = '" + productBrandName+"'  and brand.productIsVisible = 'Y' group by brand.productName");
 	console.log("Executing the query -- " + query);
 	//e.g. select * from default as brand UNNEST brand.productCategoryId where productCategoryId IN [3,16] and brand.productBrandName = "Tide";
     db.query(query, function(error, result) {
@@ -188,7 +188,7 @@ ProductModel.getProductsByCategoryIdsAndBrandName = function(categoryIdArray,pro
  *          callback for http response
  */
 ProductModel.getProductsWithTopDiscounts = function(noOfBrandsToRetrieve,callback) {
-	var queryString = "select MAX(TONUMBER(productVariants.productDiscountPercentage)) as maxDisc,topDiscounts.* from "+db._name+" as topDiscounts UNNEST topDiscounts.productVariants where topDiscounts.type = 'com.bulkwise.Products' group by  topDiscounts.productBrandName order by TONUMBER(maxDisc) DESC ";
+	var queryString = "select MAX(TONUMBER(productVariants.productDiscountPercentage)) as maxDisc,topDiscounts.* from "+db._name+" as topDiscounts UNNEST topDiscounts.productVariants where topDiscounts.type = 'com.bulkwise.Products' and topDiscounts.productIsVisible = 'Y' group by  topDiscounts.productBrandName order by TONUMBER(maxDisc) DESC ";
 	
 	if(noOfBrandsToRetrieve != undefined && noOfBrandsToRetrieve != null){
 		if(noOfBrandsToRetrieve!='all'){
@@ -220,7 +220,7 @@ ProductModel.getProductsWithTopDiscounts = function(noOfBrandsToRetrieve,callbac
 ProductModel.getProductsByLikeSearch = function(searchString,callback) {
 	console.log("Inside product search for query string -- " + searchString);
 	
-    var query = N1qlQuery.fromString("select id, productName as ProductNameSearch from "+db._name+" where lower(productName) LIKE '%"+searchString+"%' and type='com.bulkwise.Products' UNION select distinct productCategoryId,productBrandName as ProductBrandNameSearch from "+db._name+" where lower(productBrandName) LIKE '%" +searchString+"%' and type='com.bulkwise.Products'");
+    var query = N1qlQuery.fromString("select id, productName as ProductNameSearch from "+db._name+" where lower(productName) LIKE '%"+searchString+"%' and type='com.bulkwise.Products' and productIsVisible = 'Y' UNION select distinct productCategoryId,productBrandName as ProductBrandNameSearch from "+db._name+" where lower(productBrandName) LIKE '%" +searchString+"%' and type='com.bulkwise.Products' and productIsVisible = 'Y'");
 	
 	console.log("Executing the query -- " + query);
 /* e.g. Query
