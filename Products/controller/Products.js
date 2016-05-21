@@ -144,6 +144,25 @@ products.post('/search', function(req, res, next) {
 
 });
 
+/**
+ * Suggest a product
+ */
+products.post('/suggest', function(req, res, next) {
+	console.log("Inside suggest a product method " + req.body.productName);
+	var recommendingUser = "anonymous";
+	if(req.user != undefined && req.user != null && req.user.user != undefined && req.user.user != null ){
+		recommendingUser = req.user.user;
+	}
+	
+	ProductModel.addRecommendation(req.body.productName,recommendingUser, function(error, result) {
+        if(error) {
+            return res.status(400).send(error);
+        }
+        res.send(result);
+    });
+
+});
+
 // export product module
 module.exports = products;
 

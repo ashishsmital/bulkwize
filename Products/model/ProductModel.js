@@ -245,6 +245,29 @@ select id,productDisplayTitle as ProductTitleSearch from default where lower(pro
     });
 }
 
+ProductModel.addRecommendation = function(productName,recommendingUser,callback){
+	
+	var jsonObject = {
+        type: "com.bulkwise.ProductRecommendation",
+        id: "com.bulkwise.ProductRecommendation::"+productName,
+        productName: productName,
+        recommendingUser:recommendingUser,
+        created_at:new Date(),
+        udpated_at:new Date()
+        
+    }
+    
+
+    db.upsert("com.bulkwise.ProductRecommendation::"+productName, jsonObject, function(error, result) {
+        if(error) {
+            callback(error, null);
+            return;
+        }
+        callback(null, {message: 'success', data: result});
+    });
+	
+}
+
 
 
 
