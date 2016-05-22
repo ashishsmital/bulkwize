@@ -20,7 +20,8 @@ app.controller('RegisterCtrl', function($scope, $rootScope, $ionicLoading, $http
 
 	$scope.reg.delCity = 'Bangalore';
 	$scope.reg.delState = 'Karnataka';
-
+	
+	$scope.reg.isSameBillingAdd = true;
 /*
     $scope.step1 = true;
     $scope.step2 = true;
