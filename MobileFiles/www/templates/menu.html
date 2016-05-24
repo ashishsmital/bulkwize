@@ -9,12 +9,12 @@
         </button>
        <button class="button button-clear" ng-click="goToHome()">
 				<img src="img/home.png" class="menu_home">
-       
+
         </button>
       </ion-nav-buttons>
         <ion-nav-buttons side="right" class="topbar_menu">
             <button class="button" ng-if="!isLogin" ui-sref="app.login">
-                <i class="icon ion-person"></i> 
+                <i class="icon ion-person"></i>
             </button>
             <button class="button" ng-if="isLogin" ng-click="userPopover($event)" >
                 <i class="icon ion-person"></i>
@@ -39,7 +39,7 @@
         </ion-item>
     </div>
     <ion-content class="has-subheader">
-        
+
       <ion-list >
         <ion-item menu-close href="#/app/register" ng-if="!isLogin">
             Register as Buyer
@@ -59,10 +59,12 @@
         <ion-item menu-close  ng-if="isLogin" ng-click="logout()">
             Logout
         </ion-item>
-		<ion-item menu-close href="#/app/contactus">
+		    <ion-item menu-close href="#/app/contactus">
             Contact Us
-        </ion-item>  
-
+        </ion-item>
+        <ion-item menu-close href="#/app/suggest">
+                Suggest
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>

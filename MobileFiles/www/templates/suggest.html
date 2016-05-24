@@ -1,0 +1,18 @@
+<ion-view title="Suggest">
+  <ion-content class="has-header">
+    <form class="form-horizontal padding_col6_left" role="form" name="suggest" novalidate method="post" ng-submit="submit(suggest.$valid, products)" >
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+            <span class="input-label">Product Name<sup>*</sup></span>
+            <input type="text" placeholder="XYZ" name="productName" id="productName" class="error" ng-model="products.productName" autocomplete="off" required>
+            <div class="validation-error" ng-if="(suggest.$submitted || suggest.productName.$touched)" ng-messages="suggest.productName.$error" >
+                <div ng-message="required" class="error">Product Name is required</div>
+            </div>
+        </label>
+        <div class="login_button">
+          <button class="button button-block button-positive" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

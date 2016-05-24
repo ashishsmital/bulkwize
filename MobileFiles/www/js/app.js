@@ -10,7 +10,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
 
 .run(function($ionicPlatform,$rootScope,$location, $window,$ionicNavBarDelegate,RequestsService) {
   $ionicPlatform.ready(function() {
-	  
+
 	  // initialise google analytics
 
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
 
 
 //        $window.ga('create', 'UA-75906058-2', 'bulkwize.com');
- 
+
         // track pageview on state change
         $rootScope.$on('$stateChangeSuccess', function (event,toState) {
 			if (!$window.ga)
@@ -39,7 +39,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
 
         });
-		
+
 		// end Google Analytics
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -63,8 +63,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
          console.log("device token",token.token);
      });
        */
-	  
-      
+
+
 
 
 
@@ -74,7 +74,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
     $httpProvider.defaults.useXDomain = true;
     $httpProvider.defaults.withCredentials  = true;
     //delete $httpProvider.defaults.headers.common['X-Requested-With'];
- }]) 
+ }])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -191,7 +191,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
         }
     })
-	
+
 	.state('app.contactus', {
         url: '/contactus',
         views: {
@@ -201,6 +201,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
         }
     })
+
+    .state('app.suggest', {
+          url: '/suggest',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/suggest.html',
+                  controller: 'SuggestCtrl'
+              }
+          }
+      })
 
     .state('app.categorylist',{
         url:'/categorylist/:name',
@@ -294,7 +304,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova', 'ngMessa
             }
         }
     })
-	
+
 	.state('app.finalsummary', {
         url: '/finalsummary',
         views: {
