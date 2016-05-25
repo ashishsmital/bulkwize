@@ -79,6 +79,20 @@ products.get('/likeSearch/:searchString', function(req, res, next) {
         if(error) {
             return res.status(400).send(error);
         }
+        if(result.data.length == 0){
+          console.log("Product not found hence adding recomendation");
+          var recommendingUser = "anonymous";
+        	if(req.user != undefined && req.user != null && req.user.user != undefined && req.user.user != null ){
+        		recommendingUser = req.user.user;
+        	}
+
+        	ProductModel.addRecommendation(req.params['searchString'],recommendingUser, function(error, result) {
+                if(error) {
+                    console.error("Could not add searched product to product recomendation");
+                }
+                console.log("Added product : "+req.params['searchString']+" recomending User : "+recommendingUser);
+            });
+        }
         res.send(result);
     });
 
@@ -153,7 +167,7 @@ products.post('/suggest', function(req, res, next) {
 	if(req.user != undefined && req.user != null && req.user.user != undefined && req.user.user != null ){
 		recommendingUser = req.user.user;
 	}
-	
+
 	ProductModel.addRecommendation(req.body.productName,recommendingUser, function(error, result) {
         if(error) {
             return res.status(400).send(error);
@@ -162,8 +176,5 @@ products.post('/suggest', function(req, res, next) {
     });
 
 });
-
 // export product module
 module.exports = products;
-
-
