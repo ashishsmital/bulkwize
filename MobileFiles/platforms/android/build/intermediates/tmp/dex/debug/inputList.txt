@@ -1,6 +1,0 @@
-D:\bulkwize\MobileFiles\platforms\android\build\intermediates\classes\debug
-D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\support-annotations-23.1.1-bd227050441a903b70f3dc9452ce7befec2b3315.jar
-D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\gcm-36f378611816315489acf7660b07a25afa45c2fe.jar
-D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\classes-7e84e658e04326e1a5aa1fa9d508a0c4d703b855.jar
-D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\internal_impl-23.1.1-684308e1fc878d644f4fd85f81c4e69dc9f917ed.jar
-D:\bulkwize\MobileFiles\platforms\android\build\intermediates\pre-dexed\debug\classes-76008100912ec395739af6d1273a249a00ba6afa.jar

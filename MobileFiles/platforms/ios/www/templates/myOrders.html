@@ -1,0 +1,66 @@
+<ion-view title="My orders">
+    <ion-content>
+        <div class="list card" ng-if="!isMyOrders">
+            <div class="item text-center">
+               Currenty  you dont have any order details.
+            </div>
+        </div>
+
+        <ion-list class="accordion" ng-if="isMyOrders">
+            <ion-item class="item-stable" ng-repeat-start="myOrder in myOrders" ng-click="toggleGroup($index)" ng-class="{active:isGroupShown($index)}">
+                <i class="icon" ng-class="isGroupShown($index) ? 'ion-minus' : 'ion-plus'" ></i>
+                <b>Order Id :- </b>{{myOrder.Bulkwize.id}}&nbsp&nbsp&nbsp&nbsp<b>Order Amount :-</b> Rs. {{myOrder.Bulkwize.totalOrderValue | number:2}}
+            </ion-item>
+            <ion-item class="item-accordion item-align" ng-repeat-end  ng-show="isGroupShown($index)">
+              <p><b>Order Created On:-</b> {{myOrder.Bulkwize.createdAt | date:'dd-MM-yyyy'}}</p>
+            <ion-list>
+                <ion-item ng-repeat="productElement in myOrder.Bulkwize.products">
+                <div class="left_thumb">
+                  <img src="{{envHost+productElement.productImageURL}}">
+                </div>
+                <div class="padding">
+            			<h3>{{productElement.productDisplayTitle}}</h3>
+            			<p>{{productElement.productDescription}}</p>
+            			<br>
+            		</div>
+                    <table class="table">
+                        <tr>
+                           <th>Size</th>
+                            <th>Case of</th>
+                            <th width="60%">Price/Unit</th>
+                            <th>No of cases</th>
+                            <th>Status</th>
+                        </tr>
+                        <tbody>
+                        <tr ng-repeat="productVariant in productElement.variants">
+                          <td>
+          									<span>{{productVariant.productUnitSizeWeightQty}}</span>
+          								</td>
+                          <td>
+                              <span>{{productVariant.productCountInCase}}</span>
+                              <div> units</div>
+                          </td>
+                            <td>
+                                MRP: <span style='color:black;text-decoration:line-through'>
+    							                <span style='color:red'>
+    											    {{productVariant.productMRPUnit}}
+    											</span>
+    										</span>
+    							<div>You Pay: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
+    							<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
+                            </td>
+    						<td>
+    						    {{productVariant.quantity}}
+    						</td>
+                <td>
+                    {{productVariant.deliveryStatus}}
+                </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                  </ion-item>
+            </ion-list>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

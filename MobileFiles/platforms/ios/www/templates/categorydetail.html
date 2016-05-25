@@ -1,0 +1,84 @@
+<ion-view title="{{title}}">
+	<div class="item-input-inset has-header padding_6">
+		<label class="item-input-wrapper">
+		    <i class="icon ion-ios-search placeholder-icon"></i>
+		    <input type="search" placeholder="Search" ng-model="search">
+		</label>
+		<button class="button button-small button-calm" ui-sref="app.search({ searchId: search})">
+	     	<i class="icon ion-ios-search"></i>
+	    </button>
+	</div>
+  	<ion-content class="has-subheader">
+		<div class="padding text-center">
+			<img ng-src="{{envHost+detail.productImageURL}}">
+		</div>
+		<div class="padding">
+			<h3>{{detail.productDisplayTitle}}</h3>
+			<h4>Summary</h4>
+			<p>{{detail.productDescription}}</p>
+			<br>
+			<h4><b>COD</b> available on total purchase up to Rs. 10000</h4>
+			<h4><b>Delivery in {{detail.override_lead_time_for_delivery_in_days}}</b></h4>
+		</div>
+
+		<div class="mt_10 padding" ng-show="detail.productVariants">
+			<table class="table bz-sub-cat-tbl">
+				<tr>
+					<th>Size</th>
+					<th>Case of</th>
+					<th width="60%">Price/Unit</th>
+					<th>No of cases</th>
+				</tr>
+				<tbody>
+					<tr ng-repeat="productVariant in detail.productVariants">
+						<td>
+										<span>{{productVariant.productUnitSizeWeightQty}}</span>
+						</td>
+						<td>
+								<span>{{productVariant.productCountInCase}}</span>
+								<div> units</div>
+						</td>
+						<td>
+							MRP: <span style='color:black;text-decoration:line-through'>
+							                <span style='color:red'>
+											    {{productVariant.productMRPUnit}}
+											</span>
+										</span>
+							<div>You Pay: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
+							<div class="red">{{productVariant.productDiscountPercentage}}% off</div>
+
+						</td>
+						<td>
+							<div class="text-center bz-mar-bot">
+								<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+							</div>
+							<div class="text-center">
+								<div class="product-quantity">{{productVariant.productOrderedQty}}</div>
+							</div>
+							<div class="text-center bz-mar-top">
+								<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
+							</div>
+
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="row npt">
+			<div class="col text-right">
+				<div class="addCartButton nmt" ng-click="addCart(detail)">
+				 	Add to Cart <i class="ion-android-cart"></i>
+				</div>
+			</div>
+		</div>
+
+  	</ion-content>
+  	<!-- <ion-footer-bar class="bar bar-dark cart_button">
+		<div class="button-bar">
+			<a class="button button-calm " ui-sref="app.cart">Buy Now</a>
+			<a class="button button-assertive" ng-click="addCart(detail)">Add to Cart</a>
+		</div>
+	</ion-footer-bar> -->
+</ion-view>

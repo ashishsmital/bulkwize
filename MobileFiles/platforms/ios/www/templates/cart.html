@@ -1,0 +1,84 @@
+<ion-view view-title="Cart details">
+  	<ion-content >
+
+		<div ng-if="cartDetails.length == 0" style="margin-top:10px;" class="text-center">Empty cart no products added yet</div>
+    	<div class="list font_price category_list">
+
+		    <div class="item" ng-repeat="cartDetail in cartDetails.products">
+		    	<div ui-sref="app.categorydetail({ pId: cartDetail.id})">
+			    	<div class="left_thumb">
+			      		<img src="{{envHost+cartDetail.productImageURL}}">
+			      	</div>
+			      	<div>
+				      	<h2>{{cartDetail.productBrandName}}</h2>
+				      	<p>{{cartDetail.productShortSummary}}</p>
+						<br>
+						<p><b>COD</b> available on total purchase up to Rs. 10000</p>
+			            <p><b>Delivery in {{cartDetail.override_lead_time_for_delivery_in_days}}</b></p>
+				    </div>
+			    	<div class="clear"></div>
+			    </div>
+
+			    <div class="mt_10">
+					<table class="table bz-sub-cat-tbl">
+						<tr>
+							<th>Size</th>
+							<th>Case of</th>
+							<th width="60%">Price/Unit</th>
+							<th>No of cases</th>
+						</tr>
+						<tbody>
+							<tr ng-repeat="productVariant in cartDetail.variants">
+								<td>
+									<span>{{productVariant.productUnitSizeWeightQty}}</span>
+								</td>
+								<td>
+									<span>{{productVariant.productCountInCase}}</span>
+									<div> units</div>
+								</td>
+								<td>MRP: <span style='color:black;text-decoration:line-through'>
+							                <span style='color:red'>
+											    {{productVariant.productMRPUnit}}
+											</span>
+										</span>
+							<div>You Pay: {{productVariant.productMRPUnit*(100-productVariant.productDiscountPercentage)/100 | number:2}}</div>
+							<div class="red">{{productVariant.productDiscountPercentage}}% off</div></td>
+								<td>
+									<div class="text-center bz-mar-bot">
+										<button class="icon ion-plus-round icon-plus-round" ng-click="increment(productVariant)"></button>
+									</div>
+							      	<div class="text-center">
+										<div class="product-quantity">{{productVariant.quantity}}</div>
+									</div>
+
+							      	<div class="text-center bz-mar-top">
+										<button class="icon ion-minus-round icon-minus-round" ng-click="decrement(productVariant)"></button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="row">
+
+					<div class="col">
+						<div class="addCartButton" ng-click="addCart(cartDetail)">
+						 	Update cart<i class="ion-android-cart"></i>
+						</div>
+					</div>
+					<div class="col text-right">
+						<div class="addCartButton" ng-click="delete(cartDetail)">
+						 	Remove <i class="ion-close"></i>
+						</div>
+					</div>
+				</div>
+		    </div>
+		</div>
+  	</ion-content>
+  	<ion-footer-bar class="bar bar-dark cart_button" ng-if="cartDetails.length != 0">
+		<div class="button-bar">
+			<a class="button button-calm " ui-sref="#">Total: {{cartDetails.totalCartValue}}</a>
+			<a class="button button-assertive" ng-click="checkout()">Checkout</a>
+		</div>
+	</ion-footer-bar>
+</ion-view>

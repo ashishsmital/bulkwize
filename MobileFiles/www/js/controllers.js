@@ -425,7 +425,7 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
     }
 })
 
-.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window,EnvConfig){
+.controller('ConfirmCtrl', function($scope, $stateParams, $http, $ionicLoading, $rootScope, $state,$window,EnvConfig,$timeout){
 
     $ionicLoading.show({
         content: 'Loading',
@@ -491,13 +491,38 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 			 // if order creation is successful - make payment
 			$http({
 				method: 'POST',
-				url: EnvConfig.HOST+'payment/'+response.data.data.id
+				url: 'http://localhost:8080/payment/9673777913-aa3f-26052016'
 			}).then(function successCallback(pmntResponse) {
 				console.log("Payment creation was successful" + pmntResponse.data.data.pmntURL);
 				$ionicLoading.hide();
 
+               var checkpaymentFunc =  $timeout(function() {
+
+                    console.log('Payment check timeout fired')
+                    $http({
+                    				method: 'GET',
+                    				url: 'http://localhost:8080/payment/checkpayment/9673777913-aa3f-26052016'
+                    			}).then(function successCallback(response) {
+                                    console.log('success');
+                                    if(response.message=='success'){
+                                        $timeout.cancel(checkpaymentFunc);
+                                    }else{
+                                    console.log('Error');
+
+                                    }
+                    			}, function errorCallback(data) {
+                                 	console.log('Error');
+                                 	//$timeout.cancel(checkpaymentFunc);
+
+                                });
+
+                }, 20000);
+
 				// if payment creation is successful, invoke instamojo long URL
-				$window.location.href=pmntResponse.data.data.pmntURL;
+				$window.open(pmntResponse.data.data.pmntURL,"_blank","location=no");
+
+
+
 
 				// end of invoking instamojo long url
 			}, function errorCallback(data) {

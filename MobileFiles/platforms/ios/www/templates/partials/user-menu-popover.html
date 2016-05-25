@@ -1,0 +1,22 @@
+<ion-popover-view class="user-menu-popover" ng-controller="AppCtrl">
+    <!--
+    <ion-header-bar>
+        <h1 class="title">Welcome !!!</h1>
+    </ion-header-bar>
+    -->
+    <ion-content scroll = "false">
+        <ion-list class="settings-padding" >
+            <ion-item ui-sref="app.userDetails({ id: userDetails.id})" ng-click="closePopover()" >
+                My Profile
+            </ion-item>
+            <ion-item  ui-sref="app.myOrders" ng-click="closePopover()" >
+               My order
+            </ion-item>
+            <ion-item  ng-click="logout(true)">
+                Logout
+            </ion-item>
+
+        </ion-list>
+
+    </ion-content>
+</ion-popover-view>

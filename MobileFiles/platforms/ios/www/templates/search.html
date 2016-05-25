@@ -1,0 +1,28 @@
+<ion-view title="Search">
+	<div class="item-input-inset has-header padding_6">
+		<label class="item-input-wrapper">
+		    <i class="icon ion-ios-search placeholder-icon"></i>
+		    <input type="search" placeholder="Search" ng-model="search">
+		</label>
+		<button class="button button-small button-calm" ui-sref="app.search({ searchId: search})">
+	     	<i class="icon ion-ios-search"></i>
+	    </button>
+	</div>
+  	<ion-content class="has-subheader">
+  		<div class="list font_price">
+  			<div class="item item-divider" ng-show="brands.length != 0">
+			    Brand
+			</div>
+		    <a ng-click="categoryLink(brand)" class="item" ng-repeat = "brand in brands">
+		    	{{brand.ProductBrandNameSearch}}
+		    </a>
+		    <div class="item item-divider" ng-show="products.length !=0">
+			    Product
+			</div>
+		    <a ui-sref="app.categorydetail({ pId: product.id})" class="item" ng-repeat = "product in products">
+		    	{{product.ProductNameSearch}}
+		    </a>
+			<div class="item text-center" ng-if="products.length === 0">No brands or products found matching {{searchKeyword}} </div>
+		</div>
+  	</ion-content>
+</ion-view>

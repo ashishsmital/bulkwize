@@ -1,0 +1,69 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-calm">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+       <button class="button button-clear" ng-click="goToHome()">
+				<img src="img/home.png" class="menu_home">
+       
+        </button>
+      </ion-nav-buttons>
+        <ion-nav-buttons side="right" class="topbar_menu">
+            <button class="button" ng-if="!isLogin" ui-sref="app.login">
+                <i class="icon ion-person"></i> 
+            </button>
+            <button class="button" ng-if="isLogin" ng-click="userPopover($event)" >
+                <i class="icon ion-person"></i>
+            </button>
+            <button class="button"  ui-sref="app.cart">
+                <i class="icon ion-bag"></i>
+                <span  class="badge badge-assertive cartnumber" ng-show="cartNumber != 0">{{cartNumber}}</span>
+            </button>
+        </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-calm">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <div class="bar bar-pink has-header" >
+        <a ng-if="isLogin" menu-close ui-sref="app.userDetails({ id: userDetails.id})">Welcome {{userDetails.firstName}}</a>
+        <ion-item menu-close  href="#/app/login" style="border:none" class="login-item" ng-if="!isLogin">
+            Login
+        </ion-item>
+    </div>
+    <ion-content class="has-subheader">
+        
+      <ion-list >
+        <ion-item menu-close href="#/app/register" ng-if="!isLogin">
+            Register
+        </ion-item>
+        <ion-item menu-close ui-sref="app.myOrders" ng-if="isLogin" >
+              My order
+        </ion-item>
+        <ion-item menu-close href="#/app/supplier">
+            I am a supplier
+        </ion-item>
+        <ion-item menu-close href="#/app/aboutus">
+            About Us
+        </ion-item>
+        <ion-item menu-close href="#/app/faq">
+            FAQ
+        </ion-item>
+        <ion-item menu-close  ng-if="isLogin" ng-click="logout()">
+            Logout
+        </ion-item>
+		<ion-item menu-close href="#/app/contactus">
+            Contact Us
+        </ion-item>  
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
