@@ -53,7 +53,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
 		if(response.status == 401){
 					var alertPopup = $ionicPopup.alert({
                         title: 'Info',
-                        template: 'Ooops! Please login before checkout'
+                        template: 'Please login before checkout'
                     });
 
 					alertPopup.then(function(res) {
