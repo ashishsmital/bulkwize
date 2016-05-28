@@ -68,6 +68,12 @@
             <div class="col-xs-9"><strong class="pull-right">Balance:</strong></div>
             <div class="col-xs-3">BALANCE</div>
         </div>
+        <div class="row">
+           <div class="col-xs-6">
+            <strong></strong>
+            <div>CIN:U52500KA2016PTC092781</div>
+           </div>
+        </div>
     </div>
 </div>
 
