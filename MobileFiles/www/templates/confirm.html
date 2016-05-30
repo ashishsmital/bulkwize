@@ -1,10 +1,12 @@
 <ion-view view-title="Confirm Page">
 	<div class="has-header bar bar-pink">
-		<div class="total">Total Payment Amount: {{cartDetails.totalCartValue}}</div>
+		<div class="total">Total Payment Amount: {{cartDetails.totalPayableAmnt}}</div>
 	</div>
   	<ion-content class="has-subheader">
     	<div class="list font_price category_list">
-		<div class="total"><b>Shipping Address :-</b> <br>{{cartDetails.shipping_address.address1}},</br> {{cartDetails.shipping_address.address2}},<br> {{cartDetails.shipping_address.city}},  {{cartDetails.shipping_address.postcode}}</div><br>
+				<div class="total">Order subtotal: {{cartDetails.totalCartValue}}</div><br>
+				<div class="total">Delivery Charge: {{cartDetails.deliveryCharge}}</div><br>
+				<div class="total"><b>Shipping Address :-</b> <br>{{cartDetails.shipping_address.address1}},</br> {{cartDetails.shipping_address.address2}},<br> {{cartDetails.shipping_address.city}},  {{cartDetails.shipping_address.postcode}}</div><br>
 		    <div class="item" ng-repeat="cartDetail in cartDetails.products">
 		    	<div ui-sref="app.categorydetail({ pId: cartDetail.id})">
 			    	<div class="left_thumb">

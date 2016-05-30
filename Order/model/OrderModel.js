@@ -11,6 +11,7 @@ var ViewQuery = require('dbutil').ViewQuery;
 var N1qlQuery = require('dbutil').N1qlQuery;
 var moment = require('moment');
 var _ = require('underscore');
+var utilities = require('utilities/controller/Utilities.js');
 
 
 
@@ -62,8 +63,13 @@ OrderModel.createOrder = function(userId, callback) {
 					});
 
                 });
+								//if ordervalue is less than Rs 2000 then add a delivery charge of 100
+								var deliveryCharge = utilities.getDeliveryCharge(totalOrderValue);
+								console.log("deliverycharge :"+deliveryCharge);
                 _.extend(orderObj, {'totalCount': sum});
 				_.extend(orderObj, {'totalOrderValue': totalOrderValue});
+				_.extend(orderObj,{'deliveryCharge':deliveryCharge});
+				_.extend(orderObj,{'total_payable_amnt':totalOrderValue+deliveryCharge});
 		db.insert(orderId, orderObj, function(error, orderResult) {
 			if(error) {
 				callback(error, null);

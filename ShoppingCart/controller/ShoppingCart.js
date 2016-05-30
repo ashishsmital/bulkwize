@@ -8,6 +8,7 @@
 var express = require('express');
 var shoppingcart = express.Router();
 var ShoppingCartModel = require('../model/ShoppingCartModel.js');
+var utilities = require('utilities/controller/Utilities.js');
 var _ = require('underscore');
 var Bulkwize = "Bulkwize";
 var moment = require('moment');
@@ -36,11 +37,11 @@ shoppingcart.get('/user/:userid', function (req, res, next) {
 						totalCartValue += eleV.productCountInCase*eleV.quantity*eleV.productMRPUnit*(100-eleV.productDiscountPercentage)/100;
 
 					});
-				
+
                 });
                 _.extend(result.data[0].Bulkwize, {'totalCount': sum});
 				_.extend(result.data[0].Bulkwize, {'totalCartValue': numeral(totalCartValue).format('Rs0,0.00')});
-				
+
             }
 
         }
@@ -53,6 +54,7 @@ shoppingcart.get('/user/:userid', function (req, res, next) {
  * get Shoppingcart
  */
 shoppingcart.get('/', function (req, res, next) {
+    console.log("session_id :"+req.sessionID);
 	// check if there is a cart for the session and then check if there is an previous un-checked out cart for the user
     ShoppingCartModel.getByAttribute("session_id", req.sessionID, function (error, result) {
         if (error) {
@@ -75,7 +77,11 @@ shoppingcart.get('/', function (req, res, next) {
                 });
                 _.extend(result.data[0].Bulkwize, {'totalCount': sum});
 				console.log("The count of items in shopping cart is " + result.data[0].Bulkwize.totalCount);
+        var deliveryCharge = utilities.getDeliveryCharge(totalCartValue);
 				_.extend(result.data[0].Bulkwize, {'totalCartValue': numeral(totalCartValue).format('Rs0,0.00')});
+        var totalPayableAmnt = totalCartValue + deliveryCharge;
+        _.extend(result.data[0].Bulkwize, {'deliveryCharge': numeral(deliveryCharge).format('Rs0,0.00')});
+        _.extend(result.data[0].Bulkwize, {'totalPayableAmnt': numeral(totalPayableAmnt).format('Rs0,0.00')});
 				//res.send(result);
             }else{ // check if there is any unchecked out cart for the user from previous session.
 				if(req.user != undefined && req.user != null && req.user.user != undefined && req.user.user != null ){
@@ -84,18 +90,18 @@ shoppingcart.get('/', function (req, res, next) {
                         console.log('Error fetching unchecked out shopping cart');
                     }else {
                         console.log('Number of  existing unchecked out shopping cart for this user  - '+ result.data.length)
-            						
+
 						if (result != null && !_.isUndefined(result) && result.data.length > 0) {
                             console.log('Got unchecked out shopping cart for the user ')
                             var object  = result.data[0].Bulkwize;
-							
+
                             object.session_id = req.sessionID;
-                            
+
                             ShoppingCartModel.save(object,function(error,result){
                                 console.log('Got un-checked out shopping cart for the user and associating it  with the current session ')
                                 if(result && result.data.length >0){
                                     return done(null, user);
-									
+
 									//return req.res.status(200).json({message:"Successfully logged in"});
                                 }
                             });
@@ -104,7 +110,7 @@ shoppingcart.get('/', function (req, res, next) {
 					}
 				});
 				}
-				
+
 			}
 
 
@@ -139,7 +145,7 @@ shoppingcart.put('/', function (req, res, next) {
 
                     var match = false;
                     var pdtFromDB = result.data[0].Bulkwize.products;
-					
+
                     _.each(pdtFromSite, function (ele) {
 
                         var prod = _.findWhere(pdtFromDB, {'id': ele.id});
@@ -147,14 +153,14 @@ shoppingcart.put('/', function (req, res, next) {
                             _.each(ele.variants, function (ele) {
 
                                 var variant = _.findWhere(prod.variants, {'sku_id': ele.sku_id});
-                                if (variant != null) { // existing variant coming from ui, so update its quantity if > 0 or delete that variant from array 
+                                if (variant != null) { // existing variant coming from ui, so update its quantity if > 0 or delete that variant from array
 									console.log("Product variant quantity is -- " + ele.quantity);
 									if(ele.quantity == 0){
 										prod.variants = _.without(prod.variants, variant);
 									}else{
 										variant.quantity = ele.quantity;
 									}
-                                    
+
                                 } else { // new variant is coming from UI which did not earlier exist
                                     prod.variants.push(ele);
                                 }
@@ -210,7 +216,7 @@ shoppingcart.put('/shippingDetails', function (req, res, next) {
                     shoppingCartfromDB.shipping_address = shippingAddFromSite;
 					console.log("The shipping details in the cart after adding it from UI are  " + JSON.stringify(shoppingCartfromDB));
                     data = result.data[0].Bulkwize;
-					
+
 					data.createdAt = result.data[0].Bulkwize.createdAt;
 					data.workflowState = "ShippingAddressAdded";
 					//saving final data
@@ -222,7 +228,7 @@ shoppingcart.put('/shippingDetails', function (req, res, next) {
             }
         }
 
-        
+
 
     });
 
@@ -243,7 +249,7 @@ shoppingcart.post('/checkout', function (req, res, next) {
 	var queryData = {key: '', value: ''};
 
     populateKeyValue(req,data,queryData);
-	
+
     ShoppingCartModel.getUserById("id", "com.bulkwise.Cart::" + req.user.user, function (error, result) {
         if (error) {
             console.log('No details for the user');
@@ -254,10 +260,10 @@ shoppingcart.post('/checkout', function (req, res, next) {
 				} else {
 					return res.status(404).send(error);
 				}
-                
+
             }
         }
-      
+
 
     });
 
@@ -460,6 +466,3 @@ var populateVariants = function (dbVariants, siteVariants) {
 
 // export product module
 module.exports = shoppingcart;
-
-
-

@@ -9,6 +9,7 @@ var utilities = express.Router();
 var utilitiesModel = require('../model/UtilitiesModel.js');
 var mailConfig = require('../config/mail-config.json');
 var smsConfig = require('../config/sms-config.json');
+var deliveryChargeConfig = require('../config/deliverycharge-config.json');
 var smtpTransport = require("nodemailer-smtp-transport");
 var nodemailer = require('nodemailer');
 var http = require("http");
@@ -50,7 +51,7 @@ utilities.post('/sendmail', function(req, res, next) {
 		var senderEmail = req.body.senderEmail;
 	}
 	console.log("Before creating transporter the sender email is -- " + senderEmail);
-	
+
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
@@ -75,14 +76,14 @@ var mailOptions = {
 utilities.post('/sendSMS', function(req, res, next) {
 
 	var senderId = smsConfig.smsSenderId;
-	
+
 	var smsOptions = smsConfig.smsConfig;
-	
+
 	if(req.body.senderId != undefined && req.body.senderId != null ){
 		var senderId = req.body.senderId;
 	}
 	console.log("SMS Message text before encoding is   " + msgTxt);
-	
+
         var smsReq = http.request(smsOptions, function (res) {
             var chunks = [];
 
@@ -108,7 +109,7 @@ utilities.sendEmail = function(toEmail,emailSubject,emailTxt,emailHTML,callback)
 	// create reusable transporter object using the default SMTP transport
 	var senderEmail = 'info%40bulkwize.com';
 	console.log("Before creating transporter the sender email is -- " + senderEmail);
-	
+
 
 	// setup e-mail data with unicode symbols
 	var mailOptions = {
@@ -128,7 +129,7 @@ utilities.sendEmail = function(toEmail,emailSubject,emailTxt,emailHTML,callback)
 		}
 		console.log('Message sent: ' + info.response);
 		callback(null, {'status':'success', 'data':info.response});
-		
+
 	});
 }
 
@@ -137,7 +138,7 @@ utilities.sendSMS = function(toNumber,msgTxt,callback){
 	console.log("Inside send SMS function -- " );
 	// create reusable transporter object using the default SMTP transport
 	var senderId = smsConfig.smsSenderId;
-	
+
     var smsOptions = smsConfig.smsConfig;
 
         //smsOptions.path=smsOptions.path+"&Msg="+querystring.stringify(msgTxt);
@@ -162,6 +163,15 @@ utilities.sendSMS = function(toNumber,msgTxt,callback){
         req.end();
 }
 
+utilities.getDeliveryCharge = function(totalOrderValue){
+  var totalOrderLimit = deliveryChargeConfig.totalOrderLimit;
+  var deliveryCharge = 0;
+  console.log("totalOrderValue :"+totalOrderValue);
+  if(totalOrderValue != null && totalOrderValue < totalOrderLimit){{
+    deliveryCharge = deliveryChargeConfig.deliveryCharge;
+  }}
+  return deliveryCharge;
+}
 
 // export product module
 module.exports = utilities;

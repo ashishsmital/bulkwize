@@ -7,7 +7,9 @@
             </div>
         </div>
         <div>
-          <div class="total">&nbsp Total Payment Amount: {{cartDetails.totalOrderValue | number:2}}</div><br>
+          <div class="total">&nbsp Total Order Amount: {{cartDetails.totalOrderValue | number:2}}</div><br>
+          <div class="total">&nbsp Delivery Charge: {{cartDetails.deliveryCharge | number:2}}</div><br>
+          <div class="total">&nbsp Total Payment Amount: {{cartDetails.total_payable_amnt | number:2}}</div><br>
           <div class="total">&nbsp Created Date: {{cartDetails.createdAt | date:'dd-MM-yyyy'}}</div><br>
           <div class="total"><b>&nbsp Shipping Address :-</b> <br>&nbsp {{cartDetails.shipping_address.address1}},</br>&nbsp {{cartDetails.shipping_address.address2}},<br>&nbsp {{cartDetails.shipping_address.city}},  {{cartDetails.shipping_address.postcode}}</div><br>
         </div>

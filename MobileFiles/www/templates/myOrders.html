@@ -9,7 +9,7 @@
         <ion-list class="accordion" ng-if="isMyOrders">
             <ion-item class="item-stable" ng-repeat-start="myOrder in myOrders" ng-click="toggleGroup($index)" ng-class="{active:isGroupShown($index)}">
                 <i class="icon" ng-class="isGroupShown($index) ? 'ion-minus' : 'ion-plus'" ></i>
-                <b>Order Id :- </b>{{myOrder.Bulkwize.id}}&nbsp&nbsp&nbsp&nbsp<b>Order Amount :-</b> Rs. {{myOrder.Bulkwize.totalOrderValue | number:2}}
+                <b>Order Id :- </b>{{myOrder.Bulkwize.id}}&nbsp&nbsp&nbsp&nbsp<b>Order Amount :-</b> Rs. {{myOrder.Bulkwize.total_payable_amnt | number:2}}
             </ion-item>
             <ion-item class="item-accordion item-align" ng-repeat-end  ng-show="isGroupShown($index)">
               <p><b>Order Created On:-</b> {{myOrder.Bulkwize.createdAt | date:'dd-MM-yyyy'}}</p>
