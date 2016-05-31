@@ -83,6 +83,7 @@ order.get('/orderid/:orderNo', function (req, res, next) {
  */
 order.get('/:orderNo/invoice', function (req, res, next) {
     console.log("Get invoice for orderId  - " + req.params['orderNo']);
+    var deliveryCharge=0;
     var _dirname = process.cwd()
     orderModel.getAllOrders("id",req.params['orderNo'], function (error, result) {
 
@@ -112,6 +113,19 @@ order.get('/:orderNo/invoice', function (req, res, next) {
             });
 
             orderDate = new Date(result.data[0].Bulkwize.updatedAt);
+
+            var balance  = 0;
+            //delivery charges
+
+            if(result.data[0].Bulkwize.deliveryCharge){
+                deliveryCharge=result.data[0].Bulkwize.deliveryCharge;
+                balance = subtot+ deliveryCharge;
+            }else{
+                 console.log('In else part')
+                 balance = subtot;
+            }
+
+
             invoiceDate = new Date()
             input = {
                 currencyFormat: "₹%d",
@@ -127,10 +141,11 @@ order.get('/:orderNo/invoice', function (req, res, next) {
                 client_name: result.data[0].Bulkwize.shipping_address.address1,
                 items: pdtItems,
                 subtotal:subtot,
+                delivery_charges:deliveryCharge,
                 tax:0,
                 shipping:0,
                 paid:0,
-                balance:subtot,
+                balance:balance,
 
             };
 
