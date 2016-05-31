@@ -1,0 +1,56 @@
+{
+	"id": "89b36283-14fa-88ea-0b23-9b1e0f901755",
+	"name": "Test",
+	"description": "",
+	"order": [
+		"b41de046-6206-82a7-e8b9-8b0bdd897eba",
+		"82c3bf76-1e49-2ad3-8d03-a117c576c905"
+	],
+	"folders": [],
+	"timestamp": 1454786923584,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "82c3bf76-1e49-2ad3-8d03-a117c576c905",
+			"headers": "",
+			"url": "http://localhost:8080/products/category/personal care",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "89b36283-14fa-88ea-0b23-9b1e0f901755",
+			"data": [],
+			"dataMode": "params",
+			"name": "Get",
+			"description": "is only exposed in the API Portal ",
+			"descriptionFormat": "html",
+			"time": 1455053381967,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "b41de046-6206-82a7-e8b9-8b0bdd897eba",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/products",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1454950661737,
+			"name": "Products",
+			"description": "is only exposed in the API Portal ",
+			"collectionId": "89b36283-14fa-88ea-0b23-9b1e0f901755",
+			"responses": [],
+			"rawModeData": "{\n\"type\":\"com.bulkwise.Products\",\n\"id\":\"produ::3\",\n \"display_title\" : \"Gillete Mach 3 razor, titanium blade\",\n\"brand_name\":\"Gillete\",\n\"Short_summary\": \"A very short summary to be displayed along with title.\",\n\"description\": \"A detailed description about the product\",\n\"name\": \"Gillete Mach 3\",\n\"img_url\":\"product image url\",\n \"isVisible\":true,\n\"variants\":[{\n\t\t\"sku_id\":\"Gillete::1::Mach3\",\n\"supplier_item_id\":\" 82243252\",\n\t\t\"supplier_material_code\":\" 82242983\",\n\t\t\"supplier_material_description\":\" Mach 3 turbo pack of 3\",\n\t\t\"supplier_EAN\":\" 4902430665452\",\n\n\t\t\"count_in_case\":50,\n\t\t\"unit size/weight/qty\":\"3\",\n\t\t\"MRP/unit\": 550,\n\t\t\"discount percentage\": 9,\n\t\t\"isVisible\":true,\n\t\t\"price_applicable_upto\":\"ISO(date)\"\n\t\t}],\n \"prd_metafields\":[ {\n         \"key\":\"Material\",\n         \"value\":\"Cotton\"\n        },\n      {\n         \"key\":\"Quality\",\n         \"value\":\"Excellent\"\n      }   ],\n\"createdAt\":\"2014-04-03T20:46:52.411Z\",\n\"updatedAt\":\"2016-02-01T21:12:50.699Z\",\n\"category_id\":[\"array\",\"because a product can belong to multiple categories\",\"store both leaf/sub & parent category ids\"],\n\"supplier_id\": \"suppl::1\",\n\"override_lead_time_for_delivery_in_days\":20\n}"
+		}
+	]
+}

@@ -1,0 +1,35 @@
+{
+	"id": "6fb19e02-ca4d-ffbf-f9e5-480abc62c84f",
+	"name": "Utilities",
+	"description": "",
+	"order": [
+		"fb15c1d3-dcd8-829d-5ae1-79ca04a769d5"
+	],
+	"folders": [],
+	"timestamp": 1460510484600,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "fb15c1d3-dcd8-829d-5ae1-79ca04a769d5",
+			"headers": "Content-Type: application/json\n",
+			"url": "http://localhost:8080/utilities/sendmail",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460513398358,
+			"name": "http://localhost:8080/utilities/sendmail",
+			"description": "Send Email",
+			"collectionId": "6fb19e02-ca4d-ffbf-f9e5-480abc62c84f",
+			"responses": [],
+			"rawModeData": "{\n    \"toEmail\":\"ashishsmital@gmail.com\",\n    \"emailSubject\": \"Test Mail with config\",\n    \"emailTxt\": \"A test email from postman with correct response and config.\"\n}"
+		}
+	]
+}
