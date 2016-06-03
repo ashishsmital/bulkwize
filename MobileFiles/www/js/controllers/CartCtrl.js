@@ -59,6 +59,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
 					alertPopup.then(function(res) {
                         console.log("The user is not logged in and hence needs to be redirected to login page." + res);
                         if(res == true){
+                            $rootScope.onLoginGoto = 'app.shipping';
                             $state.go('app.login');
                         }
                     });
@@ -172,7 +173,7 @@ app.controller('CartCtrl', function($scope, $rootScope, $ionicLoading, $http, $i
                 $scope.cartProcess = true;
 			} // allow to call update even if 1 of the variants on the cart page as count >0 and then on server remove variants whose count is 0
 			$scope.variants.push({"sku_id":data.variants[i].sku_id,"quantity":data.variants[i].quantity,"productCountInCase":data.variants[i].productCountInCase,"productUnitSizeWeightQty":data.variants[i].productUnitSizeWeightQty,"productMRPUnit":data.variants[i].productMRPUnit,"productDiscountPercentage":data.variants[i].productDiscountPercentage});
-            
+
         }
 
 

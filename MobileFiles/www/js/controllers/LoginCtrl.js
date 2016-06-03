@@ -34,7 +34,13 @@ app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $
 
                         $ionicHistory.clearHistory();
                         $ionicNavBarDelegate.showBackButton(false);
-                        $state.go('app.home');
+                        if($rootScope.onLoginGoto != undefined && $rootScope.onLoginGoto != null){
+                          var landingPage = $rootScope.onLoginGoto;
+                          $rootScope.onLoginGoto = null;
+                          $state.go(landingPage);
+                        }else{
+                          $state.go('app.home');
+                        }
                         $timeout(function() {
                             $window.location.reload();
                             $ionicLoading.hide();
@@ -51,7 +57,7 @@ app.controller('LoginCtrl', function($scope, $rootScope, $ionicLoading, $http, $
                         template: 'Either the username or password is incorrect.'
                     });
 
-					
+
 
 				}
                 $ionicLoading.hide();
