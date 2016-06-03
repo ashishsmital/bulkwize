@@ -31,9 +31,11 @@ order.post('/create', function (req, res, next) {
 				if(error) {
 					console.log("Could not send self email for order creation.");
 				}
-        
+
         // send order sms to end consumer
-		  utilities.sendSMS(req.user.user,"Thanks for placing your order with Bulkwize, your order id is " + orderResult.data.id, function(error,result){
+    if(utilities.isSendSMS()){
+      console.log("*******************Inside send sms***************");
+      utilities.sendSMS(req.user.user,"Thanks for placing your order with Bulkwize, your order id is " + orderResult.data.id, function(error,result){
 				if(error) {
 						console.log("There was an error sending SMS to supplier and the error message was " + result.data);
 					}
@@ -42,10 +44,11 @@ order.post('/create', function (req, res, next) {
 				}
 					console.log("SMS was successfully sent to supplier " + result.data);
 			});
+    }
         // end of send SMS
 
     });
-	
+
 	res.send(orderResult);
 });
 
@@ -289,6 +292,3 @@ order.get('/:orderNo/invoice/:variantId/variants', function (req, res, next) {
 
 // export product module
 module.exports = order;
-
-
-

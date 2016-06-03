@@ -6,6 +6,7 @@
 		  "path": "/API/V1/50c446fc-037a-11e6-9a14-00163ef91450/ADDON_SERVICES/SEND/TSMS",
 		  "headers": {}
 		},
-		
-	"smsSenderId":"BLKWZE"
+
+	"smsSenderId":"BLKWZE",
+  "sendSMS":true
 }

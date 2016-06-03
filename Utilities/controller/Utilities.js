@@ -173,5 +173,8 @@ utilities.getDeliveryCharge = function(totalOrderValue){
   return deliveryCharge;
 }
 
+utilities.isSendSMS = function(){
+  return smsConfig.sendSMS;
+}
 // export product module
 module.exports = utilities;
