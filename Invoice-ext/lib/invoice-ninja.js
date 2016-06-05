@@ -18,6 +18,7 @@ var CURRENCY_FIELDS = [
   'subtotal',
   'tax',
   'shipping',
+  'delivery_charges',
   'paid',
   'balance',
 ];

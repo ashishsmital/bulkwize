@@ -290,5 +290,137 @@ order.get('/:orderNo/invoice/:variantId/variants', function (req, res, next) {
 });
 
 
+§/**
+ * post method to print specific invoice for order number
+ */
+order.post('/:orderNo/invoice', function (req, res, next) {
+
+
+    console.log("Get invoice for orderId  - " + req.params['orderNo']);
+        var deliveryCharge=0;
+        var _dirname = process.cwd()
+        var listProducts = req.body.products;
+        var includeDeliveryCharges = req.body.includeDeliveryCharges
+        orderModel.getAllOrders("id",req.params['orderNo'], function (error, result) {
+
+            if (error) {
+                return res.status(400).send(error);
+            }else{
+                pdtItems = [],subtot = 0;
+                var invoiceNumber =uuid.v4().substring(1,5) +"-"+ moment(new Date()).utcOffset("+05:30").format('DDMMYYYY');//TODO should be auto generated
+                _.extend(result.data[0].Bulkwize, {'bulkwize-address': config.bulkwizeAddress});
+                listProducts.forEach(function(passedPdtObj,i){
+
+
+                    result.data[0].Bulkwize.products.forEach(function(obj,i){
+
+                        if(passedPdtObj.id==obj.id){
+
+                            passedPdtObj.variants.forEach(function(passedVariantObj,j){
+
+
+                                obj.variants.forEach(function (variant,i)
+                                {
+                                    if(passedVariantObj==variant.sku_id){
+                                       // amt=variant.productMRPUnit*variant.productOrderedQty*variant.productCountInCase*(variant.productDiscountPercentage/100);
+                                        amt=variant.productMRPUnit*variant.quantity*variant.productCountInCase*(variant.productDiscountPercentage/100);
+                                        pdtItems.push({
+                                            description: variant.productMaterialDescription,
+                                           // quantity:variant.productOrderedQty,
+                                            quantity:variant.quantity,
+                                            rate: variant.productMRPUnit,
+                                            amount: amt,
+                                            vat:variant.productVATPercentage,
+                                            countInCase:variant.productCountInCase,
+                                            discount:variant.productDiscountPercentage
+                                        });
+                                        subtot +=parseInt(amt);
+                                     }
+                                });
+
+
+                            });
+                        }
+                    });
+
+
+                });
+
+                orderDate = new Date(result.data[0].Bulkwize.updatedAt);
+
+                var balance  = 0;
+                //delivery charges
+
+                if(result.data[0].Bulkwize.deliveryCharge && includeDeliveryCharges){
+                    deliveryCharge=result.data[0].Bulkwize.deliveryCharge;
+                    balance = subtot+ deliveryCharge;
+                }else{
+                     console.log('In else part')
+                     balance = subtot;
+                }
+
+
+                invoiceDate = new Date()
+                input = {
+                    currencyFormat: "₹%d",
+                    invoice_number: invoiceNumber,
+                    order_number:result.data[0].Bulkwize.id, //TODO check with Ashish tomorrow.
+                    orderDate: orderDate.toISOString().
+                    replace(/T/, ' ').
+                    replace(/\..+/, ''),
+                    invoiceDate: invoiceDate.toISOString().
+                    replace(/T/, ' ').
+                    replace(/\..+/, ''),
+                    from_name: 'Bulkwise',
+                    client_name: result.data[0].Bulkwize.shipping_address.address1,
+                    items: pdtItems,
+                    subtotal:subtot,
+                    delivery_charges:deliveryCharge,
+                    tax:0,
+                    shipping:0,
+                    paid:0,
+                    balance:balance,
+
+                };
+
+                var invoice = new Invoice();
+                var fileStream = fs.createWriteStream(__dirname+invoiceNumber+'-invoice.pdf');
+                invoice.generatePDFStream(input).pipe(fileStream).on('finish', function () {  // finished
+                    if(!result.data[0].Bulkwize.invoice){
+                        _.extend(result.data[0].Bulkwize,{'invoice':[{'invoiceNumber':invoiceNumber+'-invoice.pdf'}]});
+                    }else{
+                        result.data[0].Bulkwize.invoice.push({'invoiceNumber':invoiceNumber+'-invoice.pdf'});
+                    }
+                    //res.send(result);
+                    orderModel.updateOrder(result.data[0].Bulkwize.id,result.data[0].Bulkwize, function (error, result) {
+
+                        if (error) {
+                            return res.status(400).send(error);
+                        } else {
+                            fs.readFile(__dirname+invoiceNumber+'-invoice.pdf', function(error, content) {
+                                if (error) {
+                                    res.writeHead(500);
+                                    res.end();
+                                }
+                                else {
+
+                                    res.writeHead(200, { 'Content-Type': 'application/pdf',  'Content-Disposition': 'inline; filename='+invoiceNumber+'-invoice.pdf'});
+                                    res.end(content, 'utf-8');
+                                }
+                            });
+
+                        }
+                    });
+                });
+
+                console.log('Invoice end');
+            }
+
+
+
+        });
+});
+
+
 // export product module
 module.exports = order;
