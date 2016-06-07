@@ -63,6 +63,8 @@
             <div class="col-xs-3">TAX</div>
             <div class="col-xs-9"><strong class="pull-right">Shipping:</strong></div>
             <div class="col-xs-3">SHIPPING</div>
+            <div class="col-xs-9"><strong class="pull-right">Delivery Charges:</strong></div>
+            <div class="col-xs-3">DELIVERY_CHARGES</div>
             <div class="col-xs-9"><strong class="pull-right">Amount Paid:</strong></div>
             <div class="col-xs-3">PAID</div>
             <div class="col-xs-9"><strong class="pull-right">Balance:</strong></div>
