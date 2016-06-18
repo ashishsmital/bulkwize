@@ -16,8 +16,9 @@ var numeral = require('numeral');
 var RestClient = require('node-rest-client').Client;
 var pmntClient = new RestClient();
 
+
 var instamojoPmntBody = {
-							data: { 
+							data: {
 									"purpose":"invalid purpose",
 									"amount":"11",
 									"buyer_name": "No Buyer",
@@ -27,14 +28,61 @@ var instamojoPmntBody = {
 									"send_sms":"True",
 									/*"redirect_url":"http%3A%2F%2Fwww.bulkwize.com%2Forder%2F",
 									"webhook":"http%3A%2F%2Fwww.bulkwize.com%2Fpayment%2Fpaymentwebhook%2F",*/
-									"redirect_url":"http://www.bulkwize.com/order/confirm",
-									"webhook":"http://www.bulkwize.com/payment/paymentwebhook/",
+									"redirect_url":"http://bulkwize.com/Sample/success.html",
+									"webhook":"http://bulkwize.com:8080/payment/paymentwebhook/",
 									"allow_repeated_payment":"False"
-									
+
 							},
-							headers: { "Content-Type": "application/json","X-Api-Key": "f5530c93dc2b257e9f6d38159aac2603", "X-Auth-Token":"9a2c3d05a396d68a63c809ae47243906" }
+							headers: { "Content-Type": "application/json","X-Api-Key": "50b49d3f05ee3da9fe041d39923a7252", "X-Auth-Token":"986e41418a7deb0ab52675f2160f1d90" }
 						};
 
+
+
+payment.post('/paymentwebhook',function(req,res,next){
+
+console.log("Webhook response "+req.body);
+
+var payment_object = req.body
+
+orderModel.get(payment_object.purpose, function(error,result){
+        if (error) {
+            console.log('In payment webhook - Order could not be retrieved for making payment, the order id was -- '+payment_object.purpose);
+        }else{
+ var orderJSON = JSON.parse(JSON.stringify(result.data[0].Bulkwize));
+							orderJSON.paymentResponse=payment_object;
+							orderModel.updateOrder(payment_object.purpose,orderJSON, function(error,ordersaveResponse){
+									// return payment URL to browser
+							    console.log(ordersaveResponse);
+							    console.log('Updated order after payment');
+								if(error){
+										res.send({"message":"failure","data":{"pmntURL":"Oops. Problem sending response to payment gateway"}});
+								}else{
+									res.send({"message":"Success","data":""});
+								}
+							});
+        }
+
+});
+
+});
+
+payment.get('/checkpayment/:orderId', function (req, res, next) {
+    console.log('inside payment post method');
+    var data = req.params['orderId'];
+    orderModel.get(req.params['orderId'], function(error,result){
+
+        console.log("result.data[0].Bulkwize.paymentResponse  ------"+result.data[0].Bulkwize.paymentResponse)
+        if(error){
+            console.log('error check payment');
+        }else{
+            if(result && result.data[0].Bulkwize.paymentResponse && result.data[0].Bulkwize.paymentResponse.purpose==data && result.data[0].Bulkwize.paymentResponse.status=='Credit'){
+                res.send({"message":"success","data":{"success":true}});
+            }else{
+                res.send({"message":"failure","data":{"failed_id":result.data[0].Bulkwize.paymentResponse}});
+            }
+        }
+    });
+});
 
 /**
  * Make Payment

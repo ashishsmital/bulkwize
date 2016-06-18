@@ -488,7 +488,9 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
             console.log(response);
 
             $ionicLoading.hide();
+
 			 // if order creation is successful - make payment
+			 var orderId = response.data.data.id;
 			$http({
 				method: 'POST',
 				url: EnvConfig.HOST+'payment/'+response.data.data.id
@@ -496,8 +498,39 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 				console.log("Payment creation was successful" + pmntResponse.data.data.pmntURL);
 				$ionicLoading.hide();
 
+                var checkpaymentFunc =  $timeout(function() {
+
+                    console.log('Payment check timeout fired for order'+orderId)
+                    $http({
+                    				method: 'GET',
+                    				url: EnvConfig.HOST+'payment/'+'checkpayment/'+orderId
+                    			}).then(function successCallback(response) {
+                                    console.log('success');
+                                    if(response.message=='success'){
+                                        $timeout.cancel(checkpaymentFunc);
+                                    }else{
+                                    console.log('Error');
+
+                                    }
+                    			}, function errorCallback(data) {
+                                 	console.log('Error');
+
+                                });
+
+                }, 1000); //one second
+
+                var clearAll = $timeout(function(){
+
+                         $timeout.cancel(checkpaymentFunc);
+                         $timeout.cancel(clearAll);
+
+                },60000);
+
+
+
 				// if payment creation is successful, invoke instamojo long URL
-				$window.location.href=pmntResponse.data.data.pmntURL;
+                $window.open(pmntResponse.data.data.pmntURL,"_blank","location=no");
+
 
 				// end of invoking instamojo long url
 			}, function errorCallback(data) {
