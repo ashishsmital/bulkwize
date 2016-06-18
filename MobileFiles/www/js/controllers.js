@@ -516,7 +516,16 @@ app.controller('SupplierCtrl', function($scope, $stateParams, $http, $rootScope,
 
                                 });
 
-                }, 20000);
+                }, 1000); //one second
+
+                var clearAll = $timeout(function(){
+
+                         $timeout.cancel(checkpaymentFunc);
+                         $timeout.cancel(clearAll);
+
+                },60000);
+
+
 
 				// if payment creation is successful, invoke instamojo long URL
 				$window.open(pmntResponse.data.data.pmntURL,"_blank","location=no");

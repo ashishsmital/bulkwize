@@ -52,6 +52,7 @@ orderModel.get(payment_object.purpose, function(error,result){
 							orderModel.updateOrder(payment_object.purpose,orderJSON, function(error,ordersaveResponse){
 									// return payment URL to browser
 							    console.log(ordersaveResponse);
+							    console.log('Updated order after payment');
 								if(error){
 										res.send({"message":"failure","data":{"pmntURL":"Oops. Problem sending response to payment gateway"}});
 								}else{
